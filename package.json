@@ -1,0 +1,27 @@
+{
+  "name": "buxlabs.shared.core",
+  "version": "1.0.0",
+  "description": "buxlabs.shared.core",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tap": "^5.7.1"
+  },
+  "scripts": {
+    "test": "tap test/**/*.js",
+    "coverage": "tap test/**/*.js --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilos/buxlabs.shared.core.git"
+  },
+  "author": "Emil Ajdyna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emilos/buxlabs.shared.core/issues"
+  },
+  "homepage": "https://github.com/emilos/buxlabs.shared.core#readme"
+}
