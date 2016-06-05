@@ -2,6 +2,7 @@
 
 const tap = require("tap");
 const util = require("../../../../lib/util/object");
+const assert = require("assert");
 
 tap.test("flatten", function (t) {
 
@@ -87,7 +88,9 @@ tap.test("unflatten", function (t) {
                 }
             }
         };
-        t.deepEqual(util.unflatten(object), result);
+        var unflattened = util.unflatten(object);
+        t.deepEqual(unflattened, result);
+        t.assert(!Array.isArray(unflattened.errors));
         t.end()
     });
 

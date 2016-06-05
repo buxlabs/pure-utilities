@@ -1,6 +1,6 @@
 {
   "name": "buxlabs.shared.core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "buxlabs.shared.core",
   "main": "index.js",
   "directories": {
@@ -8,7 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "tap": "^5.7.1"
+    "tap": "^5.7.2"
   },
   "scripts": {
     "test": "tap test/**/*.js",
