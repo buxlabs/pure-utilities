@@ -6,7 +6,7 @@ const assert = require("assert");
 
 tap.test("extend", function (t) {
 
-    t.plan(3);
+    t.plan(5);
 
     t.test("should be possible to extend two objects", function (t) {
         var object1 = {
@@ -74,6 +74,54 @@ tap.test("extend", function (t) {
             }
         };
         t.deepEqual(util.extend(object1, object2), result);
+        t.end();
+    });
+
+    t.test("should be possible to extend deeply nested objects with same keys", function (t) {
+        var object1 = {
+            rest: {
+                login: "/rest/login"
+            }
+        };
+        var object2 = {
+            rest: {
+                logout: "/rest/logout"
+            }
+        };
+        var result = {
+            rest: {
+                login: "/rest/login",
+                logout: "/rest/logout"
+            }
+        };
+        t.deepEqual(util.extend(object1, object2), result);
+        t.end();
+    });
+
+    t.test("should be possible to extend multiple deeply nested objects with same keys", function (t) {
+        var object1 = {
+            rest: {
+                login: "/rest/login"
+            }
+        };
+        var object2 = {
+            rest: {
+                logout: "/rest/logout"
+            }
+        };
+        var object3 = {
+            rest: {
+                register: "/rest/register"
+            }
+        };
+        var result = {
+            rest: {
+                login: "/rest/login",
+                logout: "/rest/logout",
+                register: "/rest/register"
+            }
+        };
+        t.deepEqual(util.extend(object1, object2, object3), result);
         t.end();
     });
 
