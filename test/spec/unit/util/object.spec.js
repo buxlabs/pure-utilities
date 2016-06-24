@@ -6,7 +6,7 @@ const assert = require("assert");
 
 tap.test("extend", function (t) {
 
-    t.plan(5);
+    t.plan(7);
 
     t.test("should be possible to extend two objects", function (t) {
         var object1 = {
@@ -122,6 +122,58 @@ tap.test("extend", function (t) {
             }
         };
         t.deepEqual(util.extend(object1, object2, object3), result);
+        t.end();
+    });
+
+    t.test("should copy arrays", function (t) {
+        var object1 = {
+            extensions: ["jpg", "png"]
+        };
+        var object2 = {
+            rest: {
+                logout: "/rest/logout"
+            }
+        };
+        var expected = {
+            extensions: ["jpg", "png"],
+            rest: {
+                logout: "/rest/logout"
+            }
+        };
+        var result = util.extend(object1, object2);
+        t.deepEqual(result, expected);
+        t.assert(Array.isArray(result.extensions));
+        t.end();
+    });
+
+    t.test("should copy regexps", function (t) {
+        var object1 = {
+            regexp: /\d/g
+        };
+        var object2 = {
+            rest: {
+                logout: "/rest/logout"
+            }
+        };
+        var expected = {
+            regexp: /\d/g,
+            rest: {
+                logout: "/rest/logout"
+            }
+        };
+        var result = util.extend(object1, object2);
+        t.deepEqual(result, expected);
+        t.end();
+    });
+
+});
+
+tap.test("isUndefined", function (t) {
+
+    t.plan(1);
+
+    t.test("should return true if the value is undefined", function (t) {
+        t.assert(util.isUndefined(void 0));
         t.end();
     });
 
