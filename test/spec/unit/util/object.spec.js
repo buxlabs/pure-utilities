@@ -4,6 +4,50 @@ const tap = require("tap");
 const util = require("../../../../lib/util/object");
 const assert = require("assert");
 
+tap.test("extend", function (t) {
+
+    t.plan(2);
+
+    t.test("should be possible to extend two objects", function (t) {
+        var object1 = {
+            "hello": "world"
+        };
+        var object2 = {
+            "world": "hello"
+        };
+        var result = {
+            "hello": "world",
+            "world": "hello"
+        };
+        t.deepEqual(util.extend(object1, object2), result);
+        t.end();
+    });
+
+    t.test("should be possible to extend more than two objects", function (t) {
+        var object1 = {
+            "hello": "world"
+        };
+        var object2 = {
+            "world": "hello"
+        };
+        var object3 = {
+            "witaj": "świecie"
+        };
+        var object4 = {
+            "świecie": "witaj"
+        };
+        var result = {
+            "hello": "world",
+            "world": "hello",
+            "witaj": "świecie",
+            "świecie": "witaj"
+        };
+        t.deepEqual(util.extend(object1, object2, object3, object4), result);
+        t.end();
+    });
+
+});
+
 tap.test("flatten", function (t) {
 
     t.plan(3);
