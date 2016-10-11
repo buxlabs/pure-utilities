@@ -1,4 +1,4 @@
-# buxlabs.shared.core
+# buxlabs.utils
 
 A collection of utilities extracted from internal projects.
 
