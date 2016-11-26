@@ -1,7 +1,7 @@
 {
-  "name": "buxlabs.shared.core",
+  "name": "@buxlabs/utils",
   "version": "1.0.6",
-  "description": "buxlabs.shared.core",
+  "description": "buxlabs utils",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emilos/buxlabs.shared.core.git"
+    "url": "git+https://github.com/buxlabs/utils.git"
   },
   "author": "Emil Ajdyna",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emilos/buxlabs.shared.core/issues"
+    "url": "https://github.com/buxlabs/utils/issues"
   },
-  "homepage": "https://github.com/emilos/buxlabs.shared.core#readme"
+  "homepage": "https://github.com/buxlabs/utils#readme"
 }
