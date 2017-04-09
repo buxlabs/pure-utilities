@@ -8,7 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "tap": "^10.1.0"
+    "tap": "^10.3.2"
   },
   "scripts": {
     "test": "tap test/**/*.js",
