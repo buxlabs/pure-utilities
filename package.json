@@ -1,6 +1,6 @@
 {
   "name": "@buxlabs/utils",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "buxlabs utils",
   "main": "index.js",
   "dependencies": {},
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/buxlabs/utils/issues"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "https://github.com/buxlabs/utils#readme"
 }
