@@ -1,18 +1,16 @@
 {
   "name": "@buxlabs/utils",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "buxlabs utils",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {},
   "devDependencies": {
-    "tap": "^10.3.2"
+    "ava": "0.19.1",
+    "nyc": "10.3.0"
   },
   "scripts": {
-    "test": "tap test/**/*.js",
-    "coverage": "tap test/**/*.js --coverage"
+    "test": "ava \"test/spec/**/*.js\"",
+    "coverage": "nyc npm test"
   },
   "repository": {
     "type": "git",
