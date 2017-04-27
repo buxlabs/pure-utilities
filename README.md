@@ -4,6 +4,8 @@
 
 `npm install @buxlabs/utils`
 
+- [x] 100% coverage
+
 ## Usage
 
 ```javascript
@@ -38,6 +40,12 @@ object.flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
 
 #### lpad
 #### removeWhitespace
+
+### date utils
+
+`const date = require('@buxlabs/utils/lib/date');`
+
+#### toISOString
 
 ### json utils
 
