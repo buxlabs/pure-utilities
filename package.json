@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "ava": "0.19.1",
-    "nyc": "10.3.0"
+    "nyc": "10.3.2"
   },
   "scripts": {
     "test": "ava \"test/spec/**/*.js\"",
