@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "ava": "0.22.0",
+    "ava": "0.23.0",
     "nyc": "11.2.1"
   },
   "scripts": {
