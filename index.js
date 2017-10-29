@@ -1,9 +1,11 @@
-const json = require("./lib/json");
-const object = require("./lib/object");
-const string = require("./lib/string");
+import * as json from './json'
+import * as object from './object'
+import * as string from './string'
+import * as date from './date'
 
-module.exports = {
-    json: json,
-    object: object,
-    string: string
-};
+export default {
+  json,
+  object,
+  string,
+  date
+}

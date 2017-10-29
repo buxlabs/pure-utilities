@@ -1,5 +1,7 @@
 # Utils
 
+A set of utility methods reused exported as a UMD module. Methods can also be imported directly.
+
 ## Installation
 
 `npm install @buxlabs/utils`
@@ -8,16 +10,23 @@
 
 ## Usage
 
+### cjs
+
 ```javascript
-const object = require('@buxlabs/utils/lib/object');
-object.flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
+const { flatten } = require('@buxlabs/utils/object');
+flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
+```
+
+### es
+
+```javascript
+import { flatten } from '@buxlabs/utils/object'
+flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
 ```
 
 ## Methods
 
-### object utils
-
-`const object = require('@buxlabs/utils/lib/object');`
+### object
 
 #### isObject
 #### isNull
@@ -34,21 +43,15 @@ object.flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
 #### unflatten
 #### rename
 
-### string utils
+### string
 
-`const string = require('@buxlabs/utils/lib/string');`
-
-#### lpad
+#### leftPad
 #### removeWhitespace
 
-### date utils
-
-`const date = require('@buxlabs/utils/lib/date');`
+### date
 
 #### toISOString
 
-### json utils
-
-`const json = require('@buxlabs/utils/lib/json');`
+### json
 
 #### prettify
