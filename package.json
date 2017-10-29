@@ -6,8 +6,9 @@
   "dependencies": {},
   "devDependencies": {
     "ava": "0.23.0",
-    "nyc": "11.2.1",
+    "nyc": "^11.2.1",
     "rollup": "^0.50.0",
+    "rollup-plugin-butternut": "^0.1.0",
     "standard": "^10.0.3"
   },
   "engines": {
@@ -15,9 +16,9 @@
     "npm": ">= 5.5.1"
   },
   "scripts": {
-    "test": "npm run lint && npm run build -- --silent && ava \"test/spec/**/*.js\"",
+    "test": "npm run build -- --silent && ava \"test/spec/**/*.js\"",
     "build": "rollup -c config.js",
-    "coverage": "nyc npm test",
+    "coverage": "npm run build -- --silent && nyc ava \"test/spec/**/*.js\"",
     "lint": "standard \"lib/**/*.js\""
   },
   "repository": {
@@ -29,8 +30,5 @@
   "bugs": {
     "url": "https://github.com/buxlabs/utils/issues"
   },
-  "files": [
-    "lib"
-  ],
   "homepage": "https://github.com/buxlabs/utils#readme"
 }

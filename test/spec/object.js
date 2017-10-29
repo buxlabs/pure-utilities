@@ -1,5 +1,5 @@
 import test from 'ava'
-import { object } from '../../../build'
+import { object } from '../../build'
 
 test('extend should be possible to extend two objects', t => {
   var object1 = {
