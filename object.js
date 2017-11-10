@@ -177,3 +177,31 @@ export function rename (object, keys) {
 
   return object
 }
+
+export function dig (object, string) {
+  var keys = string.split('.')
+  for (var i = 0, ilen = keys.length; i < ilen; i += 1) {
+    var key = keys[i]
+    if (key in object) {
+      object = object[key]
+    } else {
+      return null
+    }
+  }
+  return object
+}
+
+export function pat (object, string, value) {
+  var keys = string.split('.')
+  var reference = object
+  for (var i = 0, ilen = keys.length; i < ilen; i += 1) {
+    var key = keys[i]
+    if (i + 1 === ilen) {
+      object[key] = value
+    } else {    
+      object[key] = {}
+      object = object[key]
+    }
+  }
+  return reference
+}

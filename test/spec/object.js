@@ -273,3 +273,23 @@ test("rename should ignore key's properties without match", t => {
   }
   t.deepEqual(object.rename(object1, keys), result)
 })
+
+test('dig returns the value of a field', t => {
+  t.deepEqual(object.dig({ foo: 'bar' }, 'foo'), 'bar')
+})
+
+test('dig returns the value of a nested field', t => {
+  t.deepEqual(object.dig({ foo: { bar: 'baz' } }, 'foo.bar'), 'baz')
+})
+
+test('dig returns null if the key does not match', t => {
+  t.deepEqual(object.dig({ foo: 'bar' }, 'baz'), null)
+})
+
+test('pat overrides a value of a field', t => {
+  t.deepEqual(object.pat({ foo: 'bar' }, 'foo', 'baz'), { foo: 'baz' })
+})
+
+test('pat overrides deeply nested fields', t => {
+  t.deepEqual(object.pat({}, 'baz.bar', 'foo'), { baz: { bar: 'foo' }})
+})

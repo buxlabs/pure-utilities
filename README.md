@@ -42,6 +42,8 @@ flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
 #### flatten
 #### unflatten
 #### rename
+#### dig
+#### pat
 
 ### string
 

@@ -2,7 +2,7 @@ import minify from 'rollup-plugin-butternut'
 
 export default {
   input: 'index.js',
-  targets: [
+  output: [
     {
       file: 'build/index.js',
       format: 'cjs'
