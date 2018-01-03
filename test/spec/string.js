@@ -1,5 +1,5 @@
 import test from 'ava'
-import { string } from '../../build'
+import { string } from '../../build/index.umd'
 
 test('removeWhitespace should remove whitespace characters', t => {
   var parsed = string.removeWhitespace('\t1234 5678\n')

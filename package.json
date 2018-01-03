@@ -1,8 +1,9 @@
 {
   "name": "@buxlabs/utils",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "buxlabs utils",
-  "main": "build/index.js",
+  "main": "build/index.umd.js",
+  "module": "build/index.es.js",
   "dependencies": {},
   "devDependencies": {
     "ava": "^0.23.0",
@@ -16,8 +17,10 @@
     "npm": ">= 5.5.1"
   },
   "scripts": {
-    "test": "npm run build -- --silent && ava \"test/spec/**/*.js\"",
     "build": "rollup -c config.js",
+    "prepublish": "npm run build",
+    "pretest": "npm run build -- --silent",
+    "test": "ava \"test/spec/**/*.js\"",
     "coverage": "npm run build -- --silent && nyc ava \"test/spec/**/*.js\"",
     "lint": "standard \"lib/**/*.js\""
   },

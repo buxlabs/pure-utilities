@@ -26,6 +26,10 @@ flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
 
 ## Methods
 
+### array
+
+#### flatten
+
 ### object
 
 #### isObject
