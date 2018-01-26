@@ -6,7 +6,7 @@
   "module": "build/index.es.js",
   "dependencies": {},
   "devDependencies": {
-    "ava": "^0.24.0",
+    "ava": "^0.25.0",
     "nyc": "^11.2.1",
     "rollup": "^0.55.0",
     "rollup-plugin-butternut": "^0.1.0",
