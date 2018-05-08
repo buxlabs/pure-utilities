@@ -40,3 +40,11 @@ export function leftPad (value, pad) {
     return line ? pad + line : line
   }).join('\n')
 }
+
+export function trim (string) {
+  return string.trim()
+}
+
+export function uppercase (string) {
+  return string.toUpperCase()
+}
