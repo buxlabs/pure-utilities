@@ -25,3 +25,13 @@ test("leftPad shouldn't add padding to empty lines", t => {
   var parsed = string.leftPad('hello\n\nworld', '* ')
   t.deepEqual(parsed, '* hello\n\n* world')
 })
+
+test('trim should remove whitespace in left and right', t => {
+  var parsed = string.trim(' foo ')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("uppercase should convert string to uppercase", t => {
+  var parsed = string.uppercase('foo')
+  t.deepEqual(parsed, 'FOO')
+})
