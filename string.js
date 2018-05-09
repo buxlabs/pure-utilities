@@ -51,17 +51,20 @@ export function uppercase (string) {
 
 export function underscore (string) {
   string = string.trim()
+  const specialCharacters = /[^a-zA-Z0-9]/
+
   for (let i = 1; i < string.length; i += 1) {
-    if (string[i] === ' ') {
+    const character = string[i]
+    const previousCharacter = string[i - 1]
+
+    if (character === ' ') {
       string = string.substr(0, i) + '_' + string.substr(i).trim()
-    } else if (string[i] === '-') {
+    } else if (specialCharacters.test(character)) {
       string = string.substr(0, i) + '_' + string.substr(i + 1)
-    } else if ((string[i] !== '_')) {
-      if (Number.isInteger(Number(string[i - 1])) && !Number.isInteger(Number(string[i]))) {
-        string = string.substr(0, i) + '_' + string.substr(i)
-      } else if ((string[i - 1].toUpperCase() !== string[i - 1]) && string[i].toUpperCase() === string[i]) {
-        string = string.substr(0, i) + '_' + string.substr(i)
-      }
+    } else if (Number.isInteger(Number(previousCharacter)) && !Number.isInteger(Number(character))) {
+      string = string.substr(0, i) + '_' + string.substr(i)
+    } else if ((previousCharacter.toUpperCase() !== previousCharacter) && character.toUpperCase() === character) {
+      string = string.substr(0, i) + '_' + string.substr(i)
     }
   }
   return string.toLowerCase()
