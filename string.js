@@ -48,3 +48,21 @@ export function trim (string) {
 export function uppercase (string) {
   return string.toUpperCase()
 }
+
+export function underscore (string) {
+
+  for (let i = 0; i < string.length; i += 1) {
+    if (string[i] === ' ') {
+      string = string.substr(0, i) + '_' + string.substr(i).trim()
+      i++
+      continue
+    }
+
+    if ((string[i] !== '_') && (string[i].toUpperCase() === string[i]) && (string[0].toUpperCase() !== string[0])) {
+      string = string.substr(0, i) + '_' + string.substr(i)
+      i++
+      continue
+    }
+  }
+  return string.toLowerCase()
+}

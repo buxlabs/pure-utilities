@@ -35,3 +35,73 @@ test("uppercase should convert string to uppercase", t => {
   var parsed = string.uppercase('foo')
   t.deepEqual(parsed, 'FOO')
 })
+
+test("uppercase should convert string to uppercase", t => {
+  var parsed = string.uppercase('foo')
+  t.deepEqual(parsed, 'FOO')
+})
+
+test("underscore shouldn't modify string", t => {
+  var parsed = string.underscore('foo')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("underscore should convert string to lowerCase", t => {
+  var parsed = string.underscore('Foo')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("underscore should add underscore between camelCase words", t => {
+  var parsed = string.underscore('fooBar')
+  t.deepEqual(parsed, 'foo_bar')
+})
+
+test("underscore should add underscore between camelCase words", t => {
+  var parsed = string.underscore('fooBarBaz')
+  t.deepEqual(parsed, 'foo_bar_baz')
+})
+
+test("underscore should add underscore between camelCase words", t => {
+  var parsed = string.underscore('fooBarBarBar')
+  t.deepEqual(parsed, 'foo_bar_bar_bar')
+})
+
+test("underscore should add underscore between camelCase words", t => {
+  var parsed = string.underscore('fooBarBazBanQux')
+  t.deepEqual(parsed, 'foo_bar_baz_ban_qux')
+})
+
+test("underscore should add underscore between spaced words", t => {
+  var parsed = string.underscore('foo bar')
+  t.deepEqual(parsed, 'foo_bar')
+})
+
+test("underscore should add underscore between spaced words", t => {
+  var parsed = string.underscore('foo bar baz ban qux')
+  t.deepEqual(parsed, 'foo_bar_baz_ban_qux')
+})
+
+test("underscore should add underscore between spaced words", t => {
+  var parsed = string.underscore('foo     bar baz')
+  t.deepEqual(parsed, 'foo_bar_baz')
+})
+
+test("underscore should add underscore between spaced words", t => {
+  var parsed = string.underscore('foo     bar baz    qux')
+  t.deepEqual(parsed, 'foo_bar_baz_qux')
+})
+
+test("underscore should add underscore between spaced words", t => {
+  var parsed = string.underscore('foo Bar')
+  t.deepEqual(parsed, 'foo_bar')
+})
+
+test("underscore should add underscore between spaced words", t => {
+  var parsed = string.underscore('foo Bar Baq')
+  t.deepEqual(parsed, 'foo_bar_baq')
+})
+
+test("underscore should add underscore between spaced words", t => {
+  var parsed = string.underscore('foo Bar      baq')
+  t.deepEqual(parsed, 'foo_bar_baq')
+})
