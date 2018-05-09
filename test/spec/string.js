@@ -220,3 +220,13 @@ test("reverse should reverse string", t => {
   var parsed = string.reverse('12345')
   t.deepEqual(parsed, '54321')
 })
+
+test("capitalize should capitalize first character of string", t => {
+  var parsed = string.capitalize('foo')
+  t.deepEqual(parsed, 'Foo')
+})
+
+test("capitalize should capitalize first character of string", t => {
+  var parsed = string.capitalize('foo bar and baz')
+  t.deepEqual(parsed, 'Foo bar and baz')
+})
