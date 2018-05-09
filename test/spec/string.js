@@ -230,3 +230,8 @@ test("capitalize should capitalize first character of string", t => {
   var parsed = string.capitalize('foo bar and baz')
   t.deepEqual(parsed, 'Foo bar and baz')
 })
+
+test("lowerCase should convert each character to lowerCase", t => {
+  var parsed = string.lowercase('Foo BAR and baZ')
+  t.deepEqual(parsed, 'foo bar and baz')
+})
