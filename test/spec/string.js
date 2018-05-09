@@ -47,10 +47,19 @@ test("underscore shouldn't modify string", t => {
 })
 
 test("underscore shouldn't modify string", t => {
+  var parsed = string.underscore('foobar')
+  t.deepEqual(parsed, 'foobar')
+})
+
+test("underscore shouldn't modify string", t => {
+  var parsed = string.underscore('foo_bar')
+  t.deepEqual(parsed, 'foo_bar')
+})
+
+test("underscore shouldn't modify string", t => {
   var parsed = string.underscore(' foo')
   t.deepEqual(parsed, 'foo')
 })
-
 
 test("underscore should convert string to lowerCase", t => {
   var parsed = string.underscore('Foo')
@@ -170,4 +179,29 @@ test("underscore should convert kebab-case too underscoreCase", t => {
 test("underscore should convert kebab-case too underscoreCase", t => {
   var parsed = string.underscore('Bar-baz-baN')
   t.deepEqual(parsed, 'bar_baz_ba_n')
+})
+
+test("underscore should convert string containing numbers too underscoreCase", t => {
+  var parsed = string.underscore('foo11')
+  t.deepEqual(parsed, 'foo_11')
+})
+
+test("underscore should convert string containing numbers too underscoreCase", t => {
+  var parsed = string.underscore('foo1o11')
+  t.deepEqual(parsed, 'foo_1_o_11')
+})
+
+test("underscore should convert string containing numbers too underscoreCase", t => {
+  var parsed = string.underscore('fo_o1o11')
+  t.deepEqual(parsed, 'fo_o_1_o_11')
+})
+
+test("underscore should convert string containing numbers too underscoreCase", t => {
+  var parsed = string.underscore('1bar')
+  t.deepEqual(parsed, '1_bar')
+})
+
+test("underscore should convert string containing numbers too underscoreCase", t => {
+  var parsed = string.underscore('1barBan-baz')
+  t.deepEqual(parsed, '1_bar_ban_baz')
 })
