@@ -210,3 +210,13 @@ test("underscore should convert string containing numbers to underscoreCase", t 
   var parsed = string.underscore('00')
   t.deepEqual(parsed, '00')
 })
+
+test("reverse should reverse string", t => {
+  var parsed = string.reverse('foo')
+  t.deepEqual(parsed, 'oof')
+})
+
+test("reverse should reverse string", t => {
+  var parsed = string.reverse('12345')
+  t.deepEqual(parsed, '54321')
+})

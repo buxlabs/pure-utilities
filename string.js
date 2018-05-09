@@ -69,3 +69,7 @@ export function underscore (string) {
   }
   return string.toLowerCase()
 }
+
+export function reverse (string) {
+  return [...string].reverse().join('')
+}
