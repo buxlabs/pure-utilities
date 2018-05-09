@@ -50,18 +50,26 @@ export function uppercase (string) {
 }
 
 export function underscore (string) {
+  string = string.trim()
 
-  for (let i = 0; i < string.length; i += 1) {
+  for (let i = 1; i < string.length; i += 1) {
     if (string[i] === ' ') {
       string = string.substr(0, i) + '_' + string.substr(i).trim()
       i++
       continue
     }
 
-    if ((string[i] !== '_') && (string[i].toUpperCase() === string[i]) && (string[0].toUpperCase() !== string[0])) {
-      string = string.substr(0, i) + '_' + string.substr(i)
+    if (string[i] === '-') {
+      string = string.substr(0, i) + '_' + string.substr(i + 1)
       i++
       continue
+    }
+
+    if ((string[i] !== '_')) {
+      if (string[i - 1].toUpperCase() !== string[i - 1] && string[i].toUpperCase() === string[i]) {
+        string = string.substr(0, i) + '_' + string.substr(i)
+        i++
+      }
     }
   }
   return string.toLowerCase()

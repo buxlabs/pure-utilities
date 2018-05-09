@@ -46,8 +46,19 @@ test("underscore shouldn't modify string", t => {
   t.deepEqual(parsed, 'foo')
 })
 
+test("underscore shouldn't modify string", t => {
+  var parsed = string.underscore(' foo')
+  t.deepEqual(parsed, 'foo')
+})
+
+
 test("underscore should convert string to lowerCase", t => {
   var parsed = string.underscore('Foo')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("underscore should convert string to lowerCase", t => {
+  var parsed = string.underscore(' Foo ')
   t.deepEqual(parsed, 'foo')
 })
 
@@ -104,4 +115,59 @@ test("underscore should add underscore between spaced words", t => {
 test("underscore should add underscore between spaced words", t => {
   var parsed = string.underscore('foo Bar      baq')
   t.deepEqual(parsed, 'foo_bar_baq')
+})
+
+test("underscore should add underscore between spaced words", t => {
+  var parsed = string.underscore('foo Bar      baq')
+  t.deepEqual(parsed, 'foo_bar_baq')
+})
+
+test("underscore should add underscore between CapitalCase words", t => {
+  var parsed = string.underscore('FooBar')
+  t.deepEqual(parsed, 'foo_bar')
+})
+
+test("underscore should add underscore between CapitalCase words", t => {
+  var parsed = string.underscore('FooBarBaz')
+  t.deepEqual(parsed, 'foo_bar_baz')
+})
+
+test("underscore should add underscore between CapitalCase words", t => {
+  var parsed = string.underscore('FooBarBazQux')
+  t.deepEqual(parsed, 'foo_bar_baz_qux')
+})
+
+test("underscore should add underscore between CapitalCase words", t => {
+  var parsed = string.underscore('FooBarBazQux')
+  t.deepEqual(parsed, 'foo_bar_baz_qux')
+})
+
+test("underscore should add underscore between CapitalCase words", t => {
+  var parsed = string.underscore('FooBarBazQux bar')
+  t.deepEqual(parsed, 'foo_bar_baz_qux_bar')
+})
+
+test("underscore should convert kebab-case to underscoreCase", t => {
+  var parsed = string.underscore('foo-bar')
+  t.deepEqual(parsed, 'foo_bar')
+})
+
+test("underscore should convert kebab-case too underscoreCase", t => {
+  var parsed = string.underscore('foo-bar-baz')
+  t.deepEqual(parsed, 'foo_bar_baz')
+})
+
+test("underscore should convert kebab-case too underscoreCase", t => {
+  var parsed = string.underscore('foo-BAR-baz')
+  t.deepEqual(parsed, 'foo_bar_baz')
+})
+
+test("underscore should convert kebab-case too underscoreCase", t => {
+  var parsed = string.underscore('foo-BaR-baz')
+  t.deepEqual(parsed, 'foo_ba_r_baz')
+})
+
+test("underscore should convert kebab-case too underscoreCase", t => {
+  var parsed = string.underscore('Bar-baz-baN')
+  t.deepEqual(parsed, 'bar_baz_ba_n')
 })
