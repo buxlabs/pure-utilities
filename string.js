@@ -69,3 +69,15 @@ export function underscore (string) {
   }
   return string.toLowerCase()
 }
+
+export function reverse (string) {
+  return [...string].reverse().join('')
+}
+
+export function capitalize (string) {
+  return string.substr(0, 1).toUpperCase() + string.substr(1)
+}
+
+export function lowercase (string) {
+  return string.toLowerCase()
+}
