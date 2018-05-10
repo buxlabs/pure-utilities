@@ -86,3 +86,7 @@ export function humanize (string, capitalize = true) {
   string = string.replace(/_/g, ' ')
   return capitalize ? string.substr(0, 1).toUpperCase() + string.substr(1) : string
 }
+
+export function titleize (string) {
+  return string.split(' ').map(word => word.substr(0, 1).toUpperCase() + word.substr(1)).join(' ')
+}
