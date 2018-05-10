@@ -81,3 +81,8 @@ export function capitalize (string) {
 export function lowercase (string) {
   return string.toLowerCase()
 }
+
+export function humanize (string, capitalize = true) {
+  string = string.replace(/_/g, ' ')
+  return capitalize ? string.substr(0, 1).toUpperCase() + string.substr(1) : string
+}

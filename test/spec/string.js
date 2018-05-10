@@ -235,3 +235,23 @@ test("lowerCase should convert each character to lowerCase", t => {
   var parsed = string.lowercase('Foo BAR and baZ')
   t.deepEqual(parsed, 'foo bar and baz')
 })
+
+test("humanize should capitalize first word", t => {
+  var parsed = string.humanize('foo bar')
+  t.deepEqual(parsed, 'Foo bar')
+})
+
+test("humanize should capitalize first word and replace underscores to spaces", t => {
+  var parsed = string.humanize('foo_bar')
+  t.deepEqual(parsed, 'Foo bar')
+})
+
+test("humanize should capitalize first word and replace underscores to spaces", t => {
+  var parsed = string.humanize('foo_bar. Baz qux _and_qux')
+  t.deepEqual(parsed, 'Foo bar. Baz qux  and qux')
+})
+
+test("humanize shouldn't capitalize first word and should replace underscores to spaces", t => {
+  var parsed = string.humanize('foo_bar. Baz qux _and_qux', false)
+  t.deepEqual(parsed, 'foo bar. Baz qux  and qux')
+})
