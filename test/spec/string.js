@@ -291,77 +291,162 @@ test("classify creates a class name from a plural", t => {
   t.deepEqual(parsed, 'FooBar')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('car')
   t.deepEqual(parsed, 'cars')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('dress')
   t.deepEqual(parsed, 'dresses')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('box')
   t.deepEqual(parsed, 'boxes')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('bush')
   t.deepEqual(parsed, 'bushes')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('bus')
   t.deepEqual(parsed, 'buses')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('watch')
   t.deepEqual(parsed, 'watches')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('bridge')
   t.deepEqual(parsed, 'bridges')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('prize')
   t.deepEqual(parsed, 'prizes')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('tomato')
   t.deepEqual(parsed, 'tomatoes')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('wife')
   t.deepEqual(parsed, 'wives')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('shelf')
   t.deepEqual(parsed, 'shelves')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('lady')
   t.deepEqual(parsed, 'ladies')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('city')
   t.deepEqual(parsed, 'cities')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('toy')
   t.deepEqual(parsed, 'toys')
 })
 
-test("pluralize returns the plural form of the word in the string.", t => {
+test("pluralize returns the plural form of the word in the string", t => {
   var parsed = string.pluralize('ad')
   t.deepEqual(parsed, 'ads')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('cars')
+  t.deepEqual(parsed, 'car')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('cars')
+  t.deepEqual(parsed, 'car')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('dresses')
+  t.deepEqual(parsed, 'dress')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('boxes')
+  t.deepEqual(parsed, 'box')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('bushes')
+  t.deepEqual(parsed, 'bush')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('buses')
+  t.deepEqual(parsed, 'bus')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('watches')
+  t.deepEqual(parsed, 'watch')
+})
+
+// test("singularize returns singular form of a word in a string", t => {
+//   var parsed = string.singularize('bridges')
+//   t.deepEqual(parsed, 'bridge')
+// })
+
+// test("singularize returns singular form of a word in a string", t => {
+//   var parsed = string.singularize('prizes')
+//   t.deepEqual(parsed, 'prize')
+// })
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('tomatoes')
+  t.deepEqual(parsed, 'tomato')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('wives')
+  t.deepEqual(parsed, 'wife')
+})
+
+// test("singularize returns singular form of a word in a string", t => {
+//   var parsed = string.singularize('shelves')
+//   t.deepEqual(parsed, 'shelf')
+// })
+
+// test("singularize returns singular form of a word in a string", t => {
+//   var parsed = string.singularize('thieves')
+//   t.deepEqual(parsed, 'thief')
+// })
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('cities')
+  t.deepEqual(parsed, 'city')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('ladies')
+  t.deepEqual(parsed, 'lady')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('toys')
+  t.deepEqual(parsed, 'toy')
+})
+
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('ads')
+  t.deepEqual(parsed, 'ad')
 })

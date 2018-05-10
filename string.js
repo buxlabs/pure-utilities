@@ -127,3 +127,22 @@ export function pluralize (string) {
   return string.concat('s')
 }
 
+export function singularize (string) {
+  if (string.endsWith('ves')) {
+    return string = string.substr(0, string.length - 3).concat('fe')
+  }
+
+  if (string.endsWith('ies')) {
+    return string.substr(0, string.length - 3).concat('y')
+  }
+
+  if (string.endsWith('es')) {
+    return string.substr(0, string.length - 2)
+  }
+
+  if (string.endsWith('s', string.length)) {
+    return string.substr(0, string.length - 1)
+  }
+
+
+}
