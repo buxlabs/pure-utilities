@@ -94,3 +94,13 @@ export function titleize (string) {
 export function dasherize (string) {
   return string = string.replace(/_/g, '-')
 }
+
+export function classify (string) {
+  const lastCharacter = string.charAt(string.length - 1)
+
+  if (lastCharacter === 's') {
+    return string.substr(0, 1).toUpperCase() + string.substr(1, string.length - 2)
+  }
+
+  return string.substr(0, 1).toUpperCase() + string.substr(1)
+}

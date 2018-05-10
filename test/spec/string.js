@@ -266,12 +266,27 @@ test("titleize should capitalize all the words", t => {
   t.deepEqual(parsed, 'Foo, Bar, Baz And Qux')
 })
 
-test("dasherize replaces underscores with dashes in the string.", t => {
+test("dasherize replaces underscores with dashes in the string", t => {
   var parsed = string.dasherize('foo_bar')
   t.deepEqual(parsed, 'foo-bar')
 })
 
-test("dasherize replaces underscores with dashes in the string.", t => {
+test("dasherize replaces underscores with dashes in the string", t => {
   var parsed = string.dasherize('foo_bar__baz')
   t.deepEqual(parsed, 'foo-bar--baz')
+})
+
+test("classify creates a class name from a plural", t => {
+  var parsed = string.classify('foos')
+  t.deepEqual(parsed, 'Foo')
+})
+
+test("classify creates a class name from a plural", t => {
+  var parsed = string.classify('fooBars')
+  t.deepEqual(parsed, 'FooBar')
+})
+
+test("classify creates a class name from a plural", t => {
+  var parsed = string.classify('fooBar')
+  t.deepEqual(parsed, 'FooBar')
 })
