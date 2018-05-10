@@ -256,12 +256,22 @@ test("humanize shouldn't capitalize first word and should replace underscores to
   t.deepEqual(parsed, 'foo bar. Baz qux  and qux')
 })
 
-test("titleize should capitalize all the words ", t => {
+test("titleize should capitalize all the words", t => {
   var parsed = string.titleize('foo bar')
   t.deepEqual(parsed, 'Foo Bar')
 })
 
-test("titleize should capitalize all the words ", t => {
+test("titleize should capitalize all the words", t => {
   var parsed = string.titleize('foo, bar, baz and qux')
   t.deepEqual(parsed, 'Foo, Bar, Baz And Qux')
+})
+
+test("dasherize replaces underscores with dashes in the string.", t => {
+  var parsed = string.dasherize('foo_bar')
+  t.deepEqual(parsed, 'foo-bar')
+})
+
+test("dasherize replaces underscores with dashes in the string.", t => {
+  var parsed = string.dasherize('foo_bar__baz')
+  t.deepEqual(parsed, 'foo-bar--baz')
 })
