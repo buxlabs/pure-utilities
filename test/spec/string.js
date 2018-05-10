@@ -471,62 +471,99 @@ test("swapcase converts uppercase to lowercase and lowercase to uppercase", t =>
   t.deepEqual(parsed, 'FoO bAR baz')
 })
 
-test("camelcase shouldn't modify string", t => {
-  var parsed = string.camelcase('foo')
+test("camelize shouldn't modify string", t => {
+  var parsed = string.camelize('foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("camelcase shouldn't modify string", t => {
-  var parsed = string.camelcase('foobar')
+test("camelize shouldn't modify string", t => {
+  var parsed = string.camelize('foobar')
   t.deepEqual(parsed, 'foobar')
 })
 
-test("camelcase shouldn't modify string", t => {
-  var parsed = string.camelcase('fooBar')
+test("camelize shouldn't modify string", t => {
+  var parsed = string.camelize('fooBar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelcase shouldn't modify string", t => {
-  var parsed = string.camelcase(' foo')
+test("camelize shouldn't modify string", t => {
+  var parsed = string.camelize(' foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("camelcase should modify string to lowerCamelCase by default", t => {
-  var parsed = string.camelcase('foo_bar')
+test("camelize should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelize('foo_bar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelcase should modify string to lowerCamelCase by default", t => {
-  var parsed = string.camelcase('FooBar')
+test("camelize should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelize('FooBar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelcase should modify string to lowerCamelCase by default", t => {
-  var parsed = string.camelcase('FooBarbazBan')
+test("camelize should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelize('FooBarbazBan')
   t.deepEqual(parsed, 'fooBarbazBan')
 })
 
-test("camelcase should modify string to lowerCamelCase by default", t => {
-  var parsed = string.camelcase('Foo')
+test("camelize should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelize('Foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("camelcase should modify string to lowerCamelCase by default", t => {
-  var parsed = string.camelcase('foo_bar_baz_ban_qux')
+test("camelize should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelize('foo_bar_baz_ban_qux')
   t.deepEqual(parsed, 'fooBarBazBanQux')
 })
 
-test("camelcase should modify string to lowerCamelCase by default", t => {
-  var parsed = string.camelcase('foo-Bar')
+test("camelize should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelize('foo-Bar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelcase should modify string to lowerCamelCase by default", t => {
-  var parsed = string.camelcase('foo bar')
+test("camelize should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelize('foo bar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelcase should modify string to lowerCamelCase by default", t => {
-  var parsed = string.camelcase('Foo bar ban')
+test("camelize should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelize('Foo bar ban')
   t.deepEqual(parsed, 'fooBarBan')
 })
+
+test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+  var parsed = string.camelize('foo', true)
+  t.deepEqual(parsed, 'Foo')
+})
+
+test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+  var parsed = string.camelize('foobar', true)
+  t.deepEqual(parsed, 'Foobar')
+})
+
+test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+  var parsed = string.camelize('fooBar', true)
+  t.deepEqual(parsed, 'FooBar')
+})
+
+test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+  var parsed = string.camelize(' foo', true)
+  t.deepEqual(parsed, 'Foo')
+})
+
+test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+  var parsed = string.camelize('Foo_bar', true)
+  t.deepEqual(parsed, 'FooBar')
+})
+
+test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+  var parsed = string.camelize('foo_bar_baz_ban_qux', true)
+  t.deepEqual(parsed, 'FooBarBazBanQux')
+})
+
+test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+  var parsed = string.camelize('Foo bar ban', true)
+  t.deepEqual(parsed, 'FooBarBan')
+})
+
+

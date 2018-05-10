@@ -75,7 +75,7 @@ export function reverse (string) {
 }
 
 export function capitalize (string) {
-  return string[0].toUpperCase() + string.substr(1)
+  return string.charAt(0).toUpperCase() + string.substr(1)
 }
 
 export function lowercase (string) {
@@ -84,7 +84,7 @@ export function lowercase (string) {
 
 export function humanize (string, capitalize = true) {
   string = string.replace(/_/g, ' ')
-  return capitalize ? string[0].toUpperCase() + string.substr(1) : string
+  return capitalize ? string.charAt(0).toUpperCase() + string.substr(1) : string
 }
 
 export function titleize (string) {
@@ -97,9 +97,9 @@ export function dasherize (string) {
 
 export function classify (string) {
   if (string.endsWith('s')) {
-    return string[0].toUpperCase() + string.substr(1, string.length - 2)
+    return string.charAt(0).toUpperCase() + string.substr(1, string.length - 2)
   }
-  return string[0].toUpperCase() + string.substr(1)
+  return string.charAt(0).toUpperCase() + string.substr(1)
 }
 
 export function pluralize (string) {
@@ -151,13 +151,10 @@ export function swapcase (string) {
   }).join('')
 }
 
-export function camelcase (string) {
+export function camelize (string, upperCamelCase = false) {
   const specialCharacters = /[^(a-zA-Z0-9)]|_|\s/g
   string = string.trim()
-
-  if (string[0].toUpperCase() === string[0]) {
-    string = string[0].toLowerCase() + string.substr(1)
-  }
+  string = string.charAt(0)[upperCamelCase ? 'toUpperCase' : 'toLowerCase']() + string.substr(1)
 
   for (let i = 1, ilen = string.length; i < ilen; i += 1) {
     if (specialCharacters.test(string[i])) {
