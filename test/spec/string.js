@@ -290,3 +290,78 @@ test("classify creates a class name from a plural", t => {
   var parsed = string.classify('fooBar')
   t.deepEqual(parsed, 'FooBar')
 })
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('car')
+  t.deepEqual(parsed, 'cars')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('dress')
+  t.deepEqual(parsed, 'dresses')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('box')
+  t.deepEqual(parsed, 'boxes')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('bush')
+  t.deepEqual(parsed, 'bushes')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('bus')
+  t.deepEqual(parsed, 'buses')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('watch')
+  t.deepEqual(parsed, 'watches')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('bridge')
+  t.deepEqual(parsed, 'bridges')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('prize')
+  t.deepEqual(parsed, 'prizes')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('tomato')
+  t.deepEqual(parsed, 'tomatoes')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('wife')
+  t.deepEqual(parsed, 'wives')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('shelf')
+  t.deepEqual(parsed, 'shelves')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('lady')
+  t.deepEqual(parsed, 'ladies')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('city')
+  t.deepEqual(parsed, 'cities')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('toy')
+  t.deepEqual(parsed, 'toys')
+})
+
+test("pluralize returns the plural form of the word in the string.", t => {
+  var parsed = string.pluralize('ad')
+  t.deepEqual(parsed, 'ads')
+})

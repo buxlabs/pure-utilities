@@ -96,11 +96,34 @@ export function dasherize (string) {
 }
 
 export function classify (string) {
-  const lastCharacter = string.charAt(string.length - 1)
-
-  if (lastCharacter === 's') {
+  if (string.endsWith('s')) {
     return string.substr(0, 1).toUpperCase() + string.substr(1, string.length - 2)
   }
-
   return string.substr(0, 1).toUpperCase() + string.substr(1)
 }
+
+export function pluralize (string) {
+  const specialCharacters = ['ch', 's', 'ss', 'sh', 'x', 'o']
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  const lastCharacter = string.charAt(string.length - 1)
+  const lastCharacters = string.substr(string.length - 2)
+
+  if (specialCharacters.includes(lastCharacter) || specialCharacters.includes(lastCharacters)) {
+    return string.concat('es')
+  }
+
+  if (string.endsWith('f')) {
+    return string.replace(lastCharacter, 'ves')
+  }
+
+  if (string.endsWith('fe')) {
+    return string.replace(lastCharacters, 'ves')
+  }
+
+  if (string.endsWith('y') && !vowels.includes(string.charAt(string.length - 2))) {
+    return string.replace(lastCharacter, 'ies')
+  }
+
+  return string.concat('s')
+}
+
