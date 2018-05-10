@@ -465,3 +465,68 @@ test("swapcase converts uppercase to lowercase and lowercase to uppercase", t =>
   var parsed = string.swapcase('fOo Bar BAZ')
   t.deepEqual(parsed, 'FoO bAR baz')
 })
+
+test("swapcase converts uppercase to lowercase and lowercase to uppercase", t => {
+  var parsed = string.swapcase('fOo Bar BAZ')
+  t.deepEqual(parsed, 'FoO bAR baz')
+})
+
+test("camelcase shouldn't modify string", t => {
+  var parsed = string.camelcase('foo')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("camelcase shouldn't modify string", t => {
+  var parsed = string.camelcase('foobar')
+  t.deepEqual(parsed, 'foobar')
+})
+
+test("camelcase shouldn't modify string", t => {
+  var parsed = string.camelcase('fooBar')
+  t.deepEqual(parsed, 'fooBar')
+})
+
+test("camelcase shouldn't modify string", t => {
+  var parsed = string.camelcase(' foo')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("camelcase should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelcase('foo_bar')
+  t.deepEqual(parsed, 'fooBar')
+})
+
+test("camelcase should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelcase('FooBar')
+  t.deepEqual(parsed, 'fooBar')
+})
+
+test("camelcase should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelcase('FooBarbazBan')
+  t.deepEqual(parsed, 'fooBarbazBan')
+})
+
+test("camelcase should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelcase('Foo')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("camelcase should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelcase('foo_bar_baz_ban_qux')
+  t.deepEqual(parsed, 'fooBarBazBanQux')
+})
+
+test("camelcase should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelcase('foo-Bar')
+  t.deepEqual(parsed, 'fooBar')
+})
+
+test("camelcase should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelcase('foo bar')
+  t.deepEqual(parsed, 'fooBar')
+})
+
+test("camelcase should modify string to lowerCamelCase by default", t => {
+  var parsed = string.camelcase('Foo bar ban')
+  t.deepEqual(parsed, 'fooBarBan')
+})

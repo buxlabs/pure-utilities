@@ -51,7 +51,7 @@ export function uppercase (string) {
 
 export function underscore (string) {
   string = string.trim()
-  const specialCharacters = /[^a-zA-Z0-9]/
+  const specialCharacters = /[^a-zA-Z0-9]/g
 
   for (let i = 1; i < string.length; i += 1) {
     const character = string[i]
@@ -75,7 +75,7 @@ export function reverse (string) {
 }
 
 export function capitalize (string) {
-  return string.substr(0, 1).toUpperCase() + string.substr(1)
+  return string[0].toUpperCase() + string.substr(1)
 }
 
 export function lowercase (string) {
@@ -84,7 +84,7 @@ export function lowercase (string) {
 
 export function humanize (string, capitalize = true) {
   string = string.replace(/_/g, ' ')
-  return capitalize ? string.substr(0, 1).toUpperCase() + string.substr(1) : string
+  return capitalize ? string[0].toUpperCase() + string.substr(1) : string
 }
 
 export function titleize (string) {
@@ -97,9 +97,9 @@ export function dasherize (string) {
 
 export function classify (string) {
   if (string.endsWith('s')) {
-    return string.substr(0, 1).toUpperCase() + string.substr(1, string.length - 2)
+    return string[0].toUpperCase() + string.substr(1, string.length - 2)
   }
-  return string.substr(0, 1).toUpperCase() + string.substr(1)
+  return string[0].toUpperCase() + string.substr(1)
 }
 
 export function pluralize (string) {
@@ -149,4 +149,21 @@ export function swapcase (string) {
   return [...string].map(character => {
     return character.toUpperCase() === character ? character.toLowerCase() : character.toUpperCase()
   }).join('')
+}
+
+export function camelcase (string) {
+  const specialCharacters = /[^(a-zA-Z0-9)]|_|\s/g
+  string = string.trim()
+
+  if (string[0].toUpperCase() === string[0]) {
+    string = string[0].toLowerCase() + string.substr(1)
+  }
+
+  for (let i = 1, ilen = string.length; i < ilen; i += 1) {
+    if (specialCharacters.test(string[i])) {
+      string = string.substr(0, i) + string.charAt(i + 1).toUpperCase() + string.substr(i + 2)
+    }
+  }
+
+  return string
 }
