@@ -143,6 +143,10 @@ export function singularize (string) {
   if (string.endsWith('s', string.length)) {
     return string.substr(0, string.length - 1)
   }
+}
 
-
+export function swapcase (string) {
+  return [...string].map(character => {
+    return character.toUpperCase() === character ? character.toLowerCase() : character.toUpperCase()
+  }).join('')
 }

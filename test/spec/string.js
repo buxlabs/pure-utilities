@@ -450,3 +450,18 @@ test("singularize returns singular form of a word in a string", t => {
   var parsed = string.singularize('ads')
   t.deepEqual(parsed, 'ad')
 })
+
+test("swapcase converts uppercase to lowercase and lowercase to uppercase", t => {
+  var parsed = string.swapcase('foo')
+  t.deepEqual(parsed, 'FOO')
+})
+
+test("swapcase converts uppercase to lowercase and lowercase to uppercase", t => {
+  var parsed = string.swapcase('FOO')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("swapcase converts uppercase to lowercase and lowercase to uppercase", t => {
+  var parsed = string.swapcase('fOo Bar BAZ')
+  t.deepEqual(parsed, 'FoO bAR baz')
+})
