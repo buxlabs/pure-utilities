@@ -51,7 +51,7 @@ export function uppercase (string) {
 
 export function underscore (string) {
   string = string.trim()
-  const specialCharacters = /[^a-zA-Z0-9]/
+  const specialCharacters = /[^a-zA-Z0-9]/g
 
   for (let i = 1; i < string.length; i += 1) {
     const character = string[i]
@@ -75,9 +75,90 @@ export function reverse (string) {
 }
 
 export function capitalize (string) {
-  return string.substr(0, 1).toUpperCase() + string.substr(1)
+  return string.charAt(0).toUpperCase() + string.substr(1)
 }
 
 export function lowercase (string) {
   return string.toLowerCase()
+}
+
+export function humanize (string, capitalize = true) {
+  string = string.replace(/_/g, ' ')
+  return capitalize ? string.charAt(0).toUpperCase() + string.substr(1) : string
+}
+
+export function titleize (string) {
+  return string.split(' ').map(word => word.substr(0, 1).toUpperCase() + word.substr(1)).join(' ')
+}
+
+export function dasherize (string) {
+  return string = string.replace(/_/g, '-')
+}
+
+export function classify (string) {
+  if (string.endsWith('s')) {
+    return string.charAt(0).toUpperCase() + string.substr(1, string.length - 2)
+  }
+  return string.charAt(0).toUpperCase() + string.substr(1)
+}
+
+export function pluralize (string) {
+  const specialCharacters = ['ch', 's', 'ss', 'sh', 'x', 'o']
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  const lastCharacter = string.charAt(string.length - 1)
+  const lastCharacters = string.substr(string.length - 2)
+
+  if (specialCharacters.includes(lastCharacter) || specialCharacters.includes(lastCharacters)) {
+    return string.concat('es')
+  }
+
+  if (string.endsWith('f')) {
+    return string.replace(lastCharacter, 'ves')
+  }
+
+  if (string.endsWith('fe')) {
+    return string.replace(lastCharacters, 'ves')
+  }
+
+  if (string.endsWith('y') && !vowels.includes(string.charAt(string.length - 2))) {
+    return string.replace(lastCharacter, 'ies')
+  }
+
+  return string.concat('s')
+}
+
+export function singularize (string, appendix = '') {
+  if (string.endsWith('ves')) {
+    return string = string.substr(0, string.length - 3).concat(appendix ||'fe')
+  }
+
+  if (string.endsWith('ies')) {
+    return string.substr(0, string.length - 3).concat(appendix || 'y')
+  }
+
+  if (string.endsWith('es')) {
+    return string.substr(0, string.length - 2).concat(appendix)
+  }
+
+  return string.substr(0, string.length - 1)
+}
+
+export function swapcase (string) {
+  return [...string].map(character => {
+    return character.toUpperCase() === character ? character.toLowerCase() : character.toUpperCase()
+  }).join('')
+}
+
+export function camelize (string, upperCamelCase = false) {
+  const specialCharacters = /[^(a-zA-Z0-9)]|_|\s/g
+  string = string.trim()
+  string = string.charAt(0)[upperCamelCase ? 'toUpperCase' : 'toLowerCase']() + string.substr(1)
+
+  for (let i = 1, ilen = string.length; i < ilen; i += 1) {
+    if (specialCharacters.test(string[i])) {
+      string = string.substr(0, i) + string.charAt(i + 1).toUpperCase() + string.substr(i + 2)
+    }
+  }
+
+  return string
 }
