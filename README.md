@@ -80,6 +80,35 @@ flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
 
 #### prettify
 
+### math
+
+#### abs
+#### acos
+#### acosh
+#### asin
+#### asinh
+#### atan
+#### atan2
+#### atanh
+#### cbrt
+#### ceil
+#### cos
+#### cosh
+#### exp
+#### floor
+#### log
+#### max
+#### min
+#### pow
+#### random
+#### round
+#### sin
+#### sinh
+#### sqrt
+#### tan
+#### tanh
+#### trunc
+
 ## Development
 
 To see available commands run:
