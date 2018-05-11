@@ -401,15 +401,15 @@ test("singularize returns singular form of a word in a string", t => {
   t.deepEqual(parsed, 'watch')
 })
 
-// test("singularize returns singular form of a word in a string", t => {
-//   var parsed = string.singularize('bridges')
-//   t.deepEqual(parsed, 'bridge')
-// })
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('bridges', 'e')
+  t.deepEqual(parsed, 'bridge')
+})
 
-// test("singularize returns singular form of a word in a string", t => {
-//   var parsed = string.singularize('prizes')
-//   t.deepEqual(parsed, 'prize')
-// })
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('prizes', 'e')
+  t.deepEqual(parsed, 'prize')
+})
 
 test("singularize returns singular form of a word in a string", t => {
   var parsed = string.singularize('tomatoes')
@@ -421,15 +421,15 @@ test("singularize returns singular form of a word in a string", t => {
   t.deepEqual(parsed, 'wife')
 })
 
-// test("singularize returns singular form of a word in a string", t => {
-//   var parsed = string.singularize('shelves')
-//   t.deepEqual(parsed, 'shelf')
-// })
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('shelves', 'f')
+  t.deepEqual(parsed, 'shelf')
+})
 
-// test("singularize returns singular form of a word in a string", t => {
-//   var parsed = string.singularize('thieves')
-//   t.deepEqual(parsed, 'thief')
-// })
+test("singularize returns singular form of a word in a string", t => {
+  var parsed = string.singularize('thieves', 'f')
+  t.deepEqual(parsed, 'thief')
+})
 
 test("singularize returns singular form of a word in a string", t => {
   var parsed = string.singularize('cities')

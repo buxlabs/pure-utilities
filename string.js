@@ -127,22 +127,20 @@ export function pluralize (string) {
   return string.concat('s')
 }
 
-export function singularize (string) {
+export function singularize (string, appendix = '') {
   if (string.endsWith('ves')) {
-    return string = string.substr(0, string.length - 3).concat('fe')
+    return string = string.substr(0, string.length - 3).concat(appendix ||'fe')
   }
 
   if (string.endsWith('ies')) {
-    return string.substr(0, string.length - 3).concat('y')
+    return string.substr(0, string.length - 3).concat(appendix || 'y')
   }
 
   if (string.endsWith('es')) {
-    return string.substr(0, string.length - 2)
+    return string.substr(0, string.length - 2).concat(appendix)
   }
 
-  if (string.endsWith('s', string.length)) {
-    return string.substr(0, string.length - 1)
-  }
+  return string.substr(0, string.length - 1)
 }
 
 export function swapcase (string) {
