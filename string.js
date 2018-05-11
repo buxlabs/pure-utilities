@@ -1,40 +1,8 @@
-/**
- *
- * removeWhitespace
- *
- * removes whitespace from string
- *
- * example:
- *
- * input
- * '\t1234 5678\n'
- *
- * output
- * '12345678'
- *
- */
-
-export function removeWhitespace (string) {
+export function whitespaceless (string) {
   return string.replace(/\s/g, '')
 }
 
-/**
- *
- * leftPad
- *
- * adds left padding to a string
- *
- * example:
- *
- * input
- * 'hello world', '** '
- *
- * output
- * '** hello world'
- *
- */
-
-export function leftPad (value, pad) {
+export function pad (value, pad) {
   if (!pad) { return value }
   return String(value).split(/\r\n|\n/).map(function (line) {
     return line ? pad + line : line
@@ -125,12 +93,12 @@ export function classify (string) {
 }
 
 export function pluralize (string) {
-  const specialCharacters = ['ch', 's', 'ss', 'sh', 'x', 'o']
+  const endings = ['ch', 's', 'ss', 'sh', 'x', 'o']
   const vowels = ['a', 'e', 'i', 'o', 'u']
   const lastCharacter = string.charAt(string.length - 1)
   const lastCharacters = string.substr(string.length - 2)
 
-  if (specialCharacters.includes(lastCharacter) || specialCharacters.includes(lastCharacters)) {
+  if (endings.includes(lastCharacter) || endings.includes(lastCharacters)) {
     return string.concat('es')
   }
 

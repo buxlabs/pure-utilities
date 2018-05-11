@@ -51,8 +51,26 @@ flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
 
 ### string
 
-#### leftPad
-#### removeWhitespace
+#### pad
+#### whitespaceless
+#### dasherize
+#### constantize
+#### trim
+#### uppercase
+#### lowercase
+#### underscore
+#### reverse
+#### capitalize
+#### unescape
+#### lowerfirst
+#### humanize
+#### titleize
+#### classify
+#### pluralize
+#### singularize
+#### swapcase
+#### camelize
+#### truncate
 
 ### date
 

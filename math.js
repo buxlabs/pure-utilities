@@ -27,7 +27,7 @@ export function atan2(number1, number2) {
 }
 
 export function atanh(number) {
-  return Math.atan2(number)
+  return Math.atanh(number)
 }
 
 export function cbrt(number) {

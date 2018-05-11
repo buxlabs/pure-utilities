@@ -2,27 +2,27 @@ import test from 'ava'
 import { string } from '../../build/index.umd'
 
 test('removeWhitespace should remove whitespace characters', t => {
-  var parsed = string.removeWhitespace('\t1234 5678\n')
+  var parsed = string.whitespaceless('\t1234 5678\n')
   t.deepEqual(parsed, '12345678')
 })
 
 test('leftPad should return the same string if no padding was provided', t => {
-  var parsed = string.leftPad('hello')
+  var parsed = string.pad('hello')
   t.deepEqual(parsed, 'hello')
 })
 
 test('leftPad should pad the string with given characters', t => {
-  var parsed = string.leftPad('hello world', '** ')
+  var parsed = string.pad('hello world', '** ')
   t.deepEqual(parsed, '** hello world')
 })
 
 test('leftPad should pad given number with given characters', t => {
-  var parsed = string.leftPad(42, '---- ')
+  var parsed = string.pad(42, '---- ')
   t.deepEqual(parsed, '---- 42')
 })
 
 test("leftPad shouldn't add padding to empty lines", t => {
-  var parsed = string.leftPad('hello\n\nworld', '* ')
+  var parsed = string.pad('hello\n\nworld', '* ')
   t.deepEqual(parsed, '* hello\n\n* world')
 })
 
