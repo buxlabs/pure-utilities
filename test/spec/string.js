@@ -626,6 +626,16 @@ test("truncate should truncate the string if it's longer than the given maximum 
   t.deepEqual(parsed, 'Once upon a ti...')
 })
 
+test("lowerfirst should lowercase first character of string", t => {
+  var parsed = string.lowerfirst('Foo')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("lowerfirst should lowercase first character of string", t => {
+  var parsed = string.lowerfirst('Foo bar baz')
+  t.deepEqual(parsed, 'foo bar baz')
+})
+
 
 
 

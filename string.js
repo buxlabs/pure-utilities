@@ -78,6 +78,10 @@ export function capitalize (string) {
   return string.charAt(0).toUpperCase() + string.substr(1)
 }
 
+export function lowerfirst (string) {
+  return string.charAt(0).toLowerCase() + string.substr(1)
+}
+
 export function lowercase (string) {
   return string.toLowerCase()
 }
