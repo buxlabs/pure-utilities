@@ -636,6 +636,12 @@ test("lowerfirst should lowercase first character of string", t => {
   t.deepEqual(parsed, 'foo bar baz')
 })
 
+test("unescape should convert the HTML entities in string to their corresponding characters", t => {
+  var parsed = string.unescape('&amp;')
+  t.deepEqual(parsed, '&')
+})
 
-
-
+test("unescape should convert the HTML entities in string to their corresponding characters", t => {
+  var parsed = string.unescape('&lt;script&gt;alert("foo")&lt;/script&gt;')
+  t.deepEqual(parsed, '<script>alert("foo")</script>')
+})

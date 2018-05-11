@@ -78,6 +78,24 @@ export function capitalize (string) {
   return string.charAt(0).toUpperCase() + string.substr(1)
 }
 
+export function unescape (string) {
+  const entities = new Map([
+    ['&amp;', '&'],
+    ['&lt;', '<'],
+    ['&gt;', '>'],
+    ['&quot;', `"`],
+    ['&39;', `'`]
+  ])
+
+  entities.forEach((value, key) => {
+    if (string.includes(key)) {
+      string = string.replace(new RegExp(key, 'g'), value)
+    }
+  })
+
+  return string
+}
+
 export function lowerfirst (string) {
   return string.charAt(0).toLowerCase() + string.substr(1)
 }
