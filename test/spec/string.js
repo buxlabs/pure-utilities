@@ -616,4 +616,16 @@ test("constantize should modify the string to the string in CONST_CONVENTION", t
   t.deepEqual(parsed, 'FOO_BAR')
 })
 
+test("truncate should truncate the string if it's longer than the given maximum string length", t => {
+  var parsed = string.truncate('Once upon a time in a world far far away')
+  t.deepEqual(parsed, 'Once upon a time in a world...')
+})
+
+test("truncate should truncate the string if it's longer than the given maximum string length", t => {
+  var parsed = string.truncate('Once upon a time in a world far far away', 17)
+  t.deepEqual(parsed, 'Once upon a ti...')
+})
+
+
+
 

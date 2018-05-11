@@ -182,3 +182,10 @@ export function constantize (string) {
 
   return string.toUpperCase()
 }
+
+export function truncate (string, length = 30) {
+  if (string.length > length) {
+    return string.substr(0, length - 3).concat('...')
+  }
+  return string
+}
