@@ -41,22 +41,22 @@ test("uppercase should convert string to uppercase", t => {
   t.deepEqual(parsed, 'FOO')
 })
 
-test("underscore shouldn't modify string", t => {
+test("underscore shouldn't modify the string", t => {
   var parsed = string.underscore('foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("underscore shouldn't modify string", t => {
+test("underscore shouldn't modify the string", t => {
   var parsed = string.underscore('foobar')
   t.deepEqual(parsed, 'foobar')
 })
 
-test("underscore shouldn't modify string", t => {
+test("underscore shouldn't modify the string", t => {
   var parsed = string.underscore('foo_bar')
   t.deepEqual(parsed, 'foo_bar')
 })
 
-test("underscore shouldn't modify string", t => {
+test("underscore shouldn't modify the string", t => {
   var parsed = string.underscore(' foo')
   t.deepEqual(parsed, 'foo')
 })
@@ -366,87 +366,87 @@ test("pluralize returns the plural form of the word in the string", t => {
   t.deepEqual(parsed, 'ads')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('cars')
   t.deepEqual(parsed, 'car')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('cars')
   t.deepEqual(parsed, 'car')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('dresses')
   t.deepEqual(parsed, 'dress')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('boxes')
   t.deepEqual(parsed, 'box')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('bushes')
   t.deepEqual(parsed, 'bush')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('buses')
   t.deepEqual(parsed, 'bus')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('watches')
   t.deepEqual(parsed, 'watch')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('bridges', 'e')
   t.deepEqual(parsed, 'bridge')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('prizes', 'e')
   t.deepEqual(parsed, 'prize')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('tomatoes')
   t.deepEqual(parsed, 'tomato')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('wives')
   t.deepEqual(parsed, 'wife')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('shelves', 'f')
   t.deepEqual(parsed, 'shelf')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('thieves', 'f')
   t.deepEqual(parsed, 'thief')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('cities')
   t.deepEqual(parsed, 'city')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('ladies')
   t.deepEqual(parsed, 'lady')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('toys')
   t.deepEqual(parsed, 'toy')
 })
 
-test("singularize returns singular form of a word in a string", t => {
+test("singularize returns singular form of a word in the string", t => {
   var parsed = string.singularize('ads')
   t.deepEqual(parsed, 'ad')
 })
@@ -471,99 +471,177 @@ test("swapcase converts uppercase to lowercase and lowercase to uppercase", t =>
   t.deepEqual(parsed, 'FoO bAR baz')
 })
 
-test("camelize shouldn't modify string", t => {
+test("camelize shouldn't modify the string", t => {
   var parsed = string.camelize('foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("camelize shouldn't modify string", t => {
+test("camelize shouldn't modify the string", t => {
   var parsed = string.camelize('foobar')
   t.deepEqual(parsed, 'foobar')
 })
 
-test("camelize shouldn't modify string", t => {
+test("camelize shouldn't modify the string", t => {
   var parsed = string.camelize('fooBar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelize shouldn't modify string", t => {
+test("camelize shouldn't modify the string", t => {
   var parsed = string.camelize(' foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("camelize should modify string to lowerCamelCase by default", t => {
+test("camelize should modify the string to lowerCamelCase by default", t => {
   var parsed = string.camelize('foo_bar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelize should modify string to lowerCamelCase by default", t => {
+test("camelize should modify the string to lowerCamelCase by default", t => {
   var parsed = string.camelize('FooBar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelize should modify string to lowerCamelCase by default", t => {
+test("camelize should modify the string to lowerCamelCase by default", t => {
   var parsed = string.camelize('FooBarbazBan')
   t.deepEqual(parsed, 'fooBarbazBan')
 })
 
-test("camelize should modify string to lowerCamelCase by default", t => {
+test("camelize should modify the string to lowerCamelCase by default", t => {
   var parsed = string.camelize('Foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("camelize should modify string to lowerCamelCase by default", t => {
+test("camelize should modify the string to lowerCamelCase by default", t => {
   var parsed = string.camelize('foo_bar_baz_ban_qux')
   t.deepEqual(parsed, 'fooBarBazBanQux')
 })
 
-test("camelize should modify string to lowerCamelCase by default", t => {
+test("camelize should modify the string to lowerCamelCase by default", t => {
   var parsed = string.camelize('foo-Bar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelize should modify string to lowerCamelCase by default", t => {
+test("camelize should modify the string to lowerCamelCase by default", t => {
   var parsed = string.camelize('foo bar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelize should modify string to lowerCamelCase by default", t => {
+test("camelize should modify the string to lowerCamelCase by default", t => {
   var parsed = string.camelize('Foo bar ban')
   t.deepEqual(parsed, 'fooBarBan')
 })
 
-test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
   var parsed = string.camelize('foo', true)
   t.deepEqual(parsed, 'Foo')
 })
 
-test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
   var parsed = string.camelize('foobar', true)
   t.deepEqual(parsed, 'Foobar')
 })
 
-test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
   var parsed = string.camelize('fooBar', true)
   t.deepEqual(parsed, 'FooBar')
 })
 
-test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
   var parsed = string.camelize(' foo', true)
   t.deepEqual(parsed, 'Foo')
 })
 
-test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
   var parsed = string.camelize('Foo_bar', true)
   t.deepEqual(parsed, 'FooBar')
 })
 
-test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
   var parsed = string.camelize('foo_bar_baz_ban_qux', true)
   t.deepEqual(parsed, 'FooBarBazBanQux')
 })
 
-test("camelize should modify string to UpperCamelCase if proper flag has been pased", t => {
+test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
   var parsed = string.camelize('Foo bar ban', true)
   t.deepEqual(parsed, 'FooBarBan')
 })
 
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo')
+  t.deepEqual(parsed, 'FOO')
+})
 
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foobar')
+  t.deepEqual(parsed, 'FOOBAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('fooBar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo_bar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('Foo_Bar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('FooBar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo-bar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo-bar_baz')
+  t.deepEqual(parsed, 'FOO_BAR_BAZ')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('FooBarBazQux')
+  t.deepEqual(parsed, 'FOO_BAR_BAZ_QUX')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo   bar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("truncate should truncate the string if it's longer than the given maximum string length", t => {
+  var parsed = string.truncate('Once upon a time in a world far far away')
+  t.deepEqual(parsed, 'Once upon a time in a world...')
+})
+
+test("truncate should truncate the string if it's longer than the given maximum string length", t => {
+  var parsed = string.truncate('Once upon a time in a world far far away', 17)
+  t.deepEqual(parsed, 'Once upon a ti...')
+})
+
+test("lowerfirst should lowercase first character of string", t => {
+  var parsed = string.lowerfirst('Foo')
+  t.deepEqual(parsed, 'foo')
+})
+
+test("lowerfirst should lowercase first character of string", t => {
+  var parsed = string.lowerfirst('Foo bar baz')
+  t.deepEqual(parsed, 'foo bar baz')
+})
+
+test("unescape should convert the HTML entities in string to their corresponding characters", t => {
+  var parsed = string.unescape('&amp;')
+  t.deepEqual(parsed, '&')
+})
+
+test("unescape should convert the HTML entities in string to their corresponding characters", t => {
+  var parsed = string.unescape('&lt;script&gt;alert("foo")&lt;/script&gt;')
+  t.deepEqual(parsed, '<script>alert("foo")</script>')
+})
