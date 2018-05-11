@@ -58,12 +58,12 @@ export function log(number) {
   return Math.log(number)
 }
 
-export function max() {
-  return Math.max(...arguments)
+export function max(array) {
+  return Math.max.apply(this, array)
 }
 
-export function min() {
-  return Math.min(...arguments)
+export function min(array) {
+  return Math.min.apply(this, array)
 }
 
 export function pow(number1, number2) {

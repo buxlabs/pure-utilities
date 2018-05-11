@@ -47,12 +47,12 @@ test('pow returns the value of x to the power of y', t => {
 })
 
 test('min returns the number with the lowest value', t => {
-  var parsed = math.min(2, 5, 1)
+  var parsed = math.min([2, 5, 1])
   t.deepEqual(parsed, 1)
 })
 
 test('max returns the number with the highest value', t => {
-  var parsed = math.max(2, 5, 1)
+  var parsed = math.max([2, 5, 1])
   t.deepEqual(parsed, 5)
 })
 
