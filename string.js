@@ -149,13 +149,13 @@ export function swapcase (string) {
   }).join('')
 }
 
-export function camelize (string, upperCamelCase = false) {
-  const specialCharacters = /[^(a-zA-Z0-9)]|_|\s/g
+export function camelize (string, camelcased = false) {
+  const endings = /[^(a-zA-Z0-9)]|_|\s/g
   string = string.trim()
-  string = string.charAt(0)[upperCamelCase ? 'toUpperCase' : 'toLowerCase']() + string.substr(1)
+  string = string.charAt(0)[camelcased ? 'toUpperCase' : 'toLowerCase']() + string.substr(1)
 
   for (let i = 1, ilen = string.length; i < ilen; i += 1) {
-    if (specialCharacters.test(string[i])) {
+    if (endings.test(string[i])) {
       string = string.substr(0, i) + string.charAt(i + 1).toUpperCase() + string.substr(i + 2)
     }
   }
