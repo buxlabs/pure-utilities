@@ -1,6 +1,6 @@
 {
   "name": "@buxlabs/utils",
-  "version": "2.2.4",
+  "version": "2.3.0",
   "description": "buxlabs utils",
   "main": "build/index.umd.js",
   "module": "build/index.es.js",
