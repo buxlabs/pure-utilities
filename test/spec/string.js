@@ -566,4 +566,54 @@ test("camelize should modify the string to UpperCamelCase if proper flag has bee
   t.deepEqual(parsed, 'FooBarBan')
 })
 
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo')
+  t.deepEqual(parsed, 'FOO')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foobar')
+  t.deepEqual(parsed, 'FOOBAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('fooBar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo_bar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('Foo_Bar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('FooBar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo-bar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo-bar_baz')
+  t.deepEqual(parsed, 'FOO_BAR_BAZ')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('FooBarBazQux')
+  t.deepEqual(parsed, 'FOO_BAR_BAZ_QUX')
+})
+
+test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+  var parsed = string.constantize('foo   bar')
+  t.deepEqual(parsed, 'FOO_BAR')
+})
+
 
