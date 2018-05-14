@@ -1,9 +1,14 @@
 import test from 'ava'
 import { string } from '../../build/index.umd'
 
-test('removeWhitespace should remove whitespace characters', t => {
+test('whitespaceless should remove whitespace characters', t => {
   var parsed = string.whitespaceless('\t1234 5678\n')
   t.deepEqual(parsed, '12345678')
+})
+
+test('whitespaceless should remove whitespace characters', t => {
+  var parsed = string.whitespaceless('b  ar')
+  t.deepEqual(parsed, 'bar')
 })
 
 test('leftPad should return the same string if no padding was provided', t => {
