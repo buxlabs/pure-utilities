@@ -54,3 +54,28 @@ test('tenth returns tenth element of an array', assert => {
 test('last returns last element of an array', assert => {
   assert.deepEqual(array.last([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10)
 })
+
+test('sum returns the sum of a list of numbers', assert => {
+  assert.deepEqual(array.sum([3, 10, 2]), 15)
+})
+
+test('sum returns the sum of a list of numbers', assert => {
+  assert.deepEqual(array.sum([100, 200, 1]), 301)
+})
+
+test('average returns the average of a list of numbers', assert => {
+  assert.deepEqual(array.average([100, 200]), 150)
+})
+
+test('average returns the average of a list of numbers', assert => {
+  assert.deepEqual(array.average([2, 0]), 1)
+})
+
+test('median returns the median of a list of numbers', assert => {
+  assert.deepEqual(array.median([6, 4, 2, 4, 4]), 4)
+})
+
+test('median returns the median of a list of numbers', assert => {
+  assert.deepEqual(array.median([1, 2, 3, 5, 5, 6]), 4)
+})
+

@@ -101,3 +101,11 @@ export function tanh(number) {
 export function trunc(number) {
   return Math.trunc(number)
 }
+
+export function square(number) {
+  return number * number
+}
+
+export function factorial(number) {
+  return number < 2 ? 1 : number * factorial(number - 1)
+}

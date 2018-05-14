@@ -125,3 +125,13 @@ test('acos returns the arccosine of x, in radians', t => {
   var parsed = math.acos(1)
   t.deepEqual(parsed, 0)
 })
+
+test('square returns square of x', t => {
+  var parsed = math.square(5)
+  t.deepEqual(parsed, 25)
+})
+
+test('factorial returns factorial of x', t => {
+  var parsed = math.factorial(5)
+  t.deepEqual(parsed, 120)
+})
