@@ -179,3 +179,11 @@ export function truncate (string, length = 30) {
   }
   return string
 }
+
+export function repeat (string, count) {
+  return string.repeat(count)
+}
+
+export function singlespace (string) {
+  return string.replace(/\s\s+/g, ' ')
+}

@@ -60,3 +60,22 @@ export function tenth (array) {
 export function last (array) {
   return array[array.length - 1]
 }
+
+export function sum (array) {
+  return array.reduce((previousValue, currentValue) => previousValue + currentValue)
+}
+
+export function average (array) {
+  return array.reduce((previousValue, currentValue) => previousValue + currentValue) / array.length
+}
+
+export function median (array) {
+  array = array.sort((a, b) => a - b)
+  const index = Math.ceil(array.length / 2)
+
+  if (array.length % 2 === 0) {
+    return (array[index] + array[index - 1]) / 2
+  }
+
+  return array[index]
+}

@@ -1,9 +1,14 @@
 import test from 'ava'
 import { string } from '../../build/index.umd'
 
-test('removeWhitespace should remove whitespace characters', t => {
+test('whitespaceless should remove whitespace characters', t => {
   var parsed = string.whitespaceless('\t1234 5678\n')
   t.deepEqual(parsed, '12345678')
+})
+
+test('whitespaceless should remove whitespace characters', t => {
+  var parsed = string.whitespaceless('b  ar')
+  t.deepEqual(parsed, 'bar')
 })
 
 test('leftPad should return the same string if no padding was provided', t => {
@@ -645,3 +650,14 @@ test("unescape should convert the HTML entities in string to their corresponding
   var parsed = string.unescape('&lt;script&gt;alert("foo")&lt;/script&gt;')
   t.deepEqual(parsed, '<script>alert("foo")</script>')
 })
+
+test("repeat should return new string which contains the specified number of copies of the string", t => {
+  var parsed = string.repeat('foo', 2)
+  t.deepEqual(parsed, 'foofoo')
+})
+
+test("singlespace should return new string which contains singlespace", t => {
+  var parsed = string.singlespace('foo     bar   baz')
+  t.deepEqual(parsed, 'foo bar baz')
+})
+
