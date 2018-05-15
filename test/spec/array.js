@@ -79,3 +79,11 @@ test('median returns the median of a list of numbers', assert => {
   assert.deepEqual(array.median([1, 2, 3, 5, 5, 6]), 4)
 })
 
+test('median returns the median of a list of numbers', assert => {
+  assert.deepEqual(array.median([5, 18, 1]), 5)
+})
+
+test('median returns the median of a list of numbers', assert => {
+  assert.deepEqual(array.median([91 , 210 , 205 , 204 , 212]), 205)
+})
+
