@@ -1,7 +1,7 @@
 {
-  "name": "@buxlabs/utils",
-  "version": "2.3.4",
-  "description": "buxlabs utils",
+  "name": "pureutils",
+  "version": "1.0.0",
+  "description": "pureutils",
   "main": "build/index.umd.js",
   "module": "build/index.es.js",
   "dependencies": {},
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buxlabs/utils.git"
+    "url": "git+https://github.com/buxlabs/pureutils.git"
   },
   "author": "Emil Ajdyna",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/buxlabs/utils/issues"
+    "url": "https://github.com/buxlabs/pureutils/issues"
   },
-  "homepage": "https://github.com/buxlabs/utils#readme"
+  "homepage": "https://github.com/buxlabs/pureutils#readme"
 }

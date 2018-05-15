@@ -1,26 +1,17 @@
-# Utils
+# pureutils
 
 [![Codeship](https://img.shields.io/codeship/d0a4ca60-9ed5-0135-eb8d-5e3172fc544d.svg)]()
 
-A set of utility methods reused exported as a UMD module. Methods can also be imported directly.
+A set of pure utility methods.
 
 ## Installation
 
-`npm install @buxlabs/utils`
+`npm install pureutils`
 
 ## Usage
 
-### cjs
-
 ```javascript
-const { flatten } = require('@buxlabs/utils/object');
-flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
-```
-
-### es
-
-```javascript
-import { flatten } from '@buxlabs/utils/object'
+import { flatten } from 'pureutils/object'
 flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
 ```
 
