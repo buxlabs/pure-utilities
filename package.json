@@ -1,5 +1,5 @@
 {
-  "name": "pureutils",
+  "name": "pure-utilities",
   "version": "1.0.0",
   "description": "pureutils",
   "main": "build/index.umd.js",
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buxlabs/pureutils.git"
+    "url": "git+https://github.com/buxlabs/pure-utilities.git"
   },
   "author": "Emil Ajdyna",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/buxlabs/pureutils/issues"
+    "url": "https://github.com/buxlabs/pure-utilities/issues"
   },
-  "homepage": "https://github.com/buxlabs/pureutils#readme"
+  "homepage": "https://github.com/buxlabs/pureu-tilities#readme"
 }

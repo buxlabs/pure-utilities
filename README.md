@@ -1,4 +1,4 @@
-# pureutils
+# pure-utilities
 
 [![Codeship](https://img.shields.io/codeship/d0a4ca60-9ed5-0135-eb8d-5e3172fc544d.svg)]()
 
@@ -6,12 +6,12 @@ A set of pure utility methods.
 
 ## Installation
 
-`npm install pureutils`
+`npm install pure-utilities`
 
 ## Usage
 
 ```javascript
-import { flatten } from 'pureutils/object'
+import { flatten } from 'pure-utilities/object'
 flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
 ```
 
