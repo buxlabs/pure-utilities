@@ -1,5 +1,5 @@
 import test from 'ava'
-import { object } from '../../build/index.umd'
+import { object } from '../..'
 
 test('extend should be possible to extend two objects', t => {
   var object1 = {
@@ -150,10 +150,6 @@ test('extend should copy regexps', t => {
   }
   var result = object.extend(object1, object2)
   t.deepEqual(result, expected)
-})
-
-test('isUndefined should return true if the value is undefined', t => {
-  t.truthy(object.isUndefined(void 0))
 })
 
 test("flatten shouldn't change flat object", t => {

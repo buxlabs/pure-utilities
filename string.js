@@ -1,23 +1,23 @@
-export function whitespaceless (string) {
+function whitespaceless (string) {
   return string.replace(/\s/g, '')
 }
 
-export function pad (value, pad) {
+function pad (value, pad) {
   if (!pad) { return value }
-  return String(value).split(/\r\n|\n/).map(function (line) {
+  return String(value).split(/\r\n|\n/).map(line => {
     return line ? pad + line : line
   }).join('\n')
 }
 
-export function trim (string) {
+function trim (string) {
   return string.trim()
 }
 
-export function uppercase (string) {
+function uppercase (string) {
   return string.toUpperCase()
 }
 
-export function underscore (string) {
+function underscore (string) {
   string = string.trim()
   const specialCharacters = /[^a-zA-Z0-9]/g
 
@@ -38,15 +38,15 @@ export function underscore (string) {
   return string.toLowerCase()
 }
 
-export function reverse (string) {
+function reverse (string) {
   return [...string].reverse().join('')
 }
 
-export function capitalize (string) {
+function capitalize (string) {
   return string.charAt(0).toUpperCase() + string.substr(1)
 }
 
-export function unescape (string) {
+function unescape (string) {
   const entities = new Map([
     ['&amp;', '&'],
     ['&lt;', '<'],
@@ -64,35 +64,35 @@ export function unescape (string) {
   return string
 }
 
-export function lowerfirst (string) {
+function lowerfirst (string) {
   return string.charAt(0).toLowerCase() + string.substr(1)
 }
 
-export function lowercase (string) {
+function lowercase (string) {
   return string.toLowerCase()
 }
 
-export function humanize (string, capitalize = true) {
+function humanize (string, capitalize = true) {
   string = string.replace(/_/g, ' ')
   return capitalize ? string.charAt(0).toUpperCase() + string.substr(1) : string
 }
 
-export function titleize (string) {
+function titleize (string) {
   return string.split(' ').map(word => word.substr(0, 1).toUpperCase() + word.substr(1)).join(' ')
 }
 
-export function dasherize (string) {
+function dasherize (string) {
   return string = string.replace(/_/g, '-')
 }
 
-export function classify (string) {
+function classify (string) {
   if (string.endsWith('s')) {
     return string.charAt(0).toUpperCase() + string.substr(1, string.length - 2)
   }
   return string.charAt(0).toUpperCase() + string.substr(1)
 }
 
-export function pluralize (string) {
+function pluralize (string) {
   const endings = ['ch', 's', 'ss', 'sh', 'x', 'o']
   const vowels = ['a', 'e', 'i', 'o', 'u']
   const lastCharacter = string.charAt(string.length - 1)
@@ -117,7 +117,7 @@ export function pluralize (string) {
   return string.concat('s')
 }
 
-export function singularize (string, appendix = '') {
+function singularize (string, appendix = '') {
   if (string.endsWith('ves')) {
     return string = string.substr(0, string.length - 3).concat(appendix ||'fe')
   }
@@ -133,13 +133,13 @@ export function singularize (string, appendix = '') {
   return string.substr(0, string.length - 1)
 }
 
-export function swapcase (string) {
+function swapcase (string) {
   return [...string].map(character => {
     return character.toUpperCase() === character ? character.toLowerCase() : character.toUpperCase()
   }).join('')
 }
 
-export function camelize (string, camelcased = false) {
+function camelize (string, camelcased = false) {
   const endings = /[^(a-zA-Z0-9)]|_|\s/g
   string = string.trim()
   string = string.charAt(0)[camelcased ? 'toUpperCase' : 'toLowerCase']() + string.substr(1)
@@ -153,7 +153,7 @@ export function camelize (string, camelcased = false) {
   return string
 }
 
-export function constantize (string) {
+function constantize (string) {
   const specialCharacters = /[^a-zA-Z0-9]/g
   string = string.replace(/\s+/g, ' ')
 
@@ -173,17 +173,42 @@ export function constantize (string) {
   return string.toUpperCase()
 }
 
-export function truncate (string, length = 30) {
+function truncate (string, length = 30) {
   if (string.length > length) {
     return string.substr(0, length - 3).concat('...')
   }
   return string
 }
 
-export function repeat (string, count) {
+function repeat (string, count) {
   return string.repeat(count)
 }
 
-export function singlespace (string) {
+function singlespace (string) {
   return string.replace(/\s\s+/g, ' ')
+}
+
+module.exports = {
+  pad,
+  trim,
+  uppercase,
+  underscore,
+  reverse,
+  capitalize,
+  unescape,
+  lowerfirst,
+  lowercase,
+  humanize,
+  titleize,
+  dasherize,
+  classify,
+  pluralize,
+  singularize,
+  swapcase,
+  camelize,
+  constantize,
+  truncate,
+  repeat,
+  singlespace,
+  whitespaceless
 }

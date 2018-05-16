@@ -1,10 +1,10 @@
-export function flatten (array) {
+function flatten (array) {
   return array.reduce((previous, current) => {
     return previous.concat(Array.isArray(current) ? flatten(current) : current)
   }, [])
 }
 
-export function identifier (array) {
+function identifier (array) {
   let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
   let index = 0
   while (array.indexOf(alphabet[index]) !== -1) {
@@ -17,59 +17,59 @@ export function identifier (array) {
   return alphabet[index]
 }
 
-export function first (array) {
+function first (array) {
   return array[0]
 }
 
-export function second (array) {
+function second (array) {
   return array[1]
 }
 
-export function third (array) {
+function third (array) {
   return array[2]
 }
 
-export function fourth (array) {
+function fourth (array) {
   return array[3]
 }
 
-export function fifth (array) {
+function fifth (array) {
   return array[4]
 }
 
-export function sixth (array) {
+function sixth (array) {
   return array[5]
 }
 
-export function seventh (array) {
+function seventh (array) {
   return array[6]
 }
 
-export function eigth (array) {
+function eigth (array) {
   return array[7]
 }
 
-export function ninth (array) {
+function ninth (array) {
   return array[8]
 }
 
-export function tenth (array) {
+function tenth (array) {
   return array[9]
 }
 
-export function last (array) {
+function last (array) {
   return array[array.length - 1]
 }
 
-export function sum (array) {
+function sum (array) {
   return array.reduce((previousValue, currentValue) => previousValue + currentValue)
 }
 
-export function average (array) {
+function average (array) {
   return array.reduce((previousValue, currentValue) => previousValue + currentValue) / array.length
 }
 
-export function median (array) {
+function median (array) {
   array = array.sort((a, b) => a - b)
   const index = Math.floor(array.length / 2)
 
@@ -78,4 +78,23 @@ export function median (array) {
   }
 
   return array[index]
+}
+
+module.exports = {
+  identifier,
+  first,
+  second,
+  third,
+  fourth,
+  fifth,
+  sixth,
+  seventh,
+  eigth,
+  ninth,
+  tenth,
+  last,
+  sum,
+  average,
+  median,
+  flatten
 }

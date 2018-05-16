@@ -1,5 +1,5 @@
 import test from 'ava'
-import index from '../../build/index.umd'
+import index from '../..'
 
 test('it is defined', t => {
   t.truthy(index)

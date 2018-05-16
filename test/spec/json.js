@@ -1,5 +1,5 @@
 import test from 'ava'
-import { json } from '../../build/index.umd'
+import { json } from '../..'
 
 test('prettify should format JSON string', t => {
   var parsed = json.prettify('{"hello":"world"}')

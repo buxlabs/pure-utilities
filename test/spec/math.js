@@ -1,5 +1,5 @@
 import test from 'ava'
-import { math } from '../../build/index.umd'
+import { math } from '../..'
 
 test('abs returns the absolute value of a number', t => {
   var parsed = math.abs(-1)

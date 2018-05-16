@@ -1,77 +1,61 @@
-export function isObject (object) {
+function isObject (object) {
   var type = typeof object
   return (type === 'function' || type === 'object') && !!object
 }
 
-export function isNull (object) {
+function isNull (object) {
   return object === null
 }
 
-export function isArray (object) {
+function isArray (object) {
   return Array.isArray(object)
 }
 
-export function isRegExp (object) {
+function isRegExp (object) {
   return Object.prototype.toString.call(object) === '[object RegExp]'
 }
 
-export function isFunction (object) {
+function isFunction (object) {
   return Object.prototype.toString.call(object) === '[object Function]'
 }
 
-export function isArguments (object) {
+function isArguments (object) {
   return Object.prototype.toString.call(object) === '[object Arguments]'
 }
 
-export function isString (object) {
+function isString (object) {
   return Object.prototype.toString.call(object) === '[object String]'
 }
 
-export function isNumber (object) {
+function isNumber (object) {
   return Object.prototype.toString.call(object) === '[object Number]'
 }
 
-export function isDate (object) {
+function isDate (object) {
   return Object.prototype.toString.call(object) === '[object Date]'
 }
 
-export function isUndefined (object) {
+function isUndefined (object) {
   return object === void 0
 }
 
-/**
- *
- * extend
- *
- * returns a new object with fields from both objects
- *
- * example:
- *
- * input
- * { "hello": "world" }, { "world": "hello" }
- *
- * output
- * { "hello": "world", "world": "hello" }
- *
- */
-
-export function extend () {
+function extend () {
   var result = {}
   for (var i = 0, ilen = arguments.length; i < ilen; i += 1) {
     var object = arguments[i]
     Object.keys(object).forEach(function (key) {
       var value = object[key]
-      if (this.isObject(value) &&
-                !this.isNull(value) &&
-                !this.isArray(value) &&
-                !this.isRegExp(value) &&
-                !this.isFunction(value) &&
-                !this.isArguments(value) &&
-                !this.isString(value) &&
-                !this.isNumber(value) &&
-                !this.isDate(value)
+      if (isObject(value) &&
+                !isNull(value) &&
+                !isArray(value) &&
+                !isRegExp(value) &&
+                !isFunction(value) &&
+                !isArguments(value) &&
+                !isString(value) &&
+                !isNumber(value) &&
+                !isDate(value)
             ) {
-        result[key] = this.extend(result[key] || {}, value)
+        result[key] = extend(result[key] || {}, value)
       } else {
         result[key] = value
       }
@@ -80,23 +64,8 @@ export function extend () {
   return result
 }
 
-/**
- *
- * flatten
- *
- * parse the object and change it structure so it has only 1 level
- *
- * example:
- *
- * input
- * { "page": { "404": "Not found" }}
- *
- * output
- * { "page.404": "Not found" }
- *
- */
 
-export function flatten (object) {
+function flatten (object) {
   var key
   var prefix
   var deep
@@ -114,23 +83,9 @@ export function flatten (object) {
   return result
 }
 
-/**
- *
- * unflatten
- *
- * parse the object and change it structure so it has multiple levels
- *
- * example:
- *
- * input
- * { "page.404": "Not found" }
- *
- * output
- * { "page": { "404": "Not found" }}
- *
- */
 
-export function unflatten (object) {
+
+function unflatten (object) {
   var result = {}
   var current
   var property
@@ -150,23 +105,7 @@ export function unflatten (object) {
   return result['_']
 }
 
-/**
- *
- * rename
- *
- * parse the object and change the names of the keys in the first level
- *
- * example:
- *
- * input
- * { "created_at": "2000-01-01" }, { "created_at": "createdAt" }
- *
- * output
- * { "createdAt": "2000-01-01" }
- *
- */
-
-export function rename (object, keys) {
+function rename (object, keys) {
   var key
   for (key in keys) {
     if (keys.hasOwnProperty(key) && object.hasOwnProperty(key)) {
@@ -178,7 +117,7 @@ export function rename (object, keys) {
   return object
 }
 
-export function dig (object, string) {
+function dig (object, string) {
   var keys = string.split('.')
   for (var i = 0, ilen = keys.length; i < ilen; i += 1) {
     var key = keys[i]
@@ -191,17 +130,26 @@ export function dig (object, string) {
   return object
 }
 
-export function pat (object, string, value) {
+function pat (object, string, value) {
   var keys = string.split('.')
   var reference = object
   for (var i = 0, ilen = keys.length; i < ilen; i += 1) {
     var key = keys[i]
     if (i + 1 === ilen) {
       object[key] = value
-    } else {    
+    } else {
       object[key] = {}
       object = object[key]
     }
   }
   return reference
+}
+
+module.exports = {
+  extend,
+  flatten,
+  unflatten,
+  rename,
+  dig,
+  pat
 }

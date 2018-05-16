@@ -1,26 +1,20 @@
 {
   "name": "pure-utilities",
   "version": "1.0.0",
-  "description": "pureutils",
-  "main": "build/index.umd.js",
-  "module": "build/index.es.js",
+  "description": "pure-utilities",
+  "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "ava": "^0.25.0",
     "nyc": "^11.2.1",
-    "rollup": "^0.59.0",
-    "rollup-plugin-butternut": "^0.1.0",
     "standard": "^11.0.0"
   },
   "engines": {
     "node": ">=8.11.1"
   },
   "scripts": {
-    "build": "rollup -c config.js",
-    "prepublish": "npm run build",
-    "pretest": "npm run build -- --silent",
     "test": "ava \"test/spec/**/*.js\"",
-    "coverage": "npm run build -- --silent && nyc ava \"test/spec/**/*.js\"",
+    "coverage": "nyc ava \"test/spec/**/*.js\"",
     "lint": "standard \"lib/**/*.js\""
   },
   "repository": {

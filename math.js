@@ -1,111 +1,142 @@
-export function abs(number) {
+function abs(number) {
   return Math.abs(number)
 }
 
-export function acos(number) {
+function acos(number) {
   return Math.acos(number)
 }
 
-export function acosh(number) {
+function acosh(number) {
   return Math.acosh(number)
 }
 
-export function asin(number) {
+function asin(number) {
   return Math.asin(number)
 }
 
-export function asinh(number) {
+function asinh(number) {
   return Math.asinh(number)
 }
 
-export function atan(number) {
+function atan(number) {
   return Math.atan(number)
 }
 
-export function atan2(number1, number2) {
+function atan2(number1, number2) {
   return Math.atan2(number1, number2)
 }
 
-export function atanh(number) {
+function atanh(number) {
   return Math.atanh(number)
 }
 
-export function cbrt(number) {
+function cbrt(number) {
   return Math.cbrt(number)
 }
 
-export function ceil(number) {
+function ceil(number) {
   return Math.ceil(number)
 }
 
-export function cos(number) {
+function cos(number) {
   return Math.cos(number)
 }
 
-export function cosh(number) {
+function cosh(number) {
   return Math.cosh(number)
 }
 
-export function exp(number) {
+function exp(number) {
   return Math.exp(number)
 }
 
-export function floor(number) {
+function floor(number) {
   return Math.floor(number)
 }
 
-export function log(number) {
+function log(number) {
   return Math.log(number)
 }
 
-export function max(array) {
+function max(array) {
   return Math.max.apply(this, array)
 }
 
-export function min(array) {
+function min(array) {
   return Math.min.apply(this, array)
 }
 
-export function pow(number1, number2) {
+function pow(number1, number2) {
   return Math.pow(number1, number2)
 }
 
-export function random() {
+function random() {
   return Math.random()
 }
 
-export function round(number) {
+function round(number) {
   return Math.round(number)
 }
 
-export function sin(number) {
+function sin(number) {
   return Math.sin(number)
 }
 
-export function sinh(number) {
+function sinh(number) {
   return Math.sinh(number)
 }
 
-export function sqrt(number) {
+function sqrt(number) {
   return Math.sqrt(number)
 }
 
-export function tan(number) {
+function tan(number) {
   return Math.tan(number)
 }
 
-export function tanh(number) {
+function tanh(number) {
   return Math.tanh(number)
 }
 
-export function trunc(number) {
+function trunc(number) {
   return Math.trunc(number)
 }
 
-export function square(number) {
+function square(number) {
   return number * number
 }
 
-export function factorial(number) {
+function factorial(number) {
   return number < 2 ? 1 : number * factorial(number - 1)
+}
+
+module.exports = {
+  abs,
+  acos,
+  acosh,
+  asin,
+  asinh,
+  atan,
+  atan2,
+  atanh,
+  cbrt,
+  ceil,
+  cos,
+  cosh,
+  exp,
+  floor,
+  log,
+  max,
+  min,
+  pow,
+  random,
+  round,
+  sin,
+  sinh,
+  sqrt,
+  tan,
+  tanh,
+  trunc,
+  square,
+  factorial
 }
