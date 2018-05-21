@@ -92,6 +92,11 @@ function nth (array, position) {
   return position > 0 ? array[position - 1] : array[array.length - Math.abs(position)]
 }
 
+function sample (array) {
+  const index = Math.floor(Math.random() * (array.length - 1))
+  return array[index]
+}
+
 module.exports = {
   identifier,
   first,
@@ -111,5 +116,6 @@ module.exports = {
   flatten,
   compact,
   unique,
-  nth
+  nth,
+  sample
 }

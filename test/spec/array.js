@@ -107,4 +107,9 @@ test('nth gets element at index "n" of array', assert => {
   assert.deepEqual(array.nth([1, 2, 3, 4, 5], -5), 1)
 })
 
+test('sample returns a random item from array', assert => {
+  assert.deepEqual(array.sample([1]), 1)
+})
+
+
 
