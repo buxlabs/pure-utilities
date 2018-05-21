@@ -181,3 +181,22 @@ test('float parses string and returns float', t => {
   t.deepEqual(parsed, 4.25)
 })
 
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(10, 20, 30), 20)
+})
+
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(20, 20, 30), 20)
+})
+
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(25, 20, 30), 25)
+})
+
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(30, 20, 30), 30)
+})
+
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(31, 20, 30), 30)
+})
