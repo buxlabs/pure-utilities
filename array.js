@@ -88,6 +88,10 @@ function unique (array) {
   return Array.from(new Set(array))
 }
 
+function nth (array, position) {
+  return position > 0 ? array[position - 1] : array[array.length - Math.abs(position)]
+}
+
 module.exports = {
   identifier,
   first,
@@ -106,5 +110,6 @@ module.exports = {
   median,
   flatten,
   compact,
-  unique
+  unique,
+  nth
 }

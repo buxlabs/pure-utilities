@@ -95,3 +95,16 @@ test('unique returns a copy of the array without duplicate items', assert => {
   assert.deepEqual(array.unique([1, 1, 2, 10, 2, 33]), [1, 2, 10, 33])
 })
 
+test('nth gets element at index "n" of array', assert => {
+  assert.deepEqual(array.nth([1, 2, 3, 4, 5], 4), 4)
+})
+
+test('nth gets element at index "n" of array', assert => {
+  assert.deepEqual(array.nth([1, 2, 3, 4, 5], -2), 4)
+})
+
+test('nth gets element at index "n" of array', assert => {
+  assert.deepEqual(array.nth([1, 2, 3, 4, 5], -5), 1)
+})
+
+
