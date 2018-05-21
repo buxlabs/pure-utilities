@@ -91,3 +91,7 @@ test('compact returns a copy of the array only with truthy values', assert => {
   assert.deepEqual(array.compact([0, 1, false, 2, '', 3]), [1, 2, 3])
 })
 
+test('unique returns a copy of the array without duplicate items', assert => {
+  assert.deepEqual(array.unique([1, 1, 2, 10, 2, 33]), [1, 2, 10, 33])
+})
+

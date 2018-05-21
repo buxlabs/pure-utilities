@@ -84,6 +84,10 @@ function compact (array) {
   return array.filter(Boolean)
 }
 
+function unique (array) {
+  return Array.from(new Set(array))
+}
+
 module.exports = {
   identifier,
   first,
@@ -101,5 +105,6 @@ module.exports = {
   average,
   median,
   flatten,
-  compact
+  compact,
+  unique
 }
