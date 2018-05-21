@@ -111,5 +111,20 @@ test('sample returns a random item from array', assert => {
   assert.deepEqual(array.sample([1]), 1)
 })
 
+test('size returns length of an array', assert => {
+  assert.deepEqual(array.size([1, 2, 3, 4, 5]), 5)
+})
+
+test('size returns length of a string', assert => {
+  assert.deepEqual(array.size('foobar'), 6)
+})
+
+test('size returns length of an object', assert => {
+  assert.deepEqual(array.size({ a: 1, b: 2 }), 2)
+})
+
+test('size returns length of a Set', assert => {
+  assert.deepEqual(array.size(new Set([1, 2, 3, 4, 5])), 5)
+})
 
 
