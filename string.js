@@ -188,6 +188,10 @@ function singlespace (string) {
   return string.replace(/\s\s+/g, ' ')
 }
 
+function quote (string, lang = 'pl') {
+  return lang = 'en' ? `"${string}"` : `„${string}”`
+}
+
 module.exports = {
   pad,
   trim,
@@ -210,5 +214,6 @@ module.exports = {
   truncate,
   repeat,
   singlespace,
-  whitespaceless
+  whitespaceless,
+  quote
 }

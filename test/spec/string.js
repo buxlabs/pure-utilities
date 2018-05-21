@@ -661,3 +661,12 @@ test("singlespace should return new string which contains singlespace", t => {
   t.deepEqual(parsed, 'foo bar baz')
 })
 
+test("quote return a string inside quotes", t => {
+  var parsed = string.quote('foo bar baz')
+  t.deepEqual(parsed, `"foo bar baz"`)
+})
+
+test("quote return a string inside quotes", t => {
+  var parsed = string.quote('foo bar baz', 'en')
+  t.deepEqual(parsed, '"foo bar baz"')
+})
