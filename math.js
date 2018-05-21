@@ -110,6 +110,34 @@ function factorial(number) {
   return number < 2 ? 1 : number * factorial(number - 1)
 }
 
+function add(number1, number2) {
+  return number1 + number2
+}
+
+function subtract(number1, number2) {
+  return number1 - number2
+}
+
+function multiply(number1, number2) {
+  return number1 * number2
+}
+
+function divide(number1, number2) {
+  return number1 / number2
+}
+
+function modulo(number1, number2) {
+  return number1 % number2
+}
+
+function increment(number) {
+  return ++number
+}
+
+function decrement(number) {
+  return --number
+}
+
 module.exports = {
   abs,
   acos,
@@ -138,5 +166,12 @@ module.exports = {
   tanh,
   trunc,
   square,
-  factorial
+  factorial,
+  add,
+  subtract,
+  multiply,
+  divide,
+  modulo,
+  increment,
+  decrement
 }
