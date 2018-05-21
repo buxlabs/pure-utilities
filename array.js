@@ -80,6 +80,10 @@ function median (array) {
   return array[index]
 }
 
+function compact (array) {
+  return array.filter(Boolean)
+}
+
 module.exports = {
   identifier,
   first,
@@ -96,5 +100,6 @@ module.exports = {
   sum,
   average,
   median,
-  flatten
+  flatten,
+  compact
 }
