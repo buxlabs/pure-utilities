@@ -170,3 +170,14 @@ test('decrement decrements number', t => {
   var parsed = math.decrement(4)
   t.deepEqual(parsed, 3)
 })
+
+test('int parses string and returns integer', t => {
+  var parsed = math.int('4.25')
+  t.deepEqual(parsed, 4)
+})
+
+test('float parses string and returns float', t => {
+  var parsed = math.float('4.25')
+  t.deepEqual(parsed, 4.25)
+})
+

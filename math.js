@@ -138,6 +138,14 @@ function decrement(number) {
   return --number
 }
 
+function int(string) {
+  return parseInt(string)
+}
+
+function float(string) {
+  return parseFloat(string)
+}
+
 module.exports = {
   abs,
   acos,
@@ -173,5 +181,7 @@ module.exports = {
   divide,
   modulo,
   increment,
-  decrement
+  decrement,
+  int,
+  float
 }
