@@ -196,6 +196,11 @@ function quote (string, lang = 'pl') {
   return lang === 'en' ? `"${string}"` : `„${string}”`
 }
 
+function unquote (string) {
+  if (string.startsWith('"') && string.endsWith('"')) return string.substr(1, string.length - 2)
+  if (string.startsWith('„') && string.endsWith('”')) return string.substr(1, string.length - 2)
+}
+
 function squeeze (string, pattern = 'a-zA-Z') {
   string = string.replace(/\s+/g, ' ')
   const regExp = new RegExp(`[${pattern}]`)
@@ -247,6 +252,7 @@ module.exports = {
   singlespace,
   whitespaceless,
   quote,
+  unquote,
   squeeze,
   summarize,
   wrap,

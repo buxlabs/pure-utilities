@@ -671,6 +671,16 @@ test("quote return a string inside quotes", t => {
   t.deepEqual(parsed, '"foo bar baz"')
 })
 
+test("unquote removes quotes from string", t => {
+  var parsed = string.unquote('„foo bar baz”')
+  t.deepEqual(parsed, `foo bar baz`)
+})
+
+test("unquote removes quotes from string", t => {
+  var parsed = string.unquote('"foo bar baz"')
+  t.deepEqual(parsed, 'foo bar baz')
+})
+
 test("squeeze return a string with removed double characters", t => {
   var parsed = string.squeeze('foo')
   t.deepEqual(parsed, 'fo')
