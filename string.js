@@ -13,6 +13,17 @@ function trim (string) {
   return string.trim()
 }
 
+function strip (string, pattern) {
+  if (!pattern) return string.trim()
+  if (!Array.isArray(pattern)) {
+    const start = string.indexOf(pattern)
+    const end = start + pattern.length
+    return string.substr(0, start - 1) + '' + string.substr(end)
+  }
+  const regExp = new RegExp(pattern.join('|'), 'g')
+  return string.replace(regExp, '')
+}
+
 function uppercase (string) {
   return string.toUpperCase()
 }
@@ -231,6 +242,7 @@ function unwrap (string, firstCharacter, lastCharacter = firstCharacter) {
 module.exports = {
   pad,
   trim,
+  strip,
   uppercase,
   underscore,
   reverse,

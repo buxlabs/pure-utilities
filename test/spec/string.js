@@ -760,5 +760,20 @@ test("unwrap, removed starting and ending character", t => {
   t.deepEqual(parsed, 'foo bar baz')
 })
 
+test('strip should remove whitespace in left and right', t => {
+  var parsed = string.strip(' foo ')
+  t.deepEqual(parsed, 'foo')
+})
+
+test('strip should remove from string passed string', t => {
+  var parsed = string.strip('foo bar baz ban', 'baz')
+  t.deepEqual(parsed, 'foo bar ban')
+})
+
+test('strip should remove from string passed string', t => {
+  var parsed = string.strip('foo bar baz ban', ['o', 'r', 'a'])
+  t.deepEqual(parsed, 'f b bz bn')
+})
+
 
 
