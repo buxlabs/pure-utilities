@@ -189,8 +189,23 @@ function singlespace (string) {
 }
 
 function quote (string, lang = 'pl') {
-  return lang = 'en' ? `"${string}"` : `„${string}”`
+  return lang === 'en' ? `"${string}"` : `„${string}”`
 }
+
+function squeeze (string, pattern = 'a-zA-Z') {
+  string = string.replace(/\s+/g, ' ')
+  const regExp = new RegExp(`[${pattern}]`)
+  for (let i = 1; i < string.length; i++) {
+    let currentCharacter = string[i]
+    let previousCharacter = string[i - 1]
+    if (regExp.test(currentCharacter) && currentCharacter === previousCharacter) {
+      string = string.substr(0, i) + string.substr(i + 1)
+      i--
+    }
+  }
+  return string
+}
+
 
 module.exports = {
   pad,
@@ -215,5 +230,6 @@ module.exports = {
   repeat,
   singlespace,
   whitespaceless,
-  quote
+  quote,
+  squeeze
 }

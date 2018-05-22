@@ -663,10 +663,41 @@ test("singlespace should return new string which contains singlespace", t => {
 
 test("quote return a string inside quotes", t => {
   var parsed = string.quote('foo bar baz')
-  t.deepEqual(parsed, `"foo bar baz"`)
+  t.deepEqual(parsed, `„foo bar baz”`)
 })
 
 test("quote return a string inside quotes", t => {
   var parsed = string.quote('foo bar baz', 'en')
   t.deepEqual(parsed, '"foo bar baz"')
 })
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('foo')
+  t.deepEqual(parsed, 'fo')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('yellow moon')
+  t.deepEqual(parsed, 'yelow mon')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('fooo    bar')
+  t.deepEqual(parsed, 'fo bar')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('putters shoot balls')
+  t.deepEqual(parsed, 'puters shot bals')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('yellow moon', 'o')
+  t.deepEqual(parsed, 'yellow mon')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('putters shoot balls', 'm-z')
+  t.deepEqual(parsed, 'puters shot balls')
+})
+
