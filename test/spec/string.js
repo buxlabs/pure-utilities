@@ -775,5 +775,10 @@ test('strip should remove from string passed string', t => {
   t.deepEqual(parsed, 'f b bz bn')
 })
 
+test('replace should replace string characters with newString', t => {
+  var parsed = string.replace('foo bar baz ban', 'baz', 'qux')
+  t.deepEqual(parsed, 'foo bar qux ban')
+})
+
 
 

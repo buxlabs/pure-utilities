@@ -239,6 +239,10 @@ function unwrap (string, firstCharacter, lastCharacter = firstCharacter) {
   return string
 }
 
+function replace (string, pattern, newString) {
+  return string.replace(pattern, newString)
+}
+
 module.exports = {
   pad,
   trim,
@@ -268,5 +272,6 @@ module.exports = {
   squeeze,
   summarize,
   wrap,
-  unwrap
+  unwrap,
+  replace
 }
