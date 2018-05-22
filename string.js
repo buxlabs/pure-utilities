@@ -180,6 +180,10 @@ function truncate (string, length = 30) {
   return string
 }
 
+function summarize (string, length = 100) {
+  return string.length >= length ? string.concat('...') : string
+}
+
 function repeat (string, count) {
   return string.repeat(count)
 }
@@ -231,5 +235,6 @@ module.exports = {
   singlespace,
   whitespaceless,
   quote,
-  squeeze
+  squeeze,
+  summarize
 }

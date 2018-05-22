@@ -701,3 +701,22 @@ test("squeeze return a string with removed double characters", t => {
   t.deepEqual(parsed, 'puters shot balls')
 })
 
+test("summarize return a string with dots if string length is longer or equal 100", t => {
+  var parsed = string.summarize(`
+    Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut fermentum.
+    Aenean non nibh sed augue gravida ultricies. Fusce dapibus libero vitae diam malesuada dictum.
+    Curabitur congue venenatis ante, non congue tortor lobortis in. Sed hendrerit egestas eleifend.
+    Nullam non accumsan augue. Maecenas sed tellus diam. Maecenas et dui auctor, elementum sapien in, fermentum nisi.
+    Etiam in tempus libero, non finibus dui. Nunc vulputate mauris odio, quis vehicula dui malesuada eu.
+    Etiam a justo quis nisl viverra finibus convallis in lorem. Sed eu massa consequat, venenatis mi at, lobortis lectus.
+    Nulla euismod mattis justo id consequat. Proin`
+  )
+  t.deepEqual(parsed.substr(parsed.length - 3), '...')
+})
+
+test("summarize return a string with dots if string length is longer or equal x", t => {
+  var parsed = string.summarize('foo bar baz ban', 10)
+  t.deepEqual(parsed.substr(parsed.length - 3), '...')
+})
+
