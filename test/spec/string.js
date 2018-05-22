@@ -720,3 +720,35 @@ test("summarize return a string with dots if string length is longer or equal x"
   t.deepEqual(parsed.substr(parsed.length - 3), '...')
 })
 
+test("wrap, insert string between passed character", t => {
+  var parsed = string.wrap('foo bar baz ban', '"')
+  t.deepEqual(parsed, '"foo bar baz ban"')
+})
+
+test("wrap, insert string between passed character", t => {
+  var parsed = string.wrap('foo bar baz', '„' ,'”')
+  t.deepEqual(parsed, '„foo bar baz”')
+})
+
+test("wrap, insert string between passed character", t => {
+  var parsed = string.wrap('foo bar baz', '(' ,')')
+  t.deepEqual(parsed, '(foo bar baz)')
+})
+
+test("unwrap, removed starting and ending character", t => {
+  var parsed = string.unwrap('"foo bar baz ban"', '"')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test("unwrap, removed starting and ending character", t => {
+  var parsed = string.unwrap('„foo bar baz”', '„' ,'”')
+  t.deepEqual(parsed, 'foo bar baz')
+})
+
+test("unwrap, removed starting and ending character", t => {
+  var parsed = string.unwrap('(foo bar baz)', '(' ,')')
+  t.deepEqual(parsed, 'foo bar baz')
+})
+
+
+

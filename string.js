@@ -210,6 +210,18 @@ function squeeze (string, pattern = 'a-zA-Z') {
   return string
 }
 
+function wrap (string, firstCharacter, lastCharacter = firstCharacter) {
+  if (!firstCharacter) return string
+  return firstCharacter + string + lastCharacter
+}
+
+function unwrap (string, firstCharacter, lastCharacter = firstCharacter) {
+  if (!firstCharacter) return string
+  if (string.startsWith(firstCharacter)) string = string.substr(1)
+  if (string.endsWith(lastCharacter)) string = string.substr(0, string.length - 1)
+
+  return string
+}
 
 module.exports = {
   pad,
@@ -236,5 +248,7 @@ module.exports = {
   whitespaceless,
   quote,
   squeeze,
-  summarize
+  summarize,
+  wrap,
+  unwrap
 }
