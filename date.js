@@ -42,7 +42,9 @@ function format (date, format) {
     let type = date[i].type
     for (let j = 0; j < format.length; j++) {
       const index = format.indexOf(date[i].type)
-      if (index !== i) {
+      if (index === -1) {
+        date.splice(i, 1)
+      } else  if (index !== i) {
         const temp = date[i]
         date[i] = date[index]
         date[index] = temp

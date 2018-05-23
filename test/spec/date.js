@@ -61,4 +61,12 @@ test('format returns a date in given format', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'YYYY/MM/DD'), '2018/05/23')
 })
 
+test('format returns a date in given format', t => {
+  t.deepEqual(date.format(new Date(2018, 4, 23), 'MM YYYY'), '05 2018')
+})
+
+test('format returns a date in given format', t => {
+  t.deepEqual(date.format(new Date(2018, 4, 23), 'MM-YYYY'), '05-2018')
+})
+
 
