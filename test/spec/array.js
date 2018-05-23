@@ -87,3 +87,44 @@ test('median returns the median of a list of numbers', assert => {
   assert.deepEqual(array.median([91 , 210 , 205 , 204 , 212]), 205)
 })
 
+test('compact returns a copy of the array only with truthy values', assert => {
+  assert.deepEqual(array.compact([0, 1, false, 2, '', 3]), [1, 2, 3])
+})
+
+test('unique returns a copy of the array without duplicate items', assert => {
+  assert.deepEqual(array.unique([1, 1, 2, 10, 2, 33]), [1, 2, 10, 33])
+})
+
+test('nth gets element at index "n" of array', assert => {
+  assert.deepEqual(array.nth([1, 2, 3, 4, 5], 4), 4)
+})
+
+test('nth gets element at index "n" of array', assert => {
+  assert.deepEqual(array.nth([1, 2, 3, 4, 5], -2), 4)
+})
+
+test('nth gets element at index "n" of array', assert => {
+  assert.deepEqual(array.nth([1, 2, 3, 4, 5], -5), 1)
+})
+
+test('sample returns a random item from array', assert => {
+  assert.deepEqual(array.sample([1]), 1)
+})
+
+test('size returns length of an array', assert => {
+  assert.deepEqual(array.size([1, 2, 3, 4, 5]), 5)
+})
+
+test('size returns length of a string', assert => {
+  assert.deepEqual(array.size('foobar'), 6)
+})
+
+test('size returns length of an object', assert => {
+  assert.deepEqual(array.size({ a: 1, b: 2 }), 2)
+})
+
+test('size returns length of a Set', assert => {
+  assert.deepEqual(array.size(new Set([1, 2, 3, 4, 5])), 5)
+})
+
+

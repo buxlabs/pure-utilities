@@ -80,6 +80,30 @@ function median (array) {
   return array[index]
 }
 
+function compact (array) {
+  return array.filter(Boolean)
+}
+
+function unique (array) {
+  return Array.from(new Set(array))
+}
+
+function nth (array, position) {
+  return position > 0 ? array[position - 1] : array[array.length - Math.abs(position)]
+}
+
+function sample (array) {
+  const index = Math.floor(Math.random() * (array.length - 1))
+  return array[index]
+}
+
+function size (object) {
+  const type = Object.prototype.toString.call(object).substr(8).replace(']', '')
+  if (type === 'Array' || type === 'String' ) return object.length
+  if (type === 'Object') return Object.keys(object).length
+  if (type === 'Map' || type === 'Set') return object.size
+}
+
 module.exports = {
   identifier,
   first,
@@ -96,5 +120,10 @@ module.exports = {
   sum,
   average,
   median,
-  flatten
+  flatten,
+  compact,
+  unique,
+  nth,
+  sample,
+  size
 }

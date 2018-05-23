@@ -661,3 +661,124 @@ test("singlespace should return new string which contains singlespace", t => {
   t.deepEqual(parsed, 'foo bar baz')
 })
 
+test("quote return a string inside quotes", t => {
+  var parsed = string.quote('foo bar baz')
+  t.deepEqual(parsed, `„foo bar baz”`)
+})
+
+test("quote return a string inside quotes", t => {
+  var parsed = string.quote('foo bar baz', 'en')
+  t.deepEqual(parsed, '"foo bar baz"')
+})
+
+test("unquote removes quotes from string", t => {
+  var parsed = string.unquote('„foo bar baz”')
+  t.deepEqual(parsed, `foo bar baz`)
+})
+
+test("unquote removes quotes from string", t => {
+  var parsed = string.unquote('"foo bar baz"')
+  t.deepEqual(parsed, 'foo bar baz')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('foo')
+  t.deepEqual(parsed, 'fo')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('yellow moon')
+  t.deepEqual(parsed, 'yelow mon')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('fooo    bar')
+  t.deepEqual(parsed, 'fo bar')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('putters shoot balls')
+  t.deepEqual(parsed, 'puters shot bals')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('yellow moon', 'o')
+  t.deepEqual(parsed, 'yellow mon')
+})
+
+test("squeeze return a string with removed double characters", t => {
+  var parsed = string.squeeze('putters shoot balls', 'm-z')
+  t.deepEqual(parsed, 'puters shot balls')
+})
+
+test("summarize return a string with dots if string length is longer or equal 100", t => {
+  var parsed = string.summarize(`
+    Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut fermentum.
+    Aenean non nibh sed augue gravida ultricies. Fusce dapibus libero vitae diam malesuada dictum.
+    Curabitur congue venenatis ante, non congue tortor lobortis in. Sed hendrerit egestas eleifend.
+    Nullam non accumsan augue. Maecenas sed tellus diam. Maecenas et dui auctor, elementum sapien in, fermentum nisi.
+    Etiam in tempus libero, non finibus dui. Nunc vulputate mauris odio, quis vehicula dui malesuada eu.
+    Etiam a justo quis nisl viverra finibus convallis in lorem. Sed eu massa consequat, venenatis mi at, lobortis lectus.
+    Nulla euismod mattis justo id consequat. Proin`
+  )
+  t.deepEqual(parsed.substr(parsed.length - 3), '...')
+})
+
+test("summarize return a string with dots if string length is longer or equal x", t => {
+  var parsed = string.summarize('foo bar baz ban', 10)
+  t.deepEqual(parsed.substr(parsed.length - 3), '...')
+})
+
+test("wrap, insert string between passed character", t => {
+  var parsed = string.wrap('foo bar baz ban', '"')
+  t.deepEqual(parsed, '"foo bar baz ban"')
+})
+
+test("wrap, insert string between passed character", t => {
+  var parsed = string.wrap('foo bar baz', '„' ,'”')
+  t.deepEqual(parsed, '„foo bar baz”')
+})
+
+test("wrap, insert string between passed character", t => {
+  var parsed = string.wrap('foo bar baz', '(' ,')')
+  t.deepEqual(parsed, '(foo bar baz)')
+})
+
+test("unwrap, removed starting and ending character", t => {
+  var parsed = string.unwrap('"foo bar baz ban"', '"')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test("unwrap, removed starting and ending character", t => {
+  var parsed = string.unwrap('„foo bar baz”', '„' ,'”')
+  t.deepEqual(parsed, 'foo bar baz')
+})
+
+test("unwrap, removed starting and ending character", t => {
+  var parsed = string.unwrap('(foo bar baz)', '(' ,')')
+  t.deepEqual(parsed, 'foo bar baz')
+})
+
+test('strip should remove whitespace in left and right', t => {
+  var parsed = string.strip(' foo ')
+  t.deepEqual(parsed, 'foo')
+})
+
+test('strip should remove from string passed string', t => {
+  var parsed = string.strip('foo bar baz ban', 'baz')
+  t.deepEqual(parsed, 'foo bar ban')
+})
+
+test('strip should remove from string passed string', t => {
+  var parsed = string.strip('foo bar baz ban', ['o', 'r', 'a'])
+  t.deepEqual(parsed, 'f b bz bn')
+})
+
+test('replace should replace string characters with newString', t => {
+  var parsed = string.replace('foo bar baz ban', 'baz', 'qux')
+  t.deepEqual(parsed, 'foo bar qux ban')
+})
+
+
+

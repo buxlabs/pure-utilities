@@ -13,6 +13,17 @@ function trim (string) {
   return string.trim()
 }
 
+function strip (string, pattern) {
+  if (!pattern) return string.trim()
+  if (!Array.isArray(pattern)) {
+    const start = string.indexOf(pattern)
+    const end = start + pattern.length
+    return string.substr(0, start - 1) + '' + string.substr(end)
+  }
+  const regExp = new RegExp(pattern.join('|'), 'g')
+  return string.replace(regExp, '')
+}
+
 function uppercase (string) {
   return string.toUpperCase()
 }
@@ -180,6 +191,10 @@ function truncate (string, length = 30) {
   return string
 }
 
+function summarize (string, length = 100) {
+  return string.length >= length ? string.concat('...') : string
+}
+
 function repeat (string, count) {
   return string.repeat(count)
 }
@@ -188,9 +203,50 @@ function singlespace (string) {
   return string.replace(/\s\s+/g, ' ')
 }
 
+function quote (string, lang = 'pl') {
+  return lang === 'en' ? `"${string}"` : `„${string}”`
+}
+
+function unquote (string) {
+  if (string.startsWith('"') && string.endsWith('"')) return string.substr(1, string.length - 2)
+  if (string.startsWith('„') && string.endsWith('”')) return string.substr(1, string.length - 2)
+}
+
+function squeeze (string, pattern = 'a-zA-Z') {
+  string = string.replace(/\s+/g, ' ')
+  const regExp = new RegExp(`[${pattern}]`)
+  for (let i = 1; i < string.length; i++) {
+    let currentCharacter = string[i]
+    let previousCharacter = string[i - 1]
+    if (regExp.test(currentCharacter) && currentCharacter === previousCharacter) {
+      string = string.substr(0, i) + string.substr(i + 1)
+      i--
+    }
+  }
+  return string
+}
+
+function wrap (string, firstCharacter, lastCharacter = firstCharacter) {
+  if (!firstCharacter) return string
+  return firstCharacter + string + lastCharacter
+}
+
+function unwrap (string, firstCharacter, lastCharacter = firstCharacter) {
+  if (!firstCharacter) return string
+  if (string.startsWith(firstCharacter)) string = string.substr(1)
+  if (string.endsWith(lastCharacter)) string = string.substr(0, string.length - 1)
+
+  return string
+}
+
+function replace (string, pattern, newString) {
+  return string.replace(pattern, newString)
+}
+
 module.exports = {
   pad,
   trim,
+  strip,
   uppercase,
   underscore,
   reverse,
@@ -210,5 +266,12 @@ module.exports = {
   truncate,
   repeat,
   singlespace,
-  whitespaceless
+  whitespaceless,
+  quote,
+  unquote,
+  squeeze,
+  summarize,
+  wrap,
+  unwrap,
+  replace
 }

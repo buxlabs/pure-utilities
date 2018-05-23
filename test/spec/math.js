@@ -135,3 +135,68 @@ test('factorial returns factorial of x', t => {
   var parsed = math.factorial(5)
   t.deepEqual(parsed, 120)
 })
+
+test('add adds numbers', t => {
+  var parsed = math.add(5, 10)
+  t.deepEqual(parsed, 15)
+})
+
+test('subtract subtracts numbers', t => {
+  var parsed = math.subtract(5, 10)
+  t.deepEqual(parsed, -5)
+})
+
+test('multiply multiplies numbers', t => {
+  var parsed = math.multiply(5, 10)
+  t.deepEqual(parsed, 50)
+})
+
+test('divide divides numbers', t => {
+  var parsed = math.divide(10, 5)
+  t.deepEqual(parsed, 2)
+})
+
+test('modulo returns modulo of x', t => {
+  var parsed = math.modulo(4, 2)
+  t.deepEqual(parsed, 0)
+})
+
+test('increment increments number', t => {
+  var parsed = math.increment(4)
+  t.deepEqual(parsed, 5)
+})
+
+test('decrement decrements number', t => {
+  var parsed = math.decrement(4)
+  t.deepEqual(parsed, 3)
+})
+
+test('int parses string and returns integer', t => {
+  var parsed = math.int('4.25')
+  t.deepEqual(parsed, 4)
+})
+
+test('float parses string and returns float', t => {
+  var parsed = math.float('4.25')
+  t.deepEqual(parsed, 4.25)
+})
+
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(10, 20, 30), 20)
+})
+
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(20, 20, 30), 20)
+})
+
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(25, 20, 30), 25)
+})
+
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(30, 20, 30), 30)
+})
+
+test('clamp clamps value inside range', t => {
+  t.deepEqual(math.clamp(31, 20, 30), 30)
+})
