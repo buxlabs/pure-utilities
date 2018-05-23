@@ -53,10 +53,6 @@ function underscore (string) {
   return string.toLowerCase()
 }
 
-function reverse (string) {
-  return [...string].reverse().join('')
-}
-
 function capitalize (string) {
   return string.charAt(0).toUpperCase() + string.substr(1)
 }
@@ -253,7 +249,6 @@ module.exports = {
   strip,
   uppercase,
   underscore,
-  reverse,
   capitalize,
   unescape,
   lowerfirst,

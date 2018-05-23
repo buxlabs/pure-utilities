@@ -216,16 +216,6 @@ test("underscore should convert string containing numbers to underscoreCase", t 
   t.deepEqual(parsed, '00')
 })
 
-test("reverse should reverse string", t => {
-  var parsed = string.reverse('foo')
-  t.deepEqual(parsed, 'oof')
-})
-
-test("reverse should reverse string", t => {
-  var parsed = string.reverse('12345')
-  t.deepEqual(parsed, '54321')
-})
-
 test("capitalize should capitalize first character of string", t => {
   var parsed = string.capitalize('foo')
   t.deepEqual(parsed, 'Foo')

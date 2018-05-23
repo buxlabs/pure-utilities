@@ -4,6 +4,7 @@ const string = require('./string')
 const date = require('./date')
 const array = require('./array')
 const math = require('./math')
+const collection = require('./collection')
 
 module.exports = {
   json,
@@ -11,5 +12,6 @@ module.exports = {
   string,
   date,
   array,
-  math
+  math,
+  collection
 }
