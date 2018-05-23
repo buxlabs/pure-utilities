@@ -1,13 +1,13 @@
 import test from 'ava'
 import { string } from '../..'
 
-test('whitespaceless should remove whitespace characters', t => {
-  var parsed = string.whitespaceless('\t1234 5678\n')
+test('whitespacestrip should remove whitespace characters', t => {
+  var parsed = string.whitespacestrip('\t1234 5678\n')
   t.deepEqual(parsed, '12345678')
 })
 
-test('whitespaceless should remove whitespace characters', t => {
-  var parsed = string.whitespaceless('b  ar')
+test('whitespacestrip should remove whitespace characters', t => {
+  var parsed = string.whitespacestrip('b  ar')
   t.deepEqual(parsed, 'bar')
 })
 

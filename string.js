@@ -1,4 +1,4 @@
-function whitespaceless (string) {
+function whitespacestrip (string) {
   return string.replace(/\s/g, '')
 }
 
@@ -270,7 +270,7 @@ module.exports = {
   truncate,
   repeat,
   singlespace,
-  whitespaceless,
+  whitespacestrip,
   quote,
   unquote,
   squeeze,
