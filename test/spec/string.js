@@ -771,6 +771,11 @@ test('strip should remove from string passed string', t => {
 })
 
 test('strip should remove from string passed string', t => {
+  var parsed = string.strip('foo bar', 'o')
+  t.deepEqual(parsed, 'f bar')
+})
+
+test('strip should remove from string passed string', t => {
   var parsed = string.strip('foo bar baz ban', ['o', 'r', 'a'])
   t.deepEqual(parsed, 'f b bz bn')
 })
