@@ -266,6 +266,10 @@ function chomp (string, pattern) {
   return match ? string.substr(0, match.index) : string
 }
 
+function dot (string) {
+  return string.endsWith('.') ? string : string.concat('.')
+}
+
 module.exports = {
   pad,
   trim,
@@ -298,5 +302,6 @@ module.exports = {
   replace,
   index,
   chop,
-  chomp
+  chomp,
+  dot
 }

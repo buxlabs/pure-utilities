@@ -864,3 +864,18 @@ test('chomp returns string with the given record separator removed from the end 
   var parsed = string.chomp('foo\r\n\r\r\n')
   t.deepEqual(parsed, 'foo\r\n\r')
 })
+
+test('dot returns string with "." at the end of the string', t => {
+  var parsed = string.dot('')
+  t.deepEqual(parsed, '.')
+})
+
+test('dot returns string with "." at the end of the string', t => {
+  var parsed = string.dot('foo bar')
+  t.deepEqual(parsed, 'foo bar.')
+})
+
+test('dot returns string with "." at the end of the string', t => {
+  var parsed = string.dot('foo bar.')
+  t.deepEqual(parsed, 'foo bar.')
+})
