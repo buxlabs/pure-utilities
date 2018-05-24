@@ -3,7 +3,7 @@ function isostring (value) {
 }
 
 function format (date, format) {
-  const delimeters = [',', '.', '-', '/', ' ']
+  const separators = [',', '.', '-', '/', ' ', '|', '_']
   const months = new Map([
     ['Jan', '01'],
     ['Feb', '02'],
@@ -20,45 +20,47 @@ function format (date, format) {
   ])
 
   if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
-  if (!+date) return date.toString()
+  if (!+date) return date.toDateString()
 
-  date = date.toDateString().substr(4).split(' ')
-  if (months.has(date[0])) date[0] = months.get(date[0])
-
+  const values = date.toDateString().substr(4).split(' ')
   date = [
-    { type: 'MM', value: date[0] },
-    { type: 'DD', value: date[1] },
-    { type: 'YYYY', value: date[2] }
+    { period: 'YYYY', value: values[2] },
+    { period: 'MM', value: months.get(values[0]) },
+    { period: 'DD', value: values[1] }
   ]
 
-  const delimeter = delimeters.find(delimeter => format.includes(delimeter))
-  if (!delimeter) {
-   const part = date.find(element => element.type === format)
-   return part.value
-  }
-  format = format.split(delimeter)
+  if (!format) return date[2].value + '-' + date[1].value + '-' + date[0].value
+  const separator = separators.find(separator => format.includes(separator))
 
+  if (!separator) {
+   const part = date.find(date => date.period === format)
+   return part ? part.value : 'Invalid Format'
+  }
+
+  format = format.split(separator)
   for (let i = 0; i < date.length; i++) {
-    let type = date[i].type
     for (let j = 0; j < format.length; j++) {
-      const index = format.indexOf(date[i].type)
+      const index = format.indexOf(date[i].period)
       if (index === -1) {
         date.splice(i, 1)
+        i--
       } else  if (index !== i) {
-        const temp = date[i]
+        const copyDate = date[i]
         date[i] = date[index]
-        date[index] = temp
+        date[index] = copyDate
       }
     }
   }
 
-  let dateString = ''
-  date.forEach(element => {
-    dateString += element.value + delimeter
+  let stringDate = ''
+  date.forEach((element, index) => {
+    if (index === date.length - 1) {
+      stringDate += element.value
+    } else {
+      stringDate += element.value + separator
+    }
   })
-
-  dateString = dateString.substr(0, dateString.length - 1)
-  return dateString
+  return stringDate
 }
 
 module.exports = {
