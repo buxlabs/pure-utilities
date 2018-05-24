@@ -775,5 +775,22 @@ test('replace should replace string characters with newString', t => {
   t.deepEqual(parsed, 'foo bar qux ban')
 })
 
+test('index returns the index of the first occurence of the given substring', t => {
+  var parsed = string.index('hello', 'e')
+  t.deepEqual(parsed, 1)
+})
+
+test('index returns the index of the first occurence of the given substring', t => {
+  var parsed = string.index('hello', 'lo')
+  t.deepEqual(parsed, 3)
+})
+
+test('index returns the index of the first occurence of the given substring', t => {
+  var parsed = string.index('hello', 'x')
+  t.deepEqual(parsed, -1)
+})
+
+
+
 
 

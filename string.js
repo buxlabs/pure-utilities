@@ -244,6 +244,10 @@ function replace (string, pattern, newString) {
   return string.replace(pattern, newString)
 }
 
+function index (string, pattern, fromIndex = 0) {
+  return string.indexOf(pattern, fromIndex)
+}
+
 module.exports = {
   pad,
   trim,
@@ -273,5 +277,6 @@ module.exports = {
   summarize,
   wrap,
   unwrap,
-  replace
+  replace,
+  index
 }
