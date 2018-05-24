@@ -248,6 +248,12 @@ function index (string, pattern, fromIndex = 0) {
   return string.indexOf(pattern, fromIndex)
 }
 
+function chop (string) {
+  if (!string.length) return string
+  if (string.endsWith('\r\n')) return string.substr(0, string.length - 2)
+  return string.substr(0, string.length - 1)
+}
+
 module.exports = {
   pad,
   trim,
@@ -278,5 +284,6 @@ module.exports = {
   wrap,
   unwrap,
   replace,
-  index
+  index,
+  chop
 }

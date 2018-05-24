@@ -790,6 +790,34 @@ test('index returns the index of the first occurence of the given substring', t 
   t.deepEqual(parsed, -1)
 })
 
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('')
+  t.deepEqual(parsed, '')
+})
+
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('foo bar baz ban\r\n')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('foo bar baz ban\n\r')
+  t.deepEqual(parsed, 'foo bar baz ban\n')
+})
+
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('foo bar baz ban\n')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('foo bar baz bar')
+  t.deepEqual(parsed, 'foo bar baz ba')
+})
+
+
+
+
 
 
 
