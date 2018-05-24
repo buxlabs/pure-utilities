@@ -815,10 +815,52 @@ test('chop returns string with the last character removed', t => {
   t.deepEqual(parsed, 'foo bar baz ba')
 })
 
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar')
+  t.deepEqual(parsed, 'foo bar')
+})
 
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('')
+  t.deepEqual(parsed, '')
+})
 
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar', 'ar')
+  t.deepEqual(parsed, 'foo b')
+})
 
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar', 'qux')
+  t.deepEqual(parsed, 'foo bar')
+})
 
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\r\n')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
 
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\n\r')
+  t.deepEqual(parsed, 'foo bar baz ban\n')
+})
 
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\n\r')
+  t.deepEqual(parsed, 'foo bar baz ban\n')
+})
 
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\n')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\r')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo\r\n\r\r\n')
+  t.deepEqual(parsed, 'foo\r\n\r')
+})

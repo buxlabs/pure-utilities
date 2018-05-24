@@ -249,9 +249,21 @@ function index (string, pattern, fromIndex = 0) {
 }
 
 function chop (string) {
-  if (!string.length) return string
-  if (string.endsWith('\r\n')) return string.substr(0, string.length - 2)
-  return string.substr(0, string.length - 1)
+  if (!string) return string
+  const match = string.match(/(\r\n)+$/)
+  return match ? string.substr(0, match.index) : string.substr(0, string.length - 1)
+}
+
+function chomp (string, pattern) {
+  if (!string) return string
+  if (!pattern) {
+    const match = string.match(/(\r\n)+$/)
+    if (match) return string.substr(0, match.index)
+    if (string.endsWith('\n') || string.endsWith('\r')) return string.substr(0, string.length - 1)
+  }
+
+  const match = string.match(new RegExp(`${pattern}+$`), '')
+  return match ? string.substr(0, match.index) : string
 }
 
 module.exports = {
@@ -285,5 +297,6 @@ module.exports = {
   unwrap,
   replace,
   index,
-  chop
+  chop,
+  chomp
 }
