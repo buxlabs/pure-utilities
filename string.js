@@ -270,6 +270,12 @@ function dot (string) {
   return string.endsWith('.') ? string : string.concat('.')
 }
 
+function crop (string, length, append = '...') {
+  if (string.length < length) return string
+  string = string.substr(0, length + 1)
+  return string.substr(0, string.lastIndexOf(' ')) + append
+}
+
 module.exports = {
   pad,
   trim,
@@ -303,5 +309,6 @@ module.exports = {
   index,
   chop,
   chomp,
-  dot
+  dot,
+  crop
 }

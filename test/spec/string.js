@@ -879,3 +879,18 @@ test('dot returns string with "." at the end of the string', t => {
   var parsed = string.dot('foo bar.')
   t.deepEqual(parsed, 'foo bar.')
 })
+
+test('crop truncates string at full words', t => {
+  var parsed = string.crop('foo bar baz ban bar', 100)
+  t.deepEqual(parsed, 'foo bar baz ban bar')
+})
+
+test('crop truncates string at full words', t => {
+  var parsed = string.crop('foo bar baz ban bar', 10)
+  t.deepEqual(parsed, 'foo bar...')
+})
+
+test('crop truncates string at full words', t => {
+  var parsed = string.crop('consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut fermentum.', 70)
+  t.deepEqual(parsed, 'consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut...')
+})
