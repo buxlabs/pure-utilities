@@ -1,4 +1,4 @@
-function whitespaceless (string) {
+function whitespacestrip (string) {
   return string.replace(/\s/g, '')
 }
 
@@ -16,6 +16,10 @@ function trim (string) {
 function strip (string, pattern) {
   if (!pattern) return string.trim()
   if (!Array.isArray(pattern)) {
+    if (pattern.length === 1) {
+      const regExp = new RegExp(pattern, 'g')
+      return string.replace(regExp, '')
+    }
     const start = string.indexOf(pattern)
     const end = start + pattern.length
     return string.substr(0, start - 1) + '' + string.substr(end)
@@ -47,10 +51,6 @@ function underscore (string) {
     }
   }
   return string.toLowerCase()
-}
-
-function reverse (string) {
-  return [...string].reverse().join('')
 }
 
 function capitalize (string) {
@@ -210,6 +210,7 @@ function quote (string, lang = 'pl') {
 function unquote (string) {
   if (string.startsWith('"') && string.endsWith('"')) return string.substr(1, string.length - 2)
   if (string.startsWith('„') && string.endsWith('”')) return string.substr(1, string.length - 2)
+  return string
 }
 
 function squeeze (string, pattern = 'a-zA-Z') {
@@ -243,13 +244,44 @@ function replace (string, pattern, newString) {
   return string.replace(pattern, newString)
 }
 
+function index (string, pattern, fromIndex = 0) {
+  return string.indexOf(pattern, fromIndex)
+}
+
+function chop (string) {
+  if (!string) return string
+  const match = string.match(/(\r\n)+$/)
+  return match ? string.substr(0, match.index) : string.substr(0, string.length - 1)
+}
+
+function chomp (string, pattern) {
+  if (!string) return string
+  if (!pattern) {
+    const match = string.match(/(\r\n)+$/)
+    if (match) return string.substr(0, match.index)
+    if (string.endsWith('\n') || string.endsWith('\r')) return string.substr(0, string.length - 1)
+  }
+
+  const match = string.match(new RegExp(`${pattern}+$`), '')
+  return match ? string.substr(0, match.index) : string
+}
+
+function dot (string) {
+  return string.endsWith('.') ? string : string.concat('.')
+}
+
+function crop (string, length, append = '...') {
+  if (string.length < length) return string
+  string = string.substr(0, length + 1)
+  return string.substr(0, string.lastIndexOf(' ')) + append
+}
+
 module.exports = {
   pad,
   trim,
   strip,
   uppercase,
   underscore,
-  reverse,
   capitalize,
   unescape,
   lowerfirst,
@@ -266,12 +298,17 @@ module.exports = {
   truncate,
   repeat,
   singlespace,
-  whitespaceless,
+  whitespacestrip,
   quote,
   unquote,
   squeeze,
   summarize,
   wrap,
   unwrap,
-  replace
+  replace,
+  index,
+  chop,
+  chomp,
+  dot,
+  crop
 }

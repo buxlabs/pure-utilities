@@ -1,13 +1,13 @@
 import test from 'ava'
 import { string } from '../..'
 
-test('whitespaceless should remove whitespace characters', t => {
-  var parsed = string.whitespaceless('\t1234 5678\n')
+test('whitespacestrip should remove whitespace characters', t => {
+  var parsed = string.whitespacestrip('\t1234 5678\n')
   t.deepEqual(parsed, '12345678')
 })
 
-test('whitespaceless should remove whitespace characters', t => {
-  var parsed = string.whitespaceless('b  ar')
+test('whitespacestrip should remove whitespace characters', t => {
+  var parsed = string.whitespacestrip('b  ar')
   t.deepEqual(parsed, 'bar')
 })
 
@@ -214,16 +214,6 @@ test("underscore should convert string containing numbers to underscoreCase", t 
 test("underscore should convert string containing numbers to underscoreCase", t => {
   var parsed = string.underscore('00')
   t.deepEqual(parsed, '00')
-})
-
-test("reverse should reverse string", t => {
-  var parsed = string.reverse('foo')
-  t.deepEqual(parsed, 'oof')
-})
-
-test("reverse should reverse string", t => {
-  var parsed = string.reverse('12345')
-  t.deepEqual(parsed, '54321')
 })
 
 test("capitalize should capitalize first character of string", t => {
@@ -771,6 +761,11 @@ test('strip should remove from string passed string', t => {
 })
 
 test('strip should remove from string passed string', t => {
+  var parsed = string.strip('foo bar', 'o')
+  t.deepEqual(parsed, 'f bar')
+})
+
+test('strip should remove from string passed string', t => {
   var parsed = string.strip('foo bar baz ban', ['o', 'r', 'a'])
   t.deepEqual(parsed, 'f b bz bn')
 })
@@ -780,5 +775,122 @@ test('replace should replace string characters with newString', t => {
   t.deepEqual(parsed, 'foo bar qux ban')
 })
 
+test('index returns the index of the first occurence of the given substring', t => {
+  var parsed = string.index('hello', 'e')
+  t.deepEqual(parsed, 1)
+})
 
+test('index returns the index of the first occurence of the given substring', t => {
+  var parsed = string.index('hello', 'lo')
+  t.deepEqual(parsed, 3)
+})
 
+test('index returns the index of the first occurence of the given substring', t => {
+  var parsed = string.index('hello', 'x')
+  t.deepEqual(parsed, -1)
+})
+
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('')
+  t.deepEqual(parsed, '')
+})
+
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('foo bar baz ban\r\n')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('foo bar baz ban\n\r')
+  t.deepEqual(parsed, 'foo bar baz ban\n')
+})
+
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('foo bar baz ban\n')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test('chop returns string with the last character removed', t => {
+  var parsed = string.chop('foo bar baz bar')
+  t.deepEqual(parsed, 'foo bar baz ba')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar')
+  t.deepEqual(parsed, 'foo bar')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('')
+  t.deepEqual(parsed, '')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar', 'ar')
+  t.deepEqual(parsed, 'foo b')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar', 'qux')
+  t.deepEqual(parsed, 'foo bar')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\r\n')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\n\r')
+  t.deepEqual(parsed, 'foo bar baz ban\n')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\n\r')
+  t.deepEqual(parsed, 'foo bar baz ban\n')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\n')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo bar baz ban\r')
+  t.deepEqual(parsed, 'foo bar baz ban')
+})
+
+test('chomp returns string with the given record separator removed from the end of string', t => {
+  var parsed = string.chomp('foo\r\n\r\r\n')
+  t.deepEqual(parsed, 'foo\r\n\r')
+})
+
+test('dot returns string with "." at the end of the string', t => {
+  var parsed = string.dot('')
+  t.deepEqual(parsed, '.')
+})
+
+test('dot returns string with "." at the end of the string', t => {
+  var parsed = string.dot('foo bar')
+  t.deepEqual(parsed, 'foo bar.')
+})
+
+test('dot returns string with "." at the end of the string', t => {
+  var parsed = string.dot('foo bar.')
+  t.deepEqual(parsed, 'foo bar.')
+})
+
+test('crop truncates string at full words', t => {
+  var parsed = string.crop('foo bar baz ban bar', 100)
+  t.deepEqual(parsed, 'foo bar baz ban bar')
+})
+
+test('crop truncates string at full words', t => {
+  var parsed = string.crop('foo bar baz ban bar', 10)
+  t.deepEqual(parsed, 'foo bar...')
+})
+
+test('crop truncates string at full words', t => {
+  var parsed = string.crop('consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut fermentum.', 70)
+  t.deepEqual(parsed, 'consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut...')
+})

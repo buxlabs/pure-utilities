@@ -97,13 +97,6 @@ function sample (array) {
   return array[index]
 }
 
-function size (object) {
-  const type = Object.prototype.toString.call(object).substr(8).replace(']', '')
-  if (type === 'Array' || type === 'String' ) return object.length
-  if (type === 'Object') return Object.keys(object).length
-  if (type === 'Map' || type === 'Set') return object.size
-}
-
 module.exports = {
   identifier,
   first,
@@ -124,6 +117,5 @@ module.exports = {
   compact,
   unique,
   nth,
-  sample,
-  size
+  sample
 }
