@@ -891,6 +891,18 @@ test('crop truncates string at full words', t => {
 })
 
 test('crop truncates string at full words', t => {
-  var parsed = string.crop('consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut fermentum.', 70)
+  var parsed = string.crop('consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut fermentum', 70)
   t.deepEqual(parsed, 'consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut...')
 })
+
+test('hyphenate replaces spaces with hyphens, split camelCase text, remove non-word chars and convert to lower case', t => {
+  var parsed = string.hyphenate('%# lorem ipsum  ? $  dolor')
+  t.deepEqual(parsed, 'lorem-ipsum-dolor')
+})
+
+test('hyphenate replaces spaces with hyphens, split camelCase text, remove non-word chars and convert to lower case', t => {
+  var parsed = string.hyphenate('loremIpsum')
+  t.deepEqual(parsed, 'lorem-ipsum')
+})
+
+
