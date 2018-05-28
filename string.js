@@ -276,6 +276,17 @@ function crop (string, length, append = '...') {
   return string.substr(0, string.lastIndexOf(' ')) + append
 }
 
+function slugify (string, separator = '-') {
+  if (!string) return string
+
+  const nonWords = /[^\x20\x2D0-9A-Z\x5Fa-z\xC0-\xD6\xD8-\xF6\xF8-\xFF]/g
+  string = string.replace(nonWords, '')
+  string = string.trim()
+  string = string.replace(/\s+/g, separator)
+
+  return string.toLowerCase()
+}
+
 function hyphenate (string) {
   if (!string) return string
 
@@ -295,9 +306,6 @@ function hyphenate (string) {
   }
 
   return string.toLowerCase()
-}
-
-function slugify (string) {
 }
 
 module.exports = {

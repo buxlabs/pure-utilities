@@ -905,4 +905,12 @@ test('hyphenate replaces spaces with hyphens, split camelCase text, remove non-w
   t.deepEqual(parsed, 'lorem-ipsum')
 })
 
+test('slugify convert to lower case, remove non-word chars and replace spaces with the delimeter', t => {
+  var parsed = string.slugify('loremIpsum dolor special chars')
+  t.deepEqual(parsed, 'loremipsum-dolor-special-chars')
+})
 
+test('slugify convert to lower case, remove non-word chars and replace spaces with the delimeter', t => {
+  var parsed = string.slugify('loremIpsum dolor special chars', '_')
+  t.deepEqual(parsed, 'loremipsum_dolor_special_chars')
+})
