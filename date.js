@@ -16,17 +16,16 @@ function format (date, format) {
     ['Sep', '09'],
     ['Oct', '10'],
     ['Nov', '11'],
-    ['Dev', '12']
+    ['Dec', '12']
   ])
 
   if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
-  if (!+date) return date.toDateString()
+  if (!Number(date)) return 'Invalid Date'
 
-  const values = date.toDateString().substr(4).split(' ')
   date = [
-    { period: 'YYYY', value: values[2] },
-    { period: 'MM', value: months.get(values[0]) },
-    { period: 'DD', value: values[1] }
+    { period: 'YYYY', value: date.getFullYear() },
+    { period: 'MM', value: months.get(date.toDateString().substr(4, 3)) },
+    { period: 'DD', value: date.getDate() }
   ]
 
   if (!format) return date[2].value + '-' + date[1].value + '-' + date[0].value
@@ -34,7 +33,7 @@ function format (date, format) {
 
   if (!separator) {
    const part = date.find(date => date.period === format)
-   return part ? part.value : 'Invalid Format'
+   return part ? part.value.toString() : 'Invalid Format'
   }
 
   format = format.split(separator)
@@ -63,7 +62,35 @@ function format (date, format) {
   return stringDate
 }
 
+function day (date) {
+  if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
+  if (!Number(date)) return date.toDateString()
+  return date.getDate()
+}
+
+function weekday (date) {
+  if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
+  if (!Number(date)) return date.toDateString()
+  return date.getDay()
+}
+
+function month (date) {
+  if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
+  if (!Number(date)) return date.toDateString()
+  return date.getMonth()
+}
+
+function year (date) {
+  if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
+  if (!Number(date)) return date.toDateString()
+  return date.getFullYear()
+}
+
 module.exports = {
   isostring,
-  format
+  format,
+  day,
+  weekday,
+  month,
+  year
 }
