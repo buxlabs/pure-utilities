@@ -145,11 +145,21 @@ function pat (object, string, value) {
   return reference
 }
 
+function values (object) {
+  return Object.values(object)
+}
+
+function keys (object) {
+  return Object.keys(object)
+}
+
 module.exports = {
   extend,
   flatten,
   unflatten,
   rename,
   dig,
-  pat
+  pat,
+  values,
+  keys
 }

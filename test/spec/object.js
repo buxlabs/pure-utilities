@@ -289,3 +289,23 @@ test('pat overrides a value of a field', t => {
 test('pat overrides deeply nested fields', t => {
   t.deepEqual(object.pat({}, 'baz.bar', 'foo'), { baz: { bar: 'foo' }})
 })
+
+test(`values returns an array containing the values that correspond to all of a given object's own enumerable string properties`, t => {
+  const parsed = object.values({ foo: 'bar', baz: [1, 2, 3] })
+  t.deepEqual(parsed.length, 2)
+})
+
+test(`values returns an array containing the values that correspond to all of a given object's own enumerable string properties`, t => {
+  const parsed = object.values({})
+  t.deepEqual(parsed.length, 0)
+})
+
+test(`keys returns an array containing the names of all of the given object's own enumerable string properties`, t => {
+  const parsed = object.keys({ foo: 'bar', baz: [1, 2, 3] })
+  t.deepEqual(parsed.length, 2)
+})
+
+test(`keys returns an array containing the names of all of the given object's own enumerable string properties`, t => {
+  const parsed = object.keys({})
+  t.deepEqual(parsed.length, 0)
+})
