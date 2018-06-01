@@ -223,7 +223,7 @@ test('monetize formats a number to currency format', t => {
 })
 
 test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(100.50, { symbol: '€', decimalSeparator: '.' })
+  const parsed = math.monetize(100.50, { symbol: '€', separator: '.' })
   t.deepEqual(parsed, '100.50 €')
 })
 
@@ -250,30 +250,30 @@ test('monetize formats a number to currency format', t => {
 test('monetize formats a number to currency format', t => {
   const parsed = math.monetize(100, {
     symbol: '$',
-    spaceBetweenAmountAndSymbol: false,
-    symbolAfterNumber: false,
-    decimalSeparator: '.'
+    space: false,
+    ending: false,
+    separator: '.'
   })
   t.deepEqual(parsed, '$100.00')
 })
 
 test('monetize formats a number to currency format', t => {
   const parsed = math.monetize(100.50, {
-    decimalDigits: 1,
+    digits: 1,
     symbol: '€',
-    decimalSeparator: '.',
-    spaceBetweenAmountAndSymbol: false
+    separator: '.',
+    space: false
   })
   t.deepEqual(parsed, '100.5€')
 })
 
 test('monetize formats a number to currency format', t => {
   const parsed = math.monetize(100.50, {
-    decimalDigits: 1,
+    digits: 1,
     symbol: '€',
-    decimalSeparator: '.',
-    spaceBetweenAmountAndSymbol: true,
-    symbolAfterNumber: false
+    separator: '.',
+    space: true,
+    ending: false
   })
   t.deepEqual(parsed, '€ 100.5')
 })

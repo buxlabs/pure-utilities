@@ -156,35 +156,34 @@ function percentage(number) {
   return number * 100 + '%'
 }
 
-function fixed(number1, number2 = 0) {
-  return number1.toFixed(number2)
+function fixed(number1, digits = 0) {
+  return number1.toFixed(digits)
 }
 
 function monetize(number, {
-    decimalDigits = 2,
-    decimalSeparator = ',',
+    digits = 2,
+    separator = ',',
     symbol = 'zł',
-    symbolAfterNumber = true,
-    spaceBetweenAmountAndSymbol = true,
-    groupingCharacter = ' ',
-    groupSize = 3
+    ending = true,
+    space = true,
+    hyphen = ' ',
+    size = 3
   } = {} ) {
-  let stringNumber = number.toFixed(decimalDigits)
-  let integerPart = stringNumber.substr(0, stringNumber.lastIndexOf('.'))
-  let decimalPart = stringNumber.substr(stringNumber.lastIndexOf('.')).replace('.', decimalSeparator)
-  let space = spaceBetweenAmountAndSymbol ? ' ' : ''
+  let fixed = number.toFixed(digits)
+  let integer = fixed.substr(0, fixed.lastIndexOf('.'))
+  let decimal = fixed.substr(fixed.lastIndexOf('.')).replace('.', separator)
+  space = space ? ' ' : ''
 
-  if (integerPart.length > groupSize) {
-    integerPart = integerPart.split('')
-    for (let i = integerPart.length - groupSize - 1; i >= 0; i -= groupSize) {
-      integerPart.splice(i + 1, 0, groupingCharacter)
+  if (integer.length > size) {
+    integer = integer.split('')
+    for (let i = integer.length - size - 1; i >= 0; i -= size) {
+      integer.splice(i + 1, 0, hyphen)
     }
-    integerPart = integerPart.join('').trim()
+    integer = integer.join('').trim()
   }
 
-  stringNumber = integerPart + decimalPart
-  stringNumber = symbolAfterNumber ? stringNumber + space + symbol : symbol + space + stringNumber
-  return stringNumber
+  fixed = integer + decimal
+  return ending ? fixed + space + symbol : symbol + space + fixed
 }
 
 module.exports = {
