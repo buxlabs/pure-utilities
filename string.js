@@ -184,9 +184,16 @@ function constantize (string) {
   return string.toUpperCase()
 }
 
-function truncate (string, length = 30) {
+function truncate (string, length = 30, ending = '...') {
   if (string.length > length) {
-    return string.substr(0, length - 3).concat('...')
+    return string.substr(0, length - ending.length).concat(ending)
+  }
+  return string
+}
+
+function tail (string, length = 30, ending = '...') {
+  if (string.length > length) {
+    return ending + string.substr(string.length - length + ending.length)
   }
   return string
 }
@@ -308,6 +315,22 @@ function hyphenate (string) {
   return string.toLowerCase()
 }
 
+function initials (string, separator = '') {
+  if (!Array.isArray(string)) {
+    string = string.replace('-', ' ')
+    return string.split(' ').map(name => name[0].toUpperCase()).join(separator)
+  }
+  return string.map(element => {
+    element = element.replace('-', ' ')
+    return element.split(' ').map(name => name[0].toUpperCase()).join(separator)
+  })
+}
+
+function htmlstrip (string) {
+  string = string.replace(/'|:|\/|\./g, '')
+  return string = string.replace(/(<[a-z]+((\s?)(([a-z]-?)+="(\/?[a-z]*\s?)+(|\s?)")?)+>)|<\/[a-z]*>/g, '')
+}
+
 module.exports = {
   pad,
   trim,
@@ -344,5 +367,8 @@ module.exports = {
   dot,
   crop,
   hyphenate,
-  slugify
+  slugify,
+  initials,
+  htmlstrip,
+  tail
 }

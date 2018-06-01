@@ -152,6 +152,40 @@ function clamp(number, min, max) {
   return number
 }
 
+function percentage(number) {
+  return number * 100 + '%'
+}
+
+function fixed(number1, digits = 0) {
+  return number1.toFixed(digits)
+}
+
+function monetize(number, {
+    digits = 2,
+    separator = ',',
+    symbol = 'zł',
+    ending = true,
+    space = true,
+    hyphen = ' ',
+    size = 3
+  } = {} ) {
+  let fixed = number.toFixed(digits)
+  let integer = fixed.substr(0, fixed.lastIndexOf('.'))
+  let decimal = fixed.substr(fixed.lastIndexOf('.')).replace('.', separator)
+  space = space ? ' ' : ''
+
+  if (integer.length > size) {
+    integer = integer.split('')
+    for (let i = integer.length - size - 1; i >= 0; i -= size) {
+      integer.splice(i + 1, 0, hyphen)
+    }
+    integer = integer.join('').trim()
+  }
+
+  fixed = integer + decimal
+  return ending ? fixed + space + symbol : symbol + space + fixed
+}
+
 module.exports = {
   abs,
   acos,
@@ -190,5 +224,8 @@ module.exports = {
   decrement,
   int,
   float,
-  clamp
+  clamp,
+  percentage,
+  fixed,
+  monetize
 }

@@ -200,3 +200,80 @@ test('clamp clamps value inside range', t => {
 test('clamp clamps value inside range', t => {
   t.deepEqual(math.clamp(31, 20, 30), 30)
 })
+
+test('percentage converts number to percent format', t => {
+  t.deepEqual(math.percentage(0.25), '25%')
+})
+
+test('percentage converts number to percent format', t => {
+  t.deepEqual(math.percentage(1), '100%')
+})
+
+test('fixed formats a number using fixed-point notation', t => {
+  t.deepEqual(math.fixed(25.32), '25')
+})
+
+test('fixed formats a number using fixed-point notation', t => {
+  t.deepEqual(math.fixed(25.32, 1), '25.3')
+})
+
+test('monetize formats a number to currency format', t => {
+  const parsed = math.monetize(100)
+  t.deepEqual(parsed, '100,00 zł')
+})
+
+test('monetize formats a number to currency format', t => {
+  const parsed = math.monetize(100.50, { symbol: '€', separator: '.' })
+  t.deepEqual(parsed, '100.50 €')
+})
+
+test('monetize formats a number to currency format', t => {
+  const parsed = math.monetize(1000)
+  t.deepEqual(parsed, '1 000,00 zł')
+})
+
+test('monetize formats a number to currency format', t => {
+  const parsed = math.monetize(1000000)
+  t.deepEqual(parsed, '1 000 000,00 zł')
+})
+
+test('monetize formats a number to currency format', t => {
+  const parsed = math.monetize(531722.07)
+  t.deepEqual(parsed, '531 722,07 zł')
+})
+
+test('monetize formats a number to currency format', t => {
+  const parsed = math.monetize(100230.1)
+  t.deepEqual(parsed, '100 230,10 zł')
+})
+
+test('monetize formats a number to currency format', t => {
+  const parsed = math.monetize(100, {
+    symbol: '$',
+    space: false,
+    ending: false,
+    separator: '.'
+  })
+  t.deepEqual(parsed, '$100.00')
+})
+
+test('monetize formats a number to currency format', t => {
+  const parsed = math.monetize(100.50, {
+    digits: 1,
+    symbol: '€',
+    separator: '.',
+    space: false
+  })
+  t.deepEqual(parsed, '100.5€')
+})
+
+test('monetize formats a number to currency format', t => {
+  const parsed = math.monetize(100.50, {
+    digits: 1,
+    symbol: '€',
+    separator: '.',
+    space: true,
+    ending: false
+  })
+  t.deepEqual(parsed, '€ 100.5')
+})

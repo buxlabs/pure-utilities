@@ -621,6 +621,11 @@ test("truncate should truncate the string if it's longer than the given maximum 
   t.deepEqual(parsed, 'Once upon a ti...')
 })
 
+test('tail removes an initial substring with length consisting of the difference and prepends a prefix', t => {
+  var parsed = string.tail('Once upon a time in a world far far away', 15)
+  t.deepEqual(parsed, '...far far away')
+})
+
 test("lowerfirst should lowercase first character of string", t => {
   var parsed = string.lowerfirst('Foo')
   t.deepEqual(parsed, 'foo')
@@ -913,4 +918,59 @@ test('slugify convert to lower case, remove non-word chars and replace spaces wi
 test('slugify convert to lower case, remove non-word chars and replace spaces with the delimeter', t => {
   var parsed = string.slugify('loremIpsum dolor special chars', '_')
   t.deepEqual(parsed, 'loremipsum_dolor_special_chars')
+})
+
+test('initials converts string to initials', t => {
+  var parsed = string.initials('Foo Bar')
+  t.deepEqual(parsed, 'FB')
+})
+
+test('initials converts string to initials', t => {
+  var parsed = string.initials('Foo Bar', ('.'))
+  t.deepEqual(parsed, 'F.B')
+})
+
+test('initials converts string to initials', t => {
+  var parsed = string.initials('Foo Barin-Bar', ('.'))
+  t.deepEqual(parsed, 'F.B.B')
+})
+
+test('initials converts string to initials', t => {
+  var parsed = string.initials(['foo bar', 'ban bar'], '.')
+  t.deepEqual(parsed, ['F.B', 'B.B'])
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<div>foo</div>')
+  t.deepEqual(parsed, 'foo')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<div><div>foo</div></div>')
+  t.deepEqual(parsed, 'foo')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<div>foo<div>foo</div></div>')
+  t.deepEqual(parsed, 'foofoo')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('Hello <b><i>world!</i></b>')
+  t.deepEqual(parsed, 'Hello world!')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<a href="">lorem <strong>ipsum</strong></a>')
+  t.deepEqual(parsed, 'lorem ipsum')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<article attr="foo \'bar\'">lorem</article> ipsum')
+  t.deepEqual(parsed, 'lorem ipsum')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<a href="https://example.com">lorem ipsum</a>')
+  t.deepEqual(parsed, 'lorem ipsum')
 })
