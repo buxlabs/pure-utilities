@@ -914,3 +914,23 @@ test('slugify convert to lower case, remove non-word chars and replace spaces wi
   var parsed = string.slugify('loremIpsum dolor special chars', '_')
   t.deepEqual(parsed, 'loremipsum_dolor_special_chars')
 })
+
+test('initials converts string to initials', t => {
+  var parsed = string.initials('Foo Bar')
+  t.deepEqual(parsed, 'FB')
+})
+
+test('initials converts string to initials', t => {
+  var parsed = string.initials('Foo Bar', ('.'))
+  t.deepEqual(parsed, 'F.B')
+})
+
+test('initials converts string to initials', t => {
+  var parsed = string.initials('Foo Barin-Bar', ('.'))
+  t.deepEqual(parsed, 'F.B.B')
+})
+
+test('initials converts string to initials', t => {
+  var parsed = string.initials(['foo bar', 'ban bar'], '.')
+  t.deepEqual(parsed, ['F.B', 'B.B'])
+})
