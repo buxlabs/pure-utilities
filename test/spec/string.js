@@ -621,6 +621,11 @@ test("truncate should truncate the string if it's longer than the given maximum 
   t.deepEqual(parsed, 'Once upon a ti...')
 })
 
+test('tail removes an initial substring with length consisting of the difference and prepends a prefix', t => {
+  var parsed = string.tail('Once upon a time in a world far far away', 15)
+  t.deepEqual(parsed, '...far far away')
+})
+
 test("lowerfirst should lowercase first character of string", t => {
   var parsed = string.lowerfirst('Foo')
   t.deepEqual(parsed, 'foo')

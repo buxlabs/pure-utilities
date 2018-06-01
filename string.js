@@ -184,9 +184,16 @@ function constantize (string) {
   return string.toUpperCase()
 }
 
-function truncate (string, length = 30) {
+function truncate (string, length = 30, ending = '...') {
   if (string.length > length) {
-    return string.substr(0, length - 3).concat('...')
+    return string.substr(0, length - ending.length).concat(ending)
+  }
+  return string
+}
+
+function tail (string, length = 30, ending = '...') {
+  if (string.length > length) {
+    return ending + string.substr(string.length - length + ending.length)
   }
   return string
 }
@@ -362,5 +369,6 @@ module.exports = {
   hyphenate,
   slugify,
   initials,
-  htmlstrip
+  htmlstrip,
+  tail
 }
