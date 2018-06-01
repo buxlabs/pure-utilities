@@ -934,3 +934,38 @@ test('initials converts string to initials', t => {
   var parsed = string.initials(['foo bar', 'ban bar'], '.')
   t.deepEqual(parsed, ['F.B', 'B.B'])
 })
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<div>foo</div>')
+  t.deepEqual(parsed, 'foo')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<div><div>foo</div></div>')
+  t.deepEqual(parsed, 'foo')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<div>foo<div>foo</div></div>')
+  t.deepEqual(parsed, 'foofoo')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('Hello <b><i>world!</i></b>')
+  t.deepEqual(parsed, 'Hello world!')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<a href="">lorem <strong>ipsum</strong></a>')
+  t.deepEqual(parsed, 'lorem ipsum')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<article attr="foo \'bar\'">lorem</article> ipsum')
+  t.deepEqual(parsed, 'lorem ipsum')
+})
+
+test('htmlstrip returns text content of html tags', t => {
+  var parsed = string.htmlstrip('<a href="https://example.com">lorem ipsum</a>')
+  t.deepEqual(parsed, 'lorem ipsum')
+})

@@ -319,6 +319,11 @@ function initials (string, separator = '') {
   })
 }
 
+function htmlstrip (string) {
+  string = string.replace(/'|:|\/|\./g, '')
+  return string = string.replace(/(<[a-z]+((\s?)(([a-z]-?)+="(\/?[a-z]*\s?)+(|\s?)")?)+>)|<\/[a-z]*>/g, '')
+}
+
 module.exports = {
   pad,
   trim,
@@ -356,5 +361,6 @@ module.exports = {
   crop,
   hyphenate,
   slugify,
-  initials
+  initials,
+  htmlstrip
 }
