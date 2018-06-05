@@ -974,3 +974,8 @@ test('htmlstrip returns text content of html tags', t => {
   var parsed = string.htmlstrip('<a href="https://example.com">lorem ipsum</a>')
   t.deepEqual(parsed, 'lorem ipsum')
 })
+
+test('split should return an array', t => {
+  var result = string.split('foo,bar,bazz', ',')
+  t.deepEqual(result ['foo', 'bar', 'bazz'])
+})

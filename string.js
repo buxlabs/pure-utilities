@@ -331,6 +331,10 @@ function htmlstrip (string) {
   return string = string.replace(/(<[a-z]+((\s?)(([a-z]-?)+="(\/?[a-z]*\s?)+(|\s?)")?)+>)|<\/[a-z]*>/g, '')
 }
 
+function split (string, separator) {
+  return string.split(separator)
+}
+
 module.exports = {
   pad,
   trim,
@@ -370,5 +374,6 @@ module.exports = {
   slugify,
   initials,
   htmlstrip,
-  tail
+  tail,
+  split
 }
