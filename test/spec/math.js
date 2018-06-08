@@ -288,3 +288,42 @@ test('cube returns the third power of the number', t => {
   t.deepEqual(parsed, -64)
 })
 
+test('feet converts feest to inches', t => {
+  const parsed = math.inches(1)
+  t.deepEqual(parsed, 12)
+})
+
+test('feet converts feets to inches', t => {
+  const parsed = math.inches(0.01)
+  t.deepEqual(parsed, 0.12)
+})
+
+test('feet converts feets to inches', t => {
+  const parsed = math.inches(0.01, 2, false)
+  t.deepEqual(parsed, '0.12"')
+})
+
+test('inches converts inches to feets', t => {
+  const parsed = math.feet(1)
+  t.deepEqual(parsed, 0.08)
+})
+
+test('inches converts inches to feets', t => {
+  const parsed = math.feet(1, 5)
+  t.deepEqual(parsed,  0.08333)
+})
+
+test('inches converts inches to feets', t => {
+  const parsed = math.feet(60)
+  t.deepEqual(parsed, 5)
+})
+
+test('inches converts inches to feets', t => {
+  const parsed = math.feet(13.25)
+  t.deepEqual(parsed, 1.10)
+})
+
+test('inches converts inches to feets', t => {
+  const parsed = math.feet(13.25, 2, false)
+  t.deepEqual(parsed, "1.1'")
+})

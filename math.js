@@ -190,6 +190,16 @@ function cube(number) {
   return (number) ** 3
 }
 
+function feet(number, precision = 2, decimal = true) {
+  const result = Number(((number) * (1/12)).toFixed(precision))
+  return  decimal ? result : `${result}'`
+}
+
+function inches(number, precision = 2, decimal = true) {
+  const result = Number((number * 12).toFixed(precision))
+  return  decimal ? result : `${result}"`
+}
+
 module.exports = {
   abs,
   acos,
@@ -232,5 +242,7 @@ module.exports = {
   percentage,
   fixed,
   monetize,
-  cube
+  cube,
+  feet,
+  inches
 }
