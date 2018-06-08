@@ -186,6 +186,10 @@ function monetize(number, {
   return ending ? fixed + space + symbol : symbol + space + fixed
 }
 
+function cube(number) {
+  return (number) ** 3
+}
+
 module.exports = {
   abs,
   acos,
@@ -227,5 +231,6 @@ module.exports = {
   clamp,
   percentage,
   fixed,
-  monetize
+  monetize,
+  cube
 }

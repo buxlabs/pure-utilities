@@ -277,3 +277,14 @@ test('monetize formats a number to currency format', t => {
   })
   t.deepEqual(parsed, '€ 100.5')
 })
+
+test('cube returns the third power of the number', t => {
+  const parsed = math.cube(5)
+  t.deepEqual(parsed, 125)
+})
+
+test('cube returns the third power of the number', t => {
+  const parsed = math.cube(-4)
+  t.deepEqual(parsed, -64)
+})
+
