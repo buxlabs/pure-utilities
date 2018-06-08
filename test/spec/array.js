@@ -110,3 +110,35 @@ test('nth gets element at index "n" of array', assert => {
 test('sample returns a random item from array', assert => {
   assert.deepEqual(array.sample([1]), 1)
 })
+
+test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
+  assert.deepEqual(array.rotate([1, 2, 3]), [1, 2, 3])
+})
+
+test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
+  assert.deepEqual(array.rotate([1, 2, 3], 1), [2, 3, 1])
+})
+
+test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
+  assert.deepEqual(array.rotate([1, 2, 3], 2), [3, 1, 2])
+})
+
+test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
+  assert.deepEqual(array.rotate([1, 2, 3], 3), [1, 2, 3])
+})
+
+test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
+  assert.deepEqual(array.rotate([1, 2, 3], 4), [2, 3, 1])
+})
+
+test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
+  assert.deepEqual(array.rotate([1, 2, 3], -1), [3, 1, 2])
+})
+
+test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
+  assert.deepEqual(array.rotate(['lorem', 'ipsum', 'dolor', 'santo'], -2), ['dolor', 'santo', 'lorem', 'ipsum'])
+})
+
+test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
+  assert.deepEqual(array.rotate([1, 2, 3], -3), [1, 2, 3])
+})
