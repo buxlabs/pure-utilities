@@ -327,3 +327,23 @@ test('inches converts inches to feets', t => {
   const parsed = math.feet(13.25, 2, false)
   t.deepEqual(parsed, "1.1'")
 })
+
+test('degrees converts radians to degrees', t => {
+  const parsed = math.degrees(1)
+  t.deepEqual(parsed, 57.3)
+})
+
+test('degrees converts radians to degrees', t => {
+  const parsed = math.degrees(5)
+  t.deepEqual(parsed, 286.48)
+})
+
+test('radians converts degrees to radians', t => {
+  const parsed = math.radians(12)
+  t.deepEqual(parsed, 0.21)
+})
+
+test('radians converts degrees to radians', t => {
+  const parsed = math.radians(-1, 10)
+  t.deepEqual(parsed, -0.0174532925)
+})

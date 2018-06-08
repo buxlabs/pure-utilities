@@ -106,6 +106,14 @@ function square(number) {
   return number * number
 }
 
+function radians (number, precision = 2) {
+  return Number(((number * Math.PI) / 180 ).toFixed(precision))
+}
+
+function degrees (number, precision = 2) {
+  return Number(((180 / Math.PI) * number).toFixed(precision))
+}
+
 function factorial(number) {
   return number < 2 ? 1 : number * factorial(number - 1)
 }
@@ -244,5 +252,7 @@ module.exports = {
   monetize,
   cube,
   feet,
-  inches
+  inches,
+  radians,
+  degrees
 }
