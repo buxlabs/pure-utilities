@@ -16,11 +16,49 @@ const documentation = {
           When pattern is an array or pattern is one character string then removes globally from the string single character.
           When pattern has not been passed, trims the string.`,
 
-  uppercase: `Takse one argument: string
+  uppercase: `Takes one argument: string
               Converts string to 'UPPERCASE'.`,
+
+  underscore: `Takes one argument: string
+               Returns new string with words separated by "_". All letters are lowercase.`,
+
+  capitalize: `Takes one argument: string
+               Converts first letter of the string to 'UPPERCASE'.`,
+
+  unescape: `Takes one argument: string
+             Converts the HTML entities in string to their corresponding characters.`,
+
+  lowerfirst: `Takes one argument: string
+               Converts first letter of the string to 'lowercase'.`,
 
   lowercase: `Takes one argument: string
               Converts string to 'lowercase'.`,
+
+  humanize: `Takes two arguments: string, capitalize
+             Replaces '_' with singlespaces
+             When capitalize is truthy, converts first char of the string to 'UPPERCASE'.
+             By default capitalize is truthy.`,
+
+  titleize: `Takes one argument: string
+             Converts to 'UPPERCASE' first letter of each word in string(separated by singlespace).`,
+
+  dasherize: `Takes one argument: string
+             Replaces globally in the string "_" to "-".`,
+
+  classify: `Takes one argument: string
+             Creates a class name from the string.`,
+
+  pluralize: `Takes one argument: string
+              Returns plural form of the string.`,
+
+  singularize: `Takes two arguments: string, appendix
+                Returns singular form of the string.
+                By default appendix is empty string.`,
+
+  camelize: `Takes two arguments: string, camelcased
+             Converts string to "lowerCase" or "UpperCase" notation.
+             When camelcased is falsy returns string in "lowerCase" notation otherwise in "UpperCase" notation.
+             By default camelcased is falsy.`,
 
   swapcase: `Takes one argument: string
              Replaces in string lower case letters to uppercase and uppercase letters to lowercase.`,
