@@ -2,10 +2,14 @@ function whitespacestrip (string) {
   return string.replace(/\s/g, '')
 }
 
-function pad (value, pad) {
+function pad (value, pad, left = true) {
   if (!pad) { return value }
+  if (Object.is(pad, Number(pad))) {
+    pad = ' '.repeat(pad)
+  }
   return String(value).split(/\r\n|\n/).map(line => {
-    return line ? pad + line : line
+    if (!line) return line
+    return left ? pad + line : line + pad
   }).join('\n')
 }
 
@@ -210,7 +214,7 @@ function singlespace (string) {
   return string.replace(/\s\s+/g, ' ')
 }
 
-function quote (string, lang = 'pl') {
+function quote (string, lang = 'en') {
   return lang === 'en' ? `"${string}"` : `„${string}”`
 }
 
