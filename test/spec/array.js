@@ -155,3 +155,10 @@ test('drop returns the tail of array after dropping the first `n` elements.', as
   assert.deepEqual(array.drop('Hello World', 6), 'World')
 })
 
+test('head returns first element of an array', assert => {
+  assert.deepEqual(array.head([1, 2, 3, 4, 5, 6]), 1)
+})
+
+test('head returns first element of an array', assert => {
+  assert.deepEqual(array.head('Hello World'), 'H')
+})
