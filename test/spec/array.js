@@ -142,3 +142,16 @@ test('rotate shifts "n" items out of the array and pushes them back on the end',
 test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
   assert.deepEqual(array.rotate([1, 2, 3], -3), [1, 2, 3])
 })
+
+test('drop returns the tail of array after dropping the first `n` elements.', assert => {
+  assert.deepEqual(array.drop([1, 2, 3], 2), [3])
+})
+
+test('drop returns the tail of array after dropping the first `n` elements.', assert => {
+  assert.deepEqual(array.drop([1, 2, 3, 4, 5, 6], 3), [4, 5, 6])
+})
+
+test('drop returns the tail of array after dropping the first `n` elements.', assert => {
+  assert.deepEqual(array.drop('Hello World', 6), 'World')
+})
+

@@ -116,6 +116,10 @@ function rotate (array, digit) {
  return array
 }
 
+function drop (array, digit) {
+  return array.slice(digit)
+}
+
 module.exports = {
   identifier,
   first,
@@ -137,5 +141,6 @@ module.exports = {
   unique,
   nth,
   sample,
-  rotate
+  rotate,
+  drop
 }
