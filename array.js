@@ -128,6 +128,10 @@ function take (array, digit) {
   return array.slice(0, digit)
 }
 
+function slice (array, start, end) {
+  return array.slice(start, end)
+}
+
 module.exports = {
   identifier,
   first,
@@ -152,5 +156,6 @@ module.exports = {
   rotate,
   drop,
   head,
-  take
+  take,
+  slice
 }

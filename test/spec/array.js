@@ -170,3 +170,11 @@ test('take takes n items of an array.', assert => {
 test('take takes n items of an array.', assert => {
   assert.deepEqual(array.take('Hello World', 5), 'Hello')
 })
+
+test('slice returns a shallow copy of a portion of an array into a new array object selected from start to end', assert => {
+  assert.deepEqual(array.slice([1, 2, 3, 4, 5, 6], 3, 5), [4, 5])
+})
+
+test('slice returns a shallow copy of a portion of an array into a new array object selected from start to end', assert => {
+  assert.deepEqual(array.slice('Hello World', 6, 9), 'Wor')
+})
