@@ -60,6 +60,17 @@ const documentation = {
              When camelcased is falsy returns string in "lowerCase" notation otherwise in "UpperCase" notation.
              By default camelcased is falsy.`,
 
+  constantize: `Takes one argument: string
+                Converts string to "CONSTANT_NOTATION".`,
+
+  truncate: `Takes three arguments: string, length, ending
+             Truncates a given string if is longer than passed length and replaces last chars of new string with passed ending.
+             When the string length is smaller than passed length returns string.
+             By default length is equal 30
+             By default ending is equal '...'`,
+
+  tails: `Takes three arguments: string, length, ending`,
+
   swapcase: `Takes one argument: string
              Replaces in string lower case letters to uppercase and uppercase letters to lowercase.`,
 
@@ -83,8 +94,7 @@ const documentation = {
 
   split: `Takes two arguments: string, separator
           Splits the string into an arrary of strings.
-          When separator has not been passed returns an array containing string.
-         `
+          When separator has not been passed returns an array containing string.`
 }
 
 for (let name in utilities) {
