@@ -124,6 +124,10 @@ function head (array) {
   return array[0]
 }
 
+function take (array, digit) {
+  return array.slice(0, digit)
+}
+
 module.exports = {
   identifier,
   first,
@@ -147,5 +151,6 @@ module.exports = {
   sample,
   rotate,
   drop,
-  head
+  head,
+  take
 }

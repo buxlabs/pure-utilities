@@ -162,3 +162,11 @@ test('head returns first element of an array', assert => {
 test('head returns first element of an array', assert => {
   assert.deepEqual(array.head('Hello World'), 'H')
 })
+
+test('take takes n items of an array.', assert => {
+  assert.deepEqual(array.take([1, 2, 3, 4, 5, 6], 2), [1, 2])
+})
+
+test('take takes n items of an array.', assert => {
+  assert.deepEqual(array.take('Hello World', 5), 'Hello')
+})
