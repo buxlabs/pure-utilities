@@ -92,6 +92,20 @@ const documentation = {
   unquote: `Takes one argument: string
             If string is between quotations characters ("", „”), removes them and returns string, otherwise returns tne string.`,
 
+  squeeze: `Takes two arguments: string, pattern
+            Replaces in string multiple repetitions of the same characters to the one character.
+            pattern is a string based on which the regular expression is created. By default is equal a-zA-Z`,
+
+  wrap:   `Takes three arguments: string, firstCharacter, lastCharacter
+           Wraps string between firstCharacter and lastCharacter.
+           When firstCharacter has been no passed to the funciton returns string.
+           When only firstCharacter has been passed without lastCharacter. Wraps string between firstCharacter.`,
+
+  unwrap: `Takes three arguments: string, firstCharacter, lastCharacter
+           Removes from string firstCharacter and lastCharacter if they exist in string.
+           When firstCharacter has been no passed to the funciton returns string.
+           When only firstCharacter has been passed without lastCharacter. Removes from start and the end of the string the firstCharacter.`,
+
   split: `Takes two arguments: string, separator
           Splits the string into an arrary of strings.
           When separator has not been passed returns an array containing string.`
