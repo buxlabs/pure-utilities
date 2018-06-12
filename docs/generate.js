@@ -66,8 +66,8 @@ const documentation = {
   truncate: `Takes three arguments: string, length, ending
              Truncates a given string if is longer than passed length and replaces last chars of new string with passed ending.
              When the string length is smaller than passed length returns string.
-             By default length is equal 30
-             By default ending is equal '...'`,
+             By default length equals 30
+             By default ending equals '...'`,
 
   tails: `Takes three arguments: string, length, ending`,
 
@@ -94,21 +94,44 @@ const documentation = {
 
   squeeze: `Takes two arguments: string, pattern
             Replaces in string multiple repetitions of the same characters to the one character.
-            pattern is a string based on which the regular expression is created. By default is equal a-zA-Z`,
+            pattern is a string based on which the regular expression is created. By default equals a-zA-Z`,
 
   wrap:   `Takes three arguments: string, firstCharacter, lastCharacter
            Wraps string between firstCharacter and lastCharacter.
-           When firstCharacter has been no passed to the funciton returns string.
+           When firstCharacter has been not passed to the funciton, returns string.
            When only firstCharacter has been passed without lastCharacter. Wraps string between firstCharacter.`,
 
   unwrap: `Takes three arguments: string, firstCharacter, lastCharacter
            Removes from string firstCharacter and lastCharacter if they exist in string.
-           When firstCharacter has been no passed to the funciton returns string.
+           When firstCharacter has been not passed to the funciton, returns string.
            When only firstCharacter has been passed without lastCharacter. Removes from start and the end of the string the firstCharacter.`,
+
+  replace: `Takes three arguments: string, pattern, newString
+            Replaces searched pattern by newString.`
 
   split: `Takes two arguments: string, separator
           Splits the string into an arrary of strings.
-          When separator has not been passed returns an array containing string.`
+          When separator has not been passed returns an array containing passed string.`,
+
+  index: `Takes three arguments: string, pattern, start
+          Returns index of searched pattern
+          By default start equals 0`,
+
+  chop: `Takes one arguments: string
+         Returns string with last character removed. If the string ends with rn special chars, both characters are removed.`,
+
+  chomp: `Takes two arguments: string, pattern
+          Removes from the end of the string passed pattern.
+          When pattern has not been passed, removes from the end of the string rn special chars`,
+
+  dot: `Takes one argument: string
+        Returns string with dot at the end.
+        When passed string ends with dot returns non-changed string`,
+
+  crop: `Takes three arguments: string, length, append
+         Truncates string at full words.
+         When length of string is longer than passed length, cut the string and add to string append.
+         By default append equals ...`
 }
 
 for (let name in utilities) {

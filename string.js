@@ -255,8 +255,8 @@ function replace (string, pattern, newString) {
   return string.replace(pattern, newString)
 }
 
-function index (string, pattern, fromIndex = 0) {
-  return string.indexOf(pattern, fromIndex)
+function index (string, pattern, start = 0) {
+  return string.indexOf(pattern, start)
 }
 
 function chop (string) {
