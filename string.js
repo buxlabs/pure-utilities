@@ -339,6 +339,51 @@ function split (string, separator) {
   return string.split(separator)
 }
 
+function celsius (string) {
+  if (string.endsWith('K')) {
+    string = Number(string.substring(0, string.lastIndexOf('K')))
+    return Math.round(string - 273.15) + '°C'
+  }
+  if (string.endsWith('°F')) {
+    string = Number(string.substring(0, string.indexOf('°F')))
+    return Math.round((string - 32) * 5 / 9) + '°C'
+  }
+  if (string.endsWith('°C')) {
+    return string
+  }
+  return string + '°C'
+}
+
+function fahrenheit (string) {
+  if (string.endsWith('K')) {
+    string = Number(string.substring(0, string.lastIndexOf('K')))
+    return Math.round((string - 273.15) * 1.8000 + 32) + '°F'
+  }
+  if (string.endsWith('°C')) {
+    string = Number(string.substring(0, string.indexOf('°C')))
+    return Math.round(string * 9 / 5 + 32) + '°F'
+  }
+  if (string.endsWith('°F')) {
+    return string
+  }
+  return string + '°F'
+}
+
+function kelvin (string) {
+  if (string.endsWith('°F')) {
+    string = Number(string.substring(0, string.indexOf('°F')))
+    return Math.round((string + 459.67) * 5 / 9) + 'K'
+  }
+  if (string.endsWith('°C')) {
+    string = Number(string.substring(0, string.indexOf('°C')))
+    return Math.round(string + 273.15) + 'K'
+  }
+  if (string.endsWith('K')) {
+    return string
+  }
+  return string + 'K'
+}
+
 module.exports = {
   pad,
   trim,
@@ -379,5 +424,8 @@ module.exports = {
   initials,
   htmlstrip,
   tail,
-  split
+  split,
+  celsius,
+  fahrenheit,
+  kelvin
 }

@@ -1002,10 +1002,120 @@ test('htmlstrip returns text content of html tags', t => {
 
 test('split should return an array', t => {
   const result = string.split('foo,bar,bazz', ',')
-  t.deepEqual(result ['foo', 'bar', 'bazz'])
+  t.deepEqual(result, ['foo', 'bar', 'bazz'])
 })
 
 test('split should return an array', t => {
   const result = string.split('foo bar baz')
-  t.deepEqual(result ['foo bar baz'])
+  t.deepEqual(result, ['foo bar baz'])
+})
+
+test('celsius should convert the temperature to the Celsius scale', t => {
+  const result = string.celsius('25')
+  t.deepEqual(result, '25°C')
+})
+
+test('celsius should convert the temperature to the Celsius scale', t => {
+  const result = string.celsius('25°C')
+  t.deepEqual(result, '25°C')
+})
+
+test('celsius should convert the temperature to the Celsius scale', t => {
+  const result = string.celsius('0°F')
+  t.deepEqual(result, '-18°C')
+})
+
+test('celsius should convert the temperature to the Celsius scale', t => {
+  const result = string.celsius('70°F')
+  t.deepEqual(result, '21°C')
+})
+
+test('celsius should convert the temperature to the Celsius scale', t => {
+  const result = string.celsius('70°F')
+  t.deepEqual(result, '21°C')
+})
+
+test('celsius should convert the temperature to the Celsius scale', t => {
+  const result = string.celsius('-10°F')
+  t.deepEqual(result, '-23°C')
+})
+
+test('celsius should convert the temperature to the Celsius scale', t => {
+  const result = string.celsius('0K')
+  t.deepEqual(result, '-273°C')
+})
+
+test('celsius should convert the temperature to the Celsius scale', t => {
+  const result = string.celsius('300K')
+  t.deepEqual(result, '27°C')
+})
+
+test('fahrenheit should convert the temperature to the Fahrenheit scale', t => {
+  const result = string.fahrenheit('50')
+  t.deepEqual(result, '50°F')
+})
+
+test('fahrenheit should convert the temperature to the Fahrenheit scale', t => {
+  const result = string.fahrenheit('50°F')
+  t.deepEqual(result, '50°F')
+})
+
+test('fahrenheit should convert the temperature to the Fahrenheit scale', t => {
+  const result = string.fahrenheit('30°C')
+  t.deepEqual(result, '86°F')
+})
+
+test('fahrenheit should convert the temperature to the Fahrenheit scale', t => {
+  const result = string.fahrenheit('10°C')
+  t.deepEqual(result, '50°F')
+})
+
+test('fahrenheit should convert the temperature to the Fahrenheit scale', t => {
+  const result = string.fahrenheit('-20.21°C')
+  t.deepEqual(result, '-4°F')
+})
+
+test('fahrenheit should convert the temperature to the Fahrenheit scale', t => {
+  const result = string.fahrenheit('1K')
+  t.deepEqual(result, '-458°F')
+})
+
+test('fahrenheit should convert the temperature to the Fahrenheit scale', t => {
+  const result = string.fahrenheit('300K')
+  t.deepEqual(result, '80°F')
+})
+
+test('fahrenheit should convert the temperature to the Fahrenheit scale', t => {
+  const result = string.fahrenheit('100K')
+  t.deepEqual(result, '-280°F')
+})
+
+test('kelvin should convert the temperature to the Kelvin scale', t => {
+  const result = string.kelvin('100')
+  t.deepEqual(result, '100K')
+})
+
+test('kelvin should convert the temperature to the Kelvin scale', t => {
+  const result = string.kelvin('100K')
+  t.deepEqual(result, '100K')
+})
+
+test('kelvin should convert the temperature to the Kelvin scale', t => {
+  const result = string.kelvin('26°C')
+  t.deepEqual(result, '299K')
+})
+
+test('kelvin should convert the temperature to the Kelvin scale', t => {
+  const result = string.kelvin('-10°C')
+  t.deepEqual(result, '263K')
+})
+
+test('kelvin should convert the temperature to the Kelvin scale', t => {
+  const result = string.kelvin('50°F')
+  t.deepEqual(result, '283K')
+})
+
+test('kelvin should convert the temperature to the Kelvin scale', t => {
+  const result = string.kelvin('-100°F')
+  t.deepEqual(result, '200K')
 })
