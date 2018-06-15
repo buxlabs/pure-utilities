@@ -86,11 +86,57 @@ function year (date) {
   return date.getFullYear()
 }
 
+function prettydate (date) {
+  if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
+  if (!Number(date)) return date.toDateString()
+  date = date.toDateString().split(' ')
+
+  const days = new Map([
+    ['Sun', 'Sunday'],
+    ['Mon', 'Monday'],
+    ['Tue', 'Tuesday'],
+    ['Wed', 'Wednesday'],
+    ['Thu', 'Thursday'],
+    ['Fri', 'Friday'],
+    ['Sat', 'Saturday']
+   ])
+  const months = new Map([
+    ['Jan', 'January'],
+    ['Feb', 'February'],
+    ['Mar', 'March'],
+    ['Apr', 'April'],
+    ['May', 'May'],
+    ['Jun', 'June'],
+    ['Jul', 'July'],
+    ['Aug', 'August'],
+    ['Sep', 'September'],
+    ['Oct', 'October'],
+    ['Nov', 'November'],
+    ['Dec', 'December']
+  ])
+  date[0] = days.get(date[0])
+  date[1] = months.get(date[1])
+  date[2] = Number(date[2])
+
+  if (date[2] === 1 || date[2] === 21) {
+    date[2] += 'st'
+  } else if (date[2] === 2 || date[2] === 22) {
+    date[2] += nd
+  } else if (date[2] === 3 || date[2] === 23) {
+    date[2] += 'rd'
+  } else {
+    date[2] += 'th'
+  }
+
+  return `${date[0]}, ${date[2]} of ${date[1]} ${date[3]}`
+}
+
 module.exports = {
   isostring,
   format,
   day,
   weekday,
   month,
-  year
+  year,
+  prettydate
 }

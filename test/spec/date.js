@@ -122,5 +122,22 @@ test('year returns the number of the year', t => {
 })
 
 test('year returns the number of the year', t => {
-  t.deepEqual(date.year(new Date(1995, 3, 13)), 1995)
+  t.deepEqual(date.year(new Date(1995, 2, 13)), 1995)
 })
+
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+  t.deepEqual(date.prettydate(new Date(2043, 9, 25)), 'Sunday, 25th of October 2043')
+})
+
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+  t.deepEqual(date.prettydate(new Date(2018, 5, 15)), 'Friday, 15th of June 2018')
+})
+
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+  t.deepEqual(date.prettydate(new Date(2018, 5, 1)), 'Friday, 1st of June 2018')
+})
+
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+  t.deepEqual(date.prettydate(new Date(2018, 2, 21)), 'Wednesday, 21st of March 2018')
+})
+
