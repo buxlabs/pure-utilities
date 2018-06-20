@@ -2,6 +2,7 @@ const utilities = require('..')
 const string = require('./string')
 const array = require('./array')
 const collection = require('./collection')
+const date = require('./date')
 
 
 const documentation = Object.assign({}, string, array, collection)
