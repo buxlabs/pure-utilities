@@ -18,9 +18,11 @@ const date = {
   year: `Takes one argument: date
          Returns the year (four digits for dates between year 1000 and 9999) for the passed date.`,
 
-  prettydate: `Takes one argument: date
-               TODO description`
-
+  prettydate: `Takes two arguments: date, localization
+               Returns a string, that contains: the name of weekday, day of the month (from 1 to 31), name of the month, and year (four digits for dates between year 1000 and 9999).
+               Example output for 'en-En' localization: Wednesday, 21st of March 2018.
+               localization can be 'en-En' or 'pl-Pl', in other case function throws error.
+               By default localization equals 'en-En'.`
 }
 
 
