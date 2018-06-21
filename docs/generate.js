@@ -3,9 +3,9 @@ const string = require('./string')
 const array = require('./array')
 const collection = require('./collection')
 const date = require('./date')
+const json = require('./json')
 
-
-const documentation = Object.assign({}, string, array, collection)
+const documentation = Object.assign({}, string, array, collection, json)
 
 for (let name in utilities) {
   const utility = utilities[name]
