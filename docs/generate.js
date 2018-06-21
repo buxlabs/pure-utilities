@@ -4,8 +4,9 @@ const array = require('./array')
 const collection = require('./collection')
 const date = require('./date')
 const json = require('./json')
+const math = require('./math')
 
-const documentation = Object.assign({}, string, array, collection, json)
+const documentation = Object.assign({}, string, array, collection, json, math)
 
 for (let name in utilities) {
   const utility = utilities[name]
