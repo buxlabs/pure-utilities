@@ -141,3 +141,24 @@ test('prettydate returns date string containing name of the day, number of the d
   t.deepEqual(date.prettydate(new Date(2018, 2, 21)), 'Wednesday, 21st of March 2018')
 })
 
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+  t.deepEqual(date.prettydate(new Date(2018, 2, 21), 'pl-Pl'), 'środa, 21 marca 2018')
+})
+
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+  t.deepEqual(date.prettydate(new Date(2018, 5, 21), 'pl-Pl'), 'czwartek, 21 czerwca 2018')
+})
+
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+  t.deepEqual(date.prettydate(new Date(2018, 8, 8), 'pl-Pl'), 'sobota, 8 września 2018')
+})
+
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+  t.deepEqual(date.prettydate(new Date(2018, 11, 30), 'pl-Pl'), 'niedziela, 30 grudnia 2018')
+})
+
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+  const error = t.throws(() => date.prettydate(new Date(2018, 11, 30), 'de-De'))
+  t.is(error.message, 'de-De localization is not supported.')
+})
+

@@ -86,49 +86,56 @@ function year (date) {
   return date.getFullYear()
 }
 
-function prettydate (date) {
+function prettydate (date, localization = 'en-En') {
   if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
   if (!Number(date)) return date.toDateString()
-  date = date.toDateString().split(' ')
 
-  const days = new Map([
-    ['Sun', 'Sunday'],
-    ['Mon', 'Monday'],
-    ['Tue', 'Tuesday'],
-    ['Wed', 'Wednesday'],
-    ['Thu', 'Thursday'],
-    ['Fri', 'Friday'],
-    ['Sat', 'Saturday']
-   ])
-  const months = new Map([
-    ['Jan', 'January'],
-    ['Feb', 'February'],
-    ['Mar', 'March'],
-    ['Apr', 'April'],
-    ['May', 'May'],
-    ['Jun', 'June'],
-    ['Jul', 'July'],
-    ['Aug', 'August'],
-    ['Sep', 'September'],
-    ['Oct', 'October'],
-    ['Nov', 'November'],
-    ['Dec', 'December']
-  ])
-  date[0] = days.get(date[0])
-  date[1] = months.get(date[1])
-  date[2] = Number(date[2])
+  const year = date.getFullYear()
+  let month = date.toLocaleString(localization, { month: 'long' })
+  let weekday = date.toLocaleString(localization, { weekday: 'long' })
+  let day = String(date.getDate())
 
-  if (date[2] === 1 || date[2] === 21) {
-    date[2] += 'st'
-  } else if (date[2] === 2 || date[2] === 22) {
-    date[2] += nd
-  } else if (date[2] === 3 || date[2] === 23) {
-    date[2] += 'rd'
-  } else {
-    date[2] += 'th'
+  if (localization === 'en-En') {
+    if (day === '1' || day === '21') {
+      day += 'st'
+    } else if (day === '2' || day === '22') {
+      day += 'nd'
+    } else if (day === '3' || day === '23') {
+      day += 'rd'
+    } else {
+      day += 'th'
+    }
+    return `${weekday}, ${day} of ${month} ${year}`
   }
-
-  return `${date[0]}, ${date[2]} of ${date[1]} ${date[3]}`
+  if (localization === 'pl-Pl') {
+    const weekdays = new Map([
+      ['Monday', 'poniedziałek'],
+      ['Tuesday', 'wtorek'],
+      ['Wednesday', 'środa'],
+      ['Thursday', 'czwartek'],
+      ['Friday', 'piątek'],
+      ['Saturday', 'sobota'],
+      ['Sunday', 'niedziela']
+    ])
+    const months = new Map([
+      ['January', 'stycznia'],
+      ['February', 'lutego'],
+      ['March', 'marca'],
+      ['April', 'kwietnia'],
+      ['May', 'maja'],
+      ['June', 'czerwca'],
+      ['July', 'lipca'],
+      ['August', 'sierpnia'],
+      ['September', 'września'],
+      ['October', 'października'],
+      ['November', 'listopada'],
+      ['December', 'grudnia']
+    ])
+    weekday =weekdays.get(weekday)
+    month = months.get(month)
+    return `${weekday}, ${day} ${month} ${year}`
+  }
+  throw new Error(`${localization} localization is not supported.`)
 }
 
 module.exports = {
