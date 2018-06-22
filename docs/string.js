@@ -68,7 +68,11 @@ const string = {
              By default length equals 30
              By default ending equals '...'`,
 
-  tails: `Takes three arguments: string, length, ending`,
+  tail: `Takes three arguments: string, length, ending
+         Truncates the tail of a given string.`,
+
+  summarize: `Takes two arguments: string, lenght
+              Adds three dots(...) at the end of the string, when the string is longer than the passed length.`,
 
   swapcase: `Takes one argument: string
              Replaces in string lower case letters to uppercase and uppercase letters to lowercase.`,
