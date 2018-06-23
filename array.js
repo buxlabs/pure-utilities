@@ -113,7 +113,7 @@ function rotate (array, digit) {
     const item = array.shift()
     array.push(item)
   }
- return array
+  return array
 }
 
 function drop (array, digit) {

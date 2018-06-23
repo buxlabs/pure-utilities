@@ -3,7 +3,7 @@ import { object } from '../..'
 
 test('flatten shouldn`t change flat object', t => {
   const object1 = { 'orderAccepted': 'Your order has been accepted' }
-  const result = { 'orderAccepted': 'Your order has been accepted'}
+  const result = { 'orderAccepted': 'Your order has been accepted' }
   t.deepEqual(object.flatten(object1), result)
 })
 
@@ -95,7 +95,7 @@ test('pat overrides a value of a field', t => {
 })
 
 test('pat overrides deeply nested fields', t => {
-  t.deepEqual(object.pat({}, 'baz.bar', 'foo'), { baz: { bar: 'foo' }})
+  t.deepEqual(object.pat({}, 'baz.bar', 'foo'), { baz: { bar: 'foo' } })
 })
 
 test(`values returns an array containing the values that correspond to all of a given object's own enumerable string properties`, t => {

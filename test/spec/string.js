@@ -56,12 +56,12 @@ test('trim should remove whitespace in left and right', t => {
   t.deepEqual(parsed, 'foo')
 })
 
-test("uppercase should convert string to uppercase", t => {
+test('uppercase should convert string to uppercase', t => {
   const parsed = string.uppercase('foo')
   t.deepEqual(parsed, 'FOO')
 })
 
-test("uppercase should convert string to uppercase", t => {
+test('uppercase should convert string to uppercase', t => {
   const parsed = string.uppercase('foo')
   t.deepEqual(parsed, 'FOO')
 })
@@ -86,182 +86,182 @@ test("underscore shouldn't modify the string", t => {
   t.deepEqual(parsed, 'foo')
 })
 
-test("underscore should convert string to lowerCase", t => {
+test('underscore should convert string to lowerCase', t => {
   const parsed = string.underscore('Foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("underscore should convert string to lowerCase", t => {
+test('underscore should convert string to lowerCase', t => {
   const parsed = string.underscore(' Foo ')
   t.deepEqual(parsed, 'foo')
 })
 
-test("underscore should add underscore between camelCase words", t => {
+test('underscore should add underscore between camelCase words', t => {
   const parsed = string.underscore('fooBar')
   t.deepEqual(parsed, 'foo_bar')
 })
 
-test("underscore should add underscore between camelCase words", t => {
+test('underscore should add underscore between camelCase words', t => {
   const parsed = string.underscore('fooBarBaz')
   t.deepEqual(parsed, 'foo_bar_baz')
 })
 
-test("underscore should add underscore between camelCase words", t => {
+test('underscore should add underscore between camelCase words', t => {
   const parsed = string.underscore('fooBarBarBar')
   t.deepEqual(parsed, 'foo_bar_bar_bar')
 })
 
-test("underscore should add underscore between camelCase words", t => {
+test('underscore should add underscore between camelCase words', t => {
   const parsed = string.underscore('fooBarBazBanQux')
   t.deepEqual(parsed, 'foo_bar_baz_ban_qux')
 })
 
-test("underscore should add underscore between spaced words", t => {
+test('underscore should add underscore between spaced words', t => {
   const parsed = string.underscore('foo bar')
   t.deepEqual(parsed, 'foo_bar')
 })
 
-test("underscore should add underscore between spaced words", t => {
+test('underscore should add underscore between spaced words', t => {
   const parsed = string.underscore('foo bar baz ban qux')
   t.deepEqual(parsed, 'foo_bar_baz_ban_qux')
 })
 
-test("underscore should add underscore between spaced words", t => {
+test('underscore should add underscore between spaced words', t => {
   const parsed = string.underscore('foo     bar baz')
   t.deepEqual(parsed, 'foo_bar_baz')
 })
 
-test("underscore should add underscore between spaced words", t => {
+test('underscore should add underscore between spaced words', t => {
   const parsed = string.underscore('foo     bar baz    qux')
   t.deepEqual(parsed, 'foo_bar_baz_qux')
 })
 
-test("underscore should add underscore between spaced words", t => {
+test('underscore should add underscore between spaced words', t => {
   const parsed = string.underscore('foo Bar')
   t.deepEqual(parsed, 'foo_bar')
 })
 
-test("underscore should add underscore between spaced words", t => {
+test('underscore should add underscore between spaced words', t => {
   const parsed = string.underscore('foo Bar Baq')
   t.deepEqual(parsed, 'foo_bar_baq')
 })
 
-test("underscore should add underscore between spaced words", t => {
+test('underscore should add underscore between spaced words', t => {
   const parsed = string.underscore('foo Bar      baq')
   t.deepEqual(parsed, 'foo_bar_baq')
 })
 
-test("underscore should add underscore between spaced words", t => {
+test('underscore should add underscore between spaced words', t => {
   const parsed = string.underscore('foo Bar      baq')
   t.deepEqual(parsed, 'foo_bar_baq')
 })
 
-test("underscore should add underscore between CapitalCase words", t => {
+test('underscore should add underscore between CapitalCase words', t => {
   const parsed = string.underscore('FooBar')
   t.deepEqual(parsed, 'foo_bar')
 })
 
-test("underscore should add underscore between CapitalCase words", t => {
+test('underscore should add underscore between CapitalCase words', t => {
   const parsed = string.underscore('FooBarBaz')
   t.deepEqual(parsed, 'foo_bar_baz')
 })
 
-test("underscore should add underscore between CapitalCase words", t => {
+test('underscore should add underscore between CapitalCase words', t => {
   const parsed = string.underscore('FooBarBazQux')
   t.deepEqual(parsed, 'foo_bar_baz_qux')
 })
 
-test("underscore should add underscore between CapitalCase words", t => {
+test('underscore should add underscore between CapitalCase words', t => {
   const parsed = string.underscore('FooBarBazQux')
   t.deepEqual(parsed, 'foo_bar_baz_qux')
 })
 
-test("underscore should add underscore between CapitalCase words", t => {
+test('underscore should add underscore between CapitalCase words', t => {
   const parsed = string.underscore('FooBarBazQux bar')
   t.deepEqual(parsed, 'foo_bar_baz_qux_bar')
 })
 
-test("underscore should convert kebab-case to underscoreCase", t => {
+test('underscore should convert kebab-case to underscoreCase', t => {
   const parsed = string.underscore('foo-bar')
   t.deepEqual(parsed, 'foo_bar')
 })
 
-test("underscore should convert kebab-case to underscoreCase", t => {
+test('underscore should convert kebab-case to underscoreCase', t => {
   const parsed = string.underscore('foo-bar-baz')
   t.deepEqual(parsed, 'foo_bar_baz')
 })
 
-test("underscore should convert kebab-case to underscoreCase", t => {
+test('underscore should convert kebab-case to underscoreCase', t => {
   const parsed = string.underscore('foo-BAR-baz')
   t.deepEqual(parsed, 'foo_bar_baz')
 })
 
-test("underscore should convert kebab-case to underscoreCase", t => {
+test('underscore should convert kebab-case to underscoreCase', t => {
   const parsed = string.underscore('foo-BaR-baz')
   t.deepEqual(parsed, 'foo_ba_r_baz')
 })
 
-test("underscore should convert kebab-case to underscoreCase", t => {
+test('underscore should convert kebab-case to underscoreCase', t => {
   const parsed = string.underscore('Bar-baz-baN')
   t.deepEqual(parsed, 'bar_baz_ba_n')
 })
 
-test("underscore should convert string containing numbers to underscoreCase", t => {
+test('underscore should convert string containing numbers to underscoreCase', t => {
   const parsed = string.underscore('foo11')
   t.deepEqual(parsed, 'foo_11')
 })
 
-test("underscore should convert string containing numbers to underscoreCase", t => {
+test('underscore should convert string containing numbers to underscoreCase', t => {
   const parsed = string.underscore('foo1o11')
   t.deepEqual(parsed, 'foo_1_o_11')
 })
 
-test("underscore should convert string containing numbers to underscoreCase", t => {
+test('underscore should convert string containing numbers to underscoreCase', t => {
   const parsed = string.underscore('fo_o1o11')
   t.deepEqual(parsed, 'fo_o_1_o_11')
 })
 
-test("underscore should convert string containing numbers to underscoreCase", t => {
+test('underscore should convert string containing numbers to underscoreCase', t => {
   const parsed = string.underscore('1bar')
   t.deepEqual(parsed, '1_bar')
 })
 
-test("underscore should convert string containing numbers to underscoreCase", t => {
+test('underscore should convert string containing numbers to underscoreCase', t => {
   const parsed = string.underscore('1barBan-baz')
   t.deepEqual(parsed, '1_bar_ban_baz')
 })
 
-test("underscore should convert string containing numbers to underscoreCase", t => {
+test('underscore should convert string containing numbers to underscoreCase', t => {
   const parsed = string.underscore('00')
   t.deepEqual(parsed, '00')
 })
 
-test("capitalize should capitalize first character of string", t => {
+test('capitalize should capitalize first character of string', t => {
   const parsed = string.capitalize('foo')
   t.deepEqual(parsed, 'Foo')
 })
 
-test("capitalize should capitalize first character of string", t => {
+test('capitalize should capitalize first character of string', t => {
   const parsed = string.capitalize('foo bar and baz')
   t.deepEqual(parsed, 'Foo bar and baz')
 })
 
-test("lowerCase should convert each character to lowerCase", t => {
+test('lowerCase should convert each character to lowerCase', t => {
   const parsed = string.lowercase('Foo BAR and baZ')
   t.deepEqual(parsed, 'foo bar and baz')
 })
 
-test("humanize should capitalize first word", t => {
+test('humanize should capitalize first word', t => {
   const parsed = string.humanize('foo bar')
   t.deepEqual(parsed, 'Foo bar')
 })
 
-test("humanize should capitalize first word and replace underscores to spaces", t => {
+test('humanize should capitalize first word and replace underscores to spaces', t => {
   const parsed = string.humanize('foo_bar')
   t.deepEqual(parsed, 'Foo bar')
 })
 
-test("humanize should capitalize first word and replace underscores to spaces", t => {
+test('humanize should capitalize first word and replace underscores to spaces', t => {
   const parsed = string.humanize('foo_bar. Baz qux _and_qux')
   t.deepEqual(parsed, 'Foo bar. Baz qux  and qux')
 })
@@ -271,217 +271,217 @@ test("humanize shouldn't capitalize first word and should replace underscores to
   t.deepEqual(parsed, 'foo bar. Baz qux  and qux')
 })
 
-test("titleize should capitalize all the words", t => {
+test('titleize should capitalize all the words', t => {
   const parsed = string.titleize('foo bar')
   t.deepEqual(parsed, 'Foo Bar')
 })
 
-test("titleize should capitalize all the words", t => {
+test('titleize should capitalize all the words', t => {
   const parsed = string.titleize('foo, bar, baz and qux')
   t.deepEqual(parsed, 'Foo, Bar, Baz And Qux')
 })
 
-test("dasherize replaces underscores with dashes in the string", t => {
+test('dasherize replaces underscores with dashes in the string', t => {
   const parsed = string.dasherize('foo_bar')
   t.deepEqual(parsed, 'foo-bar')
 })
 
-test("dasherize replaces underscores with dashes in the string", t => {
+test('dasherize replaces underscores with dashes in the string', t => {
   const parsed = string.dasherize('foo_bar__baz')
   t.deepEqual(parsed, 'foo-bar--baz')
 })
 
-test("classify creates a class name from a plural", t => {
+test('classify creates a class name from a plural', t => {
   const parsed = string.classify('foos')
   t.deepEqual(parsed, 'Foo')
 })
 
-test("classify creates a class name from a plural", t => {
+test('classify creates a class name from a plural', t => {
   const parsed = string.classify('fooBars')
   t.deepEqual(parsed, 'FooBar')
 })
 
-test("classify creates a class name from a plural", t => {
+test('classify creates a class name from a plural', t => {
   const parsed = string.classify('fooBar')
   t.deepEqual(parsed, 'FooBar')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('car')
   t.deepEqual(parsed, 'cars')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('dress')
   t.deepEqual(parsed, 'dresses')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('box')
   t.deepEqual(parsed, 'boxes')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('bush')
   t.deepEqual(parsed, 'bushes')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('bus')
   t.deepEqual(parsed, 'buses')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('watch')
   t.deepEqual(parsed, 'watches')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('bridge')
   t.deepEqual(parsed, 'bridges')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('prize')
   t.deepEqual(parsed, 'prizes')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('tomato')
   t.deepEqual(parsed, 'tomatoes')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('wife')
   t.deepEqual(parsed, 'wives')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('shelf')
   t.deepEqual(parsed, 'shelves')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('lady')
   t.deepEqual(parsed, 'ladies')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('city')
   t.deepEqual(parsed, 'cities')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('toy')
   t.deepEqual(parsed, 'toys')
 })
 
-test("pluralize returns the plural form of the word in the string", t => {
+test('pluralize returns the plural form of the word in the string', t => {
   const parsed = string.pluralize('ad')
   t.deepEqual(parsed, 'ads')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('cars')
   t.deepEqual(parsed, 'car')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('cars')
   t.deepEqual(parsed, 'car')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('dresses')
   t.deepEqual(parsed, 'dress')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('boxes')
   t.deepEqual(parsed, 'box')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('bushes')
   t.deepEqual(parsed, 'bush')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('buses')
   t.deepEqual(parsed, 'bus')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('watches')
   t.deepEqual(parsed, 'watch')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('bridges', 'e')
   t.deepEqual(parsed, 'bridge')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('prizes', 'e')
   t.deepEqual(parsed, 'prize')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('tomatoes')
   t.deepEqual(parsed, 'tomato')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('wives')
   t.deepEqual(parsed, 'wife')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('shelves', 'f')
   t.deepEqual(parsed, 'shelf')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('thieves', 'f')
   t.deepEqual(parsed, 'thief')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('cities')
   t.deepEqual(parsed, 'city')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('ladies')
   t.deepEqual(parsed, 'lady')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('toys')
   t.deepEqual(parsed, 'toy')
 })
 
-test("singularize returns singular form of a word in the string", t => {
+test('singularize returns singular form of a word in the string', t => {
   const parsed = string.singularize('ads')
   t.deepEqual(parsed, 'ad')
 })
 
-test("swapcase converts uppercase to lowercase and lowercase to uppercase", t => {
+test('swapcase converts uppercase to lowercase and lowercase to uppercase', t => {
   const parsed = string.swapcase('foo')
   t.deepEqual(parsed, 'FOO')
 })
 
-test("swapcase converts uppercase to lowercase and lowercase to uppercase", t => {
+test('swapcase converts uppercase to lowercase and lowercase to uppercase', t => {
   const parsed = string.swapcase('FOO')
   t.deepEqual(parsed, 'foo')
 })
 
-test("swapcase converts uppercase to lowercase and lowercase to uppercase", t => {
+test('swapcase converts uppercase to lowercase and lowercase to uppercase', t => {
   const parsed = string.swapcase('fOo Bar BAZ')
   t.deepEqual(parsed, 'FoO bAR baz')
 })
 
-test("swapcase converts uppercase to lowercase and lowercase to uppercase", t => {
+test('swapcase converts uppercase to lowercase and lowercase to uppercase', t => {
   const parsed = string.swapcase('fOo Bar BAZ')
   t.deepEqual(parsed, 'FoO bAR baz')
 })
@@ -506,127 +506,127 @@ test("camelize shouldn't modify the string", t => {
   t.deepEqual(parsed, 'foo')
 })
 
-test("camelize should modify the string to lowerCamelCase by default", t => {
+test('camelize should modify the string to lowerCamelCase by default', t => {
   const parsed = string.camelize('foo_bar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelize should modify the string to lowerCamelCase by default", t => {
+test('camelize should modify the string to lowerCamelCase by default', t => {
   const parsed = string.camelize('FooBar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelize should modify the string to lowerCamelCase by default", t => {
+test('camelize should modify the string to lowerCamelCase by default', t => {
   const parsed = string.camelize('FooBarbazBan')
   t.deepEqual(parsed, 'fooBarbazBan')
 })
 
-test("camelize should modify the string to lowerCamelCase by default", t => {
+test('camelize should modify the string to lowerCamelCase by default', t => {
   const parsed = string.camelize('Foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("camelize should modify the string to lowerCamelCase by default", t => {
+test('camelize should modify the string to lowerCamelCase by default', t => {
   const parsed = string.camelize('foo_bar_baz_ban_qux')
   t.deepEqual(parsed, 'fooBarBazBanQux')
 })
 
-test("camelize should modify the string to lowerCamelCase by default", t => {
+test('camelize should modify the string to lowerCamelCase by default', t => {
   const parsed = string.camelize('foo-Bar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelize should modify the string to lowerCamelCase by default", t => {
+test('camelize should modify the string to lowerCamelCase by default', t => {
   const parsed = string.camelize('foo bar')
   t.deepEqual(parsed, 'fooBar')
 })
 
-test("camelize should modify the string to lowerCamelCase by default", t => {
+test('camelize should modify the string to lowerCamelCase by default', t => {
   const parsed = string.camelize('Foo bar ban')
   t.deepEqual(parsed, 'fooBarBan')
 })
 
-test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
+test('camelize should modify the string to UpperCamelCase if proper flag has been passed', t => {
   const parsed = string.camelize('foo', true)
   t.deepEqual(parsed, 'Foo')
 })
 
-test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
+test('camelize should modify the string to UpperCamelCase if proper flag has been passed', t => {
   const parsed = string.camelize('foobar', true)
   t.deepEqual(parsed, 'Foobar')
 })
 
-test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
+test('camelize should modify the string to UpperCamelCase if proper flag has been passed', t => {
   const parsed = string.camelize('fooBar', true)
   t.deepEqual(parsed, 'FooBar')
 })
 
-test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
+test('camelize should modify the string to UpperCamelCase if proper flag has been passed', t => {
   const parsed = string.camelize(' foo', true)
   t.deepEqual(parsed, 'Foo')
 })
 
-test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
+test('camelize should modify the string to UpperCamelCase if proper flag has been passed', t => {
   const parsed = string.camelize('Foo_bar', true)
   t.deepEqual(parsed, 'FooBar')
 })
 
-test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
+test('camelize should modify the string to UpperCamelCase if proper flag has been passed', t => {
   const parsed = string.camelize('foo_bar_baz_ban_qux', true)
   t.deepEqual(parsed, 'FooBarBazBanQux')
 })
 
-test("camelize should modify the string to UpperCamelCase if proper flag has been passed", t => {
+test('camelize should modify the string to UpperCamelCase if proper flag has been passed', t => {
   const parsed = string.camelize('Foo bar ban', true)
   t.deepEqual(parsed, 'FooBarBan')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('foo')
   t.deepEqual(parsed, 'FOO')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('foobar')
   t.deepEqual(parsed, 'FOOBAR')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('fooBar')
   t.deepEqual(parsed, 'FOO_BAR')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('foo_bar')
   t.deepEqual(parsed, 'FOO_BAR')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('Foo_Bar')
   t.deepEqual(parsed, 'FOO_BAR')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('FooBar')
   t.deepEqual(parsed, 'FOO_BAR')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('foo-bar')
   t.deepEqual(parsed, 'FOO_BAR')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('foo-bar_baz')
   t.deepEqual(parsed, 'FOO_BAR_BAZ')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('FooBarBazQux')
   t.deepEqual(parsed, 'FOO_BAR_BAZ_QUX')
 })
 
-test("constantize should modify the string to the string in CONST_CONVENTION", t => {
+test('constantize should modify the string to the string in CONST_CONVENTION', t => {
   const parsed = string.constantize('foo   bar')
   t.deepEqual(parsed, 'FOO_BAR')
 })
@@ -646,92 +646,92 @@ test('tail removes an initial substring with length consisting of the difference
   t.deepEqual(parsed, '...far far away')
 })
 
-test("lowerfirst should lowercase first character of string", t => {
+test('lowerfirst should lowercase first character of string', t => {
   const parsed = string.lowerfirst('Foo')
   t.deepEqual(parsed, 'foo')
 })
 
-test("lowerfirst should lowercase first character of string", t => {
+test('lowerfirst should lowercase first character of string', t => {
   const parsed = string.lowerfirst('Foo bar baz')
   t.deepEqual(parsed, 'foo bar baz')
 })
 
-test("unescape should convert the HTML entities in string to their corresponding characters", t => {
+test('unescape should convert the HTML entities in string to their corresponding characters', t => {
   const parsed = string.unescape('&amp;')
   t.deepEqual(parsed, '&')
 })
 
-test("unescape should convert the HTML entities in string to their corresponding characters", t => {
+test('unescape should convert the HTML entities in string to their corresponding characters', t => {
   const parsed = string.unescape('&lt;script&gt;alert("foo")&lt;/script&gt;')
   t.deepEqual(parsed, '<script>alert("foo")</script>')
 })
 
-test("repeat should return new string which contains the specified number of copies of the string", t => {
+test('repeat should return new string which contains the specified number of copies of the string', t => {
   const parsed = string.repeat('foo', 2)
   t.deepEqual(parsed, 'foofoo')
 })
 
-test("singlespace should return new string which contains singlespace", t => {
+test('singlespace should return new string which contains singlespace', t => {
   const parsed = string.singlespace('foo     bar   baz')
   t.deepEqual(parsed, 'foo bar baz')
 })
 
-test("quote return a string inside quotes", t => {
+test('quote return a string inside quotes', t => {
   const parsed = string.quote('foo bar baz')
   t.deepEqual(parsed, `"foo bar baz"`)
 })
 
-test("quote return a string inside quotes", t => {
+test('quote return a string inside quotes', t => {
   const parsed = string.quote('foo bar baz', 'en')
   t.deepEqual(parsed, '"foo bar baz"')
 })
 
-test("quote return a string inside quotes", t => {
+test('quote return a string inside quotes', t => {
   const parsed = string.quote('foo bar baz', 'pl')
   t.deepEqual(parsed, '„foo bar baz”')
 })
 
-test("unquote removes quotes from string", t => {
+test('unquote removes quotes from string', t => {
   const parsed = string.unquote('„foo bar baz”')
   t.deepEqual(parsed, `foo bar baz`)
 })
 
-test("unquote removes quotes from string", t => {
+test('unquote removes quotes from string', t => {
   const parsed = string.unquote('"foo bar baz"')
   t.deepEqual(parsed, 'foo bar baz')
 })
 
-test("squeeze return a string with removed double characters", t => {
+test('squeeze return a string with removed double characters', t => {
   const parsed = string.squeeze('foo')
   t.deepEqual(parsed, 'fo')
 })
 
-test("squeeze return a string with removed double characters", t => {
+test('squeeze return a string with removed double characters', t => {
   const parsed = string.squeeze('yellow moon')
   t.deepEqual(parsed, 'yelow mon')
 })
 
-test("squeeze return a string with removed double characters", t => {
+test('squeeze return a string with removed double characters', t => {
   const parsed = string.squeeze('fooo    bar')
   t.deepEqual(parsed, 'fo bar')
 })
 
-test("squeeze return a string with removed double characters", t => {
+test('squeeze return a string with removed double characters', t => {
   const parsed = string.squeeze('putters shoot balls')
   t.deepEqual(parsed, 'puters shot bals')
 })
 
-test("squeeze return a string with removed double characters", t => {
+test('squeeze return a string with removed double characters', t => {
   const parsed = string.squeeze('yellow moon', 'o')
   t.deepEqual(parsed, 'yellow mon')
 })
 
-test("squeeze return a string with removed double characters", t => {
+test('squeeze return a string with removed double characters', t => {
   const parsed = string.squeeze('putters shoot balls', 'm-z')
   t.deepEqual(parsed, 'puters shot balls')
 })
 
-test("summarize return a string with dots if string length is longer or equal 100", t => {
+test('summarize return a string with dots if string length is longer or equal 100', t => {
   const parsed = string.summarize(`
     Lorem ipsum dolor sit amet,
     consectetur adipiscing elit. Suspendisse venenatis ultrices arcu ut fermentum.
@@ -745,38 +745,38 @@ test("summarize return a string with dots if string length is longer or equal 10
   t.deepEqual(parsed.substr(parsed.length - 3), '...')
 })
 
-test("summarize return a string with dots if string length is longer or equal x", t => {
+test('summarize return a string with dots if string length is longer or equal x', t => {
   const parsed = string.summarize('foo bar baz ban', 10)
   t.deepEqual(parsed.substr(parsed.length - 3), '...')
 })
 
-test("wrap, insert string between passed character", t => {
+test('wrap, insert string between passed character', t => {
   const parsed = string.wrap('foo bar baz ban', '"')
   t.deepEqual(parsed, '"foo bar baz ban"')
 })
 
-test("wrap, insert string between passed character", t => {
-  const parsed = string.wrap('foo bar baz', '„' ,'”')
+test('wrap, insert string between passed character', t => {
+  const parsed = string.wrap('foo bar baz', '„', '”')
   t.deepEqual(parsed, '„foo bar baz”')
 })
 
-test("wrap, insert string between passed character", t => {
-  const parsed = string.wrap('foo bar baz', '(' ,')')
+test('wrap, insert string between passed character', t => {
+  const parsed = string.wrap('foo bar baz', '(', ')')
   t.deepEqual(parsed, '(foo bar baz)')
 })
 
-test("unwrap, removed starting and ending character", t => {
+test('unwrap, removed starting and ending character', t => {
   const parsed = string.unwrap('"foo bar baz ban"', '"')
   t.deepEqual(parsed, 'foo bar baz ban')
 })
 
-test("unwrap, removed starting and ending character", t => {
-  const parsed = string.unwrap('„foo bar baz”', '„' ,'”')
+test('unwrap, removed starting and ending character', t => {
+  const parsed = string.unwrap('„foo bar baz”', '„', '”')
   t.deepEqual(parsed, 'foo bar baz')
 })
 
-test("unwrap, removed starting and ending character", t => {
-  const parsed = string.unwrap('(foo bar baz)', '(' ,')')
+test('unwrap, removed starting and ending character', t => {
+  const parsed = string.unwrap('(foo bar baz)', '(', ')')
   t.deepEqual(parsed, 'foo bar baz')
 })
 

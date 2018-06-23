@@ -161,4 +161,3 @@ test('prettydate returns date string containing name of the day, number of the d
   const error = t.throws(() => date.prettydate(new Date(2018, 11, 30), 'de-De'))
   t.is(error.message, 'de-De localization is not supported.')
 })
-

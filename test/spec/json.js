@@ -10,4 +10,3 @@ test('prettify should format objects', t => {
   var parsed = json.prettify({ hello: 'world' })
   t.deepEqual(parsed, '{\n  "hello": "world"\n}')
 })
-

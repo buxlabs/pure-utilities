@@ -310,7 +310,7 @@ test('inches converts inches to feets', t => {
 
 test('feet converts inches to feets', t => {
   const parsed = math.feet(1, 5)
-  t.deepEqual(parsed,  0.08333)
+  t.deepEqual(parsed, 0.08333)
 })
 
 test('feet converts inches to feets', t => {
@@ -325,7 +325,7 @@ test('feet converts inches to feets', t => {
 
 test('feet converts f to feets', t => {
   const parsed = math.feet(13.25, 2, false)
-  t.deepEqual(parsed, "1.1′")
+  t.deepEqual(parsed, '1.1′')
 })
 
 test('degrees converts radians to degrees', t => {

@@ -97,7 +97,7 @@ function titleize (string) {
 }
 
 function dasherize (string) {
-  return string = string.replace(/_/g, '-')
+  return string.replace(/_/g, '-')
 }
 
 function classify (string) {
@@ -134,7 +134,7 @@ function pluralize (string) {
 
 function singularize (string, appendix = '') {
   if (string.endsWith('ves')) {
-    return string = string.substr(0, string.length - 3).concat(appendix ||'fe')
+    return string.substr(0, string.length - 3).concat(appendix || 'fe')
   }
 
   if (string.endsWith('ies')) {
@@ -332,7 +332,7 @@ function initials (string, separator = '') {
 
 function htmlstrip (string) {
   string = string.replace(/'|:|\/|\./g, '')
-  return string = string.replace(/(<[a-z]+((\s?)(([a-z]-?)+="(\/?[a-z]*\s?)+(|\s?)")?)+>)|<\/[a-z]*>/g, '')
+  return string.replace(/(<[a-z]+((\s?)(([a-z]-?)+="(\/?[a-z]*\s?)+(|\s?)")?)+>)|<\/[a-z]*>/g, '')
 }
 
 function split (string, separator) {

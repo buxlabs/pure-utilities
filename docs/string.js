@@ -99,7 +99,7 @@ const string = {
             Replaces in string multiple repetitions of the same characters to the one character.
             pattern is a string based on which the regular expression is created. By default equals a-zA-Z`,
 
-  wrap:   `Takes three arguments: string, firstCharacter, lastCharacter
+  wrap: `Takes three arguments: string, firstCharacter, lastCharacter
            Wraps string between firstCharacter and lastCharacter.
            When firstCharacter has been not passed to the funciton, returns string.
            When only firstCharacter has been passed without lastCharacter. Wraps string between firstCharacter.`,
@@ -111,10 +111,6 @@ const string = {
 
   replace: `Takes three arguments: string, pattern, newString
             Replaces searched pattern by newString.`,
-
-  split: `Takes two arguments: string, separator
-          Splits the string into an arrary of strings.
-          When separator has not been passed returns an array containing passed string.`,
 
   index: `Takes three arguments: string, pattern, start
           Returns index of searched pattern

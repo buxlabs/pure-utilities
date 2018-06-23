@@ -7,7 +7,7 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "nyc": "^12.0.1",
-    "standard": "^11.0.0"
+    "standard": "^11.0.1"
   },
   "engines": {
     "node": ">=8.11.1"
@@ -15,7 +15,7 @@
   "scripts": {
     "test": "ava \"test/spec/**/*.js\"",
     "coverage": "nyc ava \"test/spec/**/*.js\"",
-    "lint": "standard \"lib/**/*.js\""
+    "lint": "standard"
   },
   "repository": {
     "type": "git",

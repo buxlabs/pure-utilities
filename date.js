@@ -32,8 +32,8 @@ function format (date, format) {
   const separator = separators.find(separator => format.includes(separator))
 
   if (!separator) {
-   const part = date.find(date => date.period === format)
-   return part ? part.value.toString() : 'Invalid Format'
+    const part = date.find(date => date.period === format)
+    return part ? part.value.toString() : 'Invalid Format'
   }
 
   format = format.split(separator)
@@ -43,7 +43,7 @@ function format (date, format) {
       if (index === -1) {
         date.splice(i, 1)
         i--
-      } else  if (index !== i) {
+      } else if (index !== i) {
         const copyDate = date[i]
         date[i] = date[index]
         date[index] = copyDate
@@ -131,7 +131,7 @@ function prettydate (date, localization = 'en-En') {
       ['November', 'listopada'],
       ['December', 'grudnia']
     ])
-    weekday =weekdays.get(weekday)
+    weekday = weekdays.get(weekday)
     month = months.get(month)
     return `${weekday}, ${day} ${month} ${year}`
   }

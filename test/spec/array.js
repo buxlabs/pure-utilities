@@ -84,7 +84,7 @@ test('median returns the median of a list of numbers', assert => {
 })
 
 test('median returns the median of a list of numbers', assert => {
-  assert.deepEqual(array.median([91 , 210 , 205 , 204 , 212]), 205)
+  assert.deepEqual(array.median([91, 210, 205, 204, 212]), 205)
 })
 
 test('compact returns a copy of the array only with truthy values', assert => {

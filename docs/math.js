@@ -2,7 +2,7 @@ const math = {
   abs: {
     parameters: ['number'],
     description: {
-      en: 'Returns the absolute value of the number',
+      en: 'Returns the absolute value of the number.',
       pl: 'Zwraca wartość absolutną z liczby.'
     }
   },
@@ -11,12 +11,14 @@ const math = {
     description: {
       en: 'Returns the arccosine of the number, in radians.',
       pl: 'Zwraca arcus cosinus z liczby, wyrażony w radianach.'
-  }
+    }
+  },
   acosh: {
     parameters: ['number'],
     description: {
       en: 'Returns the hyperbolic arccosine of the number.',
-      pl: 'Zwraca arcus cosinus hiperboliczny z liczby, wyrażony w radianach'
+      pl: 'Zwraca arcus cosinus hiperboliczny z liczby, wyrażony w radianach.'
+    }
   },
   asin: {
     parameters: ['number'],
@@ -29,7 +31,8 @@ const math = {
     parameters: ['number'],
     description: {
       en: 'Returns the hyperbolic arcsine of the number.',
-      pl: 'Zwraca arcus sinus hiperboliczny z liczby'
+      pl: 'Zwraca arcus sinus hiperboliczny z liczby.'
+    }
   },
   atan: {
     parameters: ['number'],
@@ -43,18 +46,21 @@ const math = {
     description: {
       en: 'Returns the arctangent of the quotient of its arguments.',
       pl: 'Zwraca arcus tanges ilorazu argumentów przekazanych do funkcji.'
+    }
   },
   atanh: {
     parameters: ['number'],
     description: {
       en: 'Returns the hyperbolic arctangent of the number.',
       pl: 'Zwraca arcus tanges hiperboliczny z liczby.'
+    }
   },
   cbrt: {
     parameters: ['number'],
     description: {
       en: 'Returns the cubic root of the number.',
       pl: 'Zwraca pierwiastek sześcienny z liczby.'
+    }
   },
   ceil: {
     parameters: ['number'],
@@ -75,47 +81,48 @@ const math = {
     description: {
       en: 'Returns the hyperbolic cosine of the number.',
       pl: 'Zwraca cosinus hiperboliczny z liczby.'
-    },
+    }
   },
   exp: {
-    parameters: ['number']
+    parameters: ['number'],
     description: {
       en: `Returns the value of E^number, where E is Euler's number.`,
       pl: `Zwraca wartość z wyrażenia E^number, gdzie E jest liczbę Eulera.`
-    },
+    }
   },
   floor: {
-    parameters: ['number']
+    parameters: ['number'],
     description: {
       en: 'Returns the number, rounded downwards to the nearest integer.',
       pl: 'Zwraca liczbę zaokrągloną w dół do najbliższej liczby całkowitej.'
+    }
   },
   log: {
-    parameters: ['number']
-    description{
+    parameters: ['number'],
+    description: {
       en: 'Returns the natural logarithm (base E) of the number.',
       pl: 'Zwraca logarytm naturalny z liczby.'
     }
   },
   max: {
-    parameters: ['numbers']
-    description{
+    parameters: ['numbers'],
+    description: {
       en: 'Returns the number with the highest value.',
       pl: 'Zwraca wartość wartość maksymalną z tablicy liczb.'
     }
   },
   min: {
-    parameters: ['numbers']
-    description{
+    parameters: ['numbers'],
+    description: {
       en: 'Returns the number with the lowest value.',
-      pl: 'Zwraca wartość minimalną z tablicy liczb'
+      pl: 'Zwraca wartość minimalną z tablicy liczb.'
     }
   },
   pow: {
-    parameters: ['number1', 'number2']
-    description{
-      en: 'Returns the value of number1 to the power of number2.',
-      pl: 'Podnosi "number1" do potęgi "number2".'
+    parameters: ['number1', 'number2'],
+    description: {
+      en: 'Returns the value of first parameter to the power of the second parameter.',
+      pl: 'Podnosi pierwszy parametr do potęgi drugiego parametru.'
     }
   },
   random: {
@@ -151,12 +158,14 @@ const math = {
     description: {
       en: 'Returns the tangent of the number.',
       pl: 'Zwraca tanges z liczby.'
+    }
   },
   tanh: {
     parameters: ['number'],
     description: {
       en: 'Returns the hyperbolic tangent of the number.',
       pl: 'Zwraca tanges hiperboliczny z liczby.'
+    }
   },
   sqrt: {
     parameters: ['number'],
@@ -179,17 +188,17 @@ const math = {
       pl: 'Zwraca kwadrat liczby.'
     }
   },
-  radians : {
+  radians: {
     parameters: ['number', 'precision'],
     description: {
       en: 'Converts degrees to radians and rounds received result to the passed precision. By default precision equals 2.',
       pl: 'Konwertuje stopnie na radiany. Rezultat domyślnie zaokrąglany jest do 2 miejsc po przecinku.'
     }
   },
-  degrees : {
+  degrees: {
     parameters: ['number', 'precision'],
     description: {
-      en: 'Converts radians to degrees and rounds received result to the passed precision. By default precision equals 2.',,
+      en: 'Converts radians to degrees and rounds received result to the passed precision. By default precision equals 2.',
       pl: 'Konwertuje radiany na stopnie. Rezultat domyślnie zaokrąglany jest do 2 miejsc po przecinku.'
     }
   },
@@ -197,55 +206,55 @@ const math = {
     parameters: ['number'],
     description: {
       en: 'Returns factorial of the number.',
-      pl: 'Zwraca silnię z liczby.',
+      pl: 'Zwraca silnię z liczby.'
     }
   },
   add: {
     parameters: ['number1', 'number2'],
     description: {
-      en: 'adds number1 to number2.',
-      pl: 'Dodaje dwie liczby'
+      en: 'Adds two parameters.',
+      pl: 'Dodaje dwa parametry.'
     }
   },
   subtract: {
     parameters: ['number1', 'number2'],
     description: {
-      en: 'Subtracts number2 from number1.',
-      pl: 'Odejmuje "number2" od "number1"'
+      en: 'Subtracts two parameters.',
+      pl: 'Odejmuje dwa parametry.'
     }
   },
   multiply: {
     parameters: ['number1', 'number2'],
     description: {
-      en: 'Multiplies number1 by number2.',
-      pl: 'Mnoży dwie liczby.'
+      en: 'Multiplies two parametrs.',
+      pl: 'Mnoży dwa parametry.'
     }
   },
   divide: {
     parameters: ['number1', 'number2'],
     description: {
-      en: 'Dividies number1 by number2.',
-      pl: 'Dzieli "number1" przez "number2"'
+      en: 'Divides two parameters.',
+      pl: 'Dzieli dwa parametry.'
     }
   },
   modulo: {
     parameters: ['number1', 'number2'],
     description: {
-      en: 'Divides number1 by number2, and returns the remainder.',
-      pl: 'Zwraca resztę z dzielenia "number1" przez "number2".'
+      en: 'Divides two parameters and returns the remainder.',
+      pl: 'Zwraca resztę z dzielenia dwóch parametrów.'
     }
   },
   increment: {
     parameters: ['number'],
     description: {
-      en: 'Increments the number',
+      en: 'Increments the number.',
       pl: 'Inkrementuje liczbę.'
     }
   },
   decrement: {
     parameters: ['number'],
     description: {
-      en: 'Decrements the number',
+      en: 'Decrements the number.',
       pl: 'Dekrementuje liczbę.'
     }
   },
@@ -253,34 +262,35 @@ const math = {
     parameters: ['number'],
     description: {
       en: 'Parses the number to the integer',
-      pl: 'Parsuje liczbę, na liczbę całkowitą.'
+      pl: 'Przetwarza liczbę na liczbę całkowitą.'
     }
   },
   float: {
     parameters: ['number'],
     description: {
       en: 'Parses the number to the float.',
-      pl: 'Parsuje liczbę, na liczbę zmiennoprzecinkową'
+      pl: 'Przetwarza liczbę na liczbę zmiennoprzecinkową.'
     }
   },
   clamp: {
     parameters: ['number, min, max'],
     description: {
-      en: 'Returns the highest possible value from range min to max included number.',
-      pl:'Zwraca największą możliwą wartość z zakresu min-max uwzględniając przekazaną liczbę.'
+      en: 'Returns the highest possible value from range min to max of the number.',
+      pl: 'Zwraca największą możliwą wartość z zakresu min-max uwzględniając przekazaną liczbę.'
+    }
   },
   percentage: {
-    parameters: ['number']
+    parameters: ['number'],
     description: {
       en: 'Converts the number to percentage format.',
       pl: 'Konwertuje liczbę na format procentowy.'
-    },
+    }
   },
   fixed: {
     parameters: ['number', 'digit'],
     description: {
       en: 'Formats the number using fixed-point notation. By default digit equals 0.',
-      pl: 'Formatuje liczbę używając notacji stałoprzcinkowej.'
+      pl: 'Formatuje liczbę używając notacji stałoprzecinkowej.'
     }
   },
   monetize: {
@@ -304,7 +314,7 @@ const math = {
            - space: Flaga booleowska, która określa czy przed symbole waluty powinna występować spacja. Domyślnie ustawiona na true.
            - hyphen: Symbol oddzielający grupy liczb całkowitych. Domyślnie ustawiony jako spacja.
            - size: Liczba, liczb całkowitych, które powinny zostać zebranę w grupę. Domyślnie 3.`
-    },
+    }
   },
   cube: {
     parameters: ['number'],
@@ -316,7 +326,7 @@ const math = {
   feet: {
     parameters: ['number', 'precision', 'decimal'],
     description: {
-      en: `Converts inches to feets. By default precision equals 2. When decimal flag is set to false, returns result with prim (′) symbol.,`
+      en: `Converts inches to feets. By default precision equals 2. When decimal flag is set to false, returns result with prim (′) symbol.`,
       pl: `Konwertuje cale na stopy. Domyślnie wynik zaokrąglany jest do 2 miejsc po przecinku. Gdy flaga "decimal" ustawiona jest jako fałsz, funkcja zwraca wynik jako łańcuch tekstowy z symoblem prim (′) na końcu.`
     }
   },
@@ -328,4 +338,5 @@ const math = {
     }
   }
 }
+
 module.exports = math
