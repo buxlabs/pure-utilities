@@ -1,6 +1,6 @@
 # pure-utilities
 
-[![Travis](https://travis-ci.org/buxlabs/pure-utilities.svg?branch=master)]()
+[ ![Codeship Status for buxlabs/pure-utilities](https://app.codeship.com/projects/9375a010-5a24-0136-54ed-56905797af22/status?branch=master)](https://app.codeship.com/projects/295277)
 
 A set of pure utility methods.
 
