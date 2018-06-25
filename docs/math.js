@@ -64,7 +64,7 @@ const math = {
   },
   ceil: {
     parameters: ['number'],
-    descripiton: {
+    description: {
       en: 'Returns the number, rounded upwards to the nearest integer.',
       pl: 'Zwraca liczbę zaokrągloną w górę do najbliższej liczby całkowitej.'
     }
