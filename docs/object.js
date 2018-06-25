@@ -1,4 +1,4 @@
-const object = [
+const object = {
   flatten: {
     parameters: ['object'],
     description: {
@@ -48,5 +48,5 @@ const object = [
       pl: 'Zwraca tablicę zawierającą nazwy właściwości obiektu.'
     }
   }
-]
+}
 module.exports = object

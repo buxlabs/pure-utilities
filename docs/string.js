@@ -1,4 +1,4 @@
-const string = [
+const string = {
   pad: {
     parameters: ['value', 'pad', 'left'],
     description: {
@@ -36,7 +36,7 @@ const string = [
   uppercase: {
     parameters: ['string'],
     description: {
-      en: `Converts string to 'UPPERCASE'`
+      en: `Converts string to 'UPPERCASE'`,
       pl: `Konwertuje łańuch znaków do notacji "UPPERCASE".`
     }
   },
@@ -53,7 +53,7 @@ const string = [
       en: `Converts first letter of the string to 'UPPERCASE'.`,
       pl: `Konwertuje pierwszą literę łańcucha tekstowego na wielką literę.`
     }
-  }
+  },
   unescape: {
     parameters: ['string'],
     description: {
@@ -146,14 +146,14 @@ const string = [
   tail: {
     parameters: ['string', 'length', 'ending'],
     description: {
-      en 'Truncates the tail of a given string.',
+      en: 'Truncates the tail of a given string.',
       pl: 'Obcina ogon danego łańcucha tekstowego.'
     }
   },
   summarize: {
-    parameters: ['string', 'lenght']
+    parameters: ['string', 'lenght'],
     description: {
-      en: `Adds three dots(...) at the end of the string, when the string is longer than the passed length.`
+      en: `Adds three dots(...) at the end of the string, when the string is longer than the passed length.`,
       pl: `Dodaje trzy kropki (...) na końcu ciągu tekstowego, gdy ciąg jest dłuższy niż podana długość.`
     }
   },
@@ -174,7 +174,7 @@ const string = [
   singlespace: {
     parameters: ['string'],
     description: {
-      en: `Replaces in the string multiple spaces to single spaces.`
+      en: `Replaces in the string multiple spaces to single spaces.`,
       pl: `Zastępuje wielokrotne wystąpienia spacji na pojedyńcze.`
     }
   },
@@ -190,11 +190,12 @@ const string = [
     description: {
       en: `Puts the string inside quotations marks. When lang equals 'en' returns string inside "", in other case returns inside „”. By defaul lang is set to 'en'.`,
       pl: `Umieszcza łańcuch tekstowy w cudzysłowiu. Gdy parametr "lang" równy jest 'en', wówczas znakiem cudzysłowiu jest ", w przeciwnym razie znakiem cudzysłowiu są „”.`
+    }
   },
   unquote: {
     parameters: ['string'],
     description: {
-      en: `If string is between quotations characters ("", „”), removes them and returns string, otherwise returns tne string.`
+      en: `If string is between quotations characters ("", „”), removes them and returns string, otherwise returns tne string.`,
       pl: `Jeśli łańcuch tekstowy znajduje się pomiędzy znakami "" lub „”, to znaki te usuwane są z łańcuch tekstowego.`
     }
   },
@@ -208,7 +209,7 @@ const string = [
   wrap: {
     parameters: ['string', 'firstCharacter', 'lastCharacter'],
     description: {
-      en: `Wraps string between firstCharacter and lastCharacter.`
+      en: `Wraps string between firstCharacter and lastCharacter.`,
       pl: `Umieszcza łańcuch tekstowy pomiędzy przekazanymi znakami.`
     }
   },
@@ -229,10 +230,10 @@ const string = [
   index: {
     parameters: ['string', 'pattern', 'start'],
     description: {
-      en: `Returns index of searched pattern. By default start equals 0.`
+      en: `Returns index of searched pattern. By default start equals 0.`,
       pl: `Zwraca indeks szukanego wzorca.`
     }
-  }
+  },
   chop: {
     parameters: ['string'],
     description: {
@@ -280,7 +281,7 @@ const string = [
     description: {
       en: `Returns initials from the passed string. Letters are separated by separator. By default separator equals ''.`,
       pl: `Zwraca inicjały na podstawie przekazanego łańcucha znaków. Litery inicjału oddzielone są za pomocą parametru "separator", który domyślnie jest pustym łańcuhem tekstowym.`
-   }
+    }
   },
   htmlstrip: {
     parameters: ['string'],
@@ -301,6 +302,7 @@ const string = [
     description: {
       en: `Converts temperature in Fahrenheit and Kelvin notation to Celsius degree. When passed string is a number, appends °C to the string.`,
       pl: `Konwertuje temperaturę wyrażoną w stopniach Fahrenheit'a lub jednostkach Kelvina, na stopnie Celsiusza.`
+    }
   },
   fahrenheit: {
     parameters: ['string'],
@@ -316,6 +318,5 @@ const string = [
       pl: `Konwertuje temperaturę wyrażoną w stopniach Fahrenheit'a lub Celsiusza, na skalę Celvina.`
     }
   }
-]
-
+}
 module.exports = string
