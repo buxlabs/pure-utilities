@@ -47,6 +47,13 @@ const date = {
       en: 'Returns a string, that contains: the name of weekday, day of the month (from 1 to 31), name of the month, and year (four digits for dates between year 1000 and 9999). Localization can be "en-En" or "pl-Pl", in other case function throws error. By default localization equals "en-En".',
       pl: 'Zwraca łańuch znaków, który zawiera: nazwę dnia tygodnia, dzień miesiąca (od 1 do 31), nazwę miesiąca oraz rok. Parametr "localization" może przyjąć wartość "en-En" lub "pl-Pl", w innym przypadku funkcja zwróci błąd. Domyślnie parametr "localization" przyjmuje wartość "en-En" i zwraca łańuch znaków w języku angielskim.'
     }
+  },
+  timestamp: {
+    parameters: ['date', 'pattern'],
+    description: {
+      en: 'Returns a formatted date, based on the passed pattern.',
+      pl: 'Zwraca sformatowaną datę, na podstawie przekazanego wzorca.'
+    }
   }
 }
 
