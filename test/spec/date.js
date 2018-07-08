@@ -161,3 +161,19 @@ test('prettydate returns date string containing name of the day, number of the d
   const error = t.throws(() => date.prettydate(new Date(2018, 11, 30), 'de-De'))
   t.is(error.message, 'de-De localization is not supported.')
 })
+
+test('timestamp can return the year', t => {
+  t.deepEqual(date.timestamp(new Date(2018, 4, 28), 'YYYY'), '2018')
+})
+
+test('timestamp can return the month', t => {
+  t.deepEqual(date.timestamp(new Date(2018, 4, 28), 'YYYY/MM'), '2018/05')
+})
+
+test('timestamp can return the day', t => {
+  t.deepEqual(date.timestamp(new Date(2018, 4, 28), 'YYYY/MM/DD'), '2018/05/28')
+})
+
+test('timestamp has a default pattern', t => {
+  t.deepEqual(date.timestamp(new Date(2018, 4, 28)), '2018-05-28')
+})
