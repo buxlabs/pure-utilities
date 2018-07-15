@@ -261,7 +261,7 @@ const math = {
   int: {
     parameters: ['number'],
     description: {
-      en: 'Parses the number to the integer',
+      en: 'Parses the number to the integer.',
       pl: 'Przetwarza liczbę na liczbę całkowitą.'
     }
   },

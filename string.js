@@ -110,23 +110,23 @@ function classify (string) {
 function pluralize (string) {
   const endings = ['ch', 's', 'ss', 'sh', 'x', 'o']
   const vowels = ['a', 'e', 'i', 'o', 'u']
-  const lastCharacter = string.charAt(string.length - 1)
-  const lastCharacters = string.substr(string.length - 2)
+  const last = string.charAt(string.length - 1)
+  const lasts = string.substr(string.length - 2)
 
-  if (endings.includes(lastCharacter) || endings.includes(lastCharacters)) {
+  if (endings.includes(last) || endings.includes(lasts)) {
     return string.concat('es')
   }
 
   if (string.endsWith('f')) {
-    return string.replace(lastCharacter, 'ves')
+    return string.replace(last, 'ves')
   }
 
   if (string.endsWith('fe')) {
-    return string.replace(lastCharacters, 'ves')
+    return string.replace(lasts, 'ves')
   }
 
   if (string.endsWith('y') && !vowels.includes(string.charAt(string.length - 2))) {
-    return string.replace(lastCharacter, 'ies')
+    return string.replace(last, 'ies')
   }
 
   return string.concat('s')
@@ -154,10 +154,10 @@ function swapcase (string) {
   }).join('')
 }
 
-function camelize (string, camelcased = false) {
+function camelize (string, lowercased = false) {
   const endings = /[^(a-zA-Z0-9)]|_|\s/g
   string = string.trim()
-  string = string.charAt(0)[camelcased ? 'toUpperCase' : 'toLowerCase']() + string.substr(1)
+  string = string.charAt(0)[lowercased ? 'toUpperCase' : 'toLowerCase']() + string.substr(1)
 
   for (let i = 1, ilen = string.length; i < ilen; i += 1) {
     if (endings.test(string[i])) {
@@ -238,15 +238,15 @@ function squeeze (string, pattern = 'a-zA-Z') {
   return string
 }
 
-function wrap (string, firstCharacter, lastCharacter = firstCharacter) {
-  if (!firstCharacter) return string
-  return firstCharacter + string + lastCharacter
+function wrap (string, first, last = first) {
+  if (!first) return string
+  return first + string + last
 }
 
-function unwrap (string, firstCharacter, lastCharacter = firstCharacter) {
-  if (!firstCharacter) return string
-  if (string.startsWith(firstCharacter)) string = string.substr(1)
-  if (string.endsWith(lastCharacter)) string = string.substr(0, string.length - 1)
+function unwrap (string, first, last = first) {
+  if (!first) return string
+  if (string.startsWith(first)) string = string.substr(1)
+  if (string.endsWith(last)) string = string.substr(0, string.length - 1)
 
   return string
 }

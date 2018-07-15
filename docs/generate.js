@@ -14,5 +14,9 @@ for (let name in utilities) {
     if (!description.en || !description.pl) {
       throw new Error(`Translations missing for: ${method}`)
     }
+    if (description.en[description.en.length - 1] !== '.' ||
+      description.pl[description.pl.length - 1] !== '.') {
+      throw new Error(`Translation for ${method} must end with a dot`)
+    }
   }
 }

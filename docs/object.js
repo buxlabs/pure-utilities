@@ -2,7 +2,7 @@ const object = {
   dig: {
     parameters: ['object', 'string'],
     description: {
-      en: 'Returns the value of any object property, which the name has been passed in the string',
+      en: 'Returns the value of any object property, which the name has been passed in the string.',
       pl: 'Zwraca wartość dowolnej właściwości obiektu, na podstawie przekazanego łańcucha znaków.'
     }
   },
@@ -23,14 +23,14 @@ const object = {
   pat: {
     parameters: ['object', 'string', 'value'],
     description: {
-      en: 'Overrides the value of any object property, which the name has been passed in the string with the value',
-      pl: 'Nadpisuje wartość właściwości, której nazwa została przekazana w parametrze "string", na wartość przekazaną w parametrze "value"'
+      en: 'Overrides the value of any object property, which the name has been passed in the string with the value.',
+      pl: 'Nadpisuje wartość właściwości, której nazwa została przekazana w parametrze string, na wartość przekazaną w parametrze value.'
     }
   },
   rename: {
     parameters: ['object', 'keys'],
     description: {
-      en: `Changes names of the object properties to responds values from the key's object.`,
+      en: `Changes names of the object properties to responds values from the keys object.`,
       pl: 'Zmienia nazwy właściwości obiektu, na odpowiadające im wartości z obiektu keys.'
     }
   },
@@ -44,7 +44,7 @@ const object = {
   values: {
     parameters: ['object'],
     description: {
-      en: `Returns an array of a given object's own enumerable property values`,
+      en: `Returns an array of a given object's own enumerable property values.`,
       pl: 'Zwraca tablicę zawierającą własne, wyliczalne właściwości obiektu.'
     }
   }

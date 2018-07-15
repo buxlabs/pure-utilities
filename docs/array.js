@@ -16,7 +16,7 @@ const array = {
   drop: {
     parameters: ['array', 'digit'],
     description: {
-      en: 'Removes elements of the array',
+      en: 'Removes elements of the array.',
       pl: 'Usuwa wybraną liczbę elementów z tablicy.'
     }
   },

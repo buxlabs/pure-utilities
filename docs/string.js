@@ -17,7 +17,7 @@ const string = {
     parameters: ['string'],
     description: {
       en: `Converts temperature in Fahrenheit and Kelvin notation to Celsius degree. When passed string is a number, appends °C to the string.`,
-      pl: `Konwertuje temperaturę wyrażoną w stopniach Fahrenheita lub jednostkach Kelvina, na stopnie Celsiusza.`
+      pl: `Konwertuje temperaturę wyrażoną w stopniach Fahrenheita lub jednostkach Kelvina na stopnie Celsiusza.`
     }
   },
   chomp: {
@@ -73,14 +73,14 @@ const string = {
     parameters: ['string'],
     description: {
       en: `Converts temperature in Celsius and Kelvin notation to Fahrenheit degree. When passed string is a number, appends °F to the string.`,
-      pl: `Konwertuje temperaturę wyrażoną w stopniach Celsjusza lub jednostkach Kelvina, na stopnie Fahrenheita.`
+      pl: `Konwertuje temperaturę wyrażoną w stopniach Celsjusza lub jednostkach Kelvina na stopnie Fahrenheita.`
     }
   },
   htmlstrip: {
     parameters: ['string'],
     description: {
       en: 'Removes HTML tags from the string. Warning: do not use it as a security mechanism.',
-      pl: 'Usuwa tagi HTML z podanego łańcucha znaków. Uwaga: nie należy stosować jako mechanizm zabezpieczający.'
+      pl: 'Usuwa tagi HTML z podanego łańcucha znaków. Uwaga: nie należy stosować jako mechanizmu zabezpieczającego.'
     }
   },
   humanize: {
@@ -93,8 +93,8 @@ const string = {
   hyphenate: {
     parameters: ['string'],
     description: {
-      en: 'Replaces spaces with hyphens, splits camelCase text, remove non-word chars and converts string to lower case.',
-      pl: 'Zastępuje znak spacji myślnikami(-), oddziela znakiem myślnika(-) wyrazy zapisane w notacji "camelCase". Usuwa wyrazy nie będące słowami i konwertuje wszystkie litery na małe.'
+      en: 'Replaces spaces with hyphens, splits camelcase text, remove non-word chars and converts string to lowercase.',
+      pl: 'Zastępuje znak spacji myślnikami, oddziela znakiem myślnika wyrazy zapisane w notacji camelcase. Usuwa wyrazy niebędące słowami i konwertuje wszystkie litery na małe.'
     }
   },
   index: {
@@ -129,14 +129,14 @@ const string = {
     parameters: ['string'],
     description: {
       en: `Converts first letter of the string to lowercase.`,
-      pl: `Konwertuje pierwszą literę łańcucha znaków na wielką literę.`
+      pl: `Konwertuje pierwszą literę łańcucha znaków na małą literę.`
     }
   },
   pad: {
     parameters: ['string', 'pad', 'left = true'],
     description: {
       en: `Returns string with added pad from left side or right side.`,
-      pl: `Zwraca łańuch znaków z dodanym marginesem z lewej lub prawej strony.`
+      pl: `Zwraca łańcuch znaków z dodanym marginesem z lewej lub prawej strony.`
     }
   },
   pluralize: {
@@ -168,17 +168,17 @@ const string = {
     }
   },
   singularize: {
-    parameters: ['string', 'appendix'],
+    parameters: ['string', 'appendix = ""'],
     description: {
       en: `Returns singular form of the string.`,
       pl: `Zwraca liczbę pojedynczą rzeczownika.`
     }
   },
   slugify: {
-    parameters: ['string', 'separator'],
+    parameters: ['string', 'separator = "-"'],
     description: {
-      en: `Converts string to lower case, remove non-word chars and replace spaces with the separator`,
-      pl: `Konwertuje litery łańcucha znaków na małe, usuwa wyrazy nie będące słowami, zastępuje spacje przekazanym do funkcji separatorem.`
+      en: `Converts string to lower case, remove non-word chars and replace spaces with the separator.`,
+      pl: `Konwertuje litery łańcucha znaków na małe, usuwa wyrazy niebędące słowami, zastępuje spacje przekazanym do funkcji separatorem.`
     }
   },
   split: {
@@ -199,11 +199,11 @@ const string = {
     parameters: ['string', 'pattern = "a-zA-Z"'],
     description: {
       en: 'Replaces in string multiple repetitions of the same characters to the one character.',
-      pl: 'Usuwa z łańcucha tekstowego wielokrotne wystąpienia tego samego znaku..'
+      pl: 'Usuwa z łańcucha tekstowego wielokrotne wystąpienia tego samego znaku.'
     }
   },
   summarize: {
-    parameters: ['string', 'length'],
+    parameters: ['string', 'length = 100'],
     description: {
       en: `Adds three dots at the end of the string, when the string is longer than the passed length.`,
       pl: `Dodaje trzy kropki na końcu łańcucha znaków, gdy ciąg jest dłuższy niż podana długość.`
@@ -217,7 +217,7 @@ const string = {
     }
   },
   tail: {
-    parameters: ['string', 'length', 'ending'],
+    parameters: ['string', 'length = 30', 'ending = "..."'],
     description: {
       en: 'Truncates the tail of a given string.',
       pl: 'Skraca dany łańcuch tekstowy.'
@@ -266,7 +266,7 @@ const string = {
     }
   },
   unwrap: {
-    parameters: ['string', 'first', 'last'],
+    parameters: ['string', 'first', 'last = first'],
     description: {
       en: `Removes characters from the start and end of the string based on the passed values.`,
       pl: `Usuwa znaki z początku i końca łańcucha znaków na podstawie przekazanych parametrów.`
@@ -294,7 +294,7 @@ const string = {
     }
   },
   wrap: {
-    parameters: ['string', 'first', 'last'],
+    parameters: ['string', 'first', 'last = first'],
     description: {
       en: `Wraps string between the first and last parameters.`,
       pl: `Umieszcza łańcuch znaków pomiędzy przekazanymi parametrami.`
