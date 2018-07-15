@@ -1,272 +1,93 @@
 const string = {
-  pad: {
-    parameters: ['value', 'pad', 'left'],
+  camelize: {
+    parameters: ['string', 'lowercased'],
     description: {
-      en: `Returns string with added pad from left side or right side.
-           When pad is string, prepends or appends them to the value(depending on left is truthy value).
-           When pad is a number, prepends or appends (pad) whitespaces to the value(depending on left is truthy value).
-           When left is truthy, pad is prepends to value, otherwise pad is appends to value.
-           By default left is truthy.`,
-      pl: `Zwraca łańuch znaków z dodanym marginesem z lewej lub prawej strony.
-           Jeżeli parametr "pad" jest łańcuchem znaków, to łańuch ten doklejany jest do parametru "value".
-           Jeżeli parametr pad jest liczbą, to wówczas do parametru "value" dodawane są puste spacje.
-           W zależności od wartości flagi "left" margines jes dodawany z lewej lub prawej strony. Domyślnie flaga ustawiona jest na true.`
-    }
-  },
-  trim: {
-    parameters: ['string'],
-    description: {
-      en: `Removes whitespace from the start and the end of the string.`,
-      pl: `Usuwa spacje z początku i końca łańcucha znaków`
-    }
-  },
-  strip: {
-    parameters: ['string', 'pattern'],
-    description: {
-      en: `Removes from the string, passed pattern. Pattern could be a string or an array.
-           When pattern is a string then removes substring.
-           When pattern is an array or pattern is one character string then removes globally from the string single character.
-           When pattern has not been passed, trims the string.`,
-      pl: `Usuwa z łańcucha tekstowego przekazany wzorzec. Wzorzec może być łańcuchem tekstowym lub tablicą.
-           Jeżeli wzorzec jest łańcuchem tekstowym, to jest on usuwany z parametru "string".
-           Jeżeli wzorzec jest tablicą lub pojedyńczym znakiem, to z parametru "string" usuwane są globalnie poszczególne znaki.
-           W przypadku gdy wzorzec nie został przekazany, z początku oraz końca parametru "string" usuwane są spacje.`
-    }
-  },
-  uppercase: {
-    parameters: ['string'],
-    description: {
-      en: `Converts string to 'UPPERCASE'`,
-      pl: `Konwertuje łańuch znaków do notacji "UPPERCASE".`
-    }
-  },
-  underscore: {
-    parameters: ['string'],
-    description: {
-      en: `Returns new string with words separated by "_". All letters are lowercase.`,
-      pl: `Zwraca nowy łańcuch znaków, w którym wyrazy oddzielone są od siebie podłogą(_) i pisaną są małą literą.`
+      en: `Converts string to camelcase notation. Second parameter sets the first letter to lowercase or uppercase.`,
+      pl: `Konwertuje łańcuch znaków do notacji camelcase. Drugi parametr określa konwersję pierwszej litery na małą lub dużą.`
     }
   },
   capitalize: {
     parameters: ['string'],
     description: {
-      en: `Converts first letter of the string to 'UPPERCASE'.`,
-      pl: `Konwertuje pierwszą literę łańcucha tekstowego na wielką literę.`
+      en: `Converts first letter of the string to uppercase.`,
+      pl: `Konwertuje pierwszą literę łańcucha znaków na wielką literę.`
     }
   },
-  unescape: {
+  celsius: {
     parameters: ['string'],
     description: {
-      en: `Converts the HTML entities in string to their corresponding characters.`,
-      pl: `Konwertuje encje HTML, na odpowiadające im znaki.`
-    }
-  },
-  lowerfirst: {
-    parameters: ['string'],
-    description: {
-      en: `Converts first letter of the string to 'lowercase'.`,
-      pl: `Konwertuje pierwszą literę łańcucha tekstowego na wielką literę.`
-    }
-  },
-  lowercase: {
-    parameters: ['string'],
-    description: {
-      en: `Converts string to 'lowercase'`,
-      pl: `Konwertuje wielkie litery w łańcuchu tekstowym na małe.`
-    }
-  },
-  humanize: {
-    parameters: ['string', 'capitalize'],
-    description: {
-      en: `Replaces '_' with singlespaces. When capitalize is truthy, converts first char of the string to 'UPPERCASE'. By default capitalize is truthy.`,
-      pl: `Zamienia pojedyńcze spacje na podłogę(_). Gdy flaga "capitalize" ustawiona jest na true, konwertuje pierwszą literę łańcucha na wielką, domyślnie flaga przyjmuje wartość true.`
-    }
-  },
-  titleize: {
-    parameters: ['string'],
-    description: {
-      en: `Converts to 'UPPERCASE' first letter of each word in string(separated by singlespace).`,
-      pl: `Konwertuje pierwszą literą każdego wyrazu(wyrazy oddzielone pojedyńczą spacją) na wielką.`
-    }
-  },
-  dasherize: {
-    parameters: ['string'],
-    description: {
-      en: `Replaces globally in the string "_" to "-".`,
-      pl: `Zamienia w łańcuchu tekstowym znaki podłogi(_) na myślniki(-).`
-    }
-  },
-  classify: {
-    parameters: ['string'],
-    description: {
-      en: `Creates a class name from the string.`,
-      pl: `Tworzy nazwę klasy na podstawie łańcucha tekstowego.`
-    }
-  },
-  pluralize: {
-    parameters: ['string'],
-    description: {
-      en: `Returns plural form of the string.`,
-      pl: `Zwraca liczbę mnogą rzeczownika.`
-    }
-  },
-  singularize: {
-    parameters: ['string', 'appendix'],
-    description: {
-      en: `Returns singular form of the string.`,
-      pl: `Zwraca liczbę pojedyńczą rzeczownika.`
-    }
-  },
-  camelize: {
-    parameters: ['string', 'camelcased'],
-    description: {
-      en: `Converts string to "lowerCase" or "UpperCase" notation.
-           When camelcased is falsy returns string in "lowerCase" notation otherwise in "UpperCase" notation.
-           By default camelcased is falsy.`,
-      pl: `Konwertuje łańcuch znaków do notacji "lowerCase", w przypadku gdy flaga "camelcased" ustawiona jest na true, w przeciwnym razie łańcuch tekstowy konwertowany jest do notacji "UpperCase".
-           Domyślnie flaga "camelcased" ustawiona jest na true.`
-    }
-  },
-  constantize: {
-    parameters: ['string'],
-    description: {
-      en: `Converts string to "CONSTANT_NOTATION".`,
-      pl: `Konwertuje łańcuch tekstowy do notacji "CONSTANT_VARIABLE".`
-    }
-  },
-  truncate: {
-    parameters: ['string', 'length', 'ending'],
-    description: {
-      en: `Truncates a given string if is longer than passed length and replaces last chars of new string with passed ending.
-           When the string length is smaller than passed length returns string.
-           By default length equals 30. By default ending equals '...'`,
-      pl: `Ucina łańcuch tekstowy, jeśli jest dłuższy niż podana długość i dokleja w miejscu ucięcia parametr "ending" (domyślnie ...).`
-    }
-  },
-  tail: {
-    parameters: ['string', 'length', 'ending'],
-    description: {
-      en: 'Truncates the tail of a given string.',
-      pl: 'Obcina ogon danego łańcucha tekstowego.'
-    }
-  },
-  summarize: {
-    parameters: ['string', 'lenght'],
-    description: {
-      en: `Adds three dots(...) at the end of the string, when the string is longer than the passed length.`,
-      pl: `Dodaje trzy kropki (...) na końcu ciągu tekstowego, gdy ciąg jest dłuższy niż podana długość.`
-    }
-  },
-  swapcase: {
-    parameters: ['string'],
-    description: {
-      en: `Replaces in string lower case letters to uppercase and uppercase letters to lowercase.`,
-      pl: `Zamienia wielkie litery na małe, a duże na wielkie.`
-    }
-  },
-  repeat: {
-    parameters: ['string', 'count'],
-    description: {
-      en: `Repeats the string (count) times.`,
-      pl: `Powiela łańcuch znaków okresloną ilość razy.`
-    }
-  },
-  singlespace: {
-    parameters: ['string'],
-    description: {
-      en: `Replaces in the string multiple spaces to single spaces.`,
-      pl: `Zastępuje wielokrotne wystąpienia spacji na pojedyńcze.`
-    }
-  },
-  whitespacestrip: {
-    parameters: ['string'],
-    description: {
-      en: `Removes from string whitespaces.`,
-      pl: `Usuwa z łańcucha tekstowego spacje.`
-    }
-  },
-  quote: {
-    parameters: ['string', 'lang'],
-    description: {
-      en: `Puts the string inside quotations marks. When lang equals 'en' returns string inside "", in other case returns inside „”. By defaul lang is set to 'en'.`,
-      pl: `Umieszcza łańcuch tekstowy w cudzysłowiu. Gdy parametr "lang" równy jest 'en', wówczas znakiem cudzysłowiu jest ", w przeciwnym razie znakiem cudzysłowiu są „”.`
-    }
-  },
-  unquote: {
-    parameters: ['string'],
-    description: {
-      en: `If string is between quotations characters ("", „”), removes them and returns string, otherwise returns tne string.`,
-      pl: `Jeśli łańcuch tekstowy znajduje się pomiędzy znakami "" lub „”, to znaki te usuwane są z łańcuch tekstowego.`
-    }
-  },
-  squeeze: {
-    parameters: ['string', 'pattern'],
-    description: {
-      en: 'Replaces in string multiple repetitions of the same characters to the one character. Pattern is a string based on which the regular expression is created. By default equals a-zA-Z',
-      pl: 'Usuwa z łańcucha tekstowego wielokrotne wystąpienia tego samego znaku. Parametr "pattern" jest ciągiem tekstowym, na podstawie którego tworzone jest wyrażenie regularne. Domyślnie jest równe a-zA-Z.'
-    }
-  },
-  wrap: {
-    parameters: ['string', 'firstCharacter', 'lastCharacter'],
-    description: {
-      en: `Wraps string between firstCharacter and lastCharacter.`,
-      pl: `Umieszcza łańcuch tekstowy pomiędzy przekazanymi znakami.`
-    }
-  },
-  unwrap: {
-    parameters: ['string', 'firstCharacter', 'lastCharacter'],
-    description: {
-      en: `Removes from the begining and from the end of the string passed characters`,
-      pl: `Usuwa z początku i końca łańcucha tekstowego przekazane do funkcji znaki.`
-    }
-  },
-  replace: {
-    parameters: ['string', 'pattern', 'newString'],
-    description: {
-      en: `Replaces searched pattern by newString.`,
-      pl: `Zastępuje podany wzorzec nowym łańcuhem tekstowym.`
-    }
-  },
-  index: {
-    parameters: ['string', 'pattern', 'start'],
-    description: {
-      en: `Returns index of searched pattern. By default start equals 0.`,
-      pl: `Zwraca indeks szukanego wzorca.`
-    }
-  },
-  chop: {
-    parameters: ['string'],
-    description: {
-      en: 'Returns string with last character removed. If the string ends with rn special chars, both characters are removed.',
-      pl: 'Zwraca łańcuch tekstowy z usuniętym ostatnim znakiem. Jeśli łańcuch tekstowy kończy się specjalnymi znakami (rn), to wówczas oba są usuwane.'
+      en: `Converts temperature in Fahrenheit and Kelvin notation to Celsius degree. When passed string is a number, appends °C to the string.`,
+      pl: `Konwertuje temperaturę wyrażoną w stopniach Fahrenheita lub jednostkach Kelvina, na stopnie Celsiusza.`
     }
   },
   chomp: {
     parameters: ['string', 'pattern'],
     description: {
-      en: 'Removes from the end of the string passed pattern. When pattern has not been passed, removes from the end of the string rn special chars',
-      pl: 'Usuwa z końca łańcucha tekstowego podany wzorzec.'
+      en: 'Removes from the end of the string passed pattern.',
+      pl: 'Usuwa podany wzorzec z końca łańcucha znaków.'
+    }
+  },
+  chop: {
+    parameters: ['string'],
+    description: {
+      en: 'Returns string with last character removed. If the string ends with line ending characters then both will be removed.',
+      pl: 'Zwraca łańcuch tekstowy z usuniętym ostatnim znakiem. Jeśli łańcuch znaków kończy się znakami końca linii, to oba są usuwane.'
+    }
+  },
+  classify: {
+    parameters: ['string'],
+    description: {
+      en: `Creates a class name based on the string.`,
+      pl: `Tworzy nazwę klasy na podstawie łańcucha znaków.`
+    }
+  },
+  constantize: {
+    parameters: ['string'],
+    description: {
+      en: `Converts string to constant notation.`,
+      pl: `Konwertuje łańcuch tekstowy do notacji constant.`
+    }
+  },
+  crop: {
+    parameters: ['string', 'length', 'append'],
+    description: {
+      en: `Truncates string at full words. Adds ... if the string is longer than the second parameter.`,
+      pl: `Przycina łańcuch znaków do całych wyrazów. Dodaje ... jeśli string jest dłuższy niż drugi parametr.`
+    }
+  },
+  dasherize: {
+    parameters: ['string'],
+    description: {
+      en: `Replaces _ with -.`,
+      pl: `Zamienia _ na -.`
     }
   },
   dot: {
     parameters: ['string'],
     description: {
       en: 'Returns string with dot at the end.',
-      pl: 'Zwraca łańcuch tekstowy z kropką (.) na końcu.'
+      pl: 'Zwraca łańcuch znaków z kropką na końcu.'
     }
   },
-  crop: {
-    parameters: ['string', 'length', 'append'],
+  fahrenheit: {
+    parameters: ['string'],
     description: {
-      en: `Truncates string at full words. When length of string is longer than passed length, cut the string and add to string append. By default append equals ...`,
-      pl: `Przycina łańcuch tekstowy do całych wyrazów.`
+      en: `Converts temperature in Celsius and Kelvin notation to Fahrenheit degree. When passed string is a number, appends °F to the string.`,
+      pl: `Konwertuje temperaturę wyrażoną w stopniach Celsjusza lub jednostkach Kelvina, na stopnie Fahrenheita.`
     }
   },
-  slugify: {
-    parameters: ['string', 'separator'],
+  htmlstrip: {
+    parameters: ['string'],
     description: {
-      en: `Converts string to lower case, remove non-word chars and replace spaces with the separator`,
-      pl: `Konwertuje litery łańcucha tekstowego na małe, usuwa wyrazy nie będące słowami, zastępuje spacje przekazanym do funkcji separatorem.`
+      en: 'Removes HTML tags from the string. Warning: do not use it as a security mechanism.',
+      pl: 'Usuwa tagi HTML z podanego łańcucha znaków. Uwaga: nie należy stosować jako mechanizm zabezpieczający.'
+    }
+  },
+  humanize: {
+    parameters: ['string', 'capitalize = true'],
+    description: {
+      en: `Replaces _ with singlespaces. When capitalize is truthy, converts first char of the string to uppercase.`,
+      pl: `Zamienia _ na spacje. Gdy flaga capitalize ustawiona jest na true, konwertuje pierwszą literę łańcucha na wielką.`
     }
   },
   hyphenate: {
@@ -276,46 +97,207 @@ const string = {
       pl: 'Zastępuje znak spacji myślnikami(-), oddziela znakiem myślnika(-) wyrazy zapisane w notacji "camelCase". Usuwa wyrazy nie będące słowami i konwertuje wszystkie litery na małe.'
     }
   },
+  index: {
+    parameters: ['string', 'pattern', 'start = 0'],
+    description: {
+      en: `Returns index of searched pattern.`,
+      pl: `Zwraca indeks szukanego wzorca.`
+    }
+  },
   initials: {
-    parameters: ['string', 'separator'],
+    parameters: ['string', 'separator = ""'],
     description: {
-      en: `Returns initials from the passed string. Letters are separated by separator. By default separator equals ''.`,
-      pl: `Zwraca inicjały na podstawie przekazanego łańcucha znaków. Litery inicjału oddzielone są za pomocą parametru "separator", który domyślnie jest pustym łańcuhem tekstowym.`
-    }
-  },
-  htmlstrip: {
-    parameters: ['string'],
-    description: {
-      en: 'Removes HTML tags from the string.',
-      pl: 'Usuwa tagi HTML z podanego łańcucha znaków.'
-    }
-  },
-  split: {
-    parameters: ['string', 'separator'],
-    description: {
-      en: `Splits string into an array by separating the string into substrings. By default separator equals ''`,
-      pl: `Dzieli łańcuch znaków na tablicę, dzieląc łańuch tekstowy na podłańuchy, na podstawie separatora. Domyślnie separator równy jest pustemu łańcuhowi znaków.`
-    }
-  },
-  celsius: {
-    parameters: ['string'],
-    description: {
-      en: `Converts temperature in Fahrenheit and Kelvin notation to Celsius degree. When passed string is a number, appends °C to the string.`,
-      pl: `Konwertuje temperaturę wyrażoną w stopniach Fahrenheit'a lub jednostkach Kelvina, na stopnie Celsiusza.`
-    }
-  },
-  fahrenheit: {
-    parameters: ['string'],
-    description: {
-      en: `Converts temperature in Celsius and Kelvin notation to Fahrenheit degree. When passed string is a number, appends °F to the string.`,
-      pl: `Konwertuje temperaturę wyrażoną w stopniach Celsiusza lub jednostkach Kelvina, na stopnie Fahrenheit'a.`
+      en: `Returns initials separated by the separator.`,
+      pl: `Zwraca inicjały rozdzielone separatorem.`
     }
   },
   kelvin: {
     parameters: ['string'],
     description: {
       en: 'Converts temperature in Celsius and Fahrenheit notation to Kelvin scale. When passed string is a number, appends K to the string.',
-      pl: `Konwertuje temperaturę wyrażoną w stopniach Fahrenheit'a lub Celsiusza, na skalę Celvina.`
+      pl: `Konwertuje temperaturę wyrażoną w stopniach Fahrenheita lub Celsjusza, na skalę Kelvina.`
+    }
+  },
+  lowercase: {
+    parameters: ['string'],
+    description: {
+      en: `Converts string to lowercase.`,
+      pl: `Konwertuje litery na małe.`
+    }
+  },
+  lowerfirst: {
+    parameters: ['string'],
+    description: {
+      en: `Converts first letter of the string to lowercase.`,
+      pl: `Konwertuje pierwszą literę łańcucha znaków na wielką literę.`
+    }
+  },
+  pad: {
+    parameters: ['string', 'pad', 'left = true'],
+    description: {
+      en: `Returns string with added pad from left side or right side.`,
+      pl: `Zwraca łańuch znaków z dodanym marginesem z lewej lub prawej strony.`
+    }
+  },
+  pluralize: {
+    parameters: ['string'],
+    description: {
+      en: `Returns plural form of the string.`,
+      pl: `Zwraca liczbę mnogą rzeczownika.`
+    }
+  },
+  repeat: {
+    parameters: ['string', 'count'],
+    description: {
+      en: `Repeats the string n times.`,
+      pl: `Powiela łańcuch znaków okresloną ilość razy.`
+    }
+  },
+  replace: {
+    parameters: ['string', 'pattern', 'replace'],
+    description: {
+      en: `Replaces searched pattern by the last parameter.`,
+      pl: `Zastępuje podany wzorzec nowym łańcuchem znaków.`
+    }
+  },
+  singlespace: {
+    parameters: ['string'],
+    description: {
+      en: `Replaces in the string multiple spaces to single spaces.`,
+      pl: `Zastępuje wielokrotne wystąpienia spacji na pojedyncze.`
+    }
+  },
+  singularize: {
+    parameters: ['string', 'appendix'],
+    description: {
+      en: `Returns singular form of the string.`,
+      pl: `Zwraca liczbę pojedynczą rzeczownika.`
+    }
+  },
+  slugify: {
+    parameters: ['string', 'separator'],
+    description: {
+      en: `Converts string to lower case, remove non-word chars and replace spaces with the separator`,
+      pl: `Konwertuje litery łańcucha znaków na małe, usuwa wyrazy nie będące słowami, zastępuje spacje przekazanym do funkcji separatorem.`
+    }
+  },
+  split: {
+    parameters: ['string', 'separator = ""'],
+    description: {
+      en: `Splits string into an array by separating the string into substrings.`,
+      pl: `Dzieli łańcuch znaków na tablicę, dzieląc łańcuch znaków na części na podstawie separatora.`
+    }
+  },
+  strip: {
+    parameters: ['string', 'pattern'],
+    description: {
+      en: `Removes the passed pattern from the string.`,
+      pl: `Usuwa przekazany wzorzec z łańcucha znaków.`
+    }
+  },
+  squeeze: {
+    parameters: ['string', 'pattern = "a-zA-Z"'],
+    description: {
+      en: 'Replaces in string multiple repetitions of the same characters to the one character.',
+      pl: 'Usuwa z łańcucha tekstowego wielokrotne wystąpienia tego samego znaku..'
+    }
+  },
+  summarize: {
+    parameters: ['string', 'length'],
+    description: {
+      en: `Adds three dots at the end of the string, when the string is longer than the passed length.`,
+      pl: `Dodaje trzy kropki na końcu łańcucha znaków, gdy ciąg jest dłuższy niż podana długość.`
+    }
+  },
+  swapcase: {
+    parameters: ['string'],
+    description: {
+      en: `Replaces in string lowercased letters to uppercase and uppercased letters to lowercase.`,
+      pl: `Zamienia duże litery na małe, a małe na duże.`
+    }
+  },
+  tail: {
+    parameters: ['string', 'length', 'ending'],
+    description: {
+      en: 'Truncates the tail of a given string.',
+      pl: 'Skraca dany łańcuch tekstowy.'
+    }
+  },
+  titleize: {
+    parameters: ['string'],
+    description: {
+      en: `Converts to 'uppercase' first letter of each word in string.`,
+      pl: `Konwertuje pierwszą literą każdego wyrazu na wielką.`
+    }
+  },
+  trim: {
+    parameters: ['string'],
+    description: {
+      en: `Removes whitespace from the start and the end of the string.`,
+      pl: `Usuwa spacje z początku i końca łańcucha znaków.`
+    }
+  },
+  truncate: {
+    parameters: ['string', 'length = 30', 'ending = "..."'],
+    description: {
+      en: `Truncates a given string if it  longer than the passed length and replaces last chars of new string with the passed ending.`,
+      pl: `Ucina łańcuch tekstowy, jeśli jest dłuższy niż podana długość i dokleja w miejscu ucięcia ostatni parametr.`
+    }
+  },
+  quote: {
+    parameters: ['string', 'lang = "en"'],
+    description: {
+      en: `Puts the string inside quotations marks.`,
+      pl: `Umieszcza łańcuch tekstowy w cudzysłowiu.`
+    }
+  },
+  underscore: {
+    parameters: ['string'],
+    description: {
+      en: `Returns new string with words separated by _. All letters are lowercased.`,
+      pl: `Zwraca nowy łańcuch znaków, w którym wyrazy oddzielone są od siebie znakiem _. Wszystkie litery są konwertowane na małe.`
+    }
+  },
+  unquote: {
+    parameters: ['string'],
+    description: {
+      en: `Rmoves "" or „” from the string.`,
+      pl: `Usuwa "" lub „” z łańcucha znaków.`
+    }
+  },
+  unwrap: {
+    parameters: ['string', 'first', 'last'],
+    description: {
+      en: `Removes characters from the start and end of the string based on the passed values.`,
+      pl: `Usuwa znaki z początku i końca łańcucha znaków na podstawie przekazanych parametrów.`
+    }
+  },
+  uppercase: {
+    parameters: ['string'],
+    description: {
+      en: `Converts string to uppercase.`,
+      pl: `Konwertuje litery na wielkie.`
+    }
+  },
+  unescape: {
+    parameters: ['string'],
+    description: {
+      en: `Converts the HTML entities to their corresponding characters.`,
+      pl: `Konwertuje encje HTML na odpowiadające im znaki.`
+    }
+  },
+  whitespacestrip: {
+    parameters: ['string'],
+    description: {
+      en: `Removes whitespaces from the string.`,
+      pl: `Usuwa spacje z łańcucha znaków.`
+    }
+  },
+  wrap: {
+    parameters: ['string', 'first', 'last'],
+    description: {
+      en: `Wraps string between the first and last parameters.`,
+      pl: `Umieszcza łańcuch znaków pomiędzy przekazanymi parametrami.`
     }
   }
 }

@@ -10,12 +10,13 @@
     "standard": "^11.0.1"
   },
   "engines": {
-    "node": ">=8.11.1"
+    "node": ">=8.11.3"
   },
   "scripts": {
     "test": "ava \"test/spec/**/*.js\"",
     "coverage": "nyc ava \"test/spec/**/*.js\"",
-    "lint": "standard"
+    "lint": "standard",
+    "docs": "node docs/generate.js"
   },
   "repository": {
     "type": "git",
