@@ -109,51 +109,33 @@ function prettydate (date, localization = 'en-En') {
   }
   if (localization === 'pl-Pl') {
     const weekdays = new Map([
-      ['Mon', 'poniedziałek'],
-      ['Tue', 'wtorek'],
-      ['Wed', 'środa'],
-      ['Thu', 'czwartek'],
-      ['Fri', 'piątek'],
-      ['Sat', 'sobota'],
-      ['Sun', 'niedziela']
+      ['Monday', 'poniedziałek'],
+      ['Tuesday', 'wtorek'],
+      ['Wednesday', 'środa'],
+      ['Thursday', 'czwartek'],
+      ['Friday', 'piątek'],
+      ['Saturday', 'sobota'],
+      ['Sunday', 'niedziela']
     ])
     const months = new Map([
-      ['M01', 'stycznia'],
-      ['M02', 'lutego'],
-      ['M03', 'marca'],
-      ['M04', 'kwietnia'],
-      ['M05', 'maja'],
-      ['M06', 'czerwca'],
-      ['M07', 'lipca'],
-      ['M08', 'sierpnia'],
-      ['M09', 'września'],
-      ['M10', 'października'],
-      ['M11', 'listopada'],
-      ['M12', 'grudnia']
+      ['January', 'stycznia'],
+      ['February', 'lutego'],
+      ['March', 'marca'],
+      ['April', 'kwietnia'],
+      ['May', 'maja'],
+      ['June', 'czerwca'],
+      ['July', 'lipca'],
+      ['August', 'sierpnia'],
+      ['September', 'września'],
+      ['October', 'października'],
+      ['November', 'listopada'],
+      ['December', 'grudnia']
     ])
     weekday = weekdays.get(weekday)
     month = months.get(month)
     return `${weekday}, ${day} ${month} ${year}`
   }
   throw new Error(`${localization} localization is not supported.`)
-}
-
-module.exports = function(pattern, date) {
-
-};
-
-function method(key) {
-  return ({
-    YYYY: ['getFullYear', 4],
-    YY: ['getFullYear', 2],
-    // getMonth is zero-based, thus the extra increment field
-    MM: ['getMonth', 2, 1],
-    DD: ['getDate', 2],
-    HH: ['getHours', 2],
-    mm: ['getMinutes', 2],
-    ss: ['getSeconds', 2],
-    ms: ['getMilliseconds', 3]
-  })[key];
 }
 
 function timestamp (date, pattern = 'YYYY-MM-DD') {
