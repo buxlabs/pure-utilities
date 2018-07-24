@@ -90,12 +90,38 @@ function prettydate (date, localization = 'en-En') {
   if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
   if (!Number(date)) return date.toDateString()
 
-  const year = date.getFullYear()
-  let month = date.toLocaleString(localization, { month: 'long' })
-  let weekday = date.toLocaleString(localization, { weekday: 'long' })
+  const months = {
+   'Jan': ['January', 'stycznia'],
+   'Feb': ['February', 'lutego'],
+   'Mar': ['March', 'marca'],
+   'Apr': ['April', 'kwietnia'],
+   'May': ['May', 'maja'],
+   'Jun': ['June', 'czerwca'],
+   'Jul': ['July', 'lipca'],
+   'Aug': ['August', 'sierpnia'],
+   'Sep': ['September', 'września'],
+   'Oct': ['October', 'października'],
+   'Nov': ['November', 'listopada'],
+   'Dec': ['December', 'grudnia'],
+  }
+  const weekdays = {
+    'Mon': ['Monday', 'poniedziałek'],
+    'Tue': ['Tuesday', 'wtorek'],
+    'Wed': ['Wednesday', 'środa'],
+    'Thu': ['Thursday', 'czwartek'],
+    'Fri': ['Friday', 'piątek'],
+    'Sat': ['Saturday', 'sobota'],
+    'Sun': ['Sunday', 'niedziela']
+  }
+
   let day = String(date.getDate())
+  let weekday = date.toDateString().substr(0, 3)
+  let month = date.toDateString().substr(4, 3)
+  let year = date.getFullYear()
 
   if (localization === 'en-En') {
+    weekday = weekdays[weekday][0]
+    month = months[month][0]
     if (day === '1' || day === '21') {
       day += 'st'
     } else if (day === '2' || day === '22') {
@@ -108,31 +134,8 @@ function prettydate (date, localization = 'en-En') {
     return `${weekday}, ${day} of ${month} ${year}`
   }
   if (localization === 'pl-Pl') {
-    const weekdays = new Map([
-      ['Monday', 'poniedziałek'],
-      ['Tuesday', 'wtorek'],
-      ['Wednesday', 'środa'],
-      ['Thursday', 'czwartek'],
-      ['Friday', 'piątek'],
-      ['Saturday', 'sobota'],
-      ['Sunday', 'niedziela']
-    ])
-    const months = new Map([
-      ['January', 'stycznia'],
-      ['February', 'lutego'],
-      ['March', 'marca'],
-      ['April', 'kwietnia'],
-      ['May', 'maja'],
-      ['June', 'czerwca'],
-      ['July', 'lipca'],
-      ['August', 'sierpnia'],
-      ['September', 'września'],
-      ['October', 'października'],
-      ['November', 'listopada'],
-      ['December', 'grudnia']
-    ])
-    weekday = weekdays.get(weekday)
-    month = months.get(month)
+    weekday = weekdays[weekday][1]
+    month = months[month][1]
     return `${weekday}, ${day} ${month} ${year}`
   }
   throw new Error(`${localization} localization is not supported.`)
