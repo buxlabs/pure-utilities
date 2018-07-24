@@ -151,6 +151,8 @@ function int (string) {
 }
 
 function float (string) {
+  string = string.replace(/\s/g, '')
+  string = string.replace(/,/g, '.')
   return parseFloat(string)
 }
 
