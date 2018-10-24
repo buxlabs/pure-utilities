@@ -2,7 +2,7 @@ function flatten (object) {
   const result = {}
   for (let key in object) {
     if (typeof object[key] === 'object') {
-      const deep = this.flatten(object[key])
+      const deep = flatten(object[key])
       for (let prefix in deep) {
         result[key + '.' + prefix] = deep[prefix]
       }
