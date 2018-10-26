@@ -161,7 +161,7 @@ function timestamp (date, pattern = 'YYYY-MM-DD') {
     if (match) {
       var increment = method(match[1])
       var val = '00' + String(date[increment[0]]() + (increment[2] || 0))
-      var res = val.slice(-increment[1]) + (matchm[2] || '')
+      var res = val.slice(-increment[1]) + (match[2] || '')
       pattern = pattern.replace(match[0], res)
       assign()
     }
