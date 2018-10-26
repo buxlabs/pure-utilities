@@ -1,19 +1,6 @@
-const string = require('../../string')
 const input = require('./input')
-const { stringify } = JSON
-function replacer  (key, value) {
-  return typeof value === 'function' ? value.toString() : value
-}
-function getCode (fn, input) {
-  const args = input.map(value => stringify(value, replacer)).join(', ')
-  return `${fn.name}(${args})`
-}
-for (let key in input) {
-  const fn = string[key]
-  for (let example of input[key].examples) {
-    const { input } = example
-    example.code = getCode(fn, input)
-    example.output = fn(...input)
-  }
-}
-module.exports =  input
+const generate = require('../generate')
+const string = require('../../string')
+
+const fixtures = generate(string, input)
+module.exprots = fixtures

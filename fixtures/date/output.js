@@ -1,6 +1,6 @@
 const input = require('./input')
 const generate = require('../generate')
-const object = require('../../object')
+const date = require('../../date')
 
-const fixtures = generate(object, input)
+const fixtures = generate(date, input)
 module.exports = fixtures

@@ -1,12 +1,6 @@
-const array = require('../../array')
 const input = require('./input')
+const generate = require('../generate')
+const array = require('../../array')
 
-for (let key in input) {
-  const fn = array[key]
-  for (let example of input[key].examples) {
-    const { input } = example
-    example.output = fn(...input)
-  }
-}
-
-module.exports =  input
+const fixtures = generate(array, input)
+module.exports = fixtures
