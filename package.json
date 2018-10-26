@@ -13,10 +13,11 @@
     "node": ">=8.11.3"
   },
   "scripts": {
-    "test": "ava \"test/spec/**/*.js\"",
-    "coverage": "nyc ava \"test/spec/**/*.js\"",
     "lint": "standard",
-    "docs": "node docs/generate.js"
+    "docs": "node docs/generate.js",
+    "fixtures": "node fixtures/generate.js",
+    "test": "ava \"test/spec/**/*.js\" && npm run docs && npm run fixtures",
+    "coverage": "nyc ava \"test/spec/**/*.js\""
   },
   "repository": {
     "type": "git",
