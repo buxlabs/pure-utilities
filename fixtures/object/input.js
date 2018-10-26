@@ -3,8 +3,8 @@ const object = {
     examples:
     [
       {
-        input: [ { foo: { bar: 'baz' } }, 'foo.bar']
-      },
+        input: [{ foo: { bar: 'baz' } }, 'foo.bar']
+      }
     ]
   },
   flatten: {

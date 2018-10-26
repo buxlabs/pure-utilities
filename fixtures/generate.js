@@ -1,5 +1,5 @@
 const { stringify } = JSON
-function replacer  (key, value) {
+function replacer (key, value) {
   return typeof value === 'function' ? value.toString() : value
 }
 function getCode (fn, input) {
@@ -20,4 +20,4 @@ function generate (utility, fixtures) {
   }
   return fixtures
 }
-module.exports =  generate
+module.exports = generate

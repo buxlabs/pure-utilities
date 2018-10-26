@@ -13,7 +13,7 @@ const date = {
       {
         input: [new Date(2018, 4, 23), 'DD/MM/YYYY'],
         code: 'format(new Date(2018, 4, 23), "DD/MM/YYYY")'
-      },
+      }
     ]
   },
   isostring: {
@@ -38,7 +38,7 @@ const date = {
       {
         input: [new Date(2018, 2, 21), 'pl-Pl'],
         code: 'prettydate(new Date(2018, 2, 21)'
-      },
+      }
     ]
   },
   timestamp: {
@@ -71,7 +71,7 @@ const date = {
     examples:
     [
       {
-        input: [new Date(2018, 4, 28) ],
+        input: [new Date(2018, 4, 28)],
         code: 'month(new Date(2018, 4, 28))'
       }
     ]
@@ -89,7 +89,7 @@ const date = {
     examples:
     [
       {
-        input: [new Date (2018, 4, 2)],
+        input: [new Date(2018, 4, 2)],
         code: 'year(new Date (2018, 4, 2))'
       }
     ]

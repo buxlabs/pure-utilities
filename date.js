@@ -91,18 +91,18 @@ function prettydate (date, localization = 'en-En') {
   if (!Number(date)) return date.toDateString()
 
   const months = {
-   'Jan': ['January', 'stycznia'],
-   'Feb': ['February', 'lutego'],
-   'Mar': ['March', 'marca'],
-   'Apr': ['April', 'kwietnia'],
-   'May': ['May', 'maja'],
-   'Jun': ['June', 'czerwca'],
-   'Jul': ['July', 'lipca'],
-   'Aug': ['August', 'sierpnia'],
-   'Sep': ['September', 'września'],
-   'Oct': ['October', 'października'],
-   'Nov': ['November', 'listopada'],
-   'Dec': ['December', 'grudnia'],
+    'Jan': ['January', 'stycznia'],
+    'Feb': ['February', 'lutego'],
+    'Mar': ['March', 'marca'],
+    'Apr': ['April', 'kwietnia'],
+    'May': ['May', 'maja'],
+    'Jun': ['June', 'czerwca'],
+    'Jul': ['July', 'lipca'],
+    'Aug': ['August', 'sierpnia'],
+    'Sep': ['September', 'września'],
+    'Oct': ['October', 'października'],
+    'Nov': ['November', 'listopada'],
+    'Dec': ['December', 'grudnia']
   }
   const weekdays = {
     'Mon': ['Monday', 'poniedziałek'],
@@ -142,7 +142,7 @@ function prettydate (date, localization = 'en-En') {
 }
 
 function timestamp (date, pattern = 'YYYY-MM-DD') {
-  function method(key) {
+  function method (key) {
     return ({
       YYYY: ['getFullYear', 4],
       YY: ['getFullYear', 2],
@@ -154,14 +154,14 @@ function timestamp (date, pattern = 'YYYY-MM-DD') {
       ms: ['getMilliseconds', 3]
     })[key]
   }
-  function assign() {
-    var regex = /(?=(YYYY|YY|MM|DD|HH|mm|ss|ms))\1([:\/]*)/
+  function assign () {
+    var regex = /(?=(YYYY|YY|MM|DD|HH|mm|ss|ms))\1([:/]*)/
     var match = regex.exec(pattern)
 
     if (match) {
       var increment = method(match[1])
       var val = '00' + String(date[increment[0]]() + (increment[2] || 0))
-      var res = val.slice(-increment[1]) + (match[2] || '')
+      var res = val.slice(-increment[1]) + (matchm[2] || '')
       pattern = pattern.replace(match[0], res)
       assign()
     }
