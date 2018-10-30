@@ -3,4 +3,4 @@ const generate = require('../generate')
 const string = require('../../string')
 
 const fixtures = generate(string, input)
-module.exprots = fixtures
+module.exports = fixtures
