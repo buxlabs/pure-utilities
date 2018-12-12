@@ -384,20 +384,21 @@ function kelvin (string) {
   return string + 'K'
 }
 
-function ltrim(string, chars = ' ') {
-  let charOccurences
+function ltrim(string, characters = ' ') {
+  let counter
 
   while (true) {
-    charOccurences = 0
+    counter = 0
 
-    for (var i = 0, charsLength = chars.length; i < charsLength; i++) {
-      if (string.startsWith(chars[i])) {
-        charOccurences += 1
+    for (let i = 0, ilen = characters.length; i < ilen; i++) {
+      let character = characters[i]
+      if (string.startsWith(character)) {
+        counter += 1
         string = string.substring(1)
       }
     }
 
-    if (charOccurences === 0) {
+    if (counter === 0) {
       break
     }
   }
