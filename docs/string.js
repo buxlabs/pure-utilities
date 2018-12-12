@@ -132,6 +132,13 @@ const string = {
       pl: `Konwertuje pierwszą literę łańcucha znaków na małą literę.`
     }
   },
+  ltrim: {
+    parameters: ['string', 'chars = " "'],
+    description: {
+      en: `Removes white space characters or other specified in parameter characters from the beginning of the string.`,
+      pl: `Usuwa białe znaki lub też inne określone w parametrze znaki od początku łańcucha znaków.`
+    }
+  },
   pad: {
     parameters: ['string', 'pad', 'left = true'],
     description: {

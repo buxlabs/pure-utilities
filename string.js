@@ -384,6 +384,27 @@ function kelvin (string) {
   return string + 'K'
 }
 
+function ltrim(string, chars = ' ') {
+  let charOccurences
+
+  while (true) {
+    charOccurences = 0
+
+    for (var i = 0, charsLength = chars.length; i < charsLength; i++) {
+      if (string.startsWith(chars[i])) {
+        charOccurences += 1
+        string = string.substring(1)
+      }
+    }
+
+    if (charOccurences === 0) {
+      break
+    }
+  }
+
+  return string
+}
+
 module.exports = {
   pad,
   trim,
@@ -427,5 +448,6 @@ module.exports = {
   split,
   celsius,
   fahrenheit,
-  kelvin
+  kelvin,
+  ltrim
 }

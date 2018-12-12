@@ -1119,3 +1119,18 @@ test('kelvin should convert the temperature to the Kelvin scale', t => {
   const result = string.kelvin('-100°F')
   t.deepEqual(result, '200K')
 })
+
+test('ltrim should remove all white space characters from the beginning of the string', t => {
+  const result = string.ltrim('   qwe')
+  t.deepEqual(result, 'qwe')
+})
+
+test('ltrim should remove all white space characters only from the beginning of the string', t => {
+  const result = string.ltrim('   qwe  ')
+  t.deepEqual(result, 'qwe  ')
+})
+
+test('ltrim should remove all specified characters regardless of the order of occurrence from the beginning of the string', t => {
+  const result = string.ltrim('-_-qwe-_-', '_-')
+  t.deepEqual(result, 'qwe-_-')
+})
