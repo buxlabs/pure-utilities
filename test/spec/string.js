@@ -1134,3 +1134,18 @@ test('ltrim should remove all specified characters regardless of the order of oc
   const result = string.ltrim('-_-qwe-_-', '_-')
   t.deepEqual(result, 'qwe-_-')
 })
+
+test('rtrim should remove all white space characters from the end of the string', t => {
+  const result = string.rtrim('qwe   ')
+  t.deepEqual(result, 'qwe')
+})
+
+test('rtrim should remove all white space characters only from the end of the string', t => {
+  const result = string.rtrim('  qwe   ')
+  t.deepEqual(result, '  qwe')
+})
+
+test('rtrim should remove all specified characters regardless of the order of occurrence from the end of the string', t => {
+  const result = string.rtrim('-_-qwe-_-', '_-')
+  t.deepEqual(result, '-_-qwe')
+})

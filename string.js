@@ -17,6 +17,56 @@ function trim (string) {
   return string.trim()
 }
 
+function ltrim (string, characters = ' ') {
+  let counter
+  let character
+
+  while (true) {
+    counter = 0
+
+    for (let i = 0, ilen = characters.length; i < ilen; i++) {
+      character = characters[i]
+
+      if (string.startsWith(character)) {
+        counter += 1
+        string = string.substring(1)
+      }
+    }
+
+    if (counter === 0) {
+      break
+    }
+  }
+
+  return string
+}
+
+function rtrim (string, characters = ' ') {
+  let counter
+  let character
+  let indexEnd = string.length - 1
+
+  while (true) {
+    counter = 0
+
+    for (let i = characters.length - 1; i >= 0; i--) {
+      character = characters[i]
+
+      if (string.endsWith(character)) {
+        counter += 1
+        string = string.substring(0, indexEnd)
+        indexEnd -= 1
+      }
+    }
+
+    if (counter === 0) {
+      break
+    }
+  }
+
+  return string
+}
+
 function strip (string, pattern) {
   if (!pattern) return string.trim()
   if (!Array.isArray(pattern)) {
@@ -384,31 +434,11 @@ function kelvin (string) {
   return string + 'K'
 }
 
-function ltrim(string, characters = ' ') {
-  let counter
-
-  while (true) {
-    counter = 0
-
-    for (let i = 0, ilen = characters.length; i < ilen; i++) {
-      let character = characters[i]
-      if (string.startsWith(character)) {
-        counter += 1
-        string = string.substring(1)
-      }
-    }
-
-    if (counter === 0) {
-      break
-    }
-  }
-
-  return string
-}
-
 module.exports = {
   pad,
   trim,
+  ltrim,
+  rtrim,
   strip,
   uppercase,
   underscore,
@@ -449,6 +479,5 @@ module.exports = {
   split,
   celsius,
   fahrenheit,
-  kelvin,
-  ltrim
+  kelvin
 }
