@@ -133,7 +133,7 @@ const string = {
     }
   },
   ltrim: {
-    parameters: ['string', 'chars = " "'],
+    parameters: ['string', 'characters = " "'],
     description: {
       en: `Removes white space characters or other specified in parameter characters from the beginning of the string.`,
       pl: `Usuwa białe znaki lub też inne określone w parametrze znaki od początku łańcucha znaków.`
@@ -165,6 +165,13 @@ const string = {
     description: {
       en: `Replaces searched pattern by the last parameter.`,
       pl: `Zastępuje podany wzorzec nowym łańcuchem znaków.`
+    }
+  },
+  rtrim: {
+    parameters: ['string', 'characters = " "'],
+    description: {
+      en: `Removes white space characters or other specified in parameter characters from the end of the string.`,
+      pl: `Usuwa białe znaki lub też inne określone w parametrze znaki od końca łańcucha znaków.`
     }
   },
   singlespace: {
