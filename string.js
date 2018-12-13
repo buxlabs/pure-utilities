@@ -17,7 +17,7 @@ function trim (string) {
   return string.trim()
 }
 
-function ltrim(string, characters = ' ') {
+function ltrim (string, characters = ' ') {
   let counter
   let character
 
@@ -41,10 +41,10 @@ function ltrim(string, characters = ' ') {
   return string
 }
 
-function rtrim(string, characters = ' ') {
+function rtrim (string, characters = ' ') {
   let counter
   let character
-  let indexEnd = string.length - 1;
+  let indexEnd = string.length - 1
 
   while (true) {
     counter = 0
@@ -55,7 +55,7 @@ function rtrim(string, characters = ' ') {
       if (string.endsWith(character)) {
         counter += 1
         string = string.substring(0, indexEnd)
-        indexEnd -= 1;
+        indexEnd -= 1
       }
     }
 
