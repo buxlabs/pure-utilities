@@ -1,6 +1,33 @@
 import test from 'ava'
 import { collection } from '../..'
 
+test('prepend called without any arguments should return untouched collection', assert => {
+  assert.deepEqual(collection.prepend('qwe'), 'qwe')
+})
+
+test('prepend called with argument other than string or array should throw an error', assert => {
+  const error = assert.throws(() => {
+    collection.prepend({}, 'abc')
+  }, TypeError)
+  assert.is(error.message, "[ERROR]: 'prepend' filter processes only strings or arrays")
+})
+
+test('prepend for string should add argument at the beginning of the string', assert => {
+  assert.deepEqual(collection.prepend('qwe', 'abc'), 'abcqwe')
+})
+
+test('prepend for string should add many arguments at the beginning of the string', assert => {
+  assert.deepEqual(collection.prepend('qwe', '---', '___', '***'), '---___***qwe')
+})
+
+test('prepend for array should add argument at the beginning of the array', assert => {
+  assert.deepEqual(collection.prepend(['qwe'], 'abc'), ['abc', 'qwe'])
+})
+
+test('prepend for array should add many arguments at the beginning of the array', assert => {
+  assert.deepEqual(collection.prepend(['qwe'], '---', '___', '***'), ['---', '___', '***', 'qwe'])
+})
+
 test('size returns length of collection', assert => {
   assert.deepEqual(collection.size([1, 2, 3, 4, 5]), 5)
 })
