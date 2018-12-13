@@ -1,3 +1,17 @@
+function prepend (collection, ...args) {
+  if (args.length === 0) {
+    return collection
+  }
+
+  if (typeof collection === 'string') {
+    return args.join('') + collection
+  } else if (Array.isArray(collection)) {
+    return [...args, ...collection]
+  }
+
+  throw new TypeError("[ERROR]: 'prepend' filter processes only strings or arrays")
+}
+
 function reverse (collection) {
   return Array.isArray(collection) ? collection.reverse() : [...collection].reverse().join('')
 }
@@ -10,6 +24,7 @@ function size (collection) {
 }
 
 module.exports = {
-  size,
-  reverse
+  prepend,
+  reverse,
+  size
 }

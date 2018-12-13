@@ -1,4 +1,11 @@
 const collection = {
+  prepend: {
+    parameters: ['collection', 'indefinite', 'amount', 'of', 'arguments'],
+    description: {
+      en: 'Adds arguments at the beginning of the collecion.',
+      pl: 'Dodaje argumenty na początek kolekcji.'
+    }
+  },
   reverse: {
     parameters: ['collection'],
     description: {
