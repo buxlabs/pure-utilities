@@ -181,6 +181,11 @@ test('float parses string and returns float', t => {
   t.deepEqual(parsed, 4.25)
 })
 
+test('float works for numbers', t => {
+  var parsed = math.float(1)
+  t.deepEqual(parsed, 1.00)
+})
+
 test('float parses string and returns float', t => {
   var parsed = math.float('4,25')
   t.deepEqual(parsed, 4.25)

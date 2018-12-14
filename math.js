@@ -150,10 +150,11 @@ function int (string) {
   return parseInt(string)
 }
 
-function float (string) {
-  string = string.replace(/\s/g, '')
-  string = string.replace(/,/g, '.')
-  return parseFloat(string)
+function float (value) {
+  value = value.toString()
+  value = value.replace(/\s/g, '')
+  value = value.replace(/,/g, '.')
+  return parseFloat(value)
 }
 
 function clamp (number, min, max) {
