@@ -24,5 +24,30 @@ module.exports = {
         code: 'size({ a: 1, b: 2 })'
       }
     ]
+  },
+  prepend: {
+    examples: [
+      {
+        input: ['foo', 'bar'],
+        code: 'prepend("foo", "bar")'
+      },
+      {
+        input: [[1, 2, 3], 4, 5, 6],
+        code: 'prepend([1, 2, 3], 4, 5, 6)'
+      }
+    ]
+  },
+  append: {
+    examples: [
+      {
+        input: ['foo', 'bar'],
+        code: 'append("foo", "bar")'
+      },
+      {
+        input: [[1, 2, 3], 4, 5, 6],
+        code: 'append([1, 2, 3], 4, 5, 6)'
+      }
+    ]
   }
 }
+

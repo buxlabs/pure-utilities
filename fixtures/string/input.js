@@ -411,6 +411,22 @@ const string = {
         input: ['foo bar baz ban', '„', '”']
       }
     ]
+  },
+  ltrim: {
+    examples:
+    [
+      {
+        input: ['   foo']
+      }
+    ]
+  },
+  rtrim: {
+    examples:
+    [
+      {
+        input: ['foo   ']
+      }
+    ]
   }
 }
 module.exports = string
