@@ -178,3 +178,43 @@ test('slice returns a shallow copy of a portion of an array into a new array obj
 test('slice returns a shallow copy of a portion of an array into a new array object selected from start to end', assert => {
   assert.deepEqual(array.slice('Hello World', 6, 9), 'Wor')
 })
+
+// pluck tests
+test('pluck extracts a list of all property values', assert => {
+  assert.deepEqual(
+    array.pluck([
+      { name: 'moe', age: 40 },
+      { name: 'larry', age: 50 },
+      { name: 'curly', age: 60 }
+    ], 'name'), ['moe', 'larry', 'curly'])
+})
+
+test('pluck returns a list of only existing property values', assert => {
+  assert.deepEqual(
+    array.pluck([
+      { foo: 'moe', age: 40 },
+      { name: 'larry', age: 50 },
+      { bar: 'curly', age: 60 }
+    ], 'name'), ['larry'])
+})
+
+test('pluck returns a list of not empty property values', assert => {
+  assert.deepEqual(
+    array.pluck([
+      { name: '', age: 40 },
+      { name: 'larry', age: 50 },
+      { name: null, age: 60 },
+      { name: undefined, age: 70 }
+    ], 'name'), ['larry'])
+})
+
+test('pluck ignores elements which are not an objects', assert => {
+  assert.deepEqual(
+    array.pluck([
+      333,
+      { name: 'moe', age: 40 },
+      'bar',
+      [123, 'foo'],
+      () => {}
+    ], 'name'), ['moe'])
+})

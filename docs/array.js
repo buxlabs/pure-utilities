@@ -48,6 +48,13 @@ const array = {
       pl: 'Zwraca medianę na podstawie wartości elementów tablicy.'
     }
   },
+  pluck: {
+    parameters: ['array'],
+    description: {
+      en: 'Returns a list of property values from an array of objects.',
+      pl: 'Zwraca listę wartości dla danej właściwości spośród listy obiektów.'
+    }
+  },
   rotate: {
     parameters: ['array', 'digit'],
     description: {
