@@ -9,7 +9,7 @@ const collection = {
   prepend: {
     parameters: ['collection', 'indefinite', 'amount', 'of', 'arguments'],
     description: {
-      en: 'Adds arguments at the beginning of the collecion.',
+      en: 'Adds arguments at the beginning of the collection.',
       pl: 'Dodaje argumenty na początek kolekcji.'
     }
   },
