@@ -48,5 +48,25 @@ module.exports = {
         code: 'append([1, 2, 3], 4, 5, 6)'
       }
     ]
+  },
+  flatten: {
+    examples:
+    [
+      {
+        input: [[1, [2], [[3, [4, [5]]]]]],
+        code: 'flatten([1, [2], [ [3, [ 4, [5] ] ] ] ])'
+      },
+      {
+        input: [{ titles: { 'index': 'Buxus - Plants, seedlings, producer' } }]
+      }
+    ]
+  },
+  unflatten: {
+    examples:
+    [
+      {
+        input: [{ 'errors.404.title': 'Page not found' }]
+      }
+    ]
   }
 }

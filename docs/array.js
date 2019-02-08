@@ -20,13 +20,6 @@ const array = {
       pl: 'Usuwa wybraną liczbę elementów z tablicy.'
     }
   },
-  flatten: {
-    parameters: ['array'],
-    description: {
-      en: 'Flattens n-dimensional array to a single depth array.',
-      pl: 'Spłaszcza wielowymiarową tablicę do tablicy jednowymiarowej.'
-    }
-  },
   head: {
     parameters: ['array'],
     description: {

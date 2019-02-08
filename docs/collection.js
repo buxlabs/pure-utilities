@@ -26,6 +26,20 @@ const collection = {
       en: 'Returns the size of the collection.',
       pl: 'Zwraca liczbę elementów kolekcji.'
     }
+  },
+  flatten: {
+    parameters: ['collection'],
+    description: {
+      en: 'Flattens n-dimensional array or n-depth object to a single depth array or object.',
+      pl: 'Spłaszcza wielowymiarową tablicę lub wielokrotnie zagnieżdżony obiekt do jednowymiarowej tablicy lub płaskiego obiektu.'
+    }
+  },
+  unflatten: {
+    parameters: ['collection'],
+    description: {
+      en: 'Converts properties of the object, which contain in the name dots(.), to multi-depth object.',
+      pl: 'Konwertuje właściwości obiektu, których nazwy zawierają kropki(.), na zagnieżdżone obiety, zwracając obiekt o różnym stopniu głębokości.'
+    }
   }
 }
 module.exports = collection

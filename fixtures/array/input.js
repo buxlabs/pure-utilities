@@ -26,15 +26,6 @@ module.exports = {
       }
     ]
   },
-  flatten: {
-    examples:
-    [
-      {
-        input: [[1, [2], [[3, [4, [5]]]]]],
-        code: 'flatten([1, [2], [ [3, [ 4, [5] ] ] ] ])'
-      }
-    ]
-  },
   head: {
     examples:
     [
@@ -221,6 +212,15 @@ module.exports = {
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3],
         code: 'nth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3)'
+      }
+    ]
+  },
+  pluck: {
+    examples:
+    [
+      {
+        input: [[ { foo: 'bar' }, { name: 'baz' } ], 'name'],
+        code: 'pluck([{ foo: "bar"}, { name: "baz"}], "name")'
       }
     ]
   }

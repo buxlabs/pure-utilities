@@ -1,9 +1,3 @@
-function flatten (array) {
-  return array.reduce((previous, current) => {
-    return previous.concat(Array.isArray(current) ? flatten(current) : current)
-  }, [])
-}
-
 function identifier (array) {
   let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
   let index = 0
@@ -164,7 +158,6 @@ module.exports = {
   sum,
   average,
   median,
-  flatten,
   compact,
   unique,
   nth,

@@ -37,9 +37,46 @@ function size (collection) {
   if (type === 'Map' || type === 'Set') return collection.size
 }
 
+function flatten (collection) {
+  if (Array.isArray(collection)) {
+    return collection.reduce((previous, current) => {
+      return previous.concat(Array.isArray(current) ? flatten(current) : current)
+    }, [])
+  }
+  const result = {}
+  for (let key in collection) {
+    if (typeof collection[key] === 'object') {
+      const deep = flatten(collection[key])
+      for (let prefix in deep) {
+        result[key + '.' + prefix] = deep[prefix]
+      }
+    } else {
+      result[key] = collection[key]
+    }
+  }
+  return result
+}
+
+function unflatten (collection) {
+  const result = {}
+  for (let key in collection) {
+    const parts = key.split('.')
+    let current = result
+    let property = '_'
+    for (let i = 0; i < parts.length; i++) {
+      current = current[property] || (current[property] = {})
+      property = parts[i]
+    }
+    current[property] = collection[key]
+  }
+  return result['_']
+}
+
 module.exports = {
   append,
   prepend,
   reverse,
-  size
+  size,
+  flatten,
+  unflatten
 }

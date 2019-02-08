@@ -7,14 +7,6 @@ const object = {
       }
     ]
   },
-  flatten: {
-    examples:
-    [
-      {
-        input: [{ titles: { 'index': 'Buxus - Plants, seedlings, producer' } }]
-      }
-    ]
-  },
   keys: {
     examples:
     [
@@ -39,19 +31,38 @@ const object = {
       }
     ]
   },
-  unflatten: {
-    examples:
-    [
-      {
-        input: [{ 'errors.404.title': 'Page not found' }]
-      }
-    ]
-  },
   values: {
     examples:
     [
       {
         input: [{ foo: 'bar', baz: [1, 2, 3] }]
+      }
+    ]
+  },
+  merge: {
+    examples:
+    [
+      {
+        input: [{ foo: { a: 1, b: 1, c: 1 }, baz: { b: 2, c: 2 } }]
+      },
+      {
+        input: [{ foo: { a: 1, b: 1, c: 1 }, baz: { b: 2, c: 2 }, bar: { c: 3 } }]
+      }
+    ]
+  },
+  clone: {
+    examples:
+    [
+      {
+        input: [{ a: 0, b: { c: 0 } }]
+      }
+    ]
+  },
+  deepclone: {
+    examples:
+    [
+      {
+        input: [{ a: 0, b: { c: 0 } }]
       }
     ]
   }

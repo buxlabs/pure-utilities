@@ -1,33 +1,3 @@
-function flatten (object) {
-  const result = {}
-  for (let key in object) {
-    if (typeof object[key] === 'object') {
-      const deep = flatten(object[key])
-      for (let prefix in deep) {
-        result[key + '.' + prefix] = deep[prefix]
-      }
-    } else {
-      result[key] = object[key]
-    }
-  }
-  return result
-}
-
-function unflatten (object) {
-  const result = {}
-  for (let key in object) {
-    const parts = key.split('.')
-    let current = result
-    let property = '_'
-    for (let i = 0; i < parts.length; i++) {
-      current = current[property] || (current[property] = {})
-      property = parts[i]
-    }
-    current[property] = object[key]
-  }
-  return result['_']
-}
-
 function rename (object, keys) {
   for (let key in keys) {
     if (keys.hasOwnProperty(key) && object.hasOwnProperty(key)) {
@@ -74,12 +44,25 @@ function keys (object) {
   return Object.keys(object)
 }
 
+function merge (object, ...source) {
+  return Object.assign(object, ...source)
+}
+
+function clone (object) {
+  return Object.assign({}, object)
+}
+
+function deepclone (object) {
+  return JSON.parse(JSON.stringify(object))
+}
+
 module.exports = {
-  flatten,
-  unflatten,
   rename,
   dig,
   pat,
   values,
-  keys
+  keys,
+  merge,
+  clone,
+  deepclone
 }

@@ -1,7 +1,6 @@
 import test from 'ava'
 import { collection } from '../..'
 
-// append tests
 test('append called without any arguments should return untouched collection', assert => {
   assert.deepEqual(collection.append('qwe'), 'qwe')
 })
@@ -29,7 +28,6 @@ test('append for array should add many arguments at the end of the array', asser
   assert.deepEqual(collection.append(['qwe'], '---', '___', '***'), ['qwe', '---', '___', '***'])
 })
 
-// prepend tests
 test('prepend called without any arguments should return untouched collection', assert => {
   assert.deepEqual(collection.prepend('qwe'), 'qwe')
 })
@@ -57,7 +55,6 @@ test('prepend for array should add many arguments at the beginning of the array'
   assert.deepEqual(collection.prepend(['qwe'], '---', '___', '***'), ['---', '___', '***', 'qwe'])
 })
 
-// size tests
 test('size returns length of collection', assert => {
   assert.deepEqual(collection.size([1, 2, 3, 4, 5]), 5)
 })
@@ -74,7 +71,6 @@ test('size returns length of collection', assert => {
   assert.deepEqual(collection.size(new Set([1, 2, 3, 4, 5])), 5)
 })
 
-// reverse tests
 test('reverse should reverse collection', t => {
   var parsed = collection.reverse('foo')
   t.deepEqual(parsed, 'oof')
@@ -88,4 +84,64 @@ test('reverse should reverse collection', t => {
 test('reverse should reverse collection', t => {
   var parsed = collection.reverse([1, 2, 3, 4])
   t.deepEqual(parsed, [4, 3, 2, 1])
+})
+
+test('flatten an n-dimensional array', assert => {
+  assert.deepEqual(collection.flatten([1, [2], [[3, [4, [5]]]]]), [1, 2, 3, 4, 5])
+})
+
+test('flatten shouldn`t change flat object', t => {
+  const object1 = { 'orderAccepted': 'Your order has been accepted' }
+  const result = { 'orderAccepted': 'Your order has been accepted' }
+  t.deepEqual(collection.flatten(object1), result)
+})
+
+test('flatten should flatten the object if it has 2 levels', t => {
+  const object1 = { titles: { 'index': 'Buxus - Plants, seedlings, producer' } }
+  const result = { 'titles.index': 'Buxus - Plants, seedlings, producer' }
+  t.deepEqual(collection.flatten(object1), result)
+})
+
+test('flatten should flatten the object if it has 3 levels', t => {
+  const object1 = {
+    errors: {
+      '404': {
+        title: 'Page not found'
+      }
+    }
+  }
+  const result = {
+    'errors.404.title': 'Page not found'
+  }
+  t.deepEqual(collection.flatten(object1), result)
+})
+
+test('unflatten shouldn`t change unflat object', t => {
+  const result = { 'orderAccepted': 'Your order has been accepted' }
+  const object1 = { 'orderAccepted': 'Your order has been accepted' }
+  t.deepEqual(collection.unflatten(object1), result)
+})
+
+test('unflatten should unflatten the object if it has 2 levels', t => {
+  const object1 = { 'titles.index': 'Buxus - Plants, seedlings, producer' }
+  const result = {
+    'titles': {
+      'index': 'Buxus - Plants, seedlings, producer'
+    }
+  }
+  t.deepEqual(collection.unflatten(object1), result)
+})
+
+test('unflatten should unflatten the object if it has 3 levels', t => {
+  const object1 = { 'errors.404.title': 'Page not found' }
+  const result = {
+    'errors': {
+      '404': {
+        'title': 'Page not found'
+      }
+    }
+  }
+  const unflattened = collection.unflatten(object1)
+  t.deepEqual(unflattened, result)
+  t.truthy(!Array.isArray(unflattened.errors))
 })

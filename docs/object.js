@@ -6,13 +6,6 @@ const object = {
       pl: 'Zwraca wartość dowolnej właściwości obiektu, na podstawie przekazanego łańcucha znaków.'
     }
   },
-  flatten: {
-    parameters: ['object'],
-    description: {
-      en: 'Flattens the object into a single-depth object.',
-      pl: 'Spłaszcza zagnieżdżone właściwości obiektu, zwracając obiekt o stopniu głębokości równym 1.'
-    }
-  },
   keys: {
     parameters: ['object'],
     description: {
@@ -34,18 +27,32 @@ const object = {
       pl: 'Zmienia nazwy właściwości obiektu, na odpowiadające im wartości z obiektu keys.'
     }
   },
-  unflatten: {
-    parameters: ['object'],
-    description: {
-      en: 'Converts properties of the object, which contain in the name dots(.), to multi-depth object.',
-      pl: 'Konwertuje właściwości obiektu, których nazwy zawierają kropki(.), na zagnieżdżone obiety, zwracając obiekt o różnym stopniu głębokości.'
-    }
-  },
   values: {
     parameters: ['object'],
     description: {
       en: `Returns an array of a given object's own enumerable property values.`,
       pl: 'Zwraca tablicę zawierającą własne, wyliczalne właściwości obiektu.'
+    }
+  },
+  merge: {
+    parameters: ['object', 'sources'],
+    description: {
+      en: `Merges properties of sources into the destination object.`,
+      pl: 'Scala właściwości obiektów źródłowych z obiektem docelowym.'
+    }
+  },
+  clone: {
+    parameters: ['object'],
+    description: {
+      en: `Creates shallow copy of the passed object (objects are clone as reference).`,
+      pl: 'Tworzy płytką kopię przekazanego obiektu (obiekty są klonowane jako referencja).'
+    }
+  },
+  deepclone: {
+    parameters: ['object'],
+    description: {
+      en: `Creates deep copy of the passed object (objects are clone as value).`,
+      pl: 'Tworzy głęboką kopię przekazanego obiektu (obiekty są klonowane jako wartość).'
     }
   }
 }
