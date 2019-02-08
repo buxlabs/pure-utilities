@@ -1,6 +1,6 @@
 {
   "name": "pure-utilities",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "pure-utilities",
   "main": "index.js",
   "dependencies": {},
@@ -15,7 +15,7 @@
   "scripts": {
     "lint": "standard",
     "docs": "node docs/generate.js",
-    "fixtures": "node fixtures/generate.js",
+    "fixtures": "node fixtures/index.js",
     "test": "ava \"test/spec/**/*.js\" && npm run docs && npm run fixtures",
     "coverage": "nyc ava \"test/spec/**/*.js\""
   },

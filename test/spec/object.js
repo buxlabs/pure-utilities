@@ -1,62 +1,6 @@
 import test from 'ava'
 import { object } from '../..'
 
-test('flatten shouldn`t change flat object', t => {
-  const object1 = { 'orderAccepted': 'Your order has been accepted' }
-  const result = { 'orderAccepted': 'Your order has been accepted' }
-  t.deepEqual(object.flatten(object1), result)
-})
-
-test('flatten should flatten the object if it has 2 levels', t => {
-  const object1 = { titles: { 'index': 'Buxus - Plants, seedlings, producer' } }
-  const result = { 'titles.index': 'Buxus - Plants, seedlings, producer' }
-  t.deepEqual(object.flatten(object1), result)
-})
-
-test('flatten should flatten the object if it has 3 levels', t => {
-  const object1 = {
-    errors: {
-      '404': {
-        title: 'Page not found'
-      }
-    }
-  }
-  const result = {
-    'errors.404.title': 'Page not found'
-  }
-  t.deepEqual(object.flatten(object1), result)
-})
-
-test('unflatten shouldn`t change unflat object', t => {
-  const result = { 'orderAccepted': 'Your order has been accepted' }
-  const object1 = { 'orderAccepted': 'Your order has been accepted' }
-  t.deepEqual(object.unflatten(object1), result)
-})
-
-test('unflatten should unflatten the object if it has 2 levels', t => {
-  const object1 = { 'titles.index': 'Buxus - Plants, seedlings, producer' }
-  const result = {
-    'titles': {
-      'index': 'Buxus - Plants, seedlings, producer'
-    }
-  }
-  t.deepEqual(object.unflatten(object1), result)
-})
-
-test('unflatten should unflatten the object if it has 3 levels', t => {
-  const object1 = { 'errors.404.title': 'Page not found' }
-  const result = {
-    'errors': {
-      '404': {
-        'title': 'Page not found'
-      }
-    }
-  }
-  const unflattened = object.unflatten(object1)
-  t.deepEqual(unflattened, result)
-  t.truthy(!Array.isArray(unflattened.errors))
-})
-
 test('rename should rename the keys in given object', t => {
   const object1 = { 'created_at': '2000-01-01' }
   const keys = { 'created_at': 'createdAt' }
@@ -116,4 +60,35 @@ test(`keys returns an array containing the names of all of the given object's ow
 test(`keys returns an array containing the names of all of the given object's own enumerable string properties`, t => {
   const parsed = object.keys({})
   t.deepEqual(parsed.length, 0)
+})
+
+test(`merge merges properties of source into the destination object`, t => {
+  const destination = { a: 1, b: 1, c: 1 }
+  const source = { b: 2, c: 2 }
+  const parsed = object.merge(destination, source)
+  t.deepEqual(parsed, { a: 1, b: 2, c: 2 })
+})
+
+test(`merge merges properties of sources into the destination object`, t => {
+  const destination = { a: 1, b: 1, c: 1 }
+  const source1 = { b: 2, c: 2 }
+  const source2 = { a: 3, c: 3 }
+  const source3 = { d: 4 }
+  const parsed = object.merge(destination, source1, source2, source3)
+  t.deepEqual(parsed, { a: 3, b: 2, c: 3, d: 4 })
+})
+
+test(`clone creates shallow copy of object`, t => {
+  const source = { a: 1, b: { foo: 'bar' } }
+  const parsed = object.clone(source)
+  source.b.foo = 'baz'
+  t.deepEqual(parsed, source)
+})
+
+test(`deepclone creates deep copy of object`, t => {
+  const source = { a: 1, b: { foo: 'bar' } }
+  const parsed = object.deepclone(source)
+  source.b.foo = 'baz'
+  t.deepEqual(parsed, { a: 1, b: { foo: 'bar' } })
+  t.notDeepEqual(parsed, source)
 })

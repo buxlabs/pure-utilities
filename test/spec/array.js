@@ -1,10 +1,6 @@
 import test from 'ava'
 import { array } from '../..'
 
-test('flatten an n-dimensional array', assert => {
-  assert.deepEqual(array.flatten([1, [2], [[3, [4, [5]]]]]), [1, 2, 3, 4, 5])
-})
-
 test('identifier returns a new unique identifier based on used identifiers', assert => {
   assert.deepEqual(array.identifier([]), 'a')
   assert.deepEqual(array.identifier(['a']), 'b')
@@ -179,7 +175,6 @@ test('slice returns a shallow copy of a portion of an array into a new array obj
   assert.deepEqual(array.slice('Hello World', 6, 9), 'Wor')
 })
 
-// pluck tests
 test('pluck extracts a list of all property values', assert => {
   assert.deepEqual(
     array.pluck([
