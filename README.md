@@ -1,10 +1,24 @@
 # pure-utilities
 
-[ ![Codeship Status for buxlabs/pure-utilities](https://app.codeship.com/projects/9375a010-5a24-0136-54ed-56905797af22/status?branch=master)](https://app.codeship.com/projects/295277)
+![npm](https://img.shields.io/npm/v/pure-utilities.svg) ![build](https://img.shields.io/codeship/9375a010-5a24-0136-54ed-56905797af22/master.svg)
 
-A set of pure utility methods.
+> A set of pure functions.
 
-## Installation
+## Table of Contents
+
+- [Background](#background)
+- [Install](#install)
+- [Usage](#usage)
+- [API](https://buxlabs.pl/en/tools/js/pure-utilities)
+- [Maintainers](#maintainers)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Background
+
+A pure function is a function that given the same input will give you the same output. It also does not have any side effects. The library contains many pure functions, which by design, do not depend on other non built-in functions. This limitation makes it simpler to consume the functions for inlining (e.g. by bundlers or compilers).
+
+## Install
 
 `npm install pure-utilities`
 
@@ -12,112 +26,17 @@ A set of pure utility methods.
 
 ```javascript
 import { flatten } from 'pure-utilities/object'
-flatten({ hello: { world: '1234' } }); // { 'hello.world': '1234' }
+console.log(flatten({ hello: { world: '1234' } })) // { 'hello.world': '1234' }
 ```
 
-## Methods
+## Maintainers
 
-### array
+[@emilos](https://github.com/emilos), [@pkonieczniak](https://github.com/pkonieczniak).
 
-#### flatten
+## Contibuting
 
-### object
+All contributions are highly appreciated. Please feel free to open new issues and send PRs. All new function names need to be lowercased and independent on other non built-in functions. Please consider updating the docs and fixtures as a part of the PRs.
 
-#### isObject
-#### isNull
-#### isArray
-#### isRegExp
-#### isFunction
-#### isArguments
-#### isString
-#### isNumber
-#### isDate
-#### isUndefined
-#### extend
-#### flatten
-#### unflatten
-#### rename
-#### dig
-#### pat
+## License
 
-### string
-
-#### pad
-#### whitespaceless
-#### dasherize
-#### constantize
-#### trim
-#### uppercase
-#### lowercase
-#### underscore
-#### reverse
-#### capitalize
-#### unescape
-#### lowerfirst
-#### humanize
-#### titleize
-#### classify
-#### pluralize
-#### singularize
-#### swapcase
-#### camelize
-#### truncate
-
-### date
-
-#### toISOString
-
-### json
-
-#### prettify
-
-### math
-
-#### abs
-#### acos
-#### acosh
-#### asin
-#### asinh
-#### atan
-#### atan2
-#### atanh
-#### cbrt
-#### ceil
-#### cos
-#### cosh
-#### exp
-#### floor
-#### log
-#### max
-#### min
-#### pow
-#### random
-#### round
-#### sin
-#### sinh
-#### sqrt
-#### tan
-#### tanh
-#### trunc
-
-## Development
-
-To see available commands run:
-
-`npm run`
-
-Lint:
-
-`npm run lint`
-
-Test:
-
-`npm test`
-
-Coverage:
-
-`npm run coverage`
-
-Build:
-
-`npm run build`
+MIT
