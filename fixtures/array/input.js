@@ -223,5 +223,41 @@ module.exports = {
         code: 'pluck([{ foo: "bar"}, { name: "baz"}], "name")'
       }
     ]
+  },
+  intersection: {
+    examples:
+    [
+      {
+        input: [[1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31]],
+        code: 'intersection([1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31])'
+      }
+    ]
+  },
+  difference: {
+    examples:
+    [
+      {
+        input: [[1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31]],
+        code: 'difference([1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31])'
+      }
+    ]
+  },
+  duplicates: {
+    examples:
+    [
+      {
+        input: [[1, 1, 2, 3, 5, 5]],
+        code: 'duplicates([1, 1, 2, 3, 5, 5])'
+      }
+    ]
+  },
+  symdifference: {
+    examples:
+    [
+      {
+        input: [[1, 3, 4, 6, 7, 9], [3, 5, 6, 7, 8, 9]],
+        code: 'symdifference([1, 3, 4, 6, 7, 9], [3, 5, 6, 7, 8, 9])'
+      }
+    ]
   }
 }

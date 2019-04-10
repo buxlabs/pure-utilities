@@ -213,3 +213,60 @@ test('pluck ignores elements which are not an objects', assert => {
       () => {}
     ], 'name'), ['moe'])
 })
+
+test('intersection returns common elements of passed arrays', assert => {
+  const array1 = [1, 2, 3, 4, 5, 100]
+  const array2 = [100, 2, 3, 10, 31]
+  const array3 = [2, 3, 4]
+  let commonElements = []
+  commonElements = array.intersection(array1, array2)
+  assert.deepEqual(commonElements, [2, 3, 100])
+
+  commonElements = array.intersection(array1, array3)
+  assert.deepEqual(commonElements, [2, 3, 4])
+
+  commonElements = array.intersection(array1, array2, array3)
+  assert.deepEqual(commonElements, [2, 3])
+
+  commonElements = array.intersection(array1, array2, array3)
+  assert.deepEqual(commonElements, [2, 3])
+})
+
+test('difference returns the difference between one array and a number of other arrays', assert => {
+  const array1 = [1, 2, 3, 4, 5, 100]
+  const array2 = [100, 2, 3, 10, 31]
+  const array3 = [2, 3, 4]
+  let difference = []
+  difference = array.difference(array1, array2)
+  assert.deepEqual(difference, [1, 4, 5])
+
+  difference = array.difference(array1, array3)
+  assert.deepEqual(difference, [1, 5, 100])
+
+  difference = array.difference(array1, array2, array3)
+  assert.deepEqual(difference, [1, 5])
+
+  difference = array.difference(['foo', 'bar', 'baz'], ['bar'], ['baz'])
+  assert.deepEqual(difference, ['foo'])
+})
+
+test('duplicates returns repeating elements of the array', assert => {
+  let array1 = [1, 1, 2, 3, 5, 5]
+  let duplicates = array.duplicates(array1)
+  assert.deepEqual(duplicates, [1, 5])
+
+  array1 = ['foo', 'bar', 'baz', 'foo', 'baz']
+  duplicates = array.duplicates(array1)
+  assert.deepEqual(duplicates, ['foo', 'baz'])
+})
+
+test('symdifference returns an array of unique values that is the symmetric difference', assert => {
+  let array1 = [1, 2]
+  let array2 = [2, 3]
+  let difference = array.symdifference(array1, array2)
+
+  array1 = [1, 3, 4, 6, 7, 9]
+  array2 = [3, 5, 6, 7, 8, 9]
+  difference = array.symdifference(array1, array2)
+  assert.deepEqual(difference, [1, 4, 5, 8])
+})

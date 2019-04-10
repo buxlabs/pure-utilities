@@ -142,6 +142,48 @@ function pluck (array, propertyName) {
   return extracted
 }
 
+function intersection (...arrays) {
+  const result = []
+  const array = arrays[0]
+  for (let i = 0; i < array.length; i++) {
+    const item = array[i]
+    if (result.includes(item)) continue
+    let j = 1
+    for (j; j < arrays.length; j++) {
+      if (!arrays[j].includes(item)) break
+    }
+    if (j === arrays.length) result.push(item)
+  }
+  return result
+}
+
+function difference (array, ...arrays) {
+  const difference = []
+  array.forEach(element => {
+    if (!arrays.flat().includes(element)) {
+      difference.push(element)
+    }
+  })
+  return difference
+}
+
+function duplicates (array) {
+  const duplicates = []
+  array.forEach((element, index) => {
+    if (array.indexOf(element) !== index && !duplicates.includes(element)) {
+      duplicates.push(element)
+    }
+  })
+  return duplicates
+}
+
+function symdifference (...arrays) {
+  return arrays.reduce((accumulator, array) => {
+    return accumulator.filter(element => !array.includes(element))
+      .concat(array.filter(element => !accumulator.includes(element)))
+  }, [])
+}
+
 module.exports = {
   identifier,
   first,
@@ -167,5 +209,9 @@ module.exports = {
   head,
   take,
   slice,
-  pluck
+  pluck,
+  intersection,
+  difference,
+  duplicates,
+  symdifference
 }

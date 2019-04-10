@@ -173,6 +173,34 @@ const array = {
       en: 'Returns the element located at the passed position. When position is negative it searches from the end of the array.',
       pl: 'Zwraca element znajdujący się na wybranej pozycji. Gdy parametr "position" jest ujemny, wyszukiwanie elementu zaczyna się od końca tablicy.'
     }
+  },
+  intersection: {
+    parameters: ['arrays'],
+    description: {
+      en: 'Returns an array containing elements common to all arrays that have been passed to the function.',
+      pl: 'Zwraca tablicę, zawierającą elementy wspólne dla wszystkich tablic, które zostały przekazane do funkcji.'
+    }
+  },
+  difference: {
+    parameters: ['array', 'arrays'],
+    description: {
+      en: `Returns an array containing elements that don't occur in other arrays.`,
+      pl: 'Zwraca tablicę, zawierającą elementy, które nie występują w pozostałych tablicach.'
+    }
+  },
+  duplicates: {
+    parameters: ['array'],
+    description: {
+      en: 'Returns an array containing repeated elements.',
+      pl: 'Zwraca tablicę, zawierającą powtarzające sie elementy.'
+    }
+  },
+  symdifference: {
+    parameters: ['arrays'],
+    description: {
+      en: 'Returns an array of elements that are not part of intersection.',
+      pl: 'Zwraca tablicę, zawierającą elementy, które nie należą do części wspólnej przekazanych tablic.'
+    }
   }
 }
 module.exports = array
