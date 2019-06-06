@@ -4,10 +4,10 @@ const documentation = require('.')
 for (let name in utilities) {
   const utility = utilities[name]
   for (let method in utility) {
-    if (!documentation[method]) {
+    if (!documentation[name][method]) {
       throw new Error(`Documentation missing for: ${method}`)
     }
-    const { description } = documentation[method]
+    const { description } = documentation[name][method]
     if (!description) {
       throw new Error(`Description missing for: ${method}`)
     }
