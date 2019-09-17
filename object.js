@@ -1,6 +1,7 @@
 function rename (object, keys) {
-  for (let key in keys) {
-    if (keys.hasOwnProperty(key) && object.hasOwnProperty(key)) {
+  const { hasOwnProperty } = Object.prototype
+  for (const key in keys) {
+    if (hasOwnProperty.call(keys, key) && hasOwnProperty.call(object, key)) {
       object[keys[key]] = object[key]
       delete object[key]
     }
@@ -25,7 +26,7 @@ function pat (object, string, value) {
   const keys = string.split('.')
   const reference = object
   for (let i = 0, ilen = keys.length; i < ilen; i += 1) {
-    let key = keys[i]
+    const key = keys[i]
     if (i + 1 === ilen) {
       object[key] = value
     } else {

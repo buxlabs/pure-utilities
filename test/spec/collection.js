@@ -91,13 +91,13 @@ test('flatten an n-dimensional array', assert => {
 })
 
 test('flatten shouldn`t change flat object', t => {
-  const object1 = { 'orderAccepted': 'Your order has been accepted' }
-  const result = { 'orderAccepted': 'Your order has been accepted' }
+  const object1 = { orderAccepted: 'Your order has been accepted' }
+  const result = { orderAccepted: 'Your order has been accepted' }
   t.deepEqual(collection.flatten(object1), result)
 })
 
 test('flatten should flatten the object if it has 2 levels', t => {
-  const object1 = { titles: { 'index': 'Buxus - Plants, seedlings, producer' } }
+  const object1 = { titles: { index: 'Buxus - Plants, seedlings, producer' } }
   const result = { 'titles.index': 'Buxus - Plants, seedlings, producer' }
   t.deepEqual(collection.flatten(object1), result)
 })
@@ -105,7 +105,7 @@ test('flatten should flatten the object if it has 2 levels', t => {
 test('flatten should flatten the object if it has 3 levels', t => {
   const object1 = {
     errors: {
-      '404': {
+      404: {
         title: 'Page not found'
       }
     }
@@ -117,16 +117,16 @@ test('flatten should flatten the object if it has 3 levels', t => {
 })
 
 test('unflatten shouldn`t change unflat object', t => {
-  const result = { 'orderAccepted': 'Your order has been accepted' }
-  const object1 = { 'orderAccepted': 'Your order has been accepted' }
+  const result = { orderAccepted: 'Your order has been accepted' }
+  const object1 = { orderAccepted: 'Your order has been accepted' }
   t.deepEqual(collection.unflatten(object1), result)
 })
 
 test('unflatten should unflatten the object if it has 2 levels', t => {
   const object1 = { 'titles.index': 'Buxus - Plants, seedlings, producer' }
   const result = {
-    'titles': {
-      'index': 'Buxus - Plants, seedlings, producer'
+    titles: {
+      index: 'Buxus - Plants, seedlings, producer'
     }
   }
   t.deepEqual(collection.unflatten(object1), result)
@@ -135,9 +135,9 @@ test('unflatten should unflatten the object if it has 2 levels', t => {
 test('unflatten should unflatten the object if it has 3 levels', t => {
   const object1 = { 'errors.404.title': 'Page not found' }
   const result = {
-    'errors': {
-      '404': {
-        'title': 'Page not found'
+    errors: {
+      404: {
+        title: 'Page not found'
       }
     }
   }

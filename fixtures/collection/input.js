@@ -57,7 +57,7 @@ module.exports = {
         code: 'flatten([1, [2], [ [3, [ 4, [5] ] ] ] ])'
       },
       {
-        input: [{ titles: { 'index': 'Buxus - Plants, seedlings, producer' } }]
+        input: [{ titles: { index: 'Buxus - Plants, seedlings, producer' } }]
       }
     ]
   },

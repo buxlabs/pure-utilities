@@ -3,8 +3,8 @@ import index from '../..'
 
 test('methods should be unique', t => {
   const methods = []
-  for (let key in index) {
-    for (let method in index[key]) {
+  for (const key in index) {
+    for (const method in index[key]) {
       methods.push(method)
     }
   }

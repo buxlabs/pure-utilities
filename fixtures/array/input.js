@@ -219,7 +219,7 @@ module.exports = {
     examples:
     [
       {
-        input: [[ { foo: 'bar' }, { name: 'baz' } ], 'name'],
+        input: [[{ foo: 'bar' }, { name: 'baz' }], 'name'],
         code: 'pluck([{ foo: "bar"}, { name: "baz"}], "name")'
       }
     ]

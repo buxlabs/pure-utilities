@@ -182,7 +182,7 @@ function monetize (number, {
 } = {}) {
   let fixed = number.toFixed(digits)
   let integer = fixed.substr(0, fixed.lastIndexOf('.'))
-  let decimal = fixed.substr(fixed.lastIndexOf('.')).replace('.', separator)
+  const decimal = fixed.substr(fixed.lastIndexOf('.')).replace('.', separator)
   space = space ? ' ' : ''
 
   if (integer.length > size) {

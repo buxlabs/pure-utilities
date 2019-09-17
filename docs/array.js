@@ -184,7 +184,7 @@ const array = {
   difference: {
     parameters: ['array', 'arrays'],
     description: {
-      en: `Returns an array containing elements that don't occur in other arrays.`,
+      en: 'Returns an array containing elements that don\'t occur in other arrays.',
       pl: 'Zwraca tablicę, zawierającą elementy, które nie występują w pozostałych tablicach.'
     }
   },

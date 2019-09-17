@@ -116,8 +116,8 @@ function unescape (string) {
     ['&amp;', '&'],
     ['&lt;', '<'],
     ['&gt;', '>'],
-    ['&quot;', `"`],
-    ['&39;', `'`]
+    ['&quot;', '"'],
+    ['&39;', '\'']
   ])
 
   entities.forEach((value, key) => {
@@ -278,8 +278,8 @@ function squeeze (string, pattern = 'a-zA-Z') {
   string = string.replace(/\s+/g, ' ')
   const regExp = new RegExp(`[${pattern}]`)
   for (let i = 1; i < string.length; i++) {
-    let currentCharacter = string[i]
-    let previousCharacter = string[i - 1]
+    const currentCharacter = string[i]
+    const previousCharacter = string[i - 1]
     if (regExp.test(currentCharacter) && currentCharacter === previousCharacter) {
       string = string.substr(0, i) + string.substr(i + 1)
       i--

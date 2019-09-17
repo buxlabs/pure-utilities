@@ -8,11 +8,11 @@ function getCode (fn, input) {
 }
 
 function generate (utility, fixtures) {
-  for (let key in utility) {
+  for (const key in utility) {
     const fn = utility[key]
     const fixture = fixtures[key]
     if (!fixture) throw new Error(`There is no example for the ${key} method`)
-    for (let example of fixture.examples) {
+    for (const example of fixture.examples) {
       const { input } = example
       if (!example.code) { example.code = getCode(fn, input) }
       example.output = fn(...input)

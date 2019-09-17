@@ -11,7 +11,7 @@ const object = {
     examples:
     [
       {
-        input: [ { foo: 'bar', baz: [1, 2, 3] } ]
+        input: [{ foo: 'bar', baz: [1, 2, 3] }]
       }
     ]
   },
@@ -27,7 +27,7 @@ const object = {
     examples:
     [
       {
-        input: [{ 'created_at': '2000-01-01' }, { 'created_at': 'createdAt' }]
+        input: [{ created_at: '2000-01-01' }, { created_at: 'createdAt' }]
       }
     ]
   },

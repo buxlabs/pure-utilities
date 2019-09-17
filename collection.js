@@ -44,10 +44,10 @@ function flatten (collection) {
     }, [])
   }
   const result = {}
-  for (let key in collection) {
+  for (const key in collection) {
     if (typeof collection[key] === 'object') {
       const deep = flatten(collection[key])
-      for (let prefix in deep) {
+      for (const prefix in deep) {
         result[key + '.' + prefix] = deep[prefix]
       }
     } else {
@@ -59,7 +59,7 @@ function flatten (collection) {
 
 function unflatten (collection) {
   const result = {}
-  for (let key in collection) {
+  for (const key in collection) {
     const parts = key.split('.')
     let current = result
     let property = '_'
@@ -69,7 +69,7 @@ function unflatten (collection) {
     }
     current[property] = collection[key]
   }
-  return result['_']
+  return result._
 }
 
 module.exports = {

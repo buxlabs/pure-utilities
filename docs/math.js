@@ -86,8 +86,8 @@ const math = {
   exp: {
     parameters: ['number'],
     description: {
-      en: `Returns the value of E^number, where E is Euler's number.`,
-      pl: `Zwraca wartość z wyrażenia E^number, gdzie E jest liczbę Eulera.`
+      en: 'Returns the value of E^number, where E is Euler\'s number.',
+      pl: 'Zwraca wartość z wyrażenia E^number, gdzie E jest liczbę Eulera.'
     }
   },
   floor: {
@@ -326,15 +326,15 @@ const math = {
   feet: {
     parameters: ['number', 'precision', 'decimal'],
     description: {
-      en: `Converts inches to feets. By default precision equals 2. When decimal flag is set to false, returns result with prim (′) symbol.`,
-      pl: `Konwertuje cale na stopy. Domyślnie wynik zaokrąglany jest do 2 miejsc po przecinku. Gdy flaga "decimal" ustawiona jest jako fałsz, funkcja zwraca wynik jako łańcuch tekstowy z symoblem prim (′) na końcu.`
+      en: 'Converts inches to feets. By default precision equals 2. When decimal flag is set to false, returns result with prim (′) symbol.',
+      pl: 'Konwertuje cale na stopy. Domyślnie wynik zaokrąglany jest do 2 miejsc po przecinku. Gdy flaga "decimal" ustawiona jest jako fałsz, funkcja zwraca wynik jako łańcuch tekstowy z symoblem prim (′) na końcu.'
     }
   },
   inches: {
     parameters: ['number', 'precision', 'decimal'],
     description: {
-      en: `Converts feets to inches. By default precision equals 2. When decimal flag is set to false, returns result with bis (″) symbol.`,
-      pl: `Konwertuje stopy na cale. Domyślnie wynik zaokrąglany jest do 2 miejsc po przecinku. Gdy flaga "decimal" ustawiona jest jako fałsz, funkcja zwraca wynik jako łańcuch tekstowy z symoblem bis (″) na końcu.`
+      en: 'Converts feets to inches. By default precision equals 2. When decimal flag is set to false, returns result with bis (″) symbol.',
+      pl: 'Konwertuje stopy na cale. Domyślnie wynik zaokrąglany jest do 2 miejsc po przecinku. Gdy flaga "decimal" ustawiona jest jako fałsz, funkcja zwraca wynik jako łańcuch tekstowy z symoblem bis (″) na końcu.'
     }
   }
 }

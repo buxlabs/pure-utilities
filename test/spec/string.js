@@ -678,7 +678,7 @@ test('singlespace should return new string which contains singlespace', t => {
 
 test('quote return a string inside quotes', t => {
   const parsed = string.quote('foo bar baz')
-  t.deepEqual(parsed, `"foo bar baz"`)
+  t.deepEqual(parsed, '"foo bar baz"')
 })
 
 test('quote return a string inside quotes', t => {
@@ -693,7 +693,7 @@ test('quote return a string inside quotes', t => {
 
 test('unquote removes quotes from string', t => {
   const parsed = string.unquote('„foo bar baz”')
-  t.deepEqual(parsed, `foo bar baz`)
+  t.deepEqual(parsed, 'foo bar baz')
 })
 
 test('unquote removes quotes from string', t => {
