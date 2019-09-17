@@ -1149,3 +1149,11 @@ test('rtrim should remove all specified characters regardless of the order of oc
   const result = string.rtrim('-_-qwe-_-', '_-')
   t.deepEqual(result, '-_-qwe')
 })
+
+test('uid generates a new id', assert => {
+  assert.deepEqual(string.uid().length, 32)
+})
+
+test('uid can create ids with given length', assert => {
+  assert.deepEqual(string.uid(5).length, 5)
+})

@@ -265,6 +265,13 @@ const string = {
       pl: `Umieszcza łańcuch tekstowy w cudzysłowiu.`
     }
   },
+  uid: {
+    parameters: ['length = 32'],
+    description: {
+      en: 'Returns an unique identifier.',
+      pl: 'Zwraca unikalny identyfikator.'
+    }
+  },
   underscore: {
     parameters: ['string'],
     description: {

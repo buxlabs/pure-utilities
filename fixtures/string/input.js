@@ -369,6 +369,14 @@ const string = {
       }
     ]
   },
+  uid: {
+    examples:
+    [
+      {
+        input: [10]
+      }
+    ]
+  },
   unwrap: {
     examples:
     [
