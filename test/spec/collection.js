@@ -55,33 +55,33 @@ test('prepend for array should add many arguments at the beginning of the array'
   assert.deepEqual(collection.prepend(['qwe'], '---', '___', '***'), ['---', '___', '***', 'qwe'])
 })
 
-test('size returns length of collection', assert => {
+test('size returns length of collection/array', assert => {
   assert.deepEqual(collection.size([1, 2, 3, 4, 5]), 5)
 })
 
-test('size returns length of collection', assert => {
+test('size returns length of collection/string', assert => {
   assert.deepEqual(collection.size('foobar'), 6)
 })
 
-test('size returns length of collection', assert => {
+test('size returns length of collection/object', assert => {
   assert.deepEqual(collection.size({ a: 1, b: 2 }), 2)
 })
 
-test('size returns length of collection', assert => {
+test('size returns length of collection/set', assert => {
   assert.deepEqual(collection.size(new Set([1, 2, 3, 4, 5])), 5)
 })
 
-test('reverse should reverse collection', t => {
+test('reverse should reverse collection/string of letters', t => {
   var parsed = collection.reverse('foo')
   t.deepEqual(parsed, 'oof')
 })
 
-test('reverse should reverse collection', t => {
+test('reverse should reverse collection/string of numbers', t => {
   var parsed = collection.reverse('12345')
   t.deepEqual(parsed, '54321')
 })
 
-test('reverse should reverse collection', t => {
+test('reverse should reverse collection/array of numbers', t => {
   var parsed = collection.reverse([1, 2, 3, 4])
   t.deepEqual(parsed, [4, 3, 2, 1])
 })
