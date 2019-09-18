@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^2.4.0",
     "nyc": "^14.1.1",
     "standard": "^14.3.0"
   },
@@ -16,8 +16,11 @@
     "lint": "standard",
     "docs": "node docs/generate.js",
     "fixtures": "node fixtures/index.js",
-    "test": "ava \"test/spec/**/*.js\" && npm run docs && npm run fixtures",
-    "coverage": "nyc ava \"test/spec/**/*.js\""
+    "test": "ava && npm run docs && npm run fixtures",
+    "coverage": "nyc ava"
+  },
+  "ava": {
+    "files": ["test/spec/**/*.js"]
   },
   "repository": {
     "type": "git",
