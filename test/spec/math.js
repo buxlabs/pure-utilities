@@ -176,11 +176,6 @@ test('int parses string and returns integer', t => {
   t.deepEqual(parsed, 4)
 })
 
-test('float parses string and returns float', t => {
-  var parsed = math.float('4.25')
-  t.deepEqual(parsed, 4.25)
-})
-
 test('float works for numbers', t => {
   var parsed = math.float(1)
   t.deepEqual(parsed, 1.00)
@@ -189,106 +184,75 @@ test('float works for numbers', t => {
 test('float parses string and returns float', t => {
   var parsed = math.float('4,25')
   t.deepEqual(parsed, 4.25)
-})
 
-test('float parses string and returns float', t => {
-  var parsed = math.float('100 000,01')
+  parsed = math.float('100 000,01')
   t.deepEqual(parsed, 100000.01)
-})
 
-test('float parses string and returns float', t => {
-  var parsed = math.float('100000.01')
+  parsed = math.float('100000.01')
   t.deepEqual(parsed, 100000.01)
+
+  parsed = math.float('4.25')
+  t.deepEqual(parsed, 4.25)
 })
 
 test('clamp clamps value inside range', t => {
   t.deepEqual(math.clamp(10, 20, 30), 20)
-})
-
-test('clamp clamps value inside range', t => {
   t.deepEqual(math.clamp(20, 20, 30), 20)
-})
-
-test('clamp clamps value inside range', t => {
   t.deepEqual(math.clamp(25, 20, 30), 25)
-})
-
-test('clamp clamps value inside range', t => {
   t.deepEqual(math.clamp(30, 20, 30), 30)
-})
-
-test('clamp clamps value inside range', t => {
   t.deepEqual(math.clamp(31, 20, 30), 30)
 })
 
 test('percentage converts number to percent format', t => {
   t.deepEqual(math.percentage(0.25), '25%')
-})
-
-test('percentage converts number to percent format', t => {
   t.deepEqual(math.percentage(1), '100%')
 })
 
 test('fixed formats a number using fixed-point notation', t => {
   t.deepEqual(math.fixed(25.32), '25')
-})
-
-test('fixed formats a number using fixed-point notation', t => {
   t.deepEqual(math.fixed(25.32, 1), '25.3')
 })
 
-test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(100)
+test('monetize formats a number to zloty currency format', t => {
+  var parsed = math.monetize(100)
   t.deepEqual(parsed, '100,00 zł')
-})
 
-test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(100.50, { symbol: '€', separator: '.' })
-  t.deepEqual(parsed, '100.50 €')
-})
-
-test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(1000)
+  parsed = math.monetize(1000)
   t.deepEqual(parsed, '1 000,00 zł')
-})
 
-test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(1000000)
+  parsed = math.monetize(1000000)
   t.deepEqual(parsed, '1 000 000,00 zł')
-})
 
-test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(531722.07)
+  parsed = math.monetize(531722.07)
   t.deepEqual(parsed, '531 722,07 zł')
-})
 
-test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(100230.1)
+  parsed = math.monetize(100230.1)
   t.deepEqual(parsed, '100 230,10 zł')
 })
 
-test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(100, {
+test('monetize formats a number to euro currency format', t => {
+  var parsed = math.monetize(100.50, { symbol: '€', separator: '.' })
+  t.deepEqual(parsed, '100.50 €')
+})
+
+test('monetize formats a number to custom currency format', t => {
+  var parsed = math.monetize(100, {
     symbol: '$',
     space: false,
     ending: false,
     separator: '.'
   })
   t.deepEqual(parsed, '$100.00')
-})
 
-test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(100.50, {
+  parsed = math.monetize(100.50, {
     digits: 1,
     symbol: '€',
     separator: '.',
     space: false
   })
   t.deepEqual(parsed, '100.5€')
-})
 
-test('monetize formats a number to currency format', t => {
-  const parsed = math.monetize(100.50, {
+  parsed = math.monetize(100.50, {
     digits: 1,
     symbol: '€',
     separator: '.',
@@ -299,47 +263,35 @@ test('monetize formats a number to currency format', t => {
 })
 
 test('cube returns the third power of the number', t => {
-  const parsed = math.cube(5)
+  var parsed = math.cube(5)
   t.deepEqual(parsed, 125)
-})
 
-test('cube returns the third power of the number', t => {
-  const parsed = math.cube(-4)
+  parsed = math.cube(-4)
   t.deepEqual(parsed, -64)
 })
 
 test('inches converts feest to inches', t => {
-  const parsed = math.inches(1)
+  var parsed = math.inches(1)
   t.deepEqual(parsed, 12)
-})
 
-test('inches converts feets to inches', t => {
-  const parsed = math.inches(0.01)
+  parsed = math.inches(0.01)
   t.deepEqual(parsed, 0.12)
-})
 
-test('inches converts feets to inches', t => {
-  const parsed = math.inches(0.01, 2, false)
+  parsed = math.inches(0.01, 2, false)
   t.deepEqual(parsed, '0.12″')
 })
 
 test('inches converts inches to feets', t => {
-  const parsed = math.feet(1)
+  var parsed = math.feet(1)
   t.deepEqual(parsed, 0.08)
-})
 
-test('feet converts inches to feets', t => {
-  const parsed = math.feet(1, 5)
+  parsed = math.feet(1, 5)
   t.deepEqual(parsed, 0.08333)
-})
 
-test('feet converts inches to feets', t => {
-  const parsed = math.feet(60)
+  parsed = math.feet(60)
   t.deepEqual(parsed, 5)
-})
 
-test('feet converts inches to feets', t => {
-  const parsed = math.feet(13.25)
+  parsed = math.feet(13.25)
   t.deepEqual(parsed, 1.10)
 })
 
@@ -349,21 +301,17 @@ test('feet converts f to feets', t => {
 })
 
 test('degrees converts radians to degrees', t => {
-  const parsed = math.degrees(1)
+  var parsed = math.degrees(1)
   t.deepEqual(parsed, 57.3)
-})
 
-test('degrees converts radians to degrees', t => {
-  const parsed = math.degrees(5)
+  parsed = math.degrees(5)
   t.deepEqual(parsed, 286.48)
 })
 
 test('radians converts degrees to radians', t => {
-  const parsed = math.radians(12)
+  var parsed = math.radians(12)
   t.deepEqual(parsed, 0.21)
-})
 
-test('radians converts degrees to radians', t => {
-  const parsed = math.radians(-1, 10)
+  parsed = math.radians(-1, 10)
   t.deepEqual(parsed, -0.0174532925)
 })

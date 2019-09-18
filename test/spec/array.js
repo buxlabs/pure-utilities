@@ -53,33 +53,18 @@ test('last returns last element of an array', assert => {
 
 test('sum returns the sum of a list of numbers', assert => {
   assert.deepEqual(array.sum([3, 10, 2]), 15)
-})
-
-test('sum returns the sum of a list of numbers', assert => {
   assert.deepEqual(array.sum([100, 200, 1]), 301)
 })
 
 test('average returns the average of a list of numbers', assert => {
   assert.deepEqual(array.average([100, 200]), 150)
-})
-
-test('average returns the average of a list of numbers', assert => {
   assert.deepEqual(array.average([2, 0]), 1)
 })
 
 test('median returns the median of a list of numbers', assert => {
   assert.deepEqual(array.median([6, 4, 2, 4, 4]), 4)
-})
-
-test('median returns the median of a list of numbers', assert => {
   assert.deepEqual(array.median([1, 2, 3, 5, 5, 6]), 4)
-})
-
-test('median returns the median of a list of numbers', assert => {
   assert.deepEqual(array.median([5, 18, 1]), 5)
-})
-
-test('median returns the median of a list of numbers', assert => {
   assert.deepEqual(array.median([91, 210, 205, 204, 212]), 205)
 })
 
@@ -93,13 +78,7 @@ test('unique returns a copy of the array without duplicate items', assert => {
 
 test('nth gets element at index "n" of array', assert => {
   assert.deepEqual(array.nth([1, 2, 3, 4, 5], 4), 4)
-})
-
-test('nth gets element at index "n" of array', assert => {
   assert.deepEqual(array.nth([1, 2, 3, 4, 5], -2), 4)
-})
-
-test('nth gets element at index "n" of array', assert => {
   assert.deepEqual(array.nth([1, 2, 3, 4, 5], -5), 1)
 })
 
@@ -109,69 +88,33 @@ test('sample returns a random item from array', assert => {
 
 test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
   assert.deepEqual(array.rotate([1, 2, 3]), [1, 2, 3])
-})
-
-test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
   assert.deepEqual(array.rotate([1, 2, 3], 1), [2, 3, 1])
-})
-
-test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
   assert.deepEqual(array.rotate([1, 2, 3], 2), [3, 1, 2])
-})
-
-test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
   assert.deepEqual(array.rotate([1, 2, 3], 3), [1, 2, 3])
-})
-
-test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
   assert.deepEqual(array.rotate([1, 2, 3], 4), [2, 3, 1])
-})
-
-test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
   assert.deepEqual(array.rotate([1, 2, 3], -1), [3, 1, 2])
-})
-
-test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
   assert.deepEqual(array.rotate(['lorem', 'ipsum', 'dolor', 'santo'], -2), ['dolor', 'santo', 'lorem', 'ipsum'])
-})
-
-test('rotate shifts "n" items out of the array and pushes them back on the end', assert => {
   assert.deepEqual(array.rotate([1, 2, 3], -3), [1, 2, 3])
 })
 
 test('drop returns the tail of array after dropping the first `n` elements.', assert => {
   assert.deepEqual(array.drop([1, 2, 3], 2), [3])
-})
-
-test('drop returns the tail of array after dropping the first `n` elements.', assert => {
   assert.deepEqual(array.drop([1, 2, 3, 4, 5, 6], 3), [4, 5, 6])
-})
-
-test('drop returns the tail of array after dropping the first `n` elements.', assert => {
   assert.deepEqual(array.drop('Hello World', 6), 'World')
 })
 
 test('head returns first element of an array', assert => {
   assert.deepEqual(array.head([1, 2, 3, 4, 5, 6]), 1)
-})
-
-test('head returns first element of an array', assert => {
   assert.deepEqual(array.head('Hello World'), 'H')
 })
 
 test('take takes n items of an array.', assert => {
   assert.deepEqual(array.take([1, 2, 3, 4, 5, 6], 2), [1, 2])
-})
-
-test('take takes n items of an array.', assert => {
   assert.deepEqual(array.take('Hello World', 5), 'Hello')
 })
 
 test('slice returns a shallow copy of a portion of an array into a new array object selected from start to end', assert => {
   assert.deepEqual(array.slice([1, 2, 3, 4, 5, 6], 3, 5), [4, 5])
-})
-
-test('slice returns a shallow copy of a portion of an array into a new array object selected from start to end', assert => {
   assert.deepEqual(array.slice('Hello World', 6, 9), 'Wor')
 })
 
@@ -182,18 +125,14 @@ test('pluck extracts a list of all property values', assert => {
       { name: 'larry', age: 50 },
       { name: 'curly', age: 60 }
     ], 'name'), ['moe', 'larry', 'curly'])
-})
 
-test('pluck returns a list of only existing property values', assert => {
   assert.deepEqual(
     array.pluck([
       { foo: 'moe', age: 40 },
       { name: 'larry', age: 50 },
       { bar: 'curly', age: 60 }
     ], 'name'), ['larry'])
-})
 
-test('pluck returns a list of not empty property values', assert => {
   assert.deepEqual(
     array.pluck([
       { name: '', age: 40 },
