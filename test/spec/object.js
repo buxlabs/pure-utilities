@@ -47,7 +47,7 @@ test('values returns an array containing the values that correspond to all of a 
   t.deepEqual(parsed.length, 2)
 })
 
-test('values returns an array containing the values that correspond to all of a given object\'s own enumerable string properties', t => {
+test('values returns an empty array when object doesn\'t have own enumerable string properties', t => {
   const parsed = object.values({})
   t.deepEqual(parsed.length, 0)
 })
@@ -57,7 +57,7 @@ test('keys returns an array containing the names of all of the given object\'s o
   t.deepEqual(parsed.length, 2)
 })
 
-test('keys returns an array containing the names of all of the given object\'s own enumerable string properties', t => {
+test('keys returns an empty array when object doesn\'t have own enumerable string properties', t => {
   const parsed = object.keys({})
   t.deepEqual(parsed.length, 0)
 })

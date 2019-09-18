@@ -5,19 +5,19 @@ test('isostring returns a valid date', t => {
   t.deepEqual(date.isostring('1460303444338'), '2016-04-10T15:50:44.338Z')
 })
 
-test('format returns a date in DD-MM-YYYY format by default', t => {
+test('format returns a date in DD-MM-YYYY format by default (t1)', t => {
   t.deepEqual(date.format(new Date('2013/06/13')), '13-06-2013')
 })
 
-test('format returns a date in DD-MM-YYYY format by default', t => {
+test('format returns a date in DD-MM-YYYY format by default (t2)', t => {
   t.deepEqual(date.format('06-27-13'), '27-06-2013')
 })
 
-test('format returns "Invalid Date" message when passed date is invalid', t => {
+test('format returns "Invalid Date" message when passed date is invalid (t1)', t => {
   t.deepEqual(date.format(new Date('2018/15/13'), 'DD/MM/YYYY'), 'Invalid Date')
 })
 
-test('format returns "Invalid Date" message when passed date is invalid', t => {
+test('format returns "Invalid Date" message when passed date is invalid (t2)', t => {
   t.deepEqual(date.format('27-06-2013', 'DD/MM/YYYY'), 'Invalid Date')
 })
 
@@ -25,23 +25,23 @@ test('format returns "Invalid Format" message when format is invalid', t => {
   t.deepEqual(date.format('2013-06-27', 'DD!MM!YYYY'), 'Invalid Format')
 })
 
-test('format returns a date in given format', t => {
+test('format returns a date in given format (t1)', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'MM'), '05')
 })
 
-test('format returns number of the month', t => {
+test('format returns number of the month (t1)', t => {
   t.deepEqual(date.format(new Date('2018-05-23'), 'MM'), '05')
 })
 
-test('format returns number of the month', t => {
+test('format returns number of the month (t2)', t => {
   t.deepEqual(date.format(new Date('2018/05/23'), 'MM'), '05')
 })
 
-test('format returns number of the month', t => {
+test('format returns number of the month (t3)', t => {
   t.deepEqual(date.format(new Date('2018-05'), 'MM'), '05')
 })
 
-test('format returns number of the month', t => {
+test('format returns number of the month (t4)', t => {
   t.deepEqual(date.format(new Date('2018'), 'MM'), '01')
 })
 
@@ -53,111 +53,111 @@ test('format returns number of the year', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'YYYY'), '2018')
 })
 
-test('format returns a date in given format', t => {
+test('format returns a date in given format (t2)', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'DD/MM/YYYY'), '23/05/2018')
 })
 
-test('format returns a date in given format', t => {
+test('format returns a date in given format (t3)', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'MM/DD/YYYY'), '05/23/2018')
 })
 
-test('format returns a date in given format', t => {
+test('format returns a date in given format (t4)', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'MM.DD.YYYY'), '05.23.2018')
 })
 
-test('format returns a date in given format', t => {
+test('format returns a date in given format (t5)', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'MM-DD-YYYY'), '05-23-2018')
 })
 
-test('format returns a date in given format', t => {
+test('format returns a date in given format (t6)', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'YYYY/MM/DD'), '2018/05/23')
 })
 
-test('format returns a date in given format', t => {
+test('format returns a date in given format (t7)', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'MM YYYY'), '05 2018')
 })
 
-test('format returns a date in given format', t => {
+test('format returns a date in given format (t8)', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'MM-YYYY'), '05-2018')
 })
 
-test('day returns the day of the month', t => {
+test('day returns the day of the month (t1)', t => {
   t.deepEqual(date.day(new Date(2018, 4, 28)), 28)
 })
 
-test('day returns the day of the month', t => {
+test('day returns the day of the month (t2)', t => {
   t.deepEqual(date.day(new Date(2017, 1, 11)), 11)
 })
 
-test('day returns the day of the month', t => {
+test('day returns the day of the month (t3)', t => {
   t.deepEqual(date.day('27-06-2013'), 'Invalid Date')
 })
 
-test('weekday returns the day of the week', t => {
+test('weekday returns the day of the week (t1)', t => {
   t.deepEqual(date.weekday(new Date(2018, 4, 28)), 1)
 })
 
-test('weekday returns the day of the week', t => {
+test('weekday returns the day of the week (t2)', t => {
   t.deepEqual(date.weekday(new Date(2018, 4, 27)), 0)
 })
 
-test('weekday returns the day of the week', t => {
+test('weekday returns the day of the week (t3)', t => {
   t.deepEqual(date.weekday(new Date(2017, 1, 11)), 6)
 })
 
-test('weekday returns the day of the week', t => {
+test('weekday returns the day of the week (t4)', t => {
   t.deepEqual(date.weekday('27-06-2013'), 'Invalid Date')
 })
 
-test('month returns the number of the month', t => {
+test('month returns the number of the month (t1)', t => {
   t.deepEqual(date.month(new Date(2018, 4, 28)), 4)
 })
 
-test('month returns the number of the month', t => {
+test('month returns the number of the month (t2)', t => {
   t.deepEqual(date.month(new Date(2018, 1, 27)), 1)
 })
 
-test('year returns the number of the year', t => {
+test('year returns the number of the year (t1)', t => {
   t.deepEqual(date.year(new Date(2018, 4, 28)), 2018)
 })
 
-test('year returns the number of the year', t => {
+test('year returns the number of the year (t2)', t => {
   t.deepEqual(date.year(new Date(1995, 2, 13)), 1995)
 })
 
-test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t1)', t => {
   t.deepEqual(date.prettydate(new Date(2043, 9, 25)), 'Sunday, 25th of October 2043')
 })
 
-test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t2)', t => {
   t.deepEqual(date.prettydate(new Date(2018, 5, 15)), 'Friday, 15th of June 2018')
 })
 
-test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t3)', t => {
   t.deepEqual(date.prettydate(new Date(2018, 5, 1)), 'Friday, 1st of June 2018')
 })
 
-test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t4)', t => {
   t.deepEqual(date.prettydate(new Date(2018, 2, 21)), 'Wednesday, 21st of March 2018')
 })
 
-test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t5)', t => {
   t.deepEqual(date.prettydate(new Date(2018, 2, 21), 'pl-Pl'), 'środa, 21 marca 2018')
 })
 
-test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t6)', t => {
   t.deepEqual(date.prettydate(new Date(2018, 5, 21), 'pl-Pl'), 'czwartek, 21 czerwca 2018')
 })
 
-test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t7)', t => {
   t.deepEqual(date.prettydate(new Date(2018, 8, 8), 'pl-Pl'), 'sobota, 8 września 2018')
 })
 
-test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t8)', t => {
   t.deepEqual(date.prettydate(new Date(2018, 11, 30), 'pl-Pl'), 'niedziela, 30 grudnia 2018')
 })
 
-test('prettydate returns date string containing name of the day, number of the day, name of the month and year', t => {
+test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t9)', t => {
   const error = t.throws(() => date.prettydate(new Date(2018, 11, 30), 'de-De'))
   t.is(error.message, 'de-De localization is not supported.')
 })
