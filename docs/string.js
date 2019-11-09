@@ -320,6 +320,13 @@ const string = {
       en: 'Wraps string between the first and last parameters.',
       pl: 'Umieszcza łańcuch znaków pomiędzy przekazanymi parametrami.'
     }
+  },
+  bytes: {
+    parameters: ['string'],
+    description: {
+      en: 'Converts string with specific unit to bytes',
+      pl: 'TODO'
+    }
   }
 }
 module.exports = string

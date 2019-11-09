@@ -1157,3 +1157,7 @@ test('uid generates a new id', assert => {
 test('uid can create ids with given length', assert => {
   assert.deepEqual(string.uid(5).length, 5)
 })
+
+test('bytes should convert the string with specific unit to bytes', assert => {
+  assert.deepEqual(string.bytes('400KB'), 409600)
+})
