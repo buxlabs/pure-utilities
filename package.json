@@ -20,7 +20,9 @@
     "coverage": "nyc ava"
   },
   "ava": {
-    "files": ["test/spec/**/*.js"]
+    "files": [
+      "test/spec/**/*.js"
+    ]
   },
   "repository": {
     "type": "git",

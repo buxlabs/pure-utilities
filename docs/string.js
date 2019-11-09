@@ -324,8 +324,8 @@ const string = {
   bytes: {
     parameters: ['string'],
     description: {
-      en: 'Converts string with specific unit to bytes',
-      pl: 'TODO'
+      en: 'Converts string with specific unit to bytes.',
+      pl: 'Konwertuje łańcuch znaków z daną jednostką do bitów.'
     }
   }
 }

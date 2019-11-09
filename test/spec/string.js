@@ -1159,5 +1159,17 @@ test('uid can create ids with given length', assert => {
 })
 
 test('bytes should convert the string with specific unit to bytes', assert => {
+  assert.deepEqual(string.bytes('1B'), 1)
+  assert.deepEqual(string.bytes('2B'), 2)
+  assert.deepEqual(string.bytes('1KB'), 1024)
+  assert.deepEqual(string.bytes('2KB'), 2048)
   assert.deepEqual(string.bytes('400KB'), 409600)
+  assert.deepEqual(string.bytes('2GB'), 2147483648)
+  assert.deepEqual(string.bytes('2TB'), 2199023255552)
+  assert.deepEqual(string.bytes('2PB'), 2251799813685248)
+  assert.deepEqual(string.bytes('2EB'), 2305843009213694000)
+  assert.deepEqual(string.bytes('2ZB'), 2.3611832414348226e+21)
+  assert.deepEqual(string.bytes('2YB'), 2.4178516392292583e+24)
+  assert.deepEqual(string.bytes('20YB'), 2.4178516392292583e+25)
+  assert.deepEqual(string.bytes('200YB'), 2.4178516392292583e+26)
 })

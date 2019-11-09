@@ -445,10 +445,10 @@ function uid (length = 32) {
 }
 
 function bytes (string) {
-  const [, size, dimension] = string.match(/^(\d+)(B|KB|MB|GB|TB|PB|EB|ZB|YB)$/i) || [null, null, null];
+  const [, size, dimension] = string.match(/^(\d+)(B|KB|MB|GB|TB|PB|EB|ZB|YB)$/i) || [null, null, null]
 
   if (!size || !dimension) {
-    return null;
+    return null
   }
 
   const dimensions = {
@@ -461,9 +461,9 @@ function bytes (string) {
     EB: 2 ** 60,
     ZB: 2 ** 70,
     YB: 2 ** 80
-  };
+  }
 
-  return size * dimensions[dimension];
+  return size * dimensions[dimension]
 }
 
 module.exports = {
