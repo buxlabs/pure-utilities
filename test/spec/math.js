@@ -201,6 +201,11 @@ test('float parses string and returns float (t4)', t => {
   t.deepEqual(parsed, 100000.01)
 })
 
+test('float parses string and returns float (t5)', t => {
+  var parsed = math.float('100,000.01')
+  t.deepEqual(parsed, 100000.01)
+})
+
 test('clamp clamps value inside range (t1)', t => {
   t.deepEqual(math.clamp(10, 20, 30), 20)
 })
