@@ -83,8 +83,9 @@ test('median returns the median of a list of numbers (t4)', assert => {
   assert.deepEqual(array.median([91, 210, 205, 204, 212]), 205)
 })
 
-test('compact returns a copy of the array only with truthy values', assert => {
-  assert.deepEqual(array.compact([0, 1, false, 2, '', 3]), [1, 2, 3])
+test('compact returns a copy of the array only with truthy values (if second arg is true) or without null and undefined (if second arg is false)', assert => {
+  assert.deepEqual(array.compact([0, 1, false, 2, '', 3, undefined, null]), [1, 2, 3])
+  assert.deepEqual(array.compact([0, 1, false, 2, '', 3, undefined, null], false), [0, 1, false, 2, '', 3])
 })
 
 test('unique returns a copy of the array without duplicate items', assert => {

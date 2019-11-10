@@ -74,8 +74,8 @@ function median (array) {
   return array[index]
 }
 
-function compact (array) {
-  return array.filter(Boolean)
+function compact (array, strict = true) {
+  return strict ? array.filter(Boolean) : array.filter(item => item !== null && item !== undefined)
 }
 
 function unique (array) {
