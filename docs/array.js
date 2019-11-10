@@ -7,9 +7,9 @@ const array = {
     }
   },
   compact: {
-    parameters: ['array'],
+    parameters: ['array', 'strict'],
     description: {
-      en: 'Returns an array with truthy values (if second arg is true) or without null and undefined (if second arg is false).',
+      en: 'Returns an array with truthy values.',
       pl: 'Zwraca tablicę, zawierającą tylko te elementy, których wartości są prawdziwe.'
     }
   },
@@ -205,8 +205,8 @@ const array = {
   comma: {
     parameters: ['array', 'number'],
     description: {
-      en: 'Returns a string created by joining array elements with comma and spaces.',
-      pl: 'TODO.'
+      en: 'Returns a string created by joining array elements with comma and optional spaces.',
+      pl: 'Zwraca łańcuch znaków zawierający dodatkowe przecincki i opcjonalne spacje.'
     }
   }
 }

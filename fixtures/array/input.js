@@ -12,8 +12,12 @@ module.exports = {
     examples:
     [
       {
-        input: [[0, 1, false, 2, '', 3]],
-        code: 'compact([0, 1, false, 2, "", 3])'
+        input: [[0, 1, false, null, 2, '', 3]],
+        code: 'compact([0, 1, false, null, 2, "", 3])'
+      },
+      {
+        input: [[0, 1, null, 2, undefined, 3], false],
+        code: 'compact([0, 1, null, 2, undefined, 3], false)'
       }
     ]
   },
