@@ -201,6 +201,13 @@ const array = {
       en: 'Returns an array of elements that are not part of intersection.',
       pl: 'Zwraca tablicę, zawierającą elementy, które nie należą do części wspólnej przekazanych tablic.'
     }
+  },
+  comma: {
+    parameters: ['array', 'number'],
+    description: {
+      en: 'Returns a string created by joining array elements with comma and spaces.',
+      pl: 'TODO.'
+    }
   }
 }
 module.exports = array
