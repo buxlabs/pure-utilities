@@ -9,7 +9,7 @@ const array = {
   compact: {
     parameters: ['array'],
     description: {
-      en: 'Returns an array with truthy values.',
+      en: 'Returns an array with truthy values (if second arg is true) or without null and undefined (if second arg is false).',
       pl: 'Zwraca tablicę, zawierającą tylko te elementy, których wartości są prawdziwe.'
     }
   },
