@@ -153,7 +153,7 @@ function int (string) {
 function float (value) {
   value = value.toString()
   value = value.replace(/\s/g, '')
-  value = value.replace(/,/g, '.')
+    .replace(/,/g, value.includes('.') ? '' : '.')
   return parseFloat(value)
 }
 
