@@ -184,6 +184,10 @@ function symdifference (...arrays) {
   }, [])
 }
 
+function comma (array, spacing = 0) {
+  return array.join(',' + ' '.repeat(spacing))
+}
+
 module.exports = {
   identifier,
   first,
@@ -213,5 +217,6 @@ module.exports = {
   intersection,
   difference,
   duplicates,
-  symdifference
+  symdifference,
+  comma
 }

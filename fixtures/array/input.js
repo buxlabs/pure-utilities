@@ -259,5 +259,14 @@ module.exports = {
         code: 'symdifference([1, 3, 4, 6, 7, 9], [3, 5, 6, 7, 8, 9])'
       }
     ]
+  },
+  comma: {
+    examples:
+    [
+      {
+        input: [[1, 2, 3], 2],
+        code: 'comma([1, 2, 3], 2)'
+      }
+    ]
   }
 }

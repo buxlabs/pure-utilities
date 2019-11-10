@@ -270,3 +270,7 @@ test('symdifference returns an array of unique values that is the symmetric diff
   difference = array.symdifference(array1, array2)
   assert.deepEqual(difference, [1, 4, 5, 8])
 })
+
+test('comma returns a string created by joining array elements with comma and spaces', assert => {
+  assert.deepEqual(array.comma([1, 2, 3], 2), '1,  2,  3')
+})
