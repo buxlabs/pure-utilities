@@ -145,3 +145,11 @@ test('unflatten should unflatten the object if it has 3 levels', t => {
   t.deepEqual(unflattened, result)
   t.truthy(!Array.isArray(unflattened.errors))
 })
+
+test('occurences should return the count of occurences of the string in the array', t => {
+  t.deepEqual(collection.occurences(['foo', 'foo', 'bar'], 'foo'), 2)
+})
+
+test('occurences should return the count of occurences of the string in the string', t => {
+  t.deepEqual(collection.occurences('foo foo bar', 'foo'), 2)
+})

@@ -72,11 +72,22 @@ function unflatten (collection) {
   return result._
 }
 
+function occurences (collection, string) {
+  if (typeof collection === 'string') {
+    collection = collection.split(' ')
+  }
+
+  const { [string]: count = 0 } = collection.reduce((acc, item) => ({ ...acc, [item]: (acc[item] || 0) + 1 }), {})
+
+  return count
+}
+
 module.exports = {
   append,
   prepend,
   reverse,
   size,
   flatten,
-  unflatten
+  unflatten,
+  occurences
 }

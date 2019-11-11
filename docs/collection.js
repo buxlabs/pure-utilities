@@ -40,6 +40,13 @@ const collection = {
       en: 'Converts properties of the object, which contain in the name dots(.), to multi-depth object.',
       pl: 'Konwertuje właściwości obiektu, których nazwy zawierają kropki(.), na zagnieżdżone obiety, zwracając obiekt o różnym stopniu głębokości.'
     }
+  },
+  occurences: {
+    parameters: ['collection|string', 'string'],
+    description: {
+      en: 'Returns the count of occurences of the string in the collection or array.',
+      pl: 'TODO.'
+    }
   }
 }
 module.exports = collection
