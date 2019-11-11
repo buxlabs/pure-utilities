@@ -152,4 +152,8 @@ test('occurences should return the count of occurences of the string in the arra
 
 test('occurences should return the count of occurences of the string in the string', t => {
   t.deepEqual(collection.occurences('foo foo bar', 'foo'), 2)
+  t.deepEqual(collection.occurences('foo\nfoo\nbar', 'foo'), 2)
+  t.deepEqual(collection.occurences('foo\tfoo\tbar', 'foo'), 2)
+  t.deepEqual(collection.occurences('foo\nfoo\tbar', 'foo'), 2)
+  t.deepEqual(collection.occurences('foo\r\nfoo\tbar', 'foo'), 2)
 })

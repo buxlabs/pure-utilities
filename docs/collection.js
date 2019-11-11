@@ -42,10 +42,10 @@ const collection = {
     }
   },
   occurences: {
-    parameters: ['collection|string', 'string'],
+    parameters: ['collection', 'string'],
     description: {
-      en: 'Returns the count of occurences of the string in the collection or array.',
-      pl: 'TODO.'
+      en: 'Returns the count of occurences of the string in the collection or string.',
+      pl: 'Zwraca ilość wystąpień danego łańcucha znaków w kolekcji lub innym łańcuchu znaków.'
     }
   }
 }
