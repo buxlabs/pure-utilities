@@ -62,6 +62,24 @@ function format (date, format) {
   return stringDate
 }
 
+function hours (date) {
+  if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
+  if (!Number(date)) return date.toDateString()
+  return date.getHours()
+}
+
+function minutes (date) {
+  if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
+  if (!Number(date)) return date.toDateString()
+  return date.getMinutes()
+}
+
+function seconds (date) {
+  if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
+  if (!Number(date)) return date.toDateString()
+  return date.getSeconds()
+}
+
 function day (date) {
   if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
   if (!Number(date)) return date.toDateString()
@@ -174,6 +192,9 @@ function timestamp (date, pattern = 'YYYY-MM-DD') {
 module.exports = {
   isostring,
   format,
+  hours,
+  minutes,
+  seconds,
   day,
   weekday,
   month,

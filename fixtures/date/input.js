@@ -58,6 +58,33 @@ const date = {
       }
     ]
   },
+  hours: {
+    examples:
+    [
+      {
+        input: [new Date(2018, 4, 28, 10)],
+        code: 'hours(new Date(2018, 4, 28, 10))'
+      }
+    ]
+  },
+  minutes: {
+    examples:
+    [
+      {
+        input: [new Date(2018, 4, 28, 10, 11)],
+        code: 'minutes(new Date(2018, 4, 28, 10, 11))'
+      }
+    ]
+  },
+  seconds: {
+    examples:
+    [
+      {
+        input: [new Date(2018, 4, 28, 10, 11, 12)],
+        code: 'seconds(new Date(2018, 4, 28, 10, 11, 12))'
+      }
+    ]
+  },
   day: {
     examples:
     [
