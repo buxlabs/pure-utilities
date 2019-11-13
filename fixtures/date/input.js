@@ -13,6 +13,10 @@ const date = {
       {
         input: [new Date(2018, 4, 23), 'DD/MM/YYYY'],
         code: 'format(new Date(2018, 4, 23), "DD/MM/YYYY")'
+      },
+      {
+        input: [new Date('2013/06/09')],
+        code: 'format(new Date("2013/06/09"))'
       }
     ]
   },
