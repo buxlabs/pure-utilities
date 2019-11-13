@@ -25,7 +25,7 @@ function format (date, format) {
   date = [
     { period: 'YYYY', value: date.getFullYear() },
     { period: 'MM', value: months.get(date.toDateString().substr(4, 3)) },
-    { period: 'DD', value: date.getDate() }
+    { period: 'DD', value: `0${date.getDate()}`.slice(-2) }
   ]
 
   if (!format) return date[2].value + '-' + date[1].value + '-' + date[0].value
