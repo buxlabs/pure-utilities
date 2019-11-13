@@ -85,6 +85,42 @@ test('format returns a date in given format (t8)', t => {
   t.deepEqual(date.format(new Date(2018, 4, 23), 'MM-YYYY'), '05-2018')
 })
 
+test('hours returns the hours of the day (t1)', t => {
+  t.deepEqual(date.hours(new Date(2018, 4, 28, 10)), 10)
+})
+
+test('hours returns the hours of the day (t2)', t => {
+  t.deepEqual(date.hours(new Date(2017, 1, 11)), 0)
+})
+
+test('hours returns the hours of the day (t3)', t => {
+  t.deepEqual(date.hours('27-06-2013'), 'Invalid Date')
+})
+
+test('minutes returns the minutes of the hour (t1)', t => {
+  t.deepEqual(date.minutes(new Date(2018, 4, 28, 10, 11)), 11)
+})
+
+test('minutes returns the minutes of the hour (t2)', t => {
+  t.deepEqual(date.minutes(new Date(2017, 1, 11)), 0)
+})
+
+test('minutes returns the minutes of the hour (t3)', t => {
+  t.deepEqual(date.minutes('27-06-2013'), 'Invalid Date')
+})
+
+test('seconds returns the seconds of the minute (t1)', t => {
+  t.deepEqual(date.seconds(new Date(2018, 4, 28, 10, 11, 12)), 12)
+})
+
+test('seconds returns the seconds of the minute (t2)', t => {
+  t.deepEqual(date.seconds(new Date(2017, 1, 11)), 0)
+})
+
+test('seconds returns the seconds of the minute (t3)', t => {
+  t.deepEqual(date.seconds('27-06-2013'), 'Invalid Date')
+})
+
 test('day returns the day of the month (t1)', t => {
   t.deepEqual(date.day(new Date(2018, 4, 28)), 28)
 })

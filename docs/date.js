@@ -27,6 +27,27 @@ const date = {
       pl: 'Zwraca sformatowaną datę, na podstawie przekazanego wzorca.'
     }
   },
+  hours: {
+    parameters: ['date'],
+    description: {
+      en: 'Returns the hours of the day (from 0 to 24) of the passed date.',
+      pl: 'TODO.'
+    }
+  },
+  minutes: {
+    parameters: ['date'],
+    description: {
+      en: 'Returns the minutes of the hour (from 0 to 60) of the passed date.',
+      pl: 'TODO.'
+    }
+  },
+  seconds: {
+    parameters: ['date'],
+    description: {
+      en: 'Returns the seconds of the minute (from 0 to 60) of the passed date.',
+      pl: 'TODO.'
+    }
+  },
   day: {
     parameters: ['date'],
     description: {
