@@ -10,6 +10,10 @@ test('format returns a date in DD-MM-YYYY format by default (t1)', t => {
 })
 
 test('format returns a date in DD-MM-YYYY format by default (t2)', t => {
+  t.deepEqual(date.format(new Date('2013/06/02')), '02-06-2013')
+})
+
+test('format returns a date in DD-MM-YYYY format by default (t3)', t => {
   t.deepEqual(date.format('06-27-13'), '27-06-2013')
 })
 
