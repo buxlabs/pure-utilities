@@ -93,7 +93,7 @@ test('unique returns a copy of the array without duplicate items', assert => {
 })
 
 test('unique works with objects', assert => {
-  assert.deepEqual(array.unique([{ x: "y" }, { x: "y" }, { x: "z" }]), [{ x: "y" }, { x: "z" }])
+  assert.deepEqual(array.unique([{ x: 'y' }, { x: 'y' }, { x: 'z' }]), [{ x: 'y' }, { x: 'z' }])
   assert.deepEqual(array.unique([{ foo: 1 }, { foo: 1 }, { foo: 2 }]), [{ foo: 1 }, { foo: 2 }])
   assert.deepEqual(array.unique([{ foo: { x: 1 } }, { foo: { x: 1 } }, { foo: { x: 2 } }]), [{ foo: { x: 1 } }, { foo: { x: 2 } }])
 })
