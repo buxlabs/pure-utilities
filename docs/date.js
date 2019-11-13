@@ -31,21 +31,21 @@ const date = {
     parameters: ['date'],
     description: {
       en: 'Returns the hours of the day (from 0 to 24) of the passed date.',
-      pl: 'TODO.'
+      pl: 'Zwraca godzinę (od 0 do 24) przekazanej daty.'
     }
   },
   minutes: {
     parameters: ['date'],
     description: {
       en: 'Returns the minutes of the hour (from 0 to 60) of the passed date.',
-      pl: 'TODO.'
+      pl: 'Zwraca minutę danej godziny (od 0 do 60) przekazanej daty.'
     }
   },
   seconds: {
     parameters: ['date'],
     description: {
       en: 'Returns the seconds of the minute (from 0 to 60) of the passed date.',
-      pl: 'TODO.'
+      pl: 'Zwraca sekundę danej minuty (od 0 do 60) przekazanej daty.'
     }
   },
   day: {
