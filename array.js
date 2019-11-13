@@ -79,7 +79,7 @@ function compact (array, strict = true) {
 }
 
 function unique (array) {
-  return Array.from(new Set(array))
+  return Array.from(new Set(array.map(item => JSON.stringify(item)))).map(JSON.parse)
 }
 
 function nth (array, position) {
