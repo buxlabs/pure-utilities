@@ -281,3 +281,12 @@ test('symdifference returns an array of unique values that is the symmetric diff
 test('comma returns a string created by joining array elements with comma and spaces', assert => {
   assert.deepEqual(array.comma([1, 2, 3], 2), '1,  2,  3')
 })
+
+test('union returns an array of unique values', assert => {
+  const array1 = [2]
+  const array2 = [1, 2]
+
+  const union = array.union(array1, array2)
+
+  assert.deepEqual(union, [2, 1])
+})
