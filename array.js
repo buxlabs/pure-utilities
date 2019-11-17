@@ -184,6 +184,10 @@ function symdifference (...arrays) {
   }, [])
 }
 
+function union (...arrays) {
+  return [...new Set(arrays.reduce((acc, value) => [...acc, ...value], []))]
+}
+
 module.exports = {
   identifier,
   first,
@@ -213,5 +217,6 @@ module.exports = {
   intersection,
   difference,
   duplicates,
-  symdifference
+  symdifference,
+  union
 }

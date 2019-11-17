@@ -270,3 +270,12 @@ test('symdifference returns an array of unique values that is the symmetric diff
   difference = array.symdifference(array1, array2)
   assert.deepEqual(difference, [1, 4, 5, 8])
 })
+
+test('union returns an array of unique values', assert => {
+  const array1 = [2]
+  const array2 = [1, 2]
+
+  const union = array.union(array1, array2)
+
+  assert.deepEqual(union, [2, 1])
+})

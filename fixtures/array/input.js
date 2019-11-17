@@ -259,5 +259,14 @@ module.exports = {
         code: 'symdifference([1, 3, 4, 6, 7, 9], [3, 5, 6, 7, 8, 9])'
       }
     ]
+  },
+  union: {
+    examples:
+    [
+      {
+        input: [[2], [1, 2]],
+        code: 'union([2], [1, 2])'
+      }
+    ]
   }
 }
