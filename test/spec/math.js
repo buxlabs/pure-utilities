@@ -367,3 +367,8 @@ test('radians converts degrees to radians (t2)', t => {
   const parsed = math.radians(-1, 10)
   t.deepEqual(parsed, -0.0174532925)
 })
+
+test('mean computes mean of the values in array', t => {
+  const parsed = math.mean([1, 2, 3, 4])
+  t.deepEqual(parsed, 2.5)
+})

@@ -211,6 +211,10 @@ function inches (number, precision = 2, decimal = true) {
   return decimal ? result : `${result}″`
 }
 
+function mean (array) {
+  return array.reduce((acc, value) => acc + value, 0) / array.length
+}
+
 module.exports = {
   abs,
   acos,
@@ -257,5 +261,6 @@ module.exports = {
   feet,
   inches,
   radians,
-  degrees
+  degrees,
+  mean
 }
