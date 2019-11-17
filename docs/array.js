@@ -213,7 +213,7 @@ const array = {
     parameters: ['arrays'],
     description: {
       en: 'Returns an array of unique values.',
-      pl: 'TODO.'
+      pl: 'Zwraca tablicę z unikalnymi wartościami.'
     }
   }
 }

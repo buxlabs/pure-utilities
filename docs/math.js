@@ -341,7 +341,7 @@ const math = {
     parameters: ['array'],
     description: {
       en: 'Computes the mean of the values in array.',
-      pl: 'TODO.'
+      pl: 'Wylicza średnią wartość zmiennych z tablicy.'
     }
   }
 }
