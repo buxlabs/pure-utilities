@@ -188,6 +188,10 @@ function comma (array, spacing = 0) {
   return array.join(',' + ' '.repeat(spacing))
 }
 
+function union (...arrays) {
+  return [...new Set(arrays.reduce((acc, value) => [...acc, ...value], []))]
+}
+
 module.exports = {
   identifier,
   first,
@@ -218,5 +222,6 @@ module.exports = {
   difference,
   duplicates,
   symdifference,
-  comma
+  comma,
+  union
 }

@@ -208,6 +208,13 @@ const array = {
       en: 'Returns a string created by joining array elements with comma and optional spaces.',
       pl: 'Zwraca łańcuch znaków zawierający dodatkowe przecincki i opcjonalne spacje.'
     }
+  },
+  union: {
+    parameters: ['arrays'],
+    description: {
+      en: 'Returns an array of unique values.',
+      pl: 'TODO.'
+    }
   }
 }
 module.exports = array

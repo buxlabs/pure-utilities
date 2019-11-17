@@ -272,5 +272,14 @@ module.exports = {
         code: 'comma([1, 2, 3], 2)'
       }
     ]
+  },
+  union: {
+    examples:
+    [
+      {
+        input: [[2], [1, 2]],
+        code: 'union([2], [1, 2])'
+      }
+    ]
   }
 }
