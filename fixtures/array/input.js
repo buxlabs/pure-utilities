@@ -281,5 +281,14 @@ module.exports = {
         code: 'union([2], [1, 2])'
       }
     ]
+  },
+  partition: {
+    examples:
+    [
+      {
+        input: [[{ user: 'barney', active: false }, { user: 'fred', active: true }, { user: 'pebbles', active: false }], item => item.active],
+        code: 'partition([{ user: "barney", active: false }, { user: "fred", active: true }, { user: "pebbles", active: false }], item => item.active)'
+      }
+    ]
   }
 }

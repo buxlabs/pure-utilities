@@ -290,3 +290,15 @@ test('union returns an array of unique values', assert => {
 
   assert.deepEqual(union, [2, 1])
 })
+
+test('partition returns an array of elements split into two groups, the first of which contains elements predicate returns truthy for, the second of which contains elements predicate returns falsey for. The predicate invoked with one argument', assert => {
+  const array1 = [
+    { user: 'barney', active: false },
+    { user: 'fred', active: true },
+    { user: 'pebbles', active: false }
+  ]
+
+  const partition = array.partition(array1, item => item.active)
+
+  assert.deepEqual(partition, [[{ user: 'fred', active: true }], [{ user: 'barney', active: false }, { user: 'pebbles', active: false }]])
+})
