@@ -91,4 +91,6 @@ test('deepclone creates deep copy of object', t => {
   source.b.foo = 'baz'
   t.deepEqual(parsed, { a: 1, b: { foo: 'bar' } })
   t.notDeepEqual(parsed, source)
+
+  t.deepEqual(object.deepclone(), {})
 })
