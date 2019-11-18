@@ -215,6 +215,13 @@ const array = {
       en: 'Returns an array of unique values.',
       pl: 'Zwraca tablicę z unikalnymi wartościami.'
     }
+  },
+  partition: {
+    parameters: ['array', 'predicate'],
+    description: {
+      en: 'Returns an array of elements split into two groups, the first of which contains elements predicate returns truthy for, the second of which contains elements predicate returns falsey for. The predicate invoked with one argument.',
+      pl: 'TODO.'
+    }
   }
 }
 module.exports = array
