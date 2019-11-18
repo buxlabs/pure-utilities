@@ -219,8 +219,8 @@ const array = {
   partition: {
     parameters: ['array', 'predicate'],
     description: {
-      en: 'Returns an array of elements split into two groups, the first of which contains elements predicate returns truthy for, the second of which contains elements predicate returns falsey for. The predicate invoked with one argument.',
-      pl: 'TODO.'
+      en: 'Returns an array of elements split into two groups, the first of which contains elements predicate returns truthy for, the second of which contains elements predicate returns falsey for. The predicate has one argument.',
+      pl: 'Zwraca tablicę elementów podzieloną na dwie grupy, pierwszą zawierającą elementy dla których predykat zwraca prawdę oraz drugi, dla którego predykat zwraca fałsz. Predykat przyjmuje jeden argument.'
     }
   }
 }
