@@ -53,8 +53,12 @@ function clone (object) {
   return Object.assign({}, object)
 }
 
-function deepclone (object) {
-  return JSON.parse(JSON.stringify(object))
+function deepclone (object = {}) {
+  try {
+    return JSON.parse(JSON.stringify(object))
+  } catch (err) {
+    return {}
+  }
 }
 
 module.exports = {
