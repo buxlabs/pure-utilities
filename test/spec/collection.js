@@ -5,11 +5,8 @@ test('append called without any arguments should return untouched collection', a
   assert.deepEqual(collection.append('qwe'), 'qwe')
 })
 
-test('append called with argument other than string or array should throw an error', assert => {
-  const error = assert.throws(() => {
-    collection.append({}, 'abc')
-  }, TypeError)
-  assert.is(error.message, "[ERROR]: 'append' filter processes only strings or arrays")
+test('append called with argument other than string or array should return empty collection', assert => {
+  assert.deepEqual(collection.append({}, 'abc'), []);
 })
 
 test('append for string should add argument at the end of the string', assert => {
@@ -32,11 +29,8 @@ test('prepend called without any arguments should return untouched collection', 
   assert.deepEqual(collection.prepend('qwe'), 'qwe')
 })
 
-test('prepend called with argument other than string or array should throw an error', assert => {
-  const error = assert.throws(() => {
-    collection.prepend({}, 'abc')
-  }, TypeError)
-  assert.is(error.message, "[ERROR]: 'prepend' filter processes only strings or arrays")
+test('prepend called with argument other than string or array should return empty collection', assert => {
+  assert.deepEqual(collection.prepend({}, 'abc'), []);
 })
 
 test('prepend for string should add argument at the beginning of the string', assert => {

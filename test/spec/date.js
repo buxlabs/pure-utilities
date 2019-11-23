@@ -198,8 +198,7 @@ test('prettydate returns date string containing name of the day, number of the d
 })
 
 test('prettydate returns date string containing name of the day, number of the day, name of the month and year (t9)', t => {
-  const error = t.throws(() => date.prettydate(new Date(2018, 11, 30), 'de-De'))
-  t.is(error.message, 'de-De localization is not supported.')
+  t.deepEqual(date.prettydate(new Date(2018, 11, 30), 'de-De'), '');
 })
 
 test('timestamp can return the year', t => {

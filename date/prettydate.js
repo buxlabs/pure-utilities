@@ -50,7 +50,8 @@ function prettydate (date, localization = 'en-En') {
     month = months[month][1]
     return `${weekday}, ${day} ${month} ${year}`
   }
-  throw new Error(`${localization} localization is not supported.`)
+
+  return ''
 }
 
 module.exports = prettydate

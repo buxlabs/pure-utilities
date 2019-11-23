@@ -9,7 +9,7 @@ function prepend (collection, ...args) {
     return [...args, ...collection]
   }
 
-  throw new TypeError("[ERROR]: 'prepend' filter processes only strings or arrays")
+  return []
 }
 
 module.exports = prepend
