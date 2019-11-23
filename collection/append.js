@@ -9,7 +9,7 @@ function append (collection, ...args) {
     return [...collection, ...args]
   }
 
-  throw new TypeError("[ERROR]: 'append' filter processes only strings or arrays")
+  return []
 }
 
 module.exports = append
