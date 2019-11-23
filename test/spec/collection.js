@@ -6,7 +6,7 @@ test('append called without any arguments should return untouched collection', a
 })
 
 test('append called with argument other than string or array should return empty collection', assert => {
-  assert.deepEqual(collection.append({}, 'abc'), []);
+  assert.deepEqual(collection.append({}, 'abc'), [])
 })
 
 test('append for string should add argument at the end of the string', assert => {
@@ -30,7 +30,7 @@ test('prepend called without any arguments should return untouched collection', 
 })
 
 test('prepend called with argument other than string or array should return empty collection', assert => {
-  assert.deepEqual(collection.prepend({}, 'abc'), []);
+  assert.deepEqual(collection.prepend({}, 'abc'), [])
 })
 
 test('prepend for string should add argument at the beginning of the string', assert => {
