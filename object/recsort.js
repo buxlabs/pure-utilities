@@ -16,4 +16,3 @@ function recsort (object) {
 }
 
 module.exports = recsort
-

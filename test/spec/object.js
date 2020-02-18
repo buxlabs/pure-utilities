@@ -104,4 +104,3 @@ test('recsort sorts keys of objects recursively', t => {
   t.deepEqual(actual, 'c,b')
   t.deepEqual(expected, 'b,c')
 })
-
