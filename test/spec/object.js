@@ -94,3 +94,14 @@ test('deepclone creates deep copy of object', t => {
 
   t.deepEqual(object.deepclone(), {})
 })
+
+test('recsort sorts keys of objects recursively', t => {
+  const source = { a: { c: 3, b: 2 } }
+  const result = object.recsort(source)
+  const actual = Object.keys(source.a).map(key => key).join()
+  const expected = Object.keys(result.a).map(key => key).join()
+  t.notDeepEqual(actual, expected)
+  t.deepEqual(actual, 'c,b')
+  t.deepEqual(expected, 'b,c')
+})
+
