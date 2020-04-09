@@ -142,6 +142,8 @@ test('unflatten should unflatten the object if it has 3 levels', t => {
 
 test('occurences should return the count of occurences of the string in the array', t => {
   t.deepEqual(collection.occurences(['foo', 'foo', 'bar'], 'foo'), 2)
+  t.deepEqual(collection.occurences(['foo', 'foo', 'bar'], 'f'), 2)
+  t.deepEqual(collection.occurences(['foo', 'foo', 'bar'], 'o'), 4)
 })
 
 test('occurences should return the count of occurences of the string in the string', t => {
@@ -150,4 +152,10 @@ test('occurences should return the count of occurences of the string in the stri
   t.deepEqual(collection.occurences('foo\tfoo\tbar', 'foo'), 2)
   t.deepEqual(collection.occurences('foo\nfoo\tbar', 'foo'), 2)
   t.deepEqual(collection.occurences('foo\r\nfoo\tbar', 'foo'), 2)
+})
+
+test('occurences should work with special characters', assert => {
+  assert.deepEqual(collection.occurences('!!oo', '!'), 2)
+  assert.deepEqual(collection.occurences('!!foo', '!'), 2)
+  assert.deepEqual(collection.occurences('!foo bar', 'foo'), 1)
 })
