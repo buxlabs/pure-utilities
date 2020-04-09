@@ -1,5 +1,5 @@
-import test from 'ava'
-import { collection } from '../..'
+const test = require('ava')
+const { collection } = require('../..')
 
 test('append called without any arguments should return untouched collection', assert => {
   assert.deepEqual(collection.append('qwe'), 'qwe')

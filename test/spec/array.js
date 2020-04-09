@@ -1,5 +1,5 @@
-import test from 'ava'
-import { array } from '../..'
+const test = require('ava')
+const { array } = require('../..')
 
 test('identifier returns a new unique identifier based on used identifiers', assert => {
   assert.deepEqual(array.identifier([]), 'a')

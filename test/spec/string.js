@@ -1,5 +1,5 @@
-import test from 'ava'
-import { string } from '../..'
+const test = require('ava')
+const { string } = require('../..')
 
 test('whitespacestrip should remove whitespace characters (t1)', t => {
   const parsed = string.whitespacestrip('\t1234 5678\n')

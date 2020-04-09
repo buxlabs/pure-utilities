@@ -1,5 +1,5 @@
-import test from 'ava'
-import { object } from '../..'
+const test = require('ava')
+const { object } = require('../..')
 
 test('rename should rename the keys in given object', t => {
   const object1 = { created_at: '2000-01-01' }

@@ -1,5 +1,5 @@
-import test from 'ava'
-import index from '../..'
+const test = require('ava')
+const index = require('../..')
 
 test('methods should be unique', t => {
   const methods = []

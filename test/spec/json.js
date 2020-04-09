@@ -1,5 +1,5 @@
-import test from 'ava'
-import { json } from '../..'
+const test = require('ava')
+const { json } = require('../..')
 
 test('prettify should format JSON string', t => {
   var parsed = json.prettify('{"hello":"world"}')

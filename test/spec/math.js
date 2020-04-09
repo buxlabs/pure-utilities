@@ -1,5 +1,5 @@
-import test from 'ava'
-import { math } from '../..'
+const test = require('ava')
+const { math } = require('../..')
 
 test('abs returns the absolute value of a number', t => {
   var parsed = math.abs(-1)

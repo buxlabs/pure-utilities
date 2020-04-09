@@ -5,9 +5,9 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "ava": "^2.4.0",
-    "nyc": "^14.1.1",
-    "standard": "^14.3.0"
+    "ava": "^3.6.0",
+    "nyc": "^15.0.1",
+    "standard": "^14.3.3"
   },
   "engines": {
     "node": ">=8.11.3"
