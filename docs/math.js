@@ -310,7 +310,7 @@ const math = {
            - digits: Liczba cyfr po przecinku. Domyślnie 2.
            - separator: Separator oddzielający część dziesiętną od części całkowitej. Domyślnie ','.
            - symbol: Symbol waluty. Domyślnie 'zł'.
-           - ending: Flaga booleowska, która określa czy symbol waluty znajduje się na końcu łańcuha znaków. Domyślnie ustawiona na true.
+           - ending: Flaga booleowska, która określa czy symbol waluty znajduje się na końcu łańcucha znaków. Domyślnie ustawiona na true.
            - space: Flaga booleowska, która określa czy przed symbole waluty powinna występować spacja. Domyślnie ustawiona na true.
            - hyphen: Symbol oddzielający grupy liczb całkowitych. Domyślnie ustawiony jako spacja.
            - size: Liczba, liczb całkowitych, które powinny zostać zebranę w grupę. Domyślnie 3.`
