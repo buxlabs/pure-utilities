@@ -3,14 +3,14 @@ const collection = {
     parameters: ['collection', 'indefinite', 'amount', 'of', 'arguments'],
     description: {
       en: 'Adds arguments at the end of the collecion.',
-      pl: 'Dodaje argumenty na koniec kolekcji.'
+      pl: 'Dodaje argumenty na końcu kolekcji.'
     }
   },
   prepend: {
     parameters: ['collection', 'indefinite', 'amount', 'of', 'arguments'],
     description: {
       en: 'Adds arguments at the beginning of the collection.',
-      pl: 'Dodaje argumenty na początek kolekcji.'
+      pl: 'Dodaje argumenty na początku kolekcji.'
     }
   },
   reverse: {
@@ -45,7 +45,7 @@ const collection = {
     parameters: ['collection', 'string'],
     description: {
       en: 'Returns the count of occurences of the string in the collection or string.',
-      pl: 'Zwraca ilość wystąpień danego łańcucha znaków w kolekcji lub innym łańcuchu znaków.'
+      pl: 'Zwraca ilość wystąpień danego łańcucha znaków w kolekcji lub w innym łańcuchu znaków.'
     }
   }
 }

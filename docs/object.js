@@ -3,7 +3,7 @@ const object = {
     parameters: ['object', 'string'],
     description: {
       en: 'Returns the value of any object property, which the name has been passed in the string.',
-      pl: 'Zwraca wartość dowolnej właściwości obiektu, na podstawie przekazanego łańcucha znaków.'
+      pl: 'Zwraca wartość dowolnej właściwości obiektu na podstawie przekazanego łańcucha znaków.'
     }
   },
   keys: {
@@ -24,7 +24,7 @@ const object = {
     parameters: ['object', 'keys'],
     description: {
       en: 'Changes names of the object properties to responds values from the keys object.',
-      pl: 'Zmienia nazwy właściwości obiektu, na odpowiadające im wartości z obiektu keys.'
+      pl: 'Zmienia nazwy właściwości obiektu na odpowiadające im wartości z obiektu keys.'
     }
   },
   values: {
