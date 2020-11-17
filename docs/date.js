@@ -10,7 +10,7 @@ const date = {
     parameters: ['value'],
     description: {
       en: 'Returns a string in simplified extended ISO format.',
-      pl: 'Zwraca łańuch znaków w uproszczonym rozszerzonym formacie ISO.'
+      pl: 'Zwraca łańuch znaków w uproszczonym i rozszerzonym formacie ISO.'
     }
   },
   prettydate: {
@@ -24,35 +24,35 @@ const date = {
     parameters: ['date', 'pattern'],
     description: {
       en: 'Returns a formatted date, based on the passed pattern.',
-      pl: 'Zwraca sformatowaną datę, na podstawie przekazanego wzorca.'
+      pl: 'Zwraca sformatowaną datę na podstawie przekazanego wzorca.'
     }
   },
   hours: {
     parameters: ['date'],
     description: {
-      en: 'Returns the hours of the day (from 0 to 24) of the passed date.',
-      pl: 'Zwraca godzinę (od 0 do 24) przekazanej daty.'
+      en: 'Returns the hours of the day (from 0 to 23) of the passed date.',
+      pl: 'Zwraca godzinę (od 0 do 23) przekazanej daty.'
     }
   },
   minutes: {
     parameters: ['date'],
     description: {
-      en: 'Returns the minutes of the hour (from 0 to 60) of the passed date.',
-      pl: 'Zwraca minutę danej godziny (od 0 do 60) przekazanej daty.'
+      en: 'Returns the minutes of the hour (from 0 to 59) of the passed date.',
+      pl: 'Zwraca minutę danej godziny (od 0 do 59) przekazanej daty.'
     }
   },
   seconds: {
     parameters: ['date'],
     description: {
-      en: 'Returns the seconds of the minute (from 0 to 60) of the passed date.',
-      pl: 'Zwraca sekundę danej minuty (od 0 do 60) przekazanej daty.'
+      en: 'Returns the seconds of the minute (from 0 to 59) of the passed date.',
+      pl: 'Zwraca sekundę danej minuty (od 0 do 59) przekazanej daty.'
     }
   },
   day: {
     parameters: ['date'],
     description: {
       en: 'Returns the day of the month (from 1 to 31) of the passed date.',
-      pl: 'Zwraca dzień miesiąca (od 1 do 31), na podstawie przekazanej daty.'
+      pl: 'Zwraca dzień miesiąca (od 1 do 31) na podstawie przekazanej daty.'
     }
   },
   month: {
@@ -73,7 +73,7 @@ const date = {
     parameters: ['date'],
     description: {
       en: 'Returns the year of the passed date.',
-      pl: 'Zwraca rok, na podstawie przekazanej daty.'
+      pl: 'Zwraca rok na podstawie przekazanej daty.'
     }
   }
 }

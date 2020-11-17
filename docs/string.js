@@ -10,14 +10,14 @@ const string = {
     parameters: ['string'],
     description: {
       en: 'Converts first letter of the string to uppercase.',
-      pl: 'Konwertuje pierwszą literę łańcucha znaków na wielką literę.'
+      pl: 'Konwertuje pierwszą literę łańcucha znaków na dużą literę.'
     }
   },
   celsius: {
     parameters: ['string'],
     description: {
       en: 'Converts temperature in Fahrenheit and Kelvin notation to Celsius degree. When passed string is a number, appends °C to the string.',
-      pl: 'Konwertuje temperaturę wyrażoną w stopniach Fahrenheita lub jednostkach Kelvina na stopnie Celsiusza.'
+      pl: 'Konwertuje temperaturę wyrażoną w stopniach Fahrenheita lub jednostkach Kelvina na stopnie Celsiusza. Gdy przekazany ciąg jest liczbą, dołącza ° C do ciągu.'
     }
   },
   chomp: {
@@ -52,7 +52,7 @@ const string = {
     parameters: ['string', 'length', 'append'],
     description: {
       en: 'Truncates string at full words. Adds ... if the string is longer than the second parameter.',
-      pl: 'Przycina łańcuch znaków do całych wyrazów. Dodaje ... jeśli string jest dłuższy niż drugi parametr.'
+      pl: 'Przycina łańcuch znaków do całych wyrazów. Dodaje ... jeśli łańcuch jest dłuższy niż drugi parametr.'
     }
   },
   dasherize: {
@@ -73,7 +73,7 @@ const string = {
     parameters: ['string'],
     description: {
       en: 'Converts temperature in Celsius and Kelvin notation to Fahrenheit degree. When passed string is a number, appends °F to the string.',
-      pl: 'Konwertuje temperaturę wyrażoną w stopniach Celsjusza lub jednostkach Kelvina na stopnie Fahrenheita.'
+      pl: 'Konwertuje temperaturę wyrażoną w stopniach Celsjusza lub jednostkach Kelvina na stopnie Fahrenheita. Gdy przekazany ciąg jest liczbą, dodaje ° F do ciągu.'
     }
   },
   htmlstrip: {
@@ -87,7 +87,7 @@ const string = {
     parameters: ['string', 'capitalize = true'],
     description: {
       en: 'Replaces _ with singlespaces. When capitalize is truthy, converts first char of the string to uppercase.',
-      pl: 'Zamienia _ na spacje. Gdy flaga capitalize ustawiona jest na true, konwertuje pierwszą literę łańcucha na wielką.'
+      pl: 'Zamienia _ na spacje. Gdy flaga capitalize ustawiona jest na true, konwertuje pierwszą literę łańcucha na dużą.'
     }
   },
   hyphenate: {
@@ -115,13 +115,13 @@ const string = {
     parameters: ['string'],
     description: {
       en: 'Converts temperature in Celsius and Fahrenheit notation to Kelvin scale. When passed string is a number, appends K to the string.',
-      pl: 'Konwertuje temperaturę wyrażoną w stopniach Fahrenheita lub Celsjusza, na skalę Kelvina.'
+      pl: 'Konwertuje temperaturę wyrażoną w stopniach Fahrenheita lub Celsjusza, na skalę Kelvina. Gdy przekazany ciąg jest liczbą, dodaje K do ciągu.'
     }
   },
   lowercase: {
     parameters: ['string'],
     description: {
-      en: 'Converts string to lowercase.',
+      en: 'Lowercases the string.',
       pl: 'Konwertuje litery na małe.'
     }
   },
@@ -150,7 +150,7 @@ const string = {
     parameters: ['string'],
     description: {
       en: 'Returns plural form of the string.',
-      pl: 'Zwraca liczbę mnogą rzeczownika.'
+      pl: 'Zwraca liczbę mnogą danego łańcucha znaków.'
     }
   },
   repeat: {
@@ -164,7 +164,7 @@ const string = {
     parameters: ['string', 'pattern', 'replace'],
     description: {
       en: 'Replaces searched pattern by the last parameter.',
-      pl: 'Zastępuje podany wzorzec nowym łańcuchem znaków.'
+      pl: 'Zastępuje szukany wzorzec ostatnim parametrem.'
     }
   },
   rtrim: {
@@ -178,14 +178,14 @@ const string = {
     parameters: ['string'],
     description: {
       en: 'Replaces in the string multiple spaces to single spaces.',
-      pl: 'Zastępuje wielokrotne wystąpienia spacji na pojedyncze.'
+      pl: 'Zastępuje wielokrotne wystąpienia spacji w łańcuchu znaków na pojedyncze.'
     }
   },
   singularize: {
     parameters: ['string', 'appendix = ""'],
     description: {
       en: 'Returns singular form of the string.',
-      pl: 'Zwraca liczbę pojedynczą rzeczownika.'
+      pl: 'Zwraca liczbę pojedynczą danego łańcucha znaków.'
     }
   },
   slugify: {
@@ -212,7 +212,7 @@ const string = {
   squeeze: {
     parameters: ['string', 'pattern = "a-zA-Z"'],
     description: {
-      en: 'Replaces in string multiple repetitions of the same characters to the one character.',
+      en: 'Replaces multiple occurances of the same characters to the one character.',
       pl: 'Usuwa z łańcucha tekstowego wielokrotne wystąpienia tego samego znaku.'
     }
   },
@@ -241,7 +241,7 @@ const string = {
     parameters: ['string'],
     description: {
       en: 'Converts to \'uppercase\' first letter of each word in string.',
-      pl: 'Konwertuje pierwszą literą każdego wyrazu na wielką.'
+      pl: 'Konwertuje pierwszą literą każdego wyrazu na dużą.'
     }
   },
   trim: {
@@ -255,14 +255,14 @@ const string = {
     parameters: ['string', 'length = 30', 'ending = "..."'],
     description: {
       en: 'Truncates a given string if it  longer than the passed length and replaces last chars of new string with the passed ending.',
-      pl: 'Ucina łańcuch tekstowy, jeśli jest dłuższy niż podana długość i dokleja w miejscu ucięcia ostatni parametr.'
+      pl: 'Skraca łańcuch tekstowy, jeśli jest dłuższy niż podana długość i dokleja w miejscu ucięcia ostatni parametr.'
     }
   },
   quote: {
     parameters: ['string', 'lang = "en"'],
     description: {
       en: 'Puts the string inside quotations marks.',
-      pl: 'Umieszcza łańcuch tekstowy w cudzysłowiu.'
+      pl: 'Umieszcza łańcuch tekstowy w cudzysłowie.'
     }
   },
   uid: {
@@ -282,7 +282,7 @@ const string = {
   unquote: {
     parameters: ['string'],
     description: {
-      en: 'Rmoves "" or „” from the string.',
+      en: 'Removes "" or „” from the string.',
       pl: 'Usuwa "" lub „” z łańcucha znaków.'
     }
   },
@@ -297,7 +297,7 @@ const string = {
     parameters: ['string'],
     description: {
       en: 'Converts string to uppercase.',
-      pl: 'Konwertuje litery na wielkie.'
+      pl: 'Konwertuje znaki łańcucha na wielkie.'
     }
   },
   unescape: {

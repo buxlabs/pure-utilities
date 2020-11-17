@@ -16,7 +16,7 @@ const math = {
   acosh: {
     parameters: ['number'],
     description: {
-      en: 'Returns the hyperbolic arccosine of the number.',
+      en: 'Returns the hyperbolic arccosine of the number, in radians.',
       pl: 'Zwraca arcus cosinus hiperboliczny z liczby, wyrażony w radianach.'
     }
   },
@@ -73,7 +73,7 @@ const math = {
     parameters: ['number'],
     description: {
       en: 'Returns the cosine of the number (number is in radians).',
-      pl: 'Zwraca cosinus z liczby.'
+      pl: 'Zwraca cosinus z liczby (w radianach).'
     }
   },
   cosh: {
@@ -108,35 +108,35 @@ const math = {
     parameters: ['numbers'],
     description: {
       en: 'Returns the number with the highest value.',
-      pl: 'Zwraca wartość wartość maksymalną z tablicy liczb.'
+      pl: 'Zwraca największą liczbę.'
     }
   },
   min: {
     parameters: ['numbers'],
     description: {
       en: 'Returns the number with the lowest value.',
-      pl: 'Zwraca wartość minimalną z tablicy liczb.'
+      pl: 'Zwraca najmniejszą liczbę.'
     }
   },
   pow: {
     parameters: ['number1', 'number2'],
     description: {
       en: 'Returns the value of first parameter to the power of the second parameter.',
-      pl: 'Podnosi pierwszy parametr do potęgi drugiego parametru.'
+      pl: 'Zwraca wartość pierwszego parametru do potęgi drugiego parametru.'
     }
   },
   random: {
     parameters: [],
     description: {
       en: 'Returns a floating-point, pseudo-random number in the range 0–1.',
-      pl: 'Zwraca liczbę pseudolosową z przedziału 0-1.'
+      pl: 'Zwraca zmiennoprzecinkową liczbę pseudolosową z przedziału 0-1.'
     }
   },
   round: {
     parameters: ['number'],
     description: {
       en: 'Rounds the number, to the nearest integer.',
-      pl: 'Zaokrągla liczbę, do najbliższej liczby całkowitej.'
+      pl: 'Zaokrągla liczbę do najbliższej liczby całkowitej.'
     }
   },
   sin: {
@@ -191,14 +191,14 @@ const math = {
   radians: {
     parameters: ['number', 'precision'],
     description: {
-      en: 'Converts degrees to radians and rounds received result to the passed precision. By default precision equals 2.',
+      en: 'Converts degrees to radians and rounds received result by default precision equals 2.',
       pl: 'Konwertuje stopnie na radiany. Rezultat domyślnie zaokrąglany jest do 2 miejsc po przecinku.'
     }
   },
   degrees: {
     parameters: ['number', 'precision'],
     description: {
-      en: 'Converts radians to degrees and rounds received result to the passed precision. By default precision equals 2.',
+      en: 'Converts radians to degrees and rounds received result by default precision equals 2.',
       pl: 'Konwertuje radiany na stopnie. Rezultat domyślnie zaokrąglany jest do 2 miejsc po przecinku.'
     }
   },
@@ -311,9 +311,9 @@ const math = {
            - separator: Separator oddzielający część dziesiętną od części całkowitej. Domyślnie ','.
            - symbol: Symbol waluty. Domyślnie 'zł'.
            - ending: Flaga booleowska, która określa czy symbol waluty znajduje się na końcu łańcucha znaków. Domyślnie ustawiona na true.
-           - space: Flaga booleowska, która określa czy przed symbole waluty powinna występować spacja. Domyślnie ustawiona na true.
+           - space: Flaga booleowska, która określa czy przed symbolem waluty powinna występować spacja. Domyślnie ustawiona na true.
            - hyphen: Symbol oddzielający grupy liczb całkowitych. Domyślnie ustawiony jako spacja.
-           - size: Liczba, liczb całkowitych, które powinny zostać zebranę w grupę. Domyślnie 3.`
+           - size: Ilość liczb całkowitych, które powinny zostać zebrane w grupę. Domyślnie 3.`
     }
   },
   cube: {

@@ -17,7 +17,7 @@ const array = {
     parameters: ['array', 'digit'],
     description: {
       en: 'Removes elements of the array.',
-      pl: 'Usuwa wybraną liczbę elementów z tablicy.'
+      pl: 'Usuwa elementy z tablicy.'
     }
   },
   head: {
@@ -52,7 +52,7 @@ const array = {
     parameters: ['array', 'digit'],
     description: {
       en: 'Rotates the elements on the array. When second parameter is negative, shifting starts from the end of the array.',
-      pl: 'Przesuwa elementy tablicy. Jeśli drugi parametry jest ujemny, elementy usuwane są z końca tablicy i przenoszone na jej początek.'
+      pl: 'Przesuwa elementy tablicy. Jeśli drugi parametr jest ujemny, elementy są usuwane z końca tablicy i przenoszone na początek.'
     }
   },
   sample: {
@@ -87,7 +87,7 @@ const array = {
     parameters: ['array'],
     description: {
       en: 'Returns an array with unique elements.',
-      pl: 'Zwraca tablicę, zawierające tylko unikatowe elementy.'
+      pl: 'Zwraca tablicę, zawierającą tylko unikatowe elementy.'
     }
   },
   first: {
@@ -171,7 +171,7 @@ const array = {
     parameters: ['array', 'position'],
     description: {
       en: 'Returns the element located at the passed position. When position is negative it searches from the end of the array.',
-      pl: 'Zwraca element znajdujący się na wybranej pozycji. Gdy parametr "position" jest ujemny, wyszukiwanie elementu zaczyna się od końca tablicy.'
+      pl: 'Zwraca element znajdujący się na wybranej pozycji. Gdy parametr pozycji jest ujemny, wyszukiwanie elementu zaczyna się od końca tablicy.'
     }
   },
   intersection: {
@@ -184,7 +184,7 @@ const array = {
   difference: {
     parameters: ['array', 'arrays'],
     description: {
-      en: 'Returns an array containing elements that don\'t occur in other arrays.',
+      en: 'Returns an array containing elements that do not occur in other arrays.',
       pl: 'Zwraca tablicę, zawierającą elementy, które nie występują w pozostałych tablicach.'
     }
   },
@@ -192,7 +192,7 @@ const array = {
     parameters: ['array'],
     description: {
       en: 'Returns an array containing repeated elements.',
-      pl: 'Zwraca tablicę, zawierającą powtarzające sie elementy.'
+      pl: 'Zwraca tablicę, zawierającą powtarzające się elementy.'
     }
   },
   symdifference: {
@@ -206,21 +206,21 @@ const array = {
     parameters: ['array', 'number'],
     description: {
       en: 'Returns a string created by joining array elements with comma and optional spaces.',
-      pl: 'Zwraca łańcuch znaków zawierający dodatkowe przecincki i opcjonalne spacje.'
+      pl: 'Zwraca ciąg utworzony przez połączenie elementów tablicy przecinkiem i opcjonalnymi spacjami.'
     }
   },
   union: {
     parameters: ['arrays'],
     description: {
       en: 'Returns an array of unique values.',
-      pl: 'Zwraca tablicę z unikalnymi wartościami.'
+      pl: 'Zwraca tablicę unikalnych elementów.'
     }
   },
   partition: {
     parameters: ['array', 'predicate'],
     description: {
       en: 'Returns an array of elements split into two groups, the first of which contains elements predicate returns truthy for, the second of which contains elements predicate returns falsey for. The predicate has one argument.',
-      pl: 'Zwraca tablicę elementów podzieloną na dwie grupy, pierwszą zawierającą elementy dla których predykat zwraca prawdę oraz drugi, dla którego predykat zwraca fałsz. Predykat przyjmuje jeden argument.'
+      pl: 'Zwraca tablicę elementów podzieloną na dwie grupy, pierwszą zawierającą elementy, dla których predykat zwraca prawdę oraz drugi, dla którego predykat zwraca fałsz. Predykat przyjmuje jeden argument.'
     }
   }
 }
