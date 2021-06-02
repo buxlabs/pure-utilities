@@ -12,13 +12,13 @@ function timestamp (date, pattern = 'YYYY-MM-DD') {
     })[key]
   }
   function assign () {
-    var regex = /(?=(YYYY|YY|MM|DD|HH|mm|ss|ms))\1([:/]*)/
-    var match = regex.exec(pattern)
+    const regex = /(?=(YYYY|YY|MM|DD|HH|mm|ss|ms))\1([:/]*)/
+    const match = regex.exec(pattern)
 
     if (match) {
-      var increment = method(match[1])
-      var val = '00' + String(date[increment[0]]() + (increment[2] || 0))
-      var res = val.slice(-increment[1]) + (match[2] || '')
+      const increment = method(match[1])
+      const val = '00' + String(date[increment[0]]() + (increment[2] || 0))
+      const res = val.slice(-increment[1]) + (match[2] || '')
       pattern = pattern.replace(match[0], res)
       assign()
     }

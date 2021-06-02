@@ -66,17 +66,17 @@ test('size returns length of collection/set', assert => {
 })
 
 test('reverse should reverse collection/string of letters', t => {
-  var parsed = collection.reverse('foo')
+  const parsed = collection.reverse('foo')
   t.deepEqual(parsed, 'oof')
 })
 
 test('reverse should reverse collection/string of numbers', t => {
-  var parsed = collection.reverse('12345')
+  const parsed = collection.reverse('12345')
   t.deepEqual(parsed, '54321')
 })
 
 test('reverse should reverse collection/array of numbers', t => {
-  var parsed = collection.reverse([1, 2, 3, 4])
+  const parsed = collection.reverse([1, 2, 3, 4])
   t.deepEqual(parsed, [4, 3, 2, 1])
 })
 
