@@ -79,8 +79,8 @@ const string = {
   htmlstrip: {
     parameters: ['string'],
     description: {
-      en: 'Removes HTML tags from the string. Warning: do not use it as a security mechanism.',
-      pl: 'Usuwa tagi HTML z podanego łańcucha znaków. Uwaga: nie należy stosować jako mechanizmu zabezpieczającego.'
+      en: 'Removes HTML tags from a string. Warning: user input might include malicious content, htmlstrip is not a silver bullet against xss.',
+      pl: 'Usuwa tagi HTML z podanego łańcucha znaków. Uwage: treści wysłane przez użytkowników mogą zawierać złośliwą zawartość, htmlstrip nie jest wystarczającym zabezpieczeniem przeciwko xss.'
     }
   },
   humanize: {
