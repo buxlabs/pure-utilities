@@ -84,7 +84,7 @@ const array = {
     }
   },
   unique: {
-    parameters: ['array'],
+    parameters: ['array', 'iteratee'],
     description: {
       en: 'Returns an array with unique elements.',
       pl: 'Zwraca tablicę, zawierającą tylko unikatowe elementy.'

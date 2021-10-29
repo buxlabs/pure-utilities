@@ -98,6 +98,10 @@ test('unique works with objects', assert => {
   assert.deepEqual(array.unique([{ foo: { x: 1 } }, { foo: { x: 1 } }, { foo: { x: 2 } }]), [{ foo: { x: 1 } }, { foo: { x: 2 } }])
 })
 
+test('unique works with an iteratee function', assert => {
+  assert.deepEqual(array.unique([{ x: 'y', y: 'y' }, { x: 'y', y: 'z' }, { x: 'z', y: 'z' }], object => object.x), [{ x: 'y', y: 'y' }, { x: 'z', y: 'z' }])
+})
+
 test('nth gets element at positive index "n" of array', assert => {
   assert.deepEqual(array.nth([1, 2, 3, 4, 5], 4), 4)
 })
