@@ -1,6 +1,11 @@
 const test = require('ava')
 const { math } = require('../..')
 
+test('distance returns the distance between two points in space', assert => {
+  const number = math.distance([1, 2, 3], [1, 2, 4])
+  assert.deepEqual(number, 1)
+})
+
 test('abs returns the absolute value of a number', t => {
   const parsed = math.abs(-1)
   t.deepEqual(parsed, 1)

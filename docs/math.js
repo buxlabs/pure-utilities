@@ -237,6 +237,13 @@ const math = {
       pl: 'Dzieli dwa parametry.'
     }
   },
+  distance: {
+    parameters: ['a', 'b'],
+    description: {
+      en: 'Calculates the distance between points a and b in space.',
+      pl: 'Oblicza odległość pomiędzy punktami a i b w przestrzeni.'
+    }
+  },
   modulo: {
     parameters: ['number1', 'number2'],
     description: {
