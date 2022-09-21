@@ -31,6 +31,7 @@ const subtract = require('./subtract')
 const multiply = require('./multiply')
 const divide = require('./divide')
 const distance = require('./distance')
+const kmeans = require('./kmeans')
 const modulo = require('./modulo')
 const increment = require('./increment')
 const decrement = require('./decrement')
@@ -80,7 +81,6 @@ module.exports = {
   subtract,
   multiply,
   divide,
-  distance,
   modulo,
   increment,
   decrement,
@@ -95,5 +95,7 @@ module.exports = {
   inches,
   radians,
   degrees,
-  mean
+  mean,
+  distance,
+  kmeans
 }

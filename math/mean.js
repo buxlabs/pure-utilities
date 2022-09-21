@@ -1,5 +1,5 @@
-function mean (array) {
-  return array.reduce((acc, value) => acc + value, 0) / array.length
+function mean (numbers) {
+  return numbers.reduce((result, value) => result + value, 0) / numbers.length
 }
 
 module.exports = mean

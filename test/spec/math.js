@@ -6,6 +6,22 @@ test('distance returns the distance between two points in space', assert => {
   assert.deepEqual(number, 1)
 })
 
+test('kmeans finds centoids of clusters', assert => {
+  const data = [
+    [1, 2], [2, 3], [2, 5], [1, 6], [4, 6],
+    [3, 5], [2, 4], [4, 3], [5, 2], [6, 9],
+    [4, 4], [3, 3], [8, 6], [7, 5], [9, 6],
+    [9, 7], [8, 8], [7, 9], [11, 3], [11, 2],
+    [9, 9], [7, 8], [6, 8], [12, 2], [14, 3],
+    [15, 1], [15, 4], [14, 2], [13, 1], [16, 4]
+  ]
+  const { centroids } = math.kmeans(3, data)
+  assert.deepEqual(centroids.length, 3)
+  assert.deepEqual(centroids[0].length, 2)
+  assert.deepEqual(centroids[1].length, 2)
+  assert.deepEqual(centroids[2].length, 2)
+})
+
 test('abs returns the absolute value of a number', t => {
   const parsed = math.abs(-1)
   t.deepEqual(parsed, 1)

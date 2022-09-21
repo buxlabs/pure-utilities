@@ -350,6 +350,13 @@ const math = {
       en: 'Computes the mean of the values in array.',
       pl: 'Wylicza średnią wartość zmiennych z tablicy.'
     }
+  },
+  kmeans: {
+    parameters: ['k', 'data', 'maxIterations'],
+    description: {
+      en: 'Computes centroids of k clusters, which are the average values of those points.',
+      pl: 'Wylicza środki k klastrów, będących średnimi wartościami danych punktów.'
+    }
   }
 }
 
