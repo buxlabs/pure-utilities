@@ -4,7 +4,7 @@
   "description": "pure-utilities",
   "main": "index.js",
   "devDependencies": {
-    "ava": "^4.3.0",
+    "ava": "^5.2.0",
     "nyc": "^15.1.0",
     "standard": "^17.0.0"
   },
