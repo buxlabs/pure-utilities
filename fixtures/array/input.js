@@ -1,294 +1,281 @@
 module.exports = {
   average: {
-    examples:
-    [
+    examples: [
       {
         input: [[100, 200]],
-        code: 'average(100, 200)'
-      }
-    ]
+        code: "average(100, 200)",
+      },
+    ],
   },
   compact: {
-    examples:
-    [
+    examples: [
       {
-        input: [[0, 1, false, null, 2, '', 3]],
-        code: 'compact([0, 1, false, null, 2, "", 3])'
+        input: [[0, 1, false, null, 2, "", 3]],
+        code: 'compact([0, 1, false, null, 2, "", 3])',
       },
       {
         input: [[0, 1, null, 2, undefined, 3], false],
-        code: 'compact([0, 1, null, 2, undefined, 3], false)'
-      }
-    ]
+        code: "compact([0, 1, null, 2, undefined, 3], false)",
+      },
+    ],
   },
   drop: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3], 2],
-        code: 'drop([1, 2, 3], 2)'
-      }
-    ]
+        code: "drop([1, 2, 3], 2)",
+      },
+    ],
   },
   head: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6]],
-        code: 'head([1, 2, 3, 4, 5, 6])'
-      }
-    ]
+        code: "head([1, 2, 3, 4, 5, 6])",
+      },
+    ],
   },
   identifier: {
-    examples:
-    [
+    examples: [
       {
-        input: [['a']],
-        code: 'identifier(["a"])'
-      }
-    ]
+        input: [["a"]],
+        code: 'identifier(["a"])',
+      },
+    ],
   },
   median: {
-    examples:
-    [
+    examples: [
       {
         input: [[6, 4, 2, 4, 4]],
-        code: 'median([6, 4, 2, 4, 4])'
-      }
-    ]
+        code: "median([6, 4, 2, 4, 4])",
+      },
+    ],
   },
   rotate: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3], 2],
-        code: 'rotate([1, 2, 3], 2)'
-      }
-    ]
+        code: "rotate([1, 2, 3], 2)",
+      },
+    ],
   },
   sample: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3]],
-        code: 'sample([[1, 2, 3]])'
-      }
-    ]
+        code: "sample([[1, 2, 3]])",
+      },
+    ],
   },
   slice: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6], 3, 5],
-        code: 'slice([1, 2, 3, 4,5, 6], 3, 5)'
-      }
-    ]
+        code: "slice([1, 2, 3, 4,5, 6], 3, 5)",
+      },
+    ],
   },
   sum: {
-    examples:
-    [
+    examples: [
       {
         input: [[3, 10, 2]],
-        code: 'sum([3, 10, 2])'
-      }
-    ]
+        code: "sum([3, 10, 2])",
+      },
+    ],
   },
   take: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6], 2],
-        code: 'take([1, 2, 3, 4, 5, 6], 2)'
-      }
-    ]
+        code: "take([1, 2, 3, 4, 5, 6], 2)",
+      },
+    ],
   },
   unique: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 1, 2, 10, 2, 33]],
-        code: 'unique([1, 1, 2, 10, 2, 33])'
-      }
-    ]
+        code: "unique([1, 1, 2, 10, 2, 33])",
+      },
+    ],
   },
   first: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'first([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "first([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   second: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'second([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "second([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   third: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'third([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "third([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   fourth: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'fourth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "fourth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   fifth: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'fifth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "fifth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   sixth: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'sixth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "sixth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   seventh: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'seventh([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "seventh([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   eigth: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'eigth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "eigth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   ninth: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'ninth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "ninth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   tenth: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'tenth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "tenth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   last: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-        code: 'last([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])'
-      }
-    ]
+        code: "last([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])",
+      },
+    ],
   },
   nth: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3],
-        code: 'nth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3)'
-      }
-    ]
+        code: "nth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3)",
+      },
+    ],
   },
   pluck: {
-    examples:
-    [
+    examples: [
       {
-        input: [[{ foo: 'bar' }, { name: 'baz' }], 'name'],
-        code: 'pluck([{ foo: "bar"}, { name: "baz"}], "name")'
-      }
-    ]
+        input: [[{ foo: "bar" }, { name: "baz" }], "name"],
+        code: 'pluck([{ foo: "bar"}, { name: "baz"}], "name")',
+      },
+    ],
   },
   intersection: {
-    examples:
-    [
+    examples: [
       {
-        input: [[1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31]],
-        code: 'intersection([1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31])'
-      }
-    ]
+        input: [
+          [1, 2, 3, 4, 5, 100],
+          [100, 2, 3, 10, 31],
+        ],
+        code: "intersection([1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31])",
+      },
+    ],
   },
   difference: {
-    examples:
-    [
+    examples: [
       {
-        input: [[1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31]],
-        code: 'difference([1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31])'
-      }
-    ]
+        input: [
+          [1, 2, 3, 4, 5, 100],
+          [100, 2, 3, 10, 31],
+        ],
+        code: "difference([1, 2, 3, 4, 5, 100], [100, 2, 3, 10, 31])",
+      },
+    ],
   },
   duplicates: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 1, 2, 3, 5, 5]],
-        code: 'duplicates([1, 1, 2, 3, 5, 5])'
-      }
-    ]
+        code: "duplicates([1, 1, 2, 3, 5, 5])",
+      },
+    ],
   },
   symdifference: {
-    examples:
-    [
+    examples: [
       {
-        input: [[1, 3, 4, 6, 7, 9], [3, 5, 6, 7, 8, 9]],
-        code: 'symdifference([1, 3, 4, 6, 7, 9], [3, 5, 6, 7, 8, 9])'
-      }
-    ]
+        input: [
+          [1, 3, 4, 6, 7, 9],
+          [3, 5, 6, 7, 8, 9],
+        ],
+        code: "symdifference([1, 3, 4, 6, 7, 9], [3, 5, 6, 7, 8, 9])",
+      },
+    ],
   },
   comma: {
-    examples:
-    [
+    examples: [
       {
         input: [[1, 2, 3], 2],
-        code: 'comma([1, 2, 3], 2)'
-      }
-    ]
+        code: "comma([1, 2, 3], 2)",
+      },
+    ],
   },
   union: {
-    examples:
-    [
+    examples: [
       {
         input: [[2], [1, 2]],
-        code: 'union([2], [1, 2])'
-      }
-    ]
+        code: "union([2], [1, 2])",
+      },
+    ],
   },
   partition: {
-    examples:
-    [
+    examples: [
       {
-        input: [[{ user: 'barney', active: false }, { user: 'fred', active: true }, { user: 'pebbles', active: false }], item => item.active],
-        code: 'partition([{ user: "barney", active: false }, { user: "fred", active: true }, { user: "pebbles", active: false }], item => item.active)'
-      }
-    ]
-  }
+        input: [
+          [
+            { user: "barney", active: false },
+            { user: "fred", active: true },
+            { user: "pebbles", active: false },
+          ],
+          (item) => item.active,
+        ],
+        code: 'partition([{ user: "barney", active: false }, { user: "fred", active: true }, { user: "pebbles", active: false }], item => item.active)',
+      },
+    ],
+  },
+  range: {
+    examples: [{ input: [1, 5], code: "range(1, 5)" }],
+  },
 }
