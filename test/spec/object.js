@@ -77,6 +77,20 @@ test("camelcase should convert array of nested objects keys to camelCase", () =>
   assert.deepEqual(object.camelcase(object1), result)
 })
 
+test("camelcase does not throw for non objects", () => {
+  assert.deepEqual(object.camelcase(null), null)
+  assert.deepEqual(object.camelcase(false), false)
+  assert.deepEqual(object.camelcase(true), true)
+  assert.deepEqual(object.camelcase(undefined), undefined)
+  assert.deepEqual(object.camelcase([]), [])
+})
+
+test("camelcase works for arrays", () => {
+  const object1 = [{ created_at: "2000-01-01" }]
+  const result = [{ createdAt: "2000-01-01" }]
+  assert.deepEqual(object.camelcase(object1), result)
+})
+
 test("dig returns the value of a field", () => {
   assert.deepEqual(object.dig({ foo: "bar" }, "foo"), "bar")
 })
