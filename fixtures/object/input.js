@@ -1,78 +1,80 @@
+const { camelcase } = require("../../docs/object")
+
 const object = {
   dig: {
-    examples:
-    [
+    examples: [
       {
-        input: [{ foo: { bar: 'baz' } }, 'foo.bar']
-      }
-    ]
+        input: [{ foo: { bar: "baz" } }, "foo.bar"],
+      },
+    ],
   },
   keys: {
-    examples:
-    [
+    examples: [
       {
-        input: [{ foo: 'bar', baz: [1, 2, 3] }]
-      }
-    ]
+        input: [{ foo: "bar", baz: [1, 2, 3] }],
+      },
+    ],
   },
   pat: {
-    examples:
-    [
+    examples: [
       {
-        input: [{ foo: 'bar' }, 'foo', 'baz']
-      }
-    ]
+        input: [{ foo: "bar" }, "foo", "baz"],
+      },
+    ],
   },
   rename: {
-    examples:
-    [
+    examples: [
       {
-        input: [{ created_at: '2000-01-01' }, { created_at: 'createdAt' }]
-      }
-    ]
+        input: [{ created_at: "2000-01-01" }, { created_at: "createdAt" }],
+      },
+    ],
   },
   values: {
-    examples:
-    [
+    examples: [
       {
-        input: [{ foo: 'bar', baz: [1, 2, 3] }]
-      }
-    ]
+        input: [{ foo: "bar", baz: [1, 2, 3] }],
+      },
+    ],
   },
   merge: {
-    examples:
-    [
+    examples: [
       {
-        input: [{ foo: { a: 1, b: 1, c: 1 }, baz: { b: 2, c: 2 } }]
+        input: [{ foo: { a: 1, b: 1, c: 1 }, baz: { b: 2, c: 2 } }],
       },
       {
-        input: [{ foo: { a: 1, b: 1, c: 1 }, baz: { b: 2, c: 2 }, bar: { c: 3 } }]
-      }
-    ]
+        input: [
+          { foo: { a: 1, b: 1, c: 1 }, baz: { b: 2, c: 2 }, bar: { c: 3 } },
+        ],
+      },
+    ],
   },
   clone: {
-    examples:
-    [
+    examples: [
       {
-        input: [{ a: 0, b: { c: 0 } }]
-      }
-    ]
+        input: [{ a: 0, b: { c: 0 } }],
+      },
+    ],
   },
   deepclone: {
-    examples:
-    [
+    examples: [
       {
-        input: [{ a: 0, b: { c: 0 } }]
-      }
-    ]
+        input: [{ a: 0, b: { c: 0 } }],
+      },
+    ],
   },
   recsort: {
-    examples:
-    [
+    examples: [
       {
-        input: [{ b: 2, a: 1 }]
-      }
-    ]
-  }
+        input: [{ b: 2, a: 1 }],
+      },
+    ],
+  },
+  camelcase: {
+    examples: [
+      {
+        input: [{ created_at: "2000-01-01" }],
+      },
+    ],
+  },
 }
 module.exports = object

@@ -23,6 +23,60 @@ test("rename should ignore key`s properties without match", () => {
   assert.deepEqual(object.rename(object1, keys), result)
 })
 
+test("camelcase should convert object keys to camelCase", () => {
+  const object1 = { created_at: "2000-01-01" }
+  const result = { createdAt: "2000-01-01" }
+  assert.deepEqual(object.camelcase(object1), result)
+})
+
+test("camelcase should convert nested object keys to camelCase", () => {
+  const object1 = {
+    created_at: "2000-01-01",
+    nested_object: { nested_key: "value" },
+  }
+  const result = {
+    createdAt: "2000-01-01",
+    nestedObject: { nestedKey: "value" },
+  }
+  assert.deepEqual(object.camelcase(object1), result)
+})
+
+test("camelcase should convert array of objects keys to camelCase", () => {
+  const object1 = {
+    created_at: "2000-01-01",
+    array: [{ nested_key: "value" }],
+  }
+  const result = {
+    createdAt: "2000-01-01",
+    array: [{ nestedKey: "value" }],
+  }
+  assert.deepEqual(object.camelcase(object1), result)
+})
+
+test("camelcase should convert array of nested objects keys to camelCase", () => {
+  const object1 = {
+    created_at: "2000-01-01",
+    array: [{ nested_object: { nested_key: "value" } }],
+  }
+  const result = {
+    createdAt: "2000-01-01",
+    array: [{ nestedObject: { nestedKey: "value" } }],
+  }
+  assert.deepEqual(object.camelcase(object1), result)
+})
+
+test("camelcase should convert array of nested objects keys to camelCase", () => {
+  const object1 = {
+    created_at: "2000-01-01",
+    array: [{ nested_object: { nested_array: [{ nested_key: "value" }] } }],
+  }
+  const result = {
+    createdAt: "2000-01-01",
+    array: [{ nestedObject: { nestedArray: [{ nestedKey: "value" }] } }],
+  }
+  assert.deepEqual(object.camelcase(object1), result)
+})
+
 test("dig returns the value of a field", () => {
   assert.deepEqual(object.dig({ foo: "bar" }, "foo"), "bar")
 })
