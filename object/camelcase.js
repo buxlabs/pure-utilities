@@ -1,8 +1,9 @@
 function camelcase(object) {
+  function isPlainObject(obj) {
+    return typeof obj === "object" && obj.constructor === Object
+  }
   if (Array.isArray(object)) {
-    return object.map((item) =>
-      typeof item === "object" ? camelcase(item) : item
-    )
+    return object.map((item) => (isPlainObject(item) ? camelcase(item) : item))
   }
   if (typeof object !== "object" || object === null) {
     return object
@@ -12,9 +13,9 @@ function camelcase(object) {
     result[camel] = object[key]
     if (Array.isArray(object[key])) {
       result[camel] = object[key].map((item) =>
-        typeof item === "object" ? camelcase(item) : item
+        isPlainObject(item) ? camelcase(item) : item
       )
-    } else if (typeof object[key] === "object") {
+    } else if (isPlainObject(object[key])) {
       result[camel] = camelcase(object[key])
     }
     return result
