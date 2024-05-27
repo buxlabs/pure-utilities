@@ -1,6 +1,6 @@
 function camelcase(object) {
   function isPlainObject(obj) {
-    return typeof obj === "object" && obj.constructor === Object
+    return !!obj && typeof obj === "object" && obj.constructor === Object
   }
   if (Array.isArray(object)) {
     return object.map((item) => (isPlainObject(item) ? camelcase(item) : item))

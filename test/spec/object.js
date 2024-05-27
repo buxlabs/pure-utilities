@@ -93,6 +93,12 @@ test("camelcase should convert an array with dates", () => {
   assert.deepEqual(object.camelcase(object1), result)
 })
 
+test("camelcase ignores null values", () => {
+  const object1 = { created_at: null }
+  const result = { createdAt: null }
+  assert.deepEqual(object.camelcase(object1), result)
+})
+
 test("camelcase does not throw for non objects", () => {
   assert.deepEqual(object.camelcase(null), null)
   assert.deepEqual(object.camelcase(false), false)
