@@ -1,6 +1,6 @@
 {
   "name": "pure-utilities",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "pure-utilities",
   "main": "index.js",
   "devDependencies": {
