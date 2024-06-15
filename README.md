@@ -1,7 +1,7 @@
 # pure-utilities
 
 [![npm](https://img.shields.io/npm/v/pure-utilities.svg)](https://www.npmjs.com/package/pure-utilities)
-[![build](https://github.com/buxlabs/pure-utilities/workflows/build/badge.svg)](https://github.com/buxlabs/pure-utilities/actions)
+[![build](https://github.com/buxlabs/pure-utilities/actions/workflows/nodejs.yml/badge.svg)](https://github.com/buxlabs/pure-utilities/actions/workflows/nodejs.yml)
 
 > A set of pure functions.
 
@@ -26,8 +26,8 @@ A pure function is a function that given the same input will give you the same o
 ## Usage
 
 ```javascript
-import { flatten } from 'pure-utilities/object'
-console.log(flatten({ hello: { world: '1234' } })) // { 'hello.world': '1234' }
+import { flatten } from "pure-utilities/object";
+console.log(flatten({ hello: { world: "1234" } })); // { 'hello.world': '1234' }
 ```
 
 ## Maintainers
