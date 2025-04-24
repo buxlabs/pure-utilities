@@ -130,6 +130,16 @@ test("flatten should flatten the object if it has 3 levels", () => {
   assert.deepEqual(collection.flatten(object1), result);
 });
 
+test("flatten does not override the prototype", () => {
+  const before = JSON.stringify({}.__proto__);
+  assert.deepEqual({}.__proto__, {});
+  const object = Object.create({ __proto__: { pollutedKey: "123" } });
+  const result = { pollutedKey: "123" };
+  assert.deepEqual(collection.flatten(object), result);
+  const after = JSON.stringify({}.__proto__);
+  assert.deepEqual(before, after);
+});
+
 test("unflatten shouldn`t change unflat object", () => {
   const result = { orderAccepted: "Your order has been accepted" };
   const object1 = { orderAccepted: "Your order has been accepted" };
@@ -161,11 +171,13 @@ test("unflatten should unflatten the object if it has 3 levels", () => {
 });
 
 test("unflatten does not override the prototype", () => {
+  const before = JSON.stringify({}.__proto__);
   assert.deepEqual({}.__proto__, {});
   const object = { "__proto__.pollutedKey": "123" };
   const unflattened = collection.unflatten(object);
   assert.deepEqual(unflattened.__proto__.pollutedKey, "123");
-  assert.deepEqual({}.__proto__, {});
+  const after = JSON.stringify({}.__proto__);
+  assert.deepEqual(before, after);
 });
 
 test("occurences should return the count of occurences of the string in the array", () => {
