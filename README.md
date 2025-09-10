@@ -10,7 +10,6 @@
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
-- [API](https://buxlabs.pl/en/tools/js/pure-utilities)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
