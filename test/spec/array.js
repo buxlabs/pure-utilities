@@ -1,121 +1,121 @@
-const test = require("node:test")
-const assert = require("node:assert")
-const { array } = require("../..")
+const test = require("node:test");
+const assert = require("node:assert");
+const { array } = require("../..");
 
 test("identifier returns a new unique identifier based on used identifiers", () => {
-  assert.deepEqual(array.identifier([]), "a")
-  assert.deepEqual(array.identifier(["a"]), "b")
+  assert.deepEqual(array.identifier([]), "a");
+  assert.deepEqual(array.identifier(["a"]), "b");
   assert.deepEqual(
     array.identifier("abcdefghijklmnopqrstuvwxyz".split("")),
     "_a"
-  )
-})
+  );
+});
 
 test("first returns first element of an array", () => {
-  assert.deepEqual(array.first([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 1)
-})
+  assert.deepEqual(array.first([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 1);
+});
 
 test("second returns second element of an array", () => {
-  assert.deepEqual(array.second([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 2)
-})
+  assert.deepEqual(array.second([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 2);
+});
 
 test("third returns third element of an array", () => {
-  assert.deepEqual(array.third([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 3)
-})
+  assert.deepEqual(array.third([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 3);
+});
 
 test("fourth returns fourth element of an array", () => {
-  assert.deepEqual(array.fourth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 4)
-})
+  assert.deepEqual(array.fourth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 4);
+});
 
 test("fifth returns fifth element of an array", () => {
-  assert.deepEqual(array.fifth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 5)
-})
+  assert.deepEqual(array.fifth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 5);
+});
 
 test("sixth returns sixth element of an array", () => {
-  assert.deepEqual(array.sixth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 6)
-})
+  assert.deepEqual(array.sixth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 6);
+});
 
 test("seventh returns seventh element of an array", () => {
-  assert.deepEqual(array.seventh([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 7)
-})
+  assert.deepEqual(array.seventh([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 7);
+});
 
 test("eigth returns eigth element of an array", () => {
-  assert.deepEqual(array.eigth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 8)
-})
+  assert.deepEqual(array.eigth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 8);
+});
 
 test("ninth returns ninth element of an array", () => {
-  assert.deepEqual(array.ninth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 9)
-})
+  assert.deepEqual(array.ninth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 9);
+});
 
 test("tenth returns tenth element of an array", () => {
-  assert.deepEqual(array.tenth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10)
-})
+  assert.deepEqual(array.tenth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10);
+});
 
 test("last returns last element of an array", () => {
-  assert.deepEqual(array.last([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10)
-})
+  assert.deepEqual(array.last([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10);
+});
 
 test("sum returns the sum of a list of numbers (t1)", () => {
-  assert.deepEqual(array.sum([3, 10, 2]), 15)
-})
+  assert.deepEqual(array.sum([3, 10, 2]), 15);
+});
 
 test("sum returns the sum of a list of numbers (t2)", () => {
-  assert.deepEqual(array.sum([100, 200, 1]), 301)
-})
+  assert.deepEqual(array.sum([100, 200, 1]), 301);
+});
 
 test("average returns the average of a list of numbers (t1)", () => {
-  assert.deepEqual(array.average([100, 200]), 150)
-})
+  assert.deepEqual(array.average([100, 200]), 150);
+});
 
 test("average returns the average of a list of numbers (t2)", () => {
-  assert.deepEqual(array.average([2, 0]), 1)
-})
+  assert.deepEqual(array.average([2, 0]), 1);
+});
 
 test("median returns the median of a list of numbers (t1)", () => {
-  assert.deepEqual(array.median([6, 4, 2, 4, 4]), 4)
-})
+  assert.deepEqual(array.median([6, 4, 2, 4, 4]), 4);
+});
 
 test("median returns the median of a list of numbers (t2)", () => {
-  assert.deepEqual(array.median([1, 2, 3, 5, 5, 6]), 4)
-})
+  assert.deepEqual(array.median([1, 2, 3, 5, 5, 6]), 4);
+});
 
 test("median returns the median of a list of numbers (t3)", () => {
-  assert.deepEqual(array.median([5, 18, 1]), 5)
-})
+  assert.deepEqual(array.median([5, 18, 1]), 5);
+});
 
 test("median returns the median of a list of numbers (t4)", () => {
-  assert.deepEqual(array.median([91, 210, 205, 204, 212]), 205)
-})
+  assert.deepEqual(array.median([91, 210, 205, 204, 212]), 205);
+});
 
 test("compact returns a copy of the array only with truthy values (if second arg is true) or without null and undefined (if second arg is false)", () => {
   assert.deepEqual(
     array.compact([0, 1, false, 2, "", 3, undefined, null]),
     [1, 2, 3]
-  )
+  );
   assert.deepEqual(
     array.compact([0, 1, false, 2, "", 3, undefined, null], false),
     [0, 1, false, 2, "", 3]
-  )
-})
+  );
+});
 
 test("unique returns a copy of the array without duplicate items", () => {
-  assert.deepEqual(array.unique([1, 1, 2, 10, 2, 33]), [1, 2, 10, 33])
-})
+  assert.deepEqual(array.unique([1, 1, 2, 10, 2, 33]), [1, 2, 10, 33]);
+});
 
 test("unique works with objects", () => {
   assert.deepEqual(array.unique([{ x: "y" }, { x: "y" }, { x: "z" }]), [
     { x: "y" },
     { x: "z" },
-  ])
+  ]);
   assert.deepEqual(array.unique([{ foo: 1 }, { foo: 1 }, { foo: 2 }]), [
     { foo: 1 },
     { foo: 2 },
-  ])
+  ]);
   assert.deepEqual(
     array.unique([{ foo: { x: 1 } }, { foo: { x: 1 } }, { foo: { x: 2 } }]),
     [{ foo: { x: 1 } }, { foo: { x: 2 } }]
-  )
-})
+  );
+});
 
 test("unique works with an iteratee function", () => {
   assert.deepEqual(
@@ -131,48 +131,48 @@ test("unique works with an iteratee function", () => {
       { x: "y", y: "y" },
       { x: "z", y: "z" },
     ]
-  )
-})
+  );
+});
 
 test('nth gets element at positive index "n" of array', () => {
-  assert.deepEqual(array.nth([1, 2, 3, 4, 5], 4), 4)
-})
+  assert.deepEqual(array.nth([1, 2, 3, 4, 5], 4), 4);
+});
 
 test('nth gets element at negative index "n" of array (t1)', () => {
-  assert.deepEqual(array.nth([1, 2, 3, 4, 5], -2), 4)
-})
+  assert.deepEqual(array.nth([1, 2, 3, 4, 5], -2), 4);
+});
 
 test('nth gets element at negative index "n" of array (t2)', () => {
-  assert.deepEqual(array.nth([1, 2, 3, 4, 5], -5), 1)
-})
+  assert.deepEqual(array.nth([1, 2, 3, 4, 5], -5), 1);
+});
 
 test("sample returns a random item from array", () => {
-  assert.deepEqual(array.sample([1]), 1)
-})
+  assert.deepEqual(array.sample([1]), 1);
+});
 
 test("rotate returns the array unmodified when the second argument is falsy", () => {
-  assert.deepEqual(array.rotate([1, 2, 3]), [1, 2, 3])
-})
+  assert.deepEqual(array.rotate([1, 2, 3]), [1, 2, 3]);
+});
 
 test('rotate shifts "n" items out of the array and pushes them back on the end (t1)', () => {
-  assert.deepEqual(array.rotate([1, 2, 3], 1), [2, 3, 1])
-})
+  assert.deepEqual(array.rotate([1, 2, 3], 1), [2, 3, 1]);
+});
 
 test('rotate shifts "n" items out of the array and pushes them back on the end (t2)', () => {
-  assert.deepEqual(array.rotate([1, 2, 3], 2), [3, 1, 2])
-})
+  assert.deepEqual(array.rotate([1, 2, 3], 2), [3, 1, 2]);
+});
 
 test('rotate shifts "n" items out of the array and pushes them back on the end (t3)', () => {
-  assert.deepEqual(array.rotate([1, 2, 3], 3), [1, 2, 3])
-})
+  assert.deepEqual(array.rotate([1, 2, 3], 3), [1, 2, 3]);
+});
 
 test('rotate shifts "n" items out of the array and pushes them back on the end (t4)', () => {
-  assert.deepEqual(array.rotate([1, 2, 3], 4), [2, 3, 1])
-})
+  assert.deepEqual(array.rotate([1, 2, 3], 4), [2, 3, 1]);
+});
 
 test('rotate pops "n" items out of the array and unshifts them back into the front (t1)', () => {
-  assert.deepEqual(array.rotate([1, 2, 3], -1), [3, 1, 2])
-})
+  assert.deepEqual(array.rotate([1, 2, 3], -1), [3, 1, 2]);
+});
 
 test('rotate pops "n" items out of the array and unshifts them back into the front (t2)', () => {
   assert.deepEqual(array.rotate(["lorem", "ipsum", "dolor", "santo"], -2), [
@@ -180,48 +180,48 @@ test('rotate pops "n" items out of the array and unshifts them back into the fro
     "santo",
     "lorem",
     "ipsum",
-  ])
-})
+  ]);
+});
 
 test('rotate pops "n" items out of the array and unshifts them back into the front (t3)', () => {
-  assert.deepEqual(array.rotate([1, 2, 3], -3), [1, 2, 3])
-})
+  assert.deepEqual(array.rotate([1, 2, 3], -3), [1, 2, 3]);
+});
 
 test('rotate pops "n" items out of the array and unshifts them back into the front (t4)', () => {
-  assert.deepEqual(array.drop([1, 2, 3], 2), [3])
-})
+  assert.deepEqual(array.drop([1, 2, 3], 2), [3]);
+});
 
 test("drop returns the tail of array after dropping the first `n` elements.", () => {
-  assert.deepEqual(array.drop([1, 2, 3, 4, 5, 6], 3), [4, 5, 6])
-})
+  assert.deepEqual(array.drop([1, 2, 3, 4, 5, 6], 3), [4, 5, 6]);
+});
 
 test("drop returns the tail of string after dropping the first `n` elements.", () => {
-  assert.deepEqual(array.drop("Hello World", 6), "World")
-})
+  assert.deepEqual(array.drop("Hello World", 6), "World");
+});
 
 test("head returns first element of an array", () => {
-  assert.deepEqual(array.head([1, 2, 3, 4, 5, 6]), 1)
-})
+  assert.deepEqual(array.head([1, 2, 3, 4, 5, 6]), 1);
+});
 
 test("head returns first character of a string", () => {
-  assert.deepEqual(array.head("Hello World"), "H")
-})
+  assert.deepEqual(array.head("Hello World"), "H");
+});
 
 test("take takes n items of an array.", () => {
-  assert.deepEqual(array.take([1, 2, 3, 4, 5, 6], 2), [1, 2])
-})
+  assert.deepEqual(array.take([1, 2, 3, 4, 5, 6], 2), [1, 2]);
+});
 
 test("take takes n characters of a string.", () => {
-  assert.deepEqual(array.take("Hello World", 5), "Hello")
-})
+  assert.deepEqual(array.take("Hello World", 5), "Hello");
+});
 
 test("slice returns a shallow copy of a portion of an array into a new array object selected from start to end", () => {
-  assert.deepEqual(array.slice([1, 2, 3, 4, 5, 6], 3, 5), [4, 5])
-})
+  assert.deepEqual(array.slice([1, 2, 3, 4, 5, 6], 3, 5), [4, 5]);
+});
 
 test("slice returns a shallow copy of a portion of a string into a new string selected from start to end", () => {
-  assert.deepEqual(array.slice("Hello World", 6, 9), "Wor")
-})
+  assert.deepEqual(array.slice("Hello World", 6, 9), "Wor");
+});
 
 test("pluck extracts a list of all property values", () => {
   assert.deepEqual(
@@ -234,8 +234,8 @@ test("pluck extracts a list of all property values", () => {
       "name"
     ),
     ["moe", "larry", "curly"]
-  )
-})
+  );
+});
 
 test("pluck returns a list of only existing property values", () => {
   assert.deepEqual(
@@ -248,8 +248,8 @@ test("pluck returns a list of only existing property values", () => {
       "name"
     ),
     ["larry"]
-  )
-})
+  );
+});
 
 test("pluck returns a list of not empty property values", () => {
   assert.deepEqual(
@@ -263,8 +263,8 @@ test("pluck returns a list of not empty property values", () => {
       "name"
     ),
     ["larry"]
-  )
-})
+  );
+});
 
 test("pluck ignores elements which are not an objects", () => {
   assert.deepEqual(
@@ -273,87 +273,95 @@ test("pluck ignores elements which are not an objects", () => {
       "name"
     ),
     ["moe"]
-  )
-})
+  );
+});
 
 test("intersection returns common elements of passed arrays", () => {
-  const array1 = [1, 2, 3, 4, 5, 100]
-  const array2 = [100, 2, 3, 10, 31]
-  const array3 = [2, 3, 4]
-  let commonElements = []
-  commonElements = array.intersection(array1, array2)
-  assert.deepEqual(commonElements, [2, 3, 100])
+  const array1 = [1, 2, 3, 4, 5, 100];
+  const array2 = [100, 2, 3, 10, 31];
+  const array3 = [2, 3, 4];
+  let commonElements = [];
+  commonElements = array.intersection(array1, array2);
+  assert.deepEqual(commonElements, [2, 3, 100]);
 
-  commonElements = array.intersection(array1, array3)
-  assert.deepEqual(commonElements, [2, 3, 4])
+  commonElements = array.intersection(array1, array3);
+  assert.deepEqual(commonElements, [2, 3, 4]);
 
-  commonElements = array.intersection(array1, array2, array3)
-  assert.deepEqual(commonElements, [2, 3])
+  commonElements = array.intersection(array1, array2, array3);
+  assert.deepEqual(commonElements, [2, 3]);
 
-  commonElements = array.intersection(array1, array2, array3)
-  assert.deepEqual(commonElements, [2, 3])
-})
+  commonElements = array.intersection(array1, array2, array3);
+  assert.deepEqual(commonElements, [2, 3]);
+});
 
 test("difference returns the difference between one array and a number of other arrays", () => {
-  const array1 = [1, 2, 3, 4, 5, 100]
-  const array2 = [100, 2, 3, 10, 31]
-  const array3 = [2, 3, 4]
-  let difference = []
-  difference = array.difference(array1, array2)
-  assert.deepEqual(difference, [1, 4, 5])
+  const array1 = [1, 2, 3, 4, 5, 100];
+  const array2 = [100, 2, 3, 10, 31];
+  const array3 = [2, 3, 4];
+  let difference = [];
+  difference = array.difference(array1, array2);
+  assert.deepEqual(difference, [1, 4, 5]);
 
-  difference = array.difference(array1, array3)
-  assert.deepEqual(difference, [1, 5, 100])
+  difference = array.difference(array1, array3);
+  assert.deepEqual(difference, [1, 5, 100]);
 
-  difference = array.difference(array1, array2, array3)
-  assert.deepEqual(difference, [1, 5])
+  difference = array.difference(array1, array2, array3);
+  assert.deepEqual(difference, [1, 5]);
 
-  difference = array.difference(["foo", "bar", "baz"], ["bar"], ["baz"])
-  assert.deepEqual(difference, ["foo"])
-})
+  difference = array.difference(["foo", "bar", "baz"], ["bar"], ["baz"]);
+  assert.deepEqual(difference, ["foo"]);
+});
 
-test("duplicates returns repeating elements of the array", () => {
-  let array1 = [1, 1, 2, 3, 5, 5]
-  let duplicates = array.duplicates(array1)
-  assert.deepEqual(duplicates, [1, 5])
+test("duplicates returns repeating elements of the array (numbers)", () => {
+  let array1 = [1, 1, 2, 3, 5, 5];
+  let duplicates = array.duplicates(array1);
+  assert.deepEqual(duplicates, [1, 5]);
+});
 
-  array1 = ["foo", "bar", "baz", "foo", "baz"]
-  duplicates = array.duplicates(array1)
-  assert.deepEqual(duplicates, ["foo", "baz"])
-})
+test("duplicates returns repeating elements of the array (strings)", () => {
+  array1 = ["foo", "bar", "baz", "foo", "baz"];
+  duplicates = array.duplicates(array1);
+  assert.deepEqual(duplicates, ["foo", "baz"]);
+});
+
+test("duplicates returns repeating elements of the array (objects)", () => {
+  let array1 = [{ a: 1 }, { b: 1 }, { a: 1 }];
+  let duplicates = array.duplicates(array1);
+  assert.deepEqual(duplicates, [{ a: 1 }]);
+});
 
 test("symdifference returns an array of unique values that is the symmetric difference", () => {
-  let array1 = [1, 2]
-  let array2 = [2, 3]
-  let difference = array.symdifference(array1, array2)
+  let array1 = [1, 2];
+  let array2 = [2, 3];
+  let difference = array.symdifference(array1, array2);
 
-  array1 = [1, 3, 4, 6, 7, 9]
-  array2 = [3, 5, 6, 7, 8, 9]
-  difference = array.symdifference(array1, array2)
-  assert.deepEqual(difference, [1, 4, 5, 8])
-})
+  array1 = [1, 3, 4, 6, 7, 9];
+  array2 = [3, 5, 6, 7, 8, 9];
+  difference = array.symdifference(array1, array2);
+  assert.deepEqual(difference, [1, 4, 5, 8]);
+});
 
 test("comma returns a string created by joining array elements with comma and spaces", () => {
-  assert.deepEqual(array.comma([1, 2, 3], 2), "1,  2,  3")
-})
+  assert.deepEqual(array.comma([1, 2, 3], 2), "1,  2,  3");
+});
 
 test("union returns an array of unique values", () => {
-  const array1 = [2]
-  const array2 = [1, 2]
+  const array1 = [2];
+  const array2 = [1, 2];
 
-  const union = array.union(array1, array2)
+  const union = array.union(array1, array2);
 
-  assert.deepEqual(union, [2, 1])
-})
+  assert.deepEqual(union, [2, 1]);
+});
 
 test("partition returns an array of elements split into two groups, the first of which contains elements predicate returns truthy for, the second of which contains elements predicate returns falsey for. The predicate has one argument", () => {
   const array1 = [
     { user: "barney", active: false },
     { user: "fred", active: true },
     { user: "pebbles", active: false },
-  ]
+  ];
 
-  const partition = array.partition(array1, (item) => item.active)
+  const partition = array.partition(array1, (item) => item.active);
 
   assert.deepEqual(partition, [
     [{ user: "fred", active: true }],
@@ -361,9 +369,9 @@ test("partition returns an array of elements split into two groups, the first of
       { user: "barney", active: false },
       { user: "pebbles", active: false },
     ],
-  ])
-})
+  ]);
+});
 
 test("range returns an array with numbers within the range", () => {
-  assert.deepEqual(array.range(1, 5), [1, 2, 3, 4, 5])
-})
+  assert.deepEqual(array.range(1, 5), [1, 2, 3, 4, 5]);
+});
