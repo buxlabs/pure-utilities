@@ -48,6 +48,7 @@ const fahrenheit = require('./fahrenheit')
 const kelvin = require('./kelvin')
 const uid = require('./uid')
 const bytes = require('./bytes')
+const prettybytes = require('./prettybytes')
 
 module.exports = {
   pad,
@@ -96,5 +97,6 @@ module.exports = {
   fahrenheit,
   kelvin,
   uid,
-  bytes
+  bytes,
+  prettybytes
 }

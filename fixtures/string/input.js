@@ -443,6 +443,20 @@ const string = {
         input: ['400KB']
       }
     ]
+  },
+  prettybytes: {
+    examples:
+    [
+      {
+        input: [1024]
+      },
+      {
+        input: [1536]
+      },
+      {
+        input: [1048576]
+      }
+    ]
   }
 }
 module.exports = string

@@ -327,6 +327,13 @@ const string = {
       en: 'Converts string with specific unit to bytes.',
       pl: 'Konwertuje łańcuch znaków z daną jednostką do bitów.'
     }
+  },
+  prettybytes: {
+    parameters: ['bytes'],
+    description: {
+      en: 'Converts bytes to a human-readable string with binary units (KiB, MiB, GiB, etc.).',
+      pl: 'Konwertuje bajty na czytelny dla człowieka łańcuch znaków z jednostkami binarnymi (KiB, MiB, GiB, itp.).'
+    }
   }
 }
 module.exports = string
