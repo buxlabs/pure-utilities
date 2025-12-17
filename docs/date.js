@@ -75,6 +75,13 @@ const date = {
       en: 'Returns the year of the passed date.',
       pl: 'Zwraca rok na podstawie przekazanej daty.'
     }
+  },
+  timeago: {
+    parameters: ['date'],
+    description: {
+      en: 'Returns a human-readable string representing how long ago the date occurred (e.g., "2 hours ago", "3 days ago").',
+      pl: 'Zwraca czytelny dla człowieka łańcuch znaków reprezentujący jak dawno temu wystąpiła data (np. "2 godziny temu", "3 dni temu").'
+    }
   }
 }
 

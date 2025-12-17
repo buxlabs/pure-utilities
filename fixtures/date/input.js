@@ -124,6 +124,23 @@ const date = {
         code: 'year(new Date (2018, 4, 2))'
       }
     ]
+  },
+  timeago: {
+    examples:
+    [
+      {
+        input: [new Date(Date.now() - 30000)],
+        code: 'timeago(new Date(Date.now() - 30000))'
+      },
+      {
+        input: [new Date(Date.now() - 3600000)],
+        code: 'timeago(new Date(Date.now() - 3600000))'
+      },
+      {
+        input: [new Date(Date.now() - 86400000)],
+        code: 'timeago(new Date(Date.now() - 86400000))'
+      }
+    ]
   }
 }
 

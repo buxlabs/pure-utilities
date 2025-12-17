@@ -262,3 +262,90 @@ test("timestamp can return the day", () => {
 test("timestamp has a default pattern", () => {
   assert.deepEqual(date.timestamp(new Date(2018, 4, 28)), "2018-05-28")
 })
+
+test("timeago returns 'just now' for very recent dates", () => {
+  const now = new Date()
+  assert.deepEqual(date.timeago(now), "just now")
+})
+
+test("timeago returns seconds ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 30000) // 30 seconds ago
+  assert.deepEqual(date.timeago(past), "30 seconds ago")
+})
+
+test("timeago returns 1 second ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 1000) // 1 second ago
+  assert.deepEqual(date.timeago(past), "1 second ago")
+})
+
+test("timeago returns minutes ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 120000) // 2 minutes ago
+  assert.deepEqual(date.timeago(past), "2 minutes ago")
+})
+
+test("timeago returns 1 minute ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 60000) // 1 minute ago
+  assert.deepEqual(date.timeago(past), "1 minute ago")
+})
+
+test("timeago returns hours ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 7200000) // 2 hours ago
+  assert.deepEqual(date.timeago(past), "2 hours ago")
+})
+
+test("timeago returns 1 hour ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 3600000) // 1 hour ago
+  assert.deepEqual(date.timeago(past), "1 hour ago")
+})
+
+test("timeago returns days ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 172800000) // 2 days ago
+  assert.deepEqual(date.timeago(past), "2 days ago")
+})
+
+test("timeago returns 1 day ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 86400000) // 1 day ago
+  assert.deepEqual(date.timeago(past), "1 day ago")
+})
+
+test("timeago returns months ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 5184000000) // 2 months ago
+  assert.deepEqual(date.timeago(past), "2 months ago")
+})
+
+test("timeago returns 1 month ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 2592000000) // 1 month ago
+  assert.deepEqual(date.timeago(past), "1 month ago")
+})
+
+test("timeago returns years ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 63072000000) // 2 years ago
+  assert.deepEqual(date.timeago(past), "2 years ago")
+})
+
+test("timeago returns 1 year ago", () => {
+  const now = new Date()
+  const past = new Date(now.getTime() - 31536000000) // 1 year ago
+  assert.deepEqual(date.timeago(past), "1 year ago")
+})
+
+test("timeago returns 'just now' for future dates", () => {
+  const now = new Date()
+  const future = new Date(now.getTime() + 1000)
+  assert.deepEqual(date.timeago(future), "just now")
+})
+
+test("timeago returns 'Invalid Date' for invalid input", () => {
+  assert.deepEqual(date.timeago("invalid-date"), "Invalid Date")
+})

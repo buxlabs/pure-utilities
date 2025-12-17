@@ -9,6 +9,7 @@ const month = require('./month')
 const year = require('./year')
 const prettydate = require('./prettydate')
 const timestamp = require('./timestamp')
+const timeago = require('./timeago')
 
 module.exports = {
   isostring,
@@ -21,5 +22,6 @@ module.exports = {
   month,
   year,
   prettydate,
-  timestamp
+  timestamp,
+  timeago
 }
