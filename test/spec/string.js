@@ -1183,3 +1183,35 @@ test("bytes should convert the string with specific unit to bytes", () => {
   assert.deepEqual(string.bytes("20YB"), 2.4178516392292583e25)
   assert.deepEqual(string.bytes("200YB"), 2.4178516392292583e26)
 })
+
+test("prettybytes should convert bytes to a human-readable string (t1)", () => {
+  assert.deepEqual(string.prettybytes(0), "0 B")
+})
+
+test("prettybytes should convert bytes to a human-readable string (t2)", () => {
+  assert.deepEqual(string.prettybytes(1), "1 B")
+})
+
+test("prettybytes should convert bytes to a human-readable string (t3)", () => {
+  assert.deepEqual(string.prettybytes(1024), "1 KiB")
+})
+
+test("prettybytes should convert bytes to a human-readable string (t4)", () => {
+  assert.deepEqual(string.prettybytes(2048), "2 KiB")
+})
+
+test("prettybytes should convert bytes to a human-readable string (t5)", () => {
+  assert.deepEqual(string.prettybytes(1536), "1.5 KiB")
+})
+
+test("prettybytes should convert bytes to a human-readable string (t6)", () => {
+  assert.deepEqual(string.prettybytes(1048576), "1 MiB")
+})
+
+test("prettybytes should convert bytes to a human-readable string (t7)", () => {
+  assert.deepEqual(string.prettybytes(1073741824), "1 GiB")
+})
+
+test("prettybytes should convert bytes to a human-readable string (t8)", () => {
+  assert.deepEqual(string.prettybytes(1099511627776), "1 TiB")
+})
