@@ -1,6 +1,6 @@
 function timeago (date) {
   if (Object.prototype.toString.call(date) !== '[object Date]') date = new Date(date)
-  if (!Number(date)) return 'Invalid Date'
+  if (!Number(date)) return date.toDateString()
 
   const now = new Date()
   const seconds = Math.floor((now - date) / 1000)
