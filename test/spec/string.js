@@ -1215,3 +1215,12 @@ test("prettybytes should convert bytes to a human-readable string (t7)", () => {
 test("prettybytes should convert bytes to a human-readable string (t8)", () => {
   assert.deepEqual(string.prettybytes(1099511627776), "1 TiB")
 })
+
+test("prettybytes should handle negative values", () => {
+  assert.deepEqual(string.prettybytes(-100), "0 B")
+})
+
+test("prettybytes should handle very large values", () => {
+  const result = string.prettybytes(Number.MAX_SAFE_INTEGER)
+  assert.ok(result.includes("PiB"))
+})
