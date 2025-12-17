@@ -325,7 +325,7 @@ const string = {
     parameters: ['string'],
     description: {
       en: 'Converts string with specific unit to bytes.',
-      pl: 'Konwertuje łańcuch znaków z daną jednostką do bitów.'
+      pl: 'Konwertuje łańcuch znaków z daną jednostką do bajtów.'
     }
   },
   prettybytes: {
