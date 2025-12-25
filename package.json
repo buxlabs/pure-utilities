@@ -10,7 +10,7 @@
     "node": ">=20.13.1"
   },
   "scripts": {
-    "docs": "node docs/generate.js",
+    "docs": "node docs/generate.js && node docs/generate-html.js",
     "fixtures": "node fixtures/index.js",
     "test": "node --test && npm run docs && npm run fixtures",
     "coverage": "c8 node --test"

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pure-utilities - Documentation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #24292e;
+      background-color: #fff;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 1px solid #e1e4e8;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #0366d6;
+    }
+    .tagline {
+      font-size: 1.2em;
+      color: #586069;
+      margin-bottom: 10px;
+    }
+    .badges {
+      margin-top: 15px;
+    }
+    .badges img {
+      margin-right: 5px;
+    }
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .module-card {
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s, transform 0.2s;
+      background-color: #fff;
+    }
+    .module-card:hover {
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    .module-card h2 {
+      color: #0366d6;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+    .method-count {
+      color: #586069;
+      font-size: 0.9em;
+    }
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e1e4e8;
+      text-align: center;
+      color: #586069;
+    }
+    footer a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>pure-utilities</h1>
+      <p class="tagline">A set of pure functions</p>
+      <div class="badges">
+        <a href="https://www.npmjs.com/package/pure-utilities"><img src="https://img.shields.io/npm/v/pure-utilities.svg" alt="npm"></a>
+        <a href="https://github.com/buxlabs/pure-utilities/actions/workflows/nodejs.yml"><img src="https://github.com/buxlabs/pure-utilities/actions/workflows/nodejs.yml/badge.svg" alt="build"></a>
+      </div>
+    </header>
+    
+    <main>
+      <h2 style="margin-bottom: 20px;">Modules</h2>
+      <div class="module-grid">
+        <a href="string.html" class="module-card">
+          <h2>string</h2>
+          <p class="method-count">48 methods</p>
+        </a>
+        <a href="array.html" class="module-card">
+          <h2>array</h2>
+          <p class="method-count">33 methods</p>
+        </a>
+        <a href="collection.html" class="module-card">
+          <h2>collection</h2>
+          <p class="method-count">7 methods</p>
+        </a>
+        <a href="date.html" class="module-card">
+          <h2>date</h2>
+          <p class="method-count">12 methods</p>
+        </a>
+        <a href="json.html" class="module-card">
+          <h2>json</h2>
+          <p class="method-count">1 method</p>
+        </a>
+        <a href="math.html" class="module-card">
+          <h2>math</h2>
+          <p class="method-count">49 methods</p>
+        </a>
+        <a href="object.html" class="module-card">
+          <h2>object</h2>
+          <p class="method-count">10 methods</p>
+        </a>
+      </div>
+    </main>
+    
+    <footer>
+      <p>
+        <a href="https://github.com/buxlabs/pure-utilities">View on GitHub</a> | 
+        <a href="https://www.npmjs.com/package/pure-utilities">npm package</a> | 
+        Licensed under MIT
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
