@@ -4,7 +4,7 @@ function occurences (collection, string) {
   }
 
   if (string.length <= 0) {
-    return collection.length + 1
+    return 0
   }
 
   let count = 0; let position = 0

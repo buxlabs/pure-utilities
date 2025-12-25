@@ -201,6 +201,6 @@ test("occurences should work with special characters", () => {
 });
 
 test("occurences should handle empty string search", () => {
-  assert.deepEqual(collection.occurences("hello", ""), 6);
-  assert.deepEqual(collection.occurences(["foo", "bar"], ""), 7);
+  assert.deepEqual(collection.occurences("hello", ""), 0);
+  assert.deepEqual(collection.occurences(["foo", "bar"], ""), 0);
 });
