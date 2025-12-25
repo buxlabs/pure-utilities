@@ -196,6 +196,13 @@ test("deepclone creates deep copy of object", () => {
   assert.deepEqual(object.deepclone(), {});
 });
 
+test("deepclone handles objects with circular references", () => {
+  const source = { a: 1 };
+  source.self = source;
+  const result = object.deepclone(source);
+  assert.deepEqual(result, {});
+});
+
 test("recsort sorts keys of objects recursively", () => {
   const source = { a: { c: 3, b: 2 } };
   const result = object.recsort(source);
@@ -208,4 +215,11 @@ test("recsort sorts keys of objects recursively", () => {
   assert.notDeepEqual(actual, expected);
   assert.deepEqual(actual, "c,b");
   assert.deepEqual(expected, "b,c");
+});
+
+test("recsort returns non-objects unchanged", () => {
+  assert.deepEqual(object.recsort("string"), "string");
+  assert.deepEqual(object.recsort(123), 123);
+  assert.deepEqual(object.recsort(null), null);
+  assert.deepEqual(object.recsort([1, 2, 3]), [1, 2, 3]);
 });

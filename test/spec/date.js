@@ -184,6 +184,26 @@ test("year returns the number of the year (t2)", () => {
   assert.deepEqual(date.year(new Date(1995, 2, 13)), 1995)
 })
 
+test("month handles invalid date", () => {
+  const result = date.month("invalid-date")
+  assert.deepEqual(result, "Invalid Date")
+})
+
+test("year handles invalid date", () => {
+  const result = date.year("invalid-date")
+  assert.deepEqual(result, "Invalid Date")
+})
+
+test("prettydate handles string date input", () => {
+  const result = date.prettydate("2018-06-15")
+  assert.deepEqual(result, "Friday, 15th of June 2018")
+})
+
+test("prettydate handles invalid date", () => {
+  const result = date.prettydate("invalid-date")
+  assert.deepEqual(result, "Invalid Date")
+})
+
 test("prettydate returns date string containing name of the day, number of the day, name of the month and year (t1)", () => {
   assert.deepEqual(
     date.prettydate(new Date(2043, 9, 25)),
@@ -242,6 +262,28 @@ test("prettydate returns date string containing name of the day, number of the d
 
 test("prettydate returns date string containing name of the day, number of the day, name of the month and year (t9)", () => {
   assert.deepEqual(date.prettydate(new Date(2018, 11, 30), "de-De"), "")
+})
+
+test("prettydate handles 2nd and 3rd correctly", () => {
+  assert.deepEqual(
+    date.prettydate(new Date(2018, 5, 2)),
+    "Saturday, 2nd of June 2018"
+  )
+  assert.deepEqual(
+    date.prettydate(new Date(2018, 5, 3)),
+    "Sunday, 3rd of June 2018"
+  )
+})
+
+test("prettydate handles 22nd and 23rd correctly", () => {
+  assert.deepEqual(
+    date.prettydate(new Date(2018, 5, 22)),
+    "Friday, 22nd of June 2018"
+  )
+  assert.deepEqual(
+    date.prettydate(new Date(2018, 5, 23)),
+    "Saturday, 23rd of June 2018"
+  )
 })
 
 test("timestamp can return the year", () => {
