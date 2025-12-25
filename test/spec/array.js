@@ -134,6 +134,24 @@ test("unique works with an iteratee function", () => {
   );
 });
 
+test("unique works with null values in objects", () => {
+  assert.deepEqual(array.unique([{ x: null }, { x: null }, { x: "y" }]), [
+    { x: null },
+    { x: "y" },
+  ]);
+});
+
+test("unique works with primitives and null", () => {
+  assert.deepEqual(array.unique([null, null, 1, 2, 1]), [null, 1, 2]);
+});
+
+test("unique works with objects of different key counts", () => {
+  assert.deepEqual(
+    array.unique([{ x: 1 }, { x: 1, y: 2 }, { x: 1 }]),
+    [{ x: 1 }, { x: 1, y: 2 }]
+  );
+});
+
 test('nth gets element at positive index "n" of array', () => {
   assert.deepEqual(array.nth([1, 2, 3, 4, 5], 4), 4);
 });
@@ -291,6 +309,13 @@ test("intersection returns common elements of passed arrays", () => {
   assert.deepEqual(commonElements, [2, 3]);
 
   commonElements = array.intersection(array1, array2, array3);
+  assert.deepEqual(commonElements, [2, 3]);
+});
+
+test("intersection handles arrays with duplicate items", () => {
+  const array1 = [1, 2, 2, 3, 3, 3];
+  const array2 = [2, 3, 4];
+  const commonElements = array.intersection(array1, array2);
   assert.deepEqual(commonElements, [2, 3]);
 });
 

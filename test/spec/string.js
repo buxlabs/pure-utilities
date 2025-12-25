@@ -702,6 +702,21 @@ test("unquote removes quotes from string (t2)", () => {
   assert.deepEqual(parsed, "foo bar baz")
 })
 
+test("unquote returns string as is when no quotes", () => {
+  const parsed = string.unquote("foo bar baz")
+  assert.deepEqual(parsed, "foo bar baz")
+})
+
+test("truncate returns string as is when shorter than length", () => {
+  const parsed = string.truncate("short", 30)
+  assert.deepEqual(parsed, "short")
+})
+
+test("tail returns string as is when shorter than length", () => {
+  const parsed = string.tail("short", 30)
+  assert.deepEqual(parsed, "short")
+})
+
 test("squeeze return a string with removed double characters (t1)", () => {
   const parsed = string.squeeze("foo")
   assert.deepEqual(parsed, "fo")
@@ -778,6 +793,21 @@ test("unwrap, removed starting and ending character (t2)", () => {
 test("unwrap, removed starting and ending character (t3)", () => {
   const parsed = string.unwrap("(foo bar baz)", "(", ")")
   assert.deepEqual(parsed, "foo bar baz")
+})
+
+test("summarize returns string as is when shorter than length", () => {
+  const parsed = string.summarize("short", 100)
+  assert.deepEqual(parsed, "short")
+})
+
+test("wrap returns string as is when first parameter is empty", () => {
+  const parsed = string.wrap("foo bar", "")
+  assert.deepEqual(parsed, "foo bar")
+})
+
+test("unwrap returns string as is when first parameter is empty", () => {
+  const parsed = string.unwrap("foo bar", "")
+  assert.deepEqual(parsed, "foo bar")
 })
 
 test("strip should remove whitespace in left and right", () => {
@@ -949,6 +979,16 @@ test("slugify convert to lower case, remove non-word chars and replace spaces wi
 test("slugify convert to lower case, remove non-word chars and replace spaces with the delimeter (t2)", () => {
   const parsed = string.slugify("loremIpsum dolor special chars", "_")
   assert.deepEqual(parsed, "loremipsum_dolor_special_chars")
+})
+
+test("hyphenate returns falsy values as is", () => {
+  assert.deepEqual(string.hyphenate(null), null)
+  assert.deepEqual(string.hyphenate(""), "")
+})
+
+test("slugify returns falsy values as is", () => {
+  assert.deepEqual(string.slugify(null), null)
+  assert.deepEqual(string.slugify(""), "")
 })
 
 test("initials converts string to initials (t1)", () => {
@@ -1182,6 +1222,12 @@ test("bytes should convert the string with specific unit to bytes", () => {
   assert.deepEqual(string.bytes("2YB"), 2.4178516392292583e24)
   assert.deepEqual(string.bytes("20YB"), 2.4178516392292583e25)
   assert.deepEqual(string.bytes("200YB"), 2.4178516392292583e26)
+})
+
+test("bytes should return null for invalid input", () => {
+  assert.deepEqual(string.bytes("invalid"), null)
+  assert.deepEqual(string.bytes("100"), null)
+  assert.deepEqual(string.bytes("XB"), null)
 })
 
 test("prettybytes should convert bytes to a human-readable string (t1)", () => {

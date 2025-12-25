@@ -7,6 +7,17 @@ test("distance returns the distance between two points in space", () => {
   assert.deepEqual(number, 1)
 })
 
+test("distance returns null for arrays with different lengths", () => {
+  const result = math.distance([1, 2], [1, 2, 3])
+  assert.deepEqual(result, null)
+})
+
+test("random returns a random number", () => {
+  const result = math.random()
+  assert.ok(typeof result === "number")
+  assert.ok(result >= 0 && result < 1)
+})
+
 test("kmeans finds centoids of clusters", () => {
   const data = [
     [1, 2],
