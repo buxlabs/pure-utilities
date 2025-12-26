@@ -246,7 +246,7 @@ module.exports = ({ moduleName, methods }) => {
             ])
           ])
         ]),
-        script(raw(`
+        script(`
     function showLang(btn, lang, methodName) {
       const parent = btn.parentElement;
       const buttons = parent.querySelectorAll('button');
@@ -264,7 +264,7 @@ module.exports = ({ moduleName, methods }) => {
         plDesc.style.display = 'block';
       }
     }
-        `))
+        `)
       ])
     ])
   ]
