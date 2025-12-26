@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>json - pure-utilities</title>
-  <style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>json - pure-utilities</title><style>
     * {
       margin: 0;
       padding: 0;
@@ -172,78 +166,4 @@
         margin-left: 0;
       }
     }
-  </style>
-</head>
-<body>
-  <div class="sidebar">
-    <h3><a href="index.html">← All Modules</a></h3>
-    <h3 style="margin-top: 20px;">Methods</h3>
-    <ul>
-      <li><a href="#prettify">prettify</a></li>
-    </ul>
-  </div>
-  
-  <div class="content-wrapper">
-    <div class="container">
-      <header>
-        <div class="breadcrumb">
-          <a href="index.html">pure-utilities</a> / json
-        </div>
-        <h1>json</h1>
-      </header>
-      
-      <main>
-        <div class="method" id="prettify">
-          <h2>prettify</h2>
-          <div class="method-signature">prettify(value, indent)</div>
-          
-          <div class="parameters">
-            <h3>Parameters:</h3>
-            <ul>
-              <li>value</li>
-              <li>indent</li>
-            </ul>
-          </div>
-          
-          <div class="description">
-            <div class="lang-toggle">
-              <button class="active" onclick="showLang(this, 'en', 'prettify')">English</button>
-              <button onclick="showLang(this, 'pl', 'prettify')">Polski</button>
-            </div>
-            <p class="desc-en-prettify">Converts a value to JSON string. When the passed value is not a string, returns the value.</p>
-            <p class="desc-pl-prettify" style="display: none;">Konwertuje wartość na zapis w formacie JSON. Gdy przekazana wartość nie jest łańcuchem tekstowym, zwraca niezmodyfikowaną wartość.</p>
-          </div>
-        </div>
-      </main>
-      
-      <footer>
-        <p>
-          <a href="https://github.com/buxlabs/pure-utilities">View on GitHub</a> | 
-          <a href="https://www.npmjs.com/package/pure-utilities">npm package</a> | 
-          Licensed under MIT
-        </p>
-      </footer>
-    </div>
-  </div>
-  
-  <script>
-    function showLang(btn, lang, methodName) {
-      const parent = btn.parentElement;
-      const buttons = parent.querySelectorAll('button');
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      
-      const enDesc = document.querySelector('.desc-en-' + methodName);
-      const plDesc = document.querySelector('.desc-pl-' + methodName);
-      
-      if (lang === 'en') {
-        enDesc.style.display = 'block';
-        plDesc.style.display = 'none';
-      } else {
-        enDesc.style.display = 'none';
-        plDesc.style.display = 'block';
-      }
-    }
-  </script>
-</body>
-</html>
+        </style></head><body><div class="sidebar"><h3><a href="index.html">← All Modules</a></h3><h3 style="margin-top: 20px;">Methods</h3><ul><li><a href="#prettify">prettify</a></li></ul></div><div class="content-wrapper"><div class="container"><header><div class="breadcrumb"><a href="index.html">pure-utilities</a> / json</div><h1>json</h1></header><main><div class="method" id="prettify"><h2>prettify</h2><div class="method-signature">prettify(value, indent)</div><div class="parameters"><h3>Parameters:</h3><ul><li>value</li><li>indent</li></ul></div><div class="description"><div class="lang-toggle"><button class="active" onclick="showLang(this, 'en', 'prettify')">English</button><button onclick="showLang(this, 'pl', 'prettify')">Polski</button></div><p class="desc-en-prettify">Converts a value to JSON string. When the passed value is not a string, returns the value.</p><p class="desc-pl-prettify" style="display: none;">Konwertuje wartość na zapis w formacie JSON. Gdy przekazana wartość nie jest łańcuchem tekstowym, zwraca niezmodyfikowaną wartość.</p></div></div></main><footer><p><a href="https://github.com/buxlabs/pure-utilities">View on GitHub</a> | <a href="https://www.npmjs.com/package/pure-utilities">npm package</a> | Licensed under MIT</p></footer></div></div><script></script></body></html>
