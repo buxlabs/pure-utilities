@@ -10,6 +10,7 @@
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
+- [Documentation](#documentation)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
@@ -28,6 +29,18 @@ A pure function is a function that given the same input will give you the same o
 import { flatten } from "pure-utilities/object";
 console.log(flatten({ hello: { world: "1234" } })); // { 'hello.world': '1234' }
 ```
+
+## Documentation
+
+Complete documentation for all methods is available at:
+
+**[https://buxlabs.github.io/pure-utilities/](https://buxlabs.github.io/pure-utilities/)**
+
+The documentation includes:
+- All 7 modules (array, collection, date, json, math, object, string)
+- 160+ utility methods with descriptions
+- Bilingual support (English and Polish)
+- Method signatures and parameters
 
 ## Maintainers
 
