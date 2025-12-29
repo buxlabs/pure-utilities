@@ -3,7 +3,7 @@ const path = require('path')
 const { compile } = require('boxwood')
 const documentation = require('.')
 
-const OUTPUT_DIR = path.join(__dirname, '../gh-pages')
+const OUTPUT_DIR = __dirname
 
 // Ensure output directory exists
 if (!fs.existsSync(OUTPUT_DIR)) {
